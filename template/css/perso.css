@@ -18,11 +18,11 @@
     padding: 0 4em 0 4em; /* Ajoutez un peu de padding si nécessaire */
 }
 .logo-img-fluid {
-    /*width: 100%; !* ou une largeur spécifique *!*/
+    width: 100%; /* ou une largeur spécifique */
     height: auto; /* ajuste la hauteur pour maintenir les proportions */
     object-fit: contain; /* garde les proportions tout en s'adaptant à l'espace disponible */
     /*height: 60%; !* Ajustez cette valeur selon vos besoins *!*/
-    width: 80%;
+    /*width: 80%;*/
 
 }
 .centered-title {
