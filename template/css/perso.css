@@ -77,6 +77,13 @@ li.active {
     --bs-btn-focus-shadow-rgb: 130, 138, 145;
     color: orange !important;
 }
+/*CENTRER LES 2 BOUTONS DU BANDEAU*/
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em; /* Adjust the gap between buttons as needed */
+}
 /*TITRE RESPONSIVE*/
 /* Taille de base pour les écrans larges */
 header.masthead .masthead-heading {
