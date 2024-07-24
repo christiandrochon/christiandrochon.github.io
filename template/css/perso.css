@@ -1,0 +1,103 @@
+/*PLACEMENT DES ÉLÉMENTS*/
+.containerAvecMarges {
+    margin-right: 3em;
+    margin-left: 3em;
+   /*padding-right: 2em;*/
+   /* padding-left: 2em;*/
+}
+.listeSansPuces {
+    list-style-type: none !important; /* Supprime les puces */
+}
+
+.container-marges-texte {
+    max-width: fit-content; /* Ajustez cette valeur selon vos besoins */
+    margin: 0 auto; /* Centrer le contenu */
+    padding: 0 1.5em 0 1.5em; /* Ajoutez un peu de padding si nécessaire */
+}
+.container-marges-images {
+    padding: 0 4em 0 4em; /* Ajoutez un peu de padding si nécessaire */
+}
+.logo-img-fluid {
+    /*width: 100%; !* ou une largeur spécifique *!*/
+    height: auto; /* ajuste la hauteur pour maintenir les proportions */
+    object-fit: contain; /* garde les proportions tout en s'adaptant à l'espace disponible */
+    /*height: 60%; !* Ajustez cette valeur selon vos besoins *!*/
+    width: 80%;
+
+}
+.centered-title {
+    text-align: center;
+}
+p {
+    font-size: 1.25rem; /* Taille équivalente à fs-5 dans Bootstrap */
+}
+.mailto {
+    /*color: var(--bs-primary);*/
+    color: blue;
+}
+
+
+/*SURBRILLANCE DES TAB DE MENU */
+li.active {
+  font-weight: bold;
+  color: blue;
+}
+.nav-link.active {
+    border: 2px solid orange; /* Bordure orange */
+    background-color: orange; /* Fond orange */
+    color: blue !important; /* Texte bleu */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 5px 10px; /* Espacement intérieur pour mieux visualiser le fond et la bordure */
+}
+.nav-link:hover{
+    background-color: #f8f9fa;
+    color: #0056b3;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.btnDevisTel{
+    --bs-btn-color: orange;
+    --bs-btn-bg: orange;
+    --bs-btn-border-color: #6c757d;
+    /*--bs-btn-border-color: orange;*/
+    /*--bs-btn-hover-color: blue;*/
+    /*--bs-btn-hover-bg:blue;*/
+    /*--bs-btn-hover-border-color: blue;*/
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
+    color: blue !important; /* Texte bleu */
+    border-radius: 5px; /* Coins arrondis */
+}
+.btnDevisTel:hover {
+    --bs-btn-border-color: blue;
+    --bs-btn-hover-color: blue;
+    --bs-btn-hover-bg: blue;
+    --bs-btn-hover-border-color: orange;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
+    color: orange !important;
+}
+/*TITRE RESPONSIVE*/
+/* Taille de base pour les écrans larges */
+header.masthead .masthead-heading {
+  font-size: 4.5rem; /* Taille de base */
+}
+
+/* Pour les écrans de tablettes */
+@media (max-width: 992px) {
+  header.masthead .masthead-heading {
+    font-size: 4rem; /* Réduire la taille de la police */
+  }
+}
+
+/* Pour les écrans de téléphones */
+@media (max-width: 768px) {
+  header.masthead .masthead-heading {
+    font-size: 3.5rem; /* Réduire davantage la taille de la police */
+  }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 576px) {
+  header.masthead .masthead-heading {
+    font-size: 2rem; /* Taille minimale de la police */
+  }
+}
