@@ -1,109 +1,117 @@
+/*DEBORDEMENT DE TOUTE L'APPLI*/
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.navbar {
+  width: 100%;
+  max-width: 100vw; /* Empêche la navbar de dépasser la largeur de l'écran */
+}
 /*PLACEMENT DES ÉLÉMENTS*/
 .containerAvecMarges {
-    margin-right: 3em;
-    margin-left: 3em;
-   /*padding-right: 2em;*/
-   /* padding-left: 2em;*/
+  margin-right: 3em;
+  margin-left: 3em;
+  /*padding-right: 2em;*/
+  /* padding-left: 2em;*/
 }
 .listeSansPuces {
-    list-style-type: none !important; /* Supprime les puces */
+  list-style-type: none !important; /* Supprime les puces */
 }
-
 .container-marges-texte {
-    max-width: fit-content; /* Ajustez cette valeur selon vos besoins */
-    margin: 0 auto; /* Centrer le contenu */
-    padding: 0 1.5em 0 1.5em; /* Ajoutez un peu de padding si nécessaire */
+  max-width: fit-content; /* Ajustez cette valeur selon vos besoins */
+  margin: 0 auto; /* Centrer le contenu */
+  padding: 0 1.5em 0 1.5em; /* Ajoutez un peu de padding si nécessaire */
 }
 .container-marges-images {
-    padding: 0 4em 0 4em; /* Ajoutez un peu de padding si nécessaire */
+  padding: 0 4em 0 4em; /* Ajoutez un peu de padding si nécessaire */
 }
 .logo-img-fluid {
-    width: 100%; /* ou une largeur spécifique */
-    height: auto; /* ajuste la hauteur pour maintenir les proportions */
-    object-fit: contain; /* garde les proportions tout en s'adaptant à l'espace disponible */
-    /*height: 60%; !* Ajustez cette valeur selon vos besoins *!*/
-    /*width: 80%;*/
-
+  width: 100%; /* ou une largeur spécifique */
+  height: auto; /* ajuste la hauteur pour maintenir les proportions */
+  object-fit: contain; /* garde les proportions tout en s'adaptant à l'espace disponible */
+  /*height: 60%; !* Ajustez cette valeur selon vos besoins *!*/
+  /*width: 80%;*/
 }
 .centered-title {
-    text-align: center;
+  text-align: center;
 }
 p {
-    font-size: 1.25rem; /* Taille équivalente à fs-5 dans Bootstrap */
+  font-size: 1.25rem; /* Taille équivalente à fs-5 dans Bootstrap */
 }
 .mailto {
-    /*color: var(--bs-primary);*/
-    color: blue;
+  /*color: var(--bs-primary);*/
+  color: blue;
 }
-
-
 /*SURBRILLANCE DES TAB DE MENU */
 li.active {
   font-weight: bold;
   color: blue;
 }
 .nav-link.active {
-    border: 2px solid orange; /* Bordure orange */
-    background-color: orange; /* Fond orange */
-    color: blue !important; /* Texte bleu */
-    border-radius: 5px; /* Coins arrondis */
-    padding: 5px 10px; /* Espacement intérieur pour mieux visualiser le fond et la bordure */
+  border: 2px solid orange; /* Bordure orange */
+  background-color: orange; /* Fond orange */
+  color: blue !important; /* Texte bleu */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 5px 10px; /* Espacement intérieur pour mieux visualiser le fond et la bordure */
 }
-.nav-link:hover{
-    background-color: #f8f9fa;
-    color: #0056b3;
-    border-radius: 5px;
-    padding: 5px 10px;
+.nav-link:hover {
+  background-color: #f8f9fa;
+  color: #0056b3;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
-.btnDevisTel{
-    --bs-btn-color: orange;
-    --bs-btn-bg: orange;
-    --bs-btn-border-color: #6c757d;
-    /*--bs-btn-border-color: orange;*/
-    /*--bs-btn-hover-color: blue;*/
-    /*--bs-btn-hover-bg:blue;*/
-    /*--bs-btn-hover-border-color: blue;*/
-    --bs-btn-focus-shadow-rgb: 130, 138, 145;
-    color: blue !important; /* Texte bleu */
-    border-radius: 5px; /* Coins arrondis */
-    width: 15em;
-    height: 4em;
+.btnDevisTel {
+  --bs-btn-color: orange;
+  --bs-btn-bg: orange;
+  --bs-btn-border-color: #6c757d;
+  /*--bs-btn-border-color: orange;*/
+  /*--bs-btn-hover-color: blue;*/
+  /*--bs-btn-hover-bg:blue;*/
+  /*--bs-btn-hover-border-color: blue;*/
+  --bs-btn-focus-shadow-rgb: 130, 138, 145;
+  color: blue !important; /* Texte bleu */
+  border-radius: 5px; /* Coins arrondis */
+  width: 15em;
+  height: 4em;
 }
 .btnDevisTel:hover {
-    --bs-btn-border-color: blue;
-    --bs-btn-hover-color: blue;
-    --bs-btn-hover-bg: blue;
-    --bs-btn-hover-border-color: orange;
-    --bs-btn-focus-shadow-rgb: 130, 138, 145;
-    color: orange !important;
+  --bs-btn-border-color: blue;
+  --bs-btn-hover-color: blue;
+  --bs-btn-hover-bg: blue;
+  --bs-btn-hover-border-color: orange;
+  --bs-btn-focus-shadow-rgb: 130, 138, 145;
+  color: orange !important;
 }
 /*CENTRER LES 2 BOUTONS DU BANDEAU*/
 .buttons-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5em; /* Adjust the gap between buttons as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em; /* Adjust the gap between buttons as needed */
+  margin-top: 5em;
+  margin-bottom: -3em;
 }
 /*TITRE RESPONSIVE*/
 /* Taille de base pour les écrans larges */
 header.masthead .masthead-heading {
   font-size: 4.5rem; /* Taille de base */
 }
-
 /* Pour les écrans de tablettes */
 @media (max-width: 992px) {
   header.masthead .masthead-heading {
     font-size: 4rem; /* Réduire la taille de la police */
   }
 }
-
 /* Pour les écrans de téléphones */
 @media (max-width: 768px) {
   header.masthead .masthead-heading {
     font-size: 3.5rem; /* Réduire davantage la taille de la police */
   }
 }
-
 /* Pour les très petits écrans */
 @media (max-width: 576px) {
   header.masthead .masthead-heading {
