@@ -66,6 +66,8 @@ li.active {
     --bs-btn-focus-shadow-rgb: 130, 138, 145;
     color: blue !important; /* Texte bleu */
     border-radius: 5px; /* Coins arrondis */
+    width: 15em;
+    height: 5em;
 }
 .btnDevisTel:hover {
     --bs-btn-border-color: blue;
