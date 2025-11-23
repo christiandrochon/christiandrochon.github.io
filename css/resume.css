@@ -95,34 +95,46 @@ img {
 
 .nav-link {
     position: relative;
+    display: inline-flex;
+    align-items: center;
     cursor: pointer;
     color: #9ca3af;
-    padding-bottom: 0.1rem;
-    transition: color 0.2s ease;
+    padding: 0.1rem 0;
+    transition: color 0.2s ease, padding-left 0.25s ease;
 }
 
-.nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -0.2rem;
-    width: 0;
-    height: 2px;
-    background: #f97316; /* accent */
-    transition: width 0.2s ease;
-}
-
-.nav-link:hover {
+/* Couleur active */
+.nav-link:hover,
+.nav-link.active {
     color: #e5e7eb;
 }
 
-.nav-link.active {
-    color: #f9fafb;
+/* Barre latérale */
+.nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 2px;
+    width: 0;
+    background: #e5e7eb; /* même couleur que ton texte */
+    transform: translateY(-50%);
+    transition: width 0.25s ease;
 }
 
-.nav-link.active::after {
-    width: 28px;
+/* Quand actif ou hover :
+    - texte déplacé suffisamment loin
+    - barre suffisamment large */
+.nav-link.active,
+.nav-link:hover {
+    padding-left: 5rem;       /* → espace pour ne PAS entrer dans le texte */
 }
+
+.nav-link.active::before,
+.nav-link:hover::before {
+    width: 4rem;             /* longueur de la barre */
+}
+
 
 /* --------- Réseaux sociaux --------- */
 .socials {
