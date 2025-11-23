@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Christian Drochon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          referrerpolicy="no-referrer">
+    <link rel="icon" type="image/svg+xml" href="/img/CD.svg">
+
+    <!--    Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--    Fichiers perso-->
+    <script src="js/resume.js"></script>
+    <link rel="stylesheet" href="/css/resume.css"/>
+
+</head>
+<body>
+<div class="page">
+    <!-- --------- Sidebar gauche --------- -->
+    <aside class="sidebar">
+        <div class="sidebar-inner">
+            <h1 class="name">Votre Nom</h1>
+            <div class="role">Développeur / Intégrateur Web</div>
+
+            <p class="intro">
+                Je conçois et développe des interfaces web modernes, accessibles et performantes.
+                Ce site monopage présente rapidement qui je suis, mon parcours et quelques projets.
+            </p>
+
+            <nav class="nav" id="site-nav">
+                <a href="#about" class="nav-link active" data-section="about">About</a>
+                <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </nav>
+
+            <div class="socials">
+                <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="#" target="_blank" rel="noreferrer">CodePen</a>
+                <a href="#" target="_blank" rel="noreferrer">Email</a>
+            </div>
+
+            <!-- Bas : icônes sociales FIXES dans la colonne -->
+            <div class="social-icons">
+                <a href="https://github.com/tonprofil" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://gitlab.com/tonprofil" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
+                <a href="https://linkedin.com/in/tonprofil" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://discord.gg/votre-serveur" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                <a href="https://twitter.com/tonprofil" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://instagram.com/tonprofil" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/tonprofil" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://soundcloud.com/tonprofil" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                <a href="https://spotify.com/tonprofil" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                <a href="mailto:you@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+
+
+        </div>
+    </aside>
+
+    <!-- --------- Contenu principal --------- -->
+    <main class="content">
+        <!-- About -->
+        <section id="about" data-section>
+            <div class="section-label">About</div>
+            <h2 class="section-title">À propos de moi</h2>
+            <p>
+                Je suis un développeur front-end passionné par la création d’expériences
+                web soignées, robustes et accessibles. J’aime particulièrement travailler
+                sur des sites vitrines bien structurés et faciles à maintenir.
+            </p>
+            <p>
+                Mon travail combine <span class="highlight">design</span> et
+                <span class="highlight">ingénierie</span> pour produire des interfaces
+                qui sont à la fois esthétiques et performantes, que ce soit pour des
+                petites structures ou des projets plus ambitieux.
+            </p>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" data-section>
+            <div class="section-label">Experience</div>
+            <h2 class="section-title">Expérience</h2>
+
+            <div class="experience-list">
+                <article class="exp-item">
+                    <div class="exp-period">2022 — Présent</div>
+                    <div>
+                        <div class="exp-role">
+                            Développeur Front-End · <span class="exp-company">Agence Web XYZ</span>
+                        </div>
+                        <p class="exp-description">
+                            Intégration de sites vitrines, optimisation des performances,
+                            mise en place de composants réutilisables et amélioration continue
+                            de l’accessibilité.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS / Tailwind</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Accessibility</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="exp-item">
+                    <div class="exp-period">2019 — 2022</div>
+                    <div>
+                        <div class="exp-role">
+                            Développeur Web · <span class="exp-company">Freelance</span>
+                        </div>
+                        <p class="exp-description">
+                            Réalisation de sites vitrines, intégration de maquettes, mise en
+                            place de thèmes custom pour CMS, accompagnement technique de clients
+                            non techniques.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">React</span>
+                            <span class="tag">SEO</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" data-section>
+            <div class="section-label">Projects</div>
+            <h2 class="section-title">Projets sélectionnés</h2>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-title">Portfolio Minimaliste</div>
+                    <a class="project-link" href="#" target="_blank" rel="noreferrer">
+                        Voir le site
+                        <span>↗</span>
+                    </a>
+                    <p class="project-desc">
+                        Site vitrine simple présentant un profil, un parcours et quelques projets,
+                        optimisé pour le chargement rapide et le SEO.
+                    </p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-title">Dashboard Statistiques</div>
+                    <a class="project-link" href="#" target="_blank" rel="noreferrer">
+                        Voir le site
+                        <span>↗</span>
+                    </a>
+                    <p class="project-desc">
+                        Interface web permettant de visualiser et filtrer des données en temps réel
+                        avec des graphiques interactifs.
+                    </p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>REST API</span>
+                        <span>Charts</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-title">Blog Technique</div>
+                    <a class="project-link" href="#" target="_blank" rel="noreferrer">
+                        Voir le site
+                        <span>↗</span>
+                    </a>
+                    <p class="project-desc">
+                        Blog statique généré avec un SSG, contenant des articles sur le front-end,
+                        l’accessibilité et les bonnes pratiques web.
+                    </p>
+                    <div class="project-tech">
+                        <span>Static Site Generator</span>
+                        <span>Markdown</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" data-section>
+            <div class="section-label">Contact</div>
+            <h2 class="section-title">Travaillons ensemble</h2>
+            <p class="contact-text">
+                Vous avez un projet de site vitrine, de refonte ou d’application front-end&nbsp;?
+                N’hésitez pas à me contacter pour discuter de vos besoins techniques,
+                de vos contraintes et de vos objectifs.
+            </p>
+            <button
+                    class="contact-button"
+                    onclick="window.location.href='mailto:you@example.com?subject=Projet%20web'"
+            >
+                M&apos;écrire un email
+            </button>
+        </section>
+
+        <footer>
+            Monopage construite en HTML / CSS / JS, facilement portable vers React ou un
+            framework de votre choix.
+        </footer>
+    </main>
+</div>
+
+<script>
+    // document.addEventListener("DOMContentLoaded", () => {
+    //     const sections = Array.from(document.querySelectorAll("section[data-section]"));
+    //     const navLinks = Array.from(document.querySelectorAll(".nav-link"));
+    //
+    //     const idFromLink = (link) => link.dataset.section;
+    //
+    //     const setActive = (id) => {
+    //         navLinks.forEach((link) => {
+    //             link.classList.toggle("active", idFromLink(link) === id);
+    //         });
+    //     };
+    //
+    //     const onScroll = () => {
+    //         if (sections.length === 0) return;
+    //
+    //         const scrollY   = window.scrollY;
+    //         const viewportH = window.innerHeight;
+    //         const doc       = document.documentElement;
+    //         const pageH     = doc.scrollHeight;
+    //         const bottomY   = scrollY + viewportH;
+    //
+    //         // 1) tout en haut → always ABOUT
+    //         if (scrollY < 50) {
+    //             setActive(sections[0].id);
+    //             return;
+    //         }
+    //
+    //         // 2) tout en bas → always dernière section (CONTACT)
+    //         if (bottomY >= pageH - 10) {
+    //             setActive(sections[sections.length - 1].id);
+    //             return;
+    //         }
+    //
+    //         // 3) sinon : section sous le centre de l'écran
+    //         const center = scrollY + viewportH / 2;
+    //         let currentId = sections[0].id;
+    //
+    //         for (const section of sections) {
+    //             const top = section.offsetTop;
+    //             const bottom = top + section.offsetHeight;
+    //
+    //             if (center >= top && center < bottom) {
+    //                 currentId = section.id;
+    //                 break;
+    //             }
+    //         }
+    //
+    //         setActive(currentId);
+    //     };
+    //
+    //     // Scroll fluide sur clic menu
+    //     navLinks.forEach((link) => {
+    //         link.addEventListener("click", (e) => {
+    //             e.preventDefault();
+    //             const id = idFromLink(link);
+    //             const target = document.getElementById(id);
+    //             if (!target) return;
+    //
+    //             const headerOffset = 0; // ajuste si tu as un header fixe
+    //             const rect = target.getBoundingClientRect();
+    //             const targetY = rect.top + window.scrollY - headerOffset;
+    //
+    //             window.scrollTo({
+    //                 top: targetY,
+    //                 behavior: "smooth",
+    //             });
+    //         });
+    //     });
+    //
+    //     window.addEventListener("scroll", onScroll, { passive: true });
+    //     window.addEventListener("resize", onScroll);
+    //     onScroll(); // état initial
+    // });
+</script>
+
+
+<!--<script>-->
+<!--    // -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; Scrollspy : active le bon lien au scroll -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--    document.addEventListener("DOMContentLoaded", () => {-->
+<!--        const sections = document.querySelectorAll("section[data-section]");-->
+<!--        const navLinks = document.querySelectorAll(".nav-link");-->
+
+<!--        const sectionById = {};-->
+<!--        sections.forEach((sec) => {-->
+<!--            sectionById[sec.id] = sec;-->
+<!--        });-->
+
+<!--        // IntersectionObserver pour détecter la section "active"-->
+<!--        const observer = new IntersectionObserver(-->
+<!--            (entries) => {-->
+<!--                entries.forEach((entry) => {-->
+<!--                    if (entry.isIntersecting) {-->
+<!--                        const id = entry.target.id;-->
+<!--                        navLinks.forEach((link) => {-->
+<!--                            const isActive = link.dataset.section === id;-->
+<!--                            link.classList.toggle("active", isActive);-->
+<!--                        });-->
+<!--                    }-->
+<!--                });-->
+<!--            },-->
+<!--            {-->
+<!--                root: null,-->
+<!--                rootMargin: "0px 0px -50% 0px", // déclenche quand la moitié supérieure de l'écran passe sur la section-->
+<!--                threshold: 0.1-->
+<!--            }-->
+<!--        );-->
+
+<!--        sections.forEach((sec) => observer.observe(sec));-->
+
+<!--        // Scroll fluide + gestion active immédiate au clic-->
+<!--        navLinks.forEach((link) => {-->
+<!--            link.addEventListener("click", (e) => {-->
+<!--                e.preventDefault();-->
+<!--                const id = link.dataset.section;-->
+<!--                const target = sectionById[id];-->
+<!--                if (target) {-->
+<!--                    target.scrollIntoView({ behavior: "smooth", block: "start" });-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+</body>
+</html>
