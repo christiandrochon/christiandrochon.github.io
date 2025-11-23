@@ -25,7 +25,7 @@
     <!-- --------- Sidebar gauche --------- -->
     <aside class="sidebar">
         <div class="sidebar-inner">
-            <h1 class="name">Votre Nom</h1>
+            <h1 class="name">Christian Drochon</h1>
             <div class="role">Développeur / Intégrateur Web</div>
 
             <p class="intro">
@@ -213,128 +213,5 @@
     </main>
 </div>
 
-<script>
-    // document.addEventListener("DOMContentLoaded", () => {
-    //     const sections = Array.from(document.querySelectorAll("section[data-section]"));
-    //     const navLinks = Array.from(document.querySelectorAll(".nav-link"));
-    //
-    //     const idFromLink = (link) => link.dataset.section;
-    //
-    //     const setActive = (id) => {
-    //         navLinks.forEach((link) => {
-    //             link.classList.toggle("active", idFromLink(link) === id);
-    //         });
-    //     };
-    //
-    //     const onScroll = () => {
-    //         if (sections.length === 0) return;
-    //
-    //         const scrollY   = window.scrollY;
-    //         const viewportH = window.innerHeight;
-    //         const doc       = document.documentElement;
-    //         const pageH     = doc.scrollHeight;
-    //         const bottomY   = scrollY + viewportH;
-    //
-    //         // 1) tout en haut → always ABOUT
-    //         if (scrollY < 50) {
-    //             setActive(sections[0].id);
-    //             return;
-    //         }
-    //
-    //         // 2) tout en bas → always dernière section (CONTACT)
-    //         if (bottomY >= pageH - 10) {
-    //             setActive(sections[sections.length - 1].id);
-    //             return;
-    //         }
-    //
-    //         // 3) sinon : section sous le centre de l'écran
-    //         const center = scrollY + viewportH / 2;
-    //         let currentId = sections[0].id;
-    //
-    //         for (const section of sections) {
-    //             const top = section.offsetTop;
-    //             const bottom = top + section.offsetHeight;
-    //
-    //             if (center >= top && center < bottom) {
-    //                 currentId = section.id;
-    //                 break;
-    //             }
-    //         }
-    //
-    //         setActive(currentId);
-    //     };
-    //
-    //     // Scroll fluide sur clic menu
-    //     navLinks.forEach((link) => {
-    //         link.addEventListener("click", (e) => {
-    //             e.preventDefault();
-    //             const id = idFromLink(link);
-    //             const target = document.getElementById(id);
-    //             if (!target) return;
-    //
-    //             const headerOffset = 0; // ajuste si tu as un header fixe
-    //             const rect = target.getBoundingClientRect();
-    //             const targetY = rect.top + window.scrollY - headerOffset;
-    //
-    //             window.scrollTo({
-    //                 top: targetY,
-    //                 behavior: "smooth",
-    //             });
-    //         });
-    //     });
-    //
-    //     window.addEventListener("scroll", onScroll, { passive: true });
-    //     window.addEventListener("resize", onScroll);
-    //     onScroll(); // état initial
-    // });
-</script>
-
-
-<!--<script>-->
-<!--    // -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; Scrollspy : active le bon lien au scroll -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--    document.addEventListener("DOMContentLoaded", () => {-->
-<!--        const sections = document.querySelectorAll("section[data-section]");-->
-<!--        const navLinks = document.querySelectorAll(".nav-link");-->
-
-<!--        const sectionById = {};-->
-<!--        sections.forEach((sec) => {-->
-<!--            sectionById[sec.id] = sec;-->
-<!--        });-->
-
-<!--        // IntersectionObserver pour détecter la section "active"-->
-<!--        const observer = new IntersectionObserver(-->
-<!--            (entries) => {-->
-<!--                entries.forEach((entry) => {-->
-<!--                    if (entry.isIntersecting) {-->
-<!--                        const id = entry.target.id;-->
-<!--                        navLinks.forEach((link) => {-->
-<!--                            const isActive = link.dataset.section === id;-->
-<!--                            link.classList.toggle("active", isActive);-->
-<!--                        });-->
-<!--                    }-->
-<!--                });-->
-<!--            },-->
-<!--            {-->
-<!--                root: null,-->
-<!--                rootMargin: "0px 0px -50% 0px", // déclenche quand la moitié supérieure de l'écran passe sur la section-->
-<!--                threshold: 0.1-->
-<!--            }-->
-<!--        );-->
-
-<!--        sections.forEach((sec) => observer.observe(sec));-->
-
-<!--        // Scroll fluide + gestion active immédiate au clic-->
-<!--        navLinks.forEach((link) => {-->
-<!--            link.addEventListener("click", (e) => {-->
-<!--                e.preventDefault();-->
-<!--                const id = link.dataset.section;-->
-<!--                const target = sectionById[id];-->
-<!--                if (target) {-->
-<!--                    target.scrollIntoView({ behavior: "smooth", block: "start" });-->
-<!--                }-->
-<!--            });-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
 </body>
 </html>
