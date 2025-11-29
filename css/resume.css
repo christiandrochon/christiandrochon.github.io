@@ -1,3 +1,4 @@
+/*Declaration de variable generale*/
 :root {
     --font-inter: "Inter", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
@@ -16,7 +17,6 @@ html, body {
 body {
     margin: 0;
     font-family: var(--font-inter), system-ui, sans-serif;
-    /*font-family: "Inter", ui-sans-serif, system-ui, sans-serif;*/
     background: #050816;
     color: #e5e7eb;
     line-height: 1.6;
@@ -46,8 +46,9 @@ img {
     flex-direction: column;
     /*padding: 0.8rem;*/
     /*width: 100%;*/
-    padding-inline: clamp(0.8rem, 4vw, 2rem);
-    padding-block: 1.5rem;
+    padding-inline: clamp(2rem, 4vw, 4rem);
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
     /* largeur max centrée pour les grands écrans */
     max-width: 1300px;
     margin: 0 auto;
@@ -397,10 +398,6 @@ footer {
 /* MOBILE */
 @media (max-width: 639px) {
 
-    /* Texte un peu moins massif sur très petit écran */
-    /*html, body {*/
-    /*    font-size: 0.95rem;*/
-    /*}*/
     .name {
         font-size: 2rem;     /* au lieu de 1.8rem */
     }
@@ -417,8 +414,9 @@ footer {
 
     /* Marges horizontales plus confortables */
     .page {
-        padding-inline: 2rem;
+        padding-inline: 2.5rem;
         padding-block: 1.2rem;
+        padding-top: 6rem; /* pour laisser de la place au header fixe */
     }
 
     section {
@@ -446,6 +444,8 @@ footer {
     }
 }
 
+
+
 /* ----- TABLETTE / PETITS ECRANS (600–1023px) -----
    Toujours layout en colonne (page),
    aside visible mais sans menu,
@@ -453,16 +453,15 @@ footer {
    ----------------------------------------------- */
 
 @media (min-width: 640px) and (max-width: 1023px) {
-
-    /* Layout toujours en colonne, mais tu peux affiner ici
-       si tu veux des styles spécifiques tablette. */
+    .page {
+        padding-inline: clamp(2rem, 5vw, 3rem);
+        padding-block: 1.2rem;
+        padding-top: 6rem; /* pour laisser de la place au header fixe */
+    }
 
     .nav {
         display: none; /* menu toujours caché en dessous de 1024px */
     }
-
-    /* Sur tablette on peut garder les tags, donc rien à cacher ici,
-       à toi de voir si tu veux les réactiver explicitement. */
 }
 
 /* ----- DESKTOP (≥ 1024px) -----
@@ -476,12 +475,23 @@ footer {
 
     .page {
         flex-direction: row;
-        gap: 8rem;
+        gap: 5rem;           /* espace entre colonnes */
+        padding-top: 4rem;   /* ton réglage actuel */
+    }
+
+    .sidebar {
+        flex: 0 0 40%;       /* élargit la colonne gauche */
+        max-width: none;     /* supprime la limite stricte de 360px */
+    }
+
+    .content {
+        flex: 1 0 0;         /* colonne droite prend le reste */
+        max-width: none;     /* largeur libre */
     }
 
     .sidebar-inner {
         position: sticky;
-        top: 2rem;
+        top: 6rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;  /* haut ↔ bas */
