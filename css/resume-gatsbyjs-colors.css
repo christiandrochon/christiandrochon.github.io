@@ -1,0 +1,666 @@
+/*Declaration de variable generale*/
+:root {
+    --font-inter: "Inter", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+
+    /*!*Palette A — Lavande / Indigo / Turquoise (pastel froid)*!*/
+    /*!* Fond & surfaces *!*/
+    /*--color-bg: #f5f3ff;          !* lavande très clair (fond général pastel) *!*/
+    /*--color-bg-soft: #ffffff;     !* cartes, blocs blancs propres *!*/
+    /*--color-border: #e0e7ff;      !* bordures bleu/violet très douces *!*/
+    /*!* Texte *!*/
+    /*--color-text: #111827;        !* texte principal bien contrasté *!*/
+    /*--color-text-muted: #4b5563;  !* texte secondaire gris neutre *!*/
+    /*!* Accents *!*/
+    /*--color-accent: #6366f1;      !* indigo saturé (boutons, liens principaux) *!*/
+    /*--color-accent-soft: #e0e7ff; !* fond/hovers indigo très clair *!*/
+    /*--color-link-alt: #06b6d4;    !* turquoise (liens secondaires, badges) *!*/
+
+
+    /*!*Palette B — Crème / Orange / Cyan (pastel chaud)*!*/
+    /*!* Fond & surfaces *!*/
+    /*--color-bg: #fff7ed;          !* crème pêche très clair (pastel chaud) *!*/
+    /*--color-bg-soft: #ffffff;     !* cartes blanches *!*/
+    /*--color-border: #fed7aa;      !* bordures pêche claires *!*/
+    /*!* Texte *!*/
+    /*--color-text: #1f2933;        !* texte principal bien contrasté *!*/
+    /*--color-text-muted: #4b5563;  !* texte secondaire gris neutre *!*/
+    /*!* Accents *!*/
+    /*--color-accent: #f97316;      !* orange vif (boutons, CTA) *!*/
+    /*--color-accent-soft: #ffedd5; !* fond/hovers orange très clair *!*/
+    /*--color-link-alt: #0ea5e9;    !* bleu-cyan pour liens / détails *!*/
+
+
+
+
+    /*!* Palette claire type Gatsby *!*/
+    /*--color-bg: #ffffff;          !* fond principal *!*/
+    /*--color-bg-soft: #f9fafb;     !* panneaux, cartes *!*/
+    /*--color-border: #e5e7eb;      !* bordures légères *!*/
+    /*--color-text: #111827;        !* texte principal *!*/
+    /*--color-text-muted: #4b5563;  !* texte secondaire *!*/
+    /*--color-accent: #663399;      !* violet principal *!*/
+    /*--color-accent-soft: #ede9fe; !* violet très clair (hover, fonds) *!*/
+    /*--color-link-alt: #14d9c4;    !* turquoise d’accent optionnel *!*/
+
+    /*!* Palette 1 — “Midnight Blue Soft” (dark élégant, pas noir) *!*/
+    /*--color-bg: #0f172a; !* fond principal bleu nuit *!*/
+    /*--color-bg-soft: #1e293b; !* panneaux, cartes *!*/
+    /*--color-border: #1f2937; !* bordures discrètes *!*/
+    /*--color-text: #e5f0ff; !* texte principal très clair *!*/
+    /*--color-text-muted: #cbd5f5; !* texte secondaire bleuté *!*/
+    /*--color-accent: #22d3ee; !* accent cyan/teal *!*/
+    /*--color-accent-soft: #0f172a; !* halo léger / hover sombre *!*/
+    /*--color-link-alt: #38bdf8; !* bleu vif pour certains liens *!*/
+
+    /*!*Palette 2 — “Material Vibrant” (clair, violet + vert)*!*/
+    /*--color-bg: #f7f5ff; !* fond lavande très clair *!*/
+    /*--color-bg-soft: #ffffff; !* panneaux, cartes *!*/
+    /*--color-border: #e5e7eb; !* bordures légères *!*/
+    /*--color-text: #1f2933; !* texte principal *!*/
+    /*--color-text-muted: #4b5563; !* texte secondaire *!*/
+    /*--color-accent: #6750a4; !* violet material *!*/
+    /*--color-accent-soft: #eaddff; !* violet très clair (fond/hover) *!*/
+    /*--color-link-alt: #4caf50;*/
+    /*!* vert material pour certains liens/badges **/
+
+
+    /*!*Palette 3 — “Gatsby++” (clair, légèrement teinté, violet + teal)*!*/
+    /*--color-bg: #eef0ff; !* fond bleu-lavande doux *!*/
+    /*--color-bg-soft: #ffffff; !* cartes, blocs *!*/
+    /*--color-border: #e2e5f5; !* bordures *!*/
+    /*--color-text: #1f2233; !* texte principal *!*/
+    /*--color-text-muted: #4b4f6b; !* texte secondaire *!*/
+    /*--color-accent: #663399; !* violet Gatsby *!*/
+    /*--color-accent-soft: #efe7ff; !* violet très clair (fond/hover) *!*/
+    /*--color-link-alt: #12d6c5; !* teal flashy pour liens / détails *!*/
+
+
+    /*!*PALETTE 1 — Violet / Prune (Vivante, élégante, moderne)*!*/
+    /*--color-bg: #1a1524; !* Fond prune sombre *!*/
+    /*--color-bg-soft: #231b33; !* Cartes violettes profondes *!*/
+    /*--color-border: #3c2f55; !* Bordure violette/gris *!*/
+    /*--color-text: #f3f0fc; !* Blanc légèrement violet (très lisible) *!*/
+    /*--color-text-muted: #b7accf;*/
+    /*--color-accent: #b56bff; !* Violet saturé qui claque *!*/
+    /*--color-accent-soft: #5d2b99;*/
+    /*--color-link-alt: #4ff2d6; !* Turquoise contrasté (complémentaire du violet) *!*/
+
+
+    /*!*PALETTE 2 — Bleu pétrole / Turquoise (Punch moderne)*!*/
+    /*--color-bg: #0d1a1e;         !* Bleu pétrole très sombre *!*/
+    /*--color-bg-soft: #15272d;    !* Cartes bleu-vert profond *!*/
+    /*--color-border: #234048;*/
+    /*--color-text: #e9f7f9;       !* Blanc bleuté, propre *!*/
+    /*--color-text-muted: #9fbcc4;*/
+    /*--color-accent: #2fd2c9;     !* Turquoise très vif *!*/
+    /*--color-accent-soft: #0e7a76;*/
+    /*--color-link-alt: #ff7ab0;   !* Rose vif → contraste énorme *!*/
+
+    /*!*!*PALETTE 3 — Aubergine et orange *!*!*/
+    /*--color-bg: #1c0f1b;          !* Aubergine sombre *!*/
+    /*--color-bg-soft: #2a1830;     !* Panneaux plus clairs *!*/
+    /*--color-border: #4c2e52;*/
+    /*--color-text: #f5eef9;        !* Blanc rosé froid *!*/
+    /*--color-text-muted: #c9aecf;*/
+    /*--color-accent: #ff7e47;      !* Orange punchy *!*/
+    /*--color-accent-soft: #9a3e23;*/
+    /*--color-link-alt: #63e8ff;    !* Bleu ciel saturé → complémentaire de l’orange *!*/
+
+
+    /*!*Palette 3 – “Aubergine pastel” (contraste + douceur)*!*/
+    /*--color-bg: #18141f; !* Fond principal : aubergine très sombre, mais plus neutre *!*/
+    /*--color-bg-soft: #231b2a; !* Panneaux : un peu plus clairs, moins violets pétants *!*/
+    /*--color-border: #3b3043; !* Bordure : gris aubergine, pas trop saturé *!*/
+    /*--color-text: #f4edf7; !* Texte principal : blanc rosé très doux (pastel) *!*/
+    /*--color-text-muted: #c1b2c9; !* Texte secondaire : parme/gris doux *!*/
+    /*--color-accent: #ff9a6b; !* Orange pastel (plus doux que #ff7e47) *!*/
+    /*--color-accent-soft: #8b4a30; !* Orange/brun atténué pour hover, moins agressif *!*/
+    /*--color-link-alt: #7ad8f6; !* Bleu ciel pastel (moins “néon”) *!*/
+
+
+    /*!*Palette 3 – “Aubergine pastel” fond neutre (contraste + douceur)*!*/
+    /*--color-bg: #15151c; !* Charbon avec très légère teinte violette *!*/
+    /*--color-bg-soft: #22212b; !* Panneaux un peu plus clairs *!*/
+    /*--color-border: #3a3542;*/
+    /*--color-text: #f5f2f8;*/
+    /*--color-text-muted: #bfb6c9;*/
+    /*--color-accent: #ff9a6b; !* On garde le même orange pastel *!*/
+    /*--color-accent-soft: #8b4a30;*/
+    /*--color-link-alt: #7ad8f6; !* Même bleu pastel *!*/
+
+
+    /*!*Palette entre 1 et 3 bleu  light *!*/
+    /*--color-bg: #273449;*/
+    /*--color-bg-soft: #32415a;*/
+    /*--color-border: #45526a;*/
+    /*--color-text: #f8fafc;*/
+    /*--color-text-muted: #b8c5d9;*/
+    /*--color-accent: #8f96ff;*/
+    /*--color-accent-soft: #4a3f9b;*/
+    /*--color-link-alt: #66f5ed;*/
+
+
+    /*!*Palette entre 1 et 3 bleu medium light *!*/
+    /*--color-bg: #1e293b; !* Fond principal éclairci *!*/
+    /*--color-bg-soft: #273449; !* Soft panels plus clairs *!*/
+    /*--color-border: #3b495e; !* Bordure légèrement plus contrastée *!*/
+    /*--color-text: #f1f5f9; !* Texte éclairci → blanc froid (mais pas pur) *!*/
+    /*--color-text-muted: #a7b7cf; !* Gris bleuté clair *!*/
+    /*--color-accent: #7a82ff; !* Indigo plus lumineux *!*/
+    /*--color-accent-soft: #3f3a8d; !* Hover violet foncé adouci *!*/
+    /*--color-link-alt: #4df0e5; !* Turquoise plus clair & vivant *!*/
+
+
+    /*Palette entre 1 et 3 bleu */
+    --color-bg: #0f172a; /* Fond principal (anthracite bleu nuit) */
+    --color-bg-soft: #1e293b; /* Fond des cartes/sections */
+    --color-border: #334155; /* Bordures douces */
+    --color-text: #e2e8f0; /* Texte principal */
+    --color-text-muted: #94a3b8; /* Texte secondaire */
+    --color-accent: #6366f1; /* Indigo moderne (accent principal) */
+    --color-accent-soft: #312e81; /* Indigo très sombre pour hover */
+    --color-link-alt: #22d3ee; /* Turquoise lumineux (second accent) */
+
+
+    /*!*Palette entre 1 et 3 plus foncé *!*/
+    /*--color-bg: #0d1221;          !* Bleu-nuit profond (pas noir !) *!*/
+    /*--color-bg-soft: #171e2f;     !* Cartes / panneaux : bleu-nuit + clair *!*/
+    /*--color-border: #29334d;      !* Bordure froide, nette *!*/
+    /*--color-text: #e6e9f2;        !* Gris très clair froid (pas jaune, pas cassé) *!*/
+    /*--color-text-muted: #9ca7c3;  !* Gris bleuté pour le secondaire *!*/
+    /*--color-accent: #7c4dff;      !* Violet “electric”, moderne *!*/
+    /*--color-accent-soft: #382a73; !* Hover violet sombre mais coloré *!*/
+    /*--color-link-alt: #35e8d0;    !* Turquoise propre, moderne *!*/
+
+
+}
+
+html, body {
+    font-size: 1rem;
+}
+
+/* --------- Reset minimal --------- */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin: 0.3rem 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --------- Layout global --------- */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-inline: clamp(2rem, 4vw, 4rem);
+    padding-top: 5rem;
+    /*padding-bottom: 1.5rem;*/
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+
+/* --------- Sidebar gauche --------- */
+
+.sidebar {
+    flex: 0 0 30%;
+    max-width: 360px;
+    position: relative;
+}
+
+
+.name {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    color: var(--color-text);
+}
+
+.role {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    margin-top: 0.4rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--color-accent);
+}
+
+.intro {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    max-width: 32rem;
+}
+
+/* --------- Navigation --------- */
+
+.nav {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+}
+
+
+.nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    /*color: #9ca3af;*/
+    color: var(--color-text-muted);
+    padding: 0.1rem 0;
+    transition: color 0.2s ease, padding-left 0.25s ease;
+    text-transform: uppercase;
+    font-weight: 600;  /* <-- gras */
+}
+
+/* Couleur active */
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-text);
+}
+
+/* Barre latérale */
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 2px;
+    width: 0;
+    background: var(--color-accent);
+    transform: translateY(-50%);
+    transition: width 0.25s ease;
+}
+
+/* Quand actif ou hover */
+
+.nav-link.active,
+.nav-link:hover {
+    padding-left: 5rem;
+}
+
+.nav-link.active::before,
+.nav-link:hover::before {
+    width: 4rem;
+}
+
+
+/* --------- Réseaux sociaux --------- */
+
+.socials {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.socials a {
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    padding: 0.25rem 0.7rem;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.socials a:hover {
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* --------- Contenu principal --------- */
+
+.content {
+    flex: 1;
+    max-width: 720px;
+}
+
+section {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #9ca3af;
+    margin-bottom: 0.4rem;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.highlight {
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+/* --------- Experience --------- */
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.exp-item {
+    display: grid;
+    grid-template-columns: minmax(90px, 120px) 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.exp-period {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+.exp-role {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+.exp-company {
+    color: var(--color-text);
+}
+
+.exp-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 0.3rem;
+}
+
+.exp-tags {
+    margin-top: 0.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+}
+
+.tag {
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--color-link-alt);
+    color: var(--color-link-alt);
+    background: rgba(20, 217, 196, 0.1); /* turquoise très léger en fond */
+}
+
+/*.tag {*/
+/*    border-radius: 999px;*/
+/*    padding: 0.1rem 0.5rem;*/
+/*    border: 1px solid var(--color-border);*/
+/*    color: var(--color-text-muted);*/
+/*}*/
+
+/* --------- Projects --------- */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    border-radius: 0.8rem;
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    background: var(--color-bg-soft);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+    border-color: var(--color-accent);
+}
+
+.project-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--color-text);
+}
+
+.project-link {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    margin-top: 0.6rem;
+    color: var(--color-text-muted);
+}
+
+.project-tech {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+/* --------- Contact --------- */
+
+.contact-text {
+    max-width: 480px;
+}
+
+.contact-button {
+    margin-top: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-accent);
+    background: transparent;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.contact-button:hover {
+    background: var(--color-accent);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25);
+}
+
+/* --------- Icones en bas --------- */
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.social-icons a {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.social-icons a:hover {
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+
+/* --------- Footer --------- */
+
+footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8rem;
+    color: #9ca3af;
+    text-align: right;
+    max-width: 700px;
+}
+
+/* --------- AJUSTEMENT SPECIFIQUES TABLETTES ET MOBILES --------- */
+/* Breakpoints mobile-first comme avant */
+
+/* MOBILE */
+@media (max-width: 639px) {
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .role {
+        font-size: 0.9rem;
+        letter-spacing: 0.16em;
+    }
+
+    p,
+    .intro {
+        font-size: 0.9rem;
+    }
+
+    .page {
+        padding-inline: 2.5rem;
+        padding-block: 1.2rem;
+        padding-top: 5rem;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+
+    .sidebar {
+        flex: 0 0 auto;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .exp-tags,
+    .project-tech {
+        display: none;
+    }
+
+    .exp-item {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* TABLETTE / PETITS ECRANS (640–1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .page {
+        padding-inline: clamp(2rem, 5vw, 3rem);
+        padding-block: 1.2rem;
+        padding-top: 5rem;
+    }
+
+    .nav {
+        display: none;
+    }
+}
+
+/* DESKTOP (≥ 1024px) */
+@media (min-width: 1024px) {
+
+    .page {
+        flex-direction: row;
+        gap: 5rem;
+        padding-top: 5rem;   /* même offset que top:5rem */
+    }
+
+    .sidebar {
+        flex: 0 0 45%;       /* colonne de gauche plus large */
+        max-width: none;
+    }
+
+    .content {
+        flex: 1 0 0;         /* la droite prend le reste */
+        max-width: none;
+    }
+
+    .sidebar-inner {
+        position: sticky;
+        top: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: calc(100vh - 5rem);
+        overflow: auto;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* pour aligner le début du contenu avec ton nom */
+    section:first-of-type {
+        padding-top: 0;
+    }
+}
+
+
