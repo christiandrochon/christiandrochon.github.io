@@ -275,6 +275,7 @@ img {
     max-width: 32rem;
 }
 
+
 /* --------- Navigation --------- */
 
 .nav {
@@ -362,7 +363,8 @@ img {
 
 .content {
     flex: 1;
-    max-width: 720px;
+    /*max-width: 720px;*/
+    max-width: 100%;
 }
 
 section {
@@ -510,7 +512,7 @@ section:last-of-type {
 /* --------- Contact --------- */
 
 .contact-text {
-    max-width: 480px;
+    max-width: none;
 }
 
 .contact-button {
@@ -535,6 +537,7 @@ section:last-of-type {
     transform: translateY(-1px);
     box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25);
 }
+
 
 /* --------- Icones en bas --------- */
 
@@ -577,25 +580,70 @@ footer {
     max-width: 700px;
 }
 
-/* --------- AJUSTEMENT SPECIFIQUES TABLETTES ET MOBILES --------- */
-/* Breakpoints mobile-first comme avant */
 
+/*--------------------------------------------------------------------------*/
+/* --------- AJUSTEMENT SPECIFIQUES TABLETTES ET MOBILES --------- */
+@media (max-width: 1023px) {
+    :root {
+        /* Fond un peu plus foncé que #eef3ff, reste pastel et cohérent */
+        --color-bg: #e7ecff; /* légèrement plus sombre */
+        /* Surfaces / cartes */
+        --color-bg-soft: #ffffff;
+        /* Bordures un peu plus marquées pour lisibilité */
+        --color-border: #d6e4ff;
+        /* Texte — lisibilité conservée */
+        --color-text: #0f172a;
+        --color-text-muted: #5b6b86; /* un poil plus foncé */
+        /* Accents — mêmes tons pastel */
+        --color-accent: #7c86ff;
+        --color-accent-soft: #e9e8ff;
+        --color-link-alt: #22d3ee;
+    }
+
+    /*:root {*/
+    /*    !*Palette entre 1 et 3 bleu inversé *!*/
+    /*    !* fond plus clair / pastel *!*/
+    /*    --color-bg: #f6f8ff; !* bleu-lavande très clair *!*/
+    /*    --color-bg-soft: #ffffff; !* cartes/blocs blancs *!*/
+    /*    --color-border: #e6eefc; !* bordures très douces *!*/
+    /*    !* texte (sombre pour lisibilité sur fond clair) *!*/
+    /*    --color-text: #0f172a; !* texte principal sombre *!*/
+    /*    --color-text-muted: #64748b; !* gris-bleu pour secondaire *!*/
+    /*    !* accents dans les mêmes gammes mais pastel *!*/
+    /*    --color-accent: #7c86ff; !* indigo pastel *!*/
+    /*    --color-accent-soft: #e9e8ff; !* halo/hover très doux *!*/
+    /*    --color-link-alt: #22d3ee; !* teal lumineux (inchangé si désiré) *!*/
+    /*}*/
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 2px solid rgba(15, 23, 42, 0.20); /* cercle bien visible */
+        background: rgba(15, 23, 42, 0.04); /* léger fond gris/bleu */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.15rem;
+        color: var(--color-text-muted);
+        transition: background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.1s ease;
+    }
+
+    .social-icons a:hover {
+        background: var(--color-accent-soft); /* halo indigo clair */
+        border-color: var(--color-accent); /* bord violet */
+        color: var(--color-text); /* icône plus foncée */
+        transform: translateY(-1px);
+    }
+}
+
+
+/*--------------------------------------------------------------------------*/
 /* MOBILE */
 @media (max-width: 639px) {
-    :root {
-        /*Palette entre 1 et 3 bleu inversé */
-        /* fond plus clair / pastel */
-        --color-bg: #f6f8ff; /* bleu-lavande très clair */
-        --color-bg-soft: #ffffff; /* cartes/blocs blancs */
-        --color-border: #e6eefc; /* bordures très douces */
-        /* texte (sombre pour lisibilité sur fond clair) */
-        --color-text: #0f172a; /* texte principal sombre */
-        --color-text-muted: #64748b; /* gris-bleu pour secondaire */
-        /* accents dans les mêmes gammes mais pastel */
-        --color-accent: #7c86ff; /* indigo pastel */
-        --color-accent-soft: #e9e8ff; /* halo/hover très doux */
-        --color-link-alt: #22d3ee; /* teal lumineux (inchangé si désiré) */
-    }
+
 
     .name {
         font-size: 2rem;
@@ -639,23 +687,10 @@ footer {
     }
 }
 
+
+/*--------------------------------------------------------------------------*/
 /* TABLETTE / PETITS ECRANS (640–1023px) */
 @media (min-width: 640px) and (max-width: 1023px) {
-
-    :root {
-        /*Palette entre 1 et 3 bleu inversé */
-        /* fond plus clair / pastel */
-        --color-bg: #f6f8ff; /* bleu-lavande très clair */
-        --color-bg-soft: #ffffff; /* cartes/blocs blancs */
-        --color-border: #e6eefc; /* bordures très douces */
-        /* texte (sombre pour lisibilité sur fond clair) */
-        --color-text: #0f172a; /* texte principal sombre */
-        --color-text-muted: #64748b; /* gris-bleu pour secondaire */
-        /* accents dans les mêmes gammes mais pastel */
-        --color-accent: #7c86ff; /* indigo pastel */
-        --color-accent-soft: #e9e8ff; /* halo/hover très doux */
-        --color-link-alt: #22d3ee; /* teal lumineux (inchangé si désiré) */
-    }
 
     .page {
         padding-inline: clamp(2rem, 5vw, 3rem);
@@ -668,6 +703,8 @@ footer {
     }
 }
 
+
+/*--------------------------------------------------------------------------*/
 /* DESKTOP (≥ 1024px) */
 @media (min-width: 1024px) {
 
@@ -684,7 +721,7 @@ footer {
 
     .content {
         flex: 1 0 0; /* la droite prend le reste */
-        max-width: none;
+        /*max-width: none;*/
     }
 
     .sidebar-inner {
@@ -705,6 +742,10 @@ footer {
     /* pour aligner le début du contenu avec ton nom */
     section:first-of-type {
         padding-top: 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
