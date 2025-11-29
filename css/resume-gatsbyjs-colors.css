@@ -32,8 +32,6 @@
     /*--color-link-alt: #0ea5e9;    !* bleu-cyan pour liens / détails *!*/
 
 
-
-
     /*!* Palette claire type Gatsby *!*/
     /*--color-bg: #ffffff;          !* fond principal *!*/
     /*--color-bg-soft: #f9fafb;     !* panneaux, cartes *!*/
@@ -154,14 +152,30 @@
 
 
     /*Palette entre 1 et 3 bleu */
-    --color-bg: #0f172a; /* Fond principal (anthracite bleu nuit) */
-    --color-bg-soft: #1e293b; /* Fond des cartes/sections */
+    /*--color-bg: #0f172a; !* Fond principal (anthracite bleu nuit) *!*/
+    /*--color-bg-soft: #1e293b; !* Fond des cartes/sections *!*/
+    --color-bg: #121c33;
+    --color-bg-soft: #24324d; /* légèrement plus clair */
     --color-border: #334155; /* Bordures douces */
     --color-text: #e2e8f0; /* Texte principal */
     --color-text-muted: #94a3b8; /* Texte secondaire */
     --color-accent: #6366f1; /* Indigo moderne (accent principal) */
     --color-accent-soft: #312e81; /* Indigo très sombre pour hover */
     --color-link-alt: #22d3ee; /* Turquoise lumineux (second accent) */
+
+
+    /*!*Palette entre 1 et 3 bleu inversé *!*/
+    /*!* fond plus clair / pastel *!*/
+    /*--color-bg: #f6f8ff; !* bleu-lavande très clair *!*/
+    /*--color-bg-soft: #ffffff; !* cartes/blocs blancs *!*/
+    /*--color-border: #e6eefc; !* bordures très douces *!*/
+    /*!* texte (sombre pour lisibilité sur fond clair) *!*/
+    /*--color-text: #0f172a; !* texte principal sombre *!*/
+    /*--color-text-muted: #64748b; !* gris-bleu pour secondaire *!*/
+    /*!* accents dans les mêmes gammes mais pastel *!*/
+    /*--color-accent: #7c86ff; !* indigo pastel *!*/
+    /*--color-accent-soft: #e9e8ff; !* halo/hover très doux *!*/
+    /*--color-link-alt: #22d3ee; !* teal lumineux (inchangé si désiré) *!*/
 
 
     /*!*Palette entre 1 et 3 plus foncé *!*/
@@ -238,18 +252,19 @@ img {
 
 .name {
     font-family: var(--font-inter), system-ui, sans-serif;
-    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-size: clamp(2.6rem, 4vw, 3.2rem);
     font-weight: 700;
-    letter-spacing: 0.02em;
-    line-height: 1.1;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
     color: var(--color-text);
 }
 
 .role {
     font-family: var(--font-inter), system-ui, sans-serif;
     margin-top: 0.4rem;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    letter-spacing: 0;
     color: var(--color-accent);
 }
 
@@ -282,7 +297,7 @@ img {
     padding: 0.1rem 0;
     transition: color 0.2s ease, padding-left 0.25s ease;
     text-transform: uppercase;
-    font-weight: 600;  /* <-- gras */
+    font-weight: 600; /* <-- gras */
 }
 
 /* Couleur active */
@@ -567,6 +582,20 @@ footer {
 
 /* MOBILE */
 @media (max-width: 639px) {
+    :root {
+        /*Palette entre 1 et 3 bleu inversé */
+        /* fond plus clair / pastel */
+        --color-bg: #f6f8ff; /* bleu-lavande très clair */
+        --color-bg-soft: #ffffff; /* cartes/blocs blancs */
+        --color-border: #e6eefc; /* bordures très douces */
+        /* texte (sombre pour lisibilité sur fond clair) */
+        --color-text: #0f172a; /* texte principal sombre */
+        --color-text-muted: #64748b; /* gris-bleu pour secondaire */
+        /* accents dans les mêmes gammes mais pastel */
+        --color-accent: #7c86ff; /* indigo pastel */
+        --color-accent-soft: #e9e8ff; /* halo/hover très doux */
+        --color-link-alt: #22d3ee; /* teal lumineux (inchangé si désiré) */
+    }
 
     .name {
         font-size: 2rem;
@@ -585,7 +614,7 @@ footer {
     .page {
         padding-inline: 2.5rem;
         padding-block: 1.2rem;
-        padding-top: 5rem;
+        padding-top: 3rem;
     }
 
     section {
@@ -612,10 +641,26 @@ footer {
 
 /* TABLETTE / PETITS ECRANS (640–1023px) */
 @media (min-width: 640px) and (max-width: 1023px) {
+
+    :root {
+        /*Palette entre 1 et 3 bleu inversé */
+        /* fond plus clair / pastel */
+        --color-bg: #f6f8ff; /* bleu-lavande très clair */
+        --color-bg-soft: #ffffff; /* cartes/blocs blancs */
+        --color-border: #e6eefc; /* bordures très douces */
+        /* texte (sombre pour lisibilité sur fond clair) */
+        --color-text: #0f172a; /* texte principal sombre */
+        --color-text-muted: #64748b; /* gris-bleu pour secondaire */
+        /* accents dans les mêmes gammes mais pastel */
+        --color-accent: #7c86ff; /* indigo pastel */
+        --color-accent-soft: #e9e8ff; /* halo/hover très doux */
+        --color-link-alt: #22d3ee; /* teal lumineux (inchangé si désiré) */
+    }
+
     .page {
         padding-inline: clamp(2rem, 5vw, 3rem);
         padding-block: 1.2rem;
-        padding-top: 5rem;
+        padding-top: 4rem;
     }
 
     .nav {
@@ -629,16 +674,16 @@ footer {
     .page {
         flex-direction: row;
         gap: 5rem;
-        padding-top: 5rem;   /* même offset que top:5rem */
+        padding-top: 5rem; /* même offset que top:5rem */
     }
 
     .sidebar {
-        flex: 0 0 45%;       /* colonne de gauche plus large */
+        flex: 0 0 41%; /* colonne de gauche plus large */
         max-width: none;
     }
 
     .content {
-        flex: 1 0 0;         /* la droite prend le reste */
+        flex: 1 0 0; /* la droite prend le reste */
         max-width: none;
     }
 
