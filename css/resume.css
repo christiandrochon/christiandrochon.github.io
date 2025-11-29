@@ -1,21 +1,39 @@
-html, body {font-size: 1.2rem;}
+:root {
+    --font-inter: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html, body {
+    font-size: 1rem;
+}
+
 /* --------- Reset minimal --------- */
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
 body {
-    font-family: "Roboto", sans-serif;
     margin: 0;
-    /*font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;*/
+    font-family: var(--font-inter);
     background: #050816;
     color: #e5e7eb;
     line-height: 1.6;
     scroll-behavior: smooth;
 }
+
+p {
+    font-size: 0.95rem;
+    color: #d1d5db;
+    margin: 0.3rem 0;
+}
+
 a {
     color: inherit;
     text-decoration: none;
 }
+
 img {
     max-width: 100%;
     display: block;
@@ -26,55 +44,46 @@ img {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
-    max-width: 1100px;
+    /*padding: 0.8rem;*/
+    /*width: 100%;*/
+    padding-inline: clamp(0.8rem, 4vw, 2rem);
+    padding-block: 1.5rem;
+    /* largeur max centrée pour les grands écrans */
+    max-width: 1300px;
     margin: 0 auto;
-    gap: 2rem;
+    gap: clamp(1.5rem, 3vw, 3rem);
 }
 
-@media (min-width: 900px) {
-    .page {
-        flex-direction: row;
-        gap: 3rem;
-    }
-}
 
 /* --------- Sidebar gauche --------- */
 .sidebar {
-    flex: 0 0 450px;
+    flex: 0 0 30%;
+    max-width: 360px;
     position: relative;
 }
 
-@media (min-width: 900px) {
-    .sidebar-inner {
-        position: sticky;
-        top: 2rem;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;  /* haut ↔ bas */
-        min-height: calc(100vh - 4rem);  /* pour que ça prenne (presque) tout la hauteur */
-    }
-}
 
 .name {
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    font-family: var(--font-inter);
+    font-size: clamp(2.2rem, 4vw, 3rem); /* mobile → desktop */
+    font-weight: 800;                     /* gros, type “display” */
+    letter-spacing: 0.02em;
+    line-height: 1.1;
 }
 
 .role {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #9ca3af;
+    font-family: var(--font-inter);
     margin-top: 0.4rem;
+    font-size: 1.05rem;   /* plus petit que le nom, plus gros que le corps */
+    font-weight: 500;     /* demi-gras */
+    color: #cbd5f5;       /* un peu plus clair que #9ca3af si tu veux, sinon garde #9ca3af */
 }
 
 .intro {
     margin-top: 1.2rem;
     font-size: 0.95rem;
     color: #d1d5db;
+    max-width: 32rem;  /* pour ne pas être trop large */
 }
 
 /* --------- Navigation --------- */
@@ -87,11 +96,6 @@ img {
     font-size: 0.9rem;
 }
 
-@media (min-width: 900px) {
-    .nav {
-        flex-direction: column;
-    }
-}
 
 .nav-link {
     position: relative;
@@ -128,12 +132,12 @@ img {
     - barre suffisamment large */
 .nav-link.active,
 .nav-link:hover {
-    padding-left: 5rem;       /* → espace pour ne PAS entrer dans le texte */
+    padding-left: 5rem; /* → espace pour ne PAS entrer dans le texte */
 }
 
 .nav-link.active::before,
 .nav-link:hover::before {
-    width: 4rem;             /* longueur de la barre */
+    width: 4rem; /* longueur de la barre */
 }
 
 
@@ -163,7 +167,7 @@ img {
 /* --------- Contenu principal --------- */
 .content {
     flex: 1;
-    max-width: 700px;
+    max-width: 720px;
 }
 
 section {
@@ -190,11 +194,7 @@ section:last-of-type {
     margin-bottom: 1.5rem;
 }
 
-p {
-    font-size: 0.95rem;
-    color: #d1d5db;
-    margin: 0.3rem 0;
-}
+
 
 .highlight {
     color: #f97316;
@@ -215,11 +215,6 @@ p {
     align-items: start;
 }
 
-@media (max-width: 600px) {
-    .exp-item {
-        grid-template-columns: 1fr;
-    }
-}
 
 .exp-period {
     font-size: 0.8rem;
@@ -372,21 +367,131 @@ footer {
     max-width: 700px;
 }
 
-/*Adoucir le design sur mobile*/
-@media (max-width: 600px) {
-    html, body {
-        font-size: 1rem;          /* texte un peu moins massif sur petit écran */
+/* --------- AJUSTEMENT SPECIFIQUES TABLETTES ET MOBILES --------- */
+/* ===========================================
+   Breakpoints choisis (mobile-first)
+
+   0–599 px     : Smartphones (portrait & paysage)
+                  - iPhone SE / 13 / 14 / Android standard
+   600–1023 px  : Tablettes & petits laptops
+                  - iPad portrait/paysage, tablettes Android
+                  - petits écrans type 11–13"
+   ≥ 1024 px    : Desktop / grands écrans
+                  - Laptops classiques (1280+)
+                  - Écrans 1080p, 1440p, etc.
+
+   Règles de base :
+   - Base = mobile
+   - < 1024 px : pas de menu latéral .nav
+   - ≥ 1024 px : layout 2 colonnes + sidebar sticky + menu visible
+   =========================================== */
+
+
+/* ----- Mobile par défaut (0–639px) -----
+   On laisse le layout en colonne (page),
+   aside au-dessus, contenu en dessous,
+   menu de navigation masqué.
+   --------------------------------------- */
+
+
+/* MOBILE */
+@media (max-width: 639px) {
+
+    /* Texte un peu moins massif sur très petit écran */
+    /*html, body {*/
+    /*    font-size: 0.95rem;*/
+    /*}*/
+    .name {
+        font-size: 2rem;     /* au lieu de 1.8rem */
     }
 
+    .role {
+        font-size: 0.9rem;     /* un peu plus petit */
+        letter-spacing: 0.16em;
+    }
+
+    p,
+    .intro {
+        font-size: 0.9rem;
+    }
+
+    /* Marges horizontales plus confortables */
     .page {
-        padding: 1rem;            /* moins de marge autour */
+        padding-inline: 2rem;
+        padding-block: 1.2rem;
     }
 
     section {
-        padding: 2rem 0;          /* un peu moins de vertical */
+        padding: 2rem 0;
     }
 
     .sidebar {
-        flex: 0 0 auto;           /* laisse la sidebar prendre la largeur naturelle */
+        flex: 0 0 auto; /* width naturelle, au-dessus du contenu */
+    }
+
+    /* Masquer le menu (About / Experience / ...) sur mobile */
+    .nav {
+        display: none;
+    }
+
+    /* Masquer certains détails jugés secondaires sur mobile */
+    .exp-tags,
+    .project-tech {
+        display: none;
+    }
+
+    /* Expérience : une seule colonne */
+    .exp-item {
+        grid-template-columns: 1fr;
     }
 }
+
+/* ----- TABLETTE / PETITS ECRANS (600–1023px) -----
+   Toujours layout en colonne (page),
+   aside visible mais sans menu,
+   contenu sur toute la largeur dispo.
+   ----------------------------------------------- */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+
+    /* Layout toujours en colonne, mais tu peux affiner ici
+       si tu veux des styles spécifiques tablette. */
+
+    .nav {
+        display: none; /* menu toujours caché en dessous de 1024px */
+    }
+
+    /* Sur tablette on peut garder les tags, donc rien à cacher ici,
+       à toi de voir si tu veux les réactiver explicitement. */
+}
+
+/* ----- DESKTOP (≥ 1024px) -----
+   Passage en 2 colonnes :
+   - sidebar à gauche, sticky,
+   - contenu qui scrolle à droite,
+   - menu .nav visible en colonne.
+   -------------------------------- */
+
+@media (min-width: 1024px) {
+
+    .page {
+        flex-direction: row;
+        gap: 8rem;
+    }
+
+    .sidebar-inner {
+        position: sticky;
+        top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;  /* haut ↔ bas */
+        min-height: calc(100vh - 4rem);  /* prend presque toute la hauteur */
+    }
+
+    .nav {
+        display: flex;       /* ré-affiche le menu */
+        flex-direction: column;
+    }
+}
+
+
