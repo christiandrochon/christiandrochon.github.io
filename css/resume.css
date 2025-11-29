@@ -494,7 +494,7 @@ footer {
         top: 6rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;  /* haut ↔ bas */
+        justify-content: flex-start; /* ou normal */
         min-height: calc(100vh - 4rem);  /* prend presque toute la hauteur */
     }
 
