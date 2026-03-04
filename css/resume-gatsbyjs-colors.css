@@ -716,6 +716,16 @@ footer {
         font-size: 2rem;
     }
 
+    .name-link{
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+    }
+
+    .name-link:hover{
+        color: inherit;
+    }
+
     .role {
         font-size: 0.9rem;
         letter-spacing: 0.16em;
