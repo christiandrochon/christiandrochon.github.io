@@ -148,40 +148,9 @@ section[data-section] { scroll-margin-top: 5rem; }
         top: 4.2rem !important; /*releve legerement Christian Drochon*/
     }
 }
-/*@media (min-width: 1024px) {*/
-/*    .sidebar-inner{*/
-/*        position: sticky;*/
-/*        top: 5rem;*/
-/*        max-height: calc(100vh - 5rem);*/
-/*        display: flex;*/
-/*        flex-direction: column;*/
-/*        overflow: hidden; !* évite un scroll global à gauche *!*/
-/*    }*/
-
-/*    !* Si un jour tu rallonges la gauche : tu mets l'intro dans un wrapper scrollable *!*/
-/*    !* (Optionnel mais conseillé : crée un div.sidebar-intro autour de .intro) *!*/
-/*    .sidebar-intro{*/
-/*        flex: 1 1 auto;*/
-/*        min-height: 0;*/
-/*        overflow: auto;*/
-/*        padding-right: 0.5rem;*/
-/*    }*/
-
-/*    .nav{*/
-/*        flex: 0 0 auto;*/
-/*        margin-top: 1.2rem;*/
-/*    }*/
-
-/*    .social-icons{*/
-/*        flex: 0 0 auto;*/
-/*        margin-top: 1.2rem;*/
-/*    }*/
-/*}*/
-
-/* COLLE ÇA DANS resume-patch.css (où tu veux). NE TOUCHE PAS AUX .nav-link */
 
 /* =========================
-   Centres d'interet dans le enu de gauche
+   Centres d'interet dans le menu de gauche
    ========================= */
 .sidebar-interests{
     margin-top: 1.25rem;
@@ -208,6 +177,38 @@ section[data-section] { scroll-margin-top: 5rem; }
     line-height: 1.45;
     color: var(--color-text-muted);
     opacity: 0.9;
+}
+
+
+/* =========================
+   Téléchargement de CV
+   ========================= */
+.cv-download{
+    display: flex;
+    justify-content: center;   /* centre le texte */
+    align-items: center;
+
+    width: 100%;               /* pleine largeur de la colonne */
+    margin-top: 1rem;
+
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    padding: 0.65rem 1.1rem;   /* garde la hauteur actuelle */
+
+    border-radius: 999px;
+    border: 1px solid var(--color-accent);
+
+    color: var(--color-accent);
+    text-decoration: none;
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.cv-download:hover{
+    background: var(--color-accent);
+    color: #fff;
 }
 
 /* =========================
