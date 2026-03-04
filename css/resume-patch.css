@@ -173,7 +173,7 @@ section[data-section] { scroll-margin-top: 5rem; }
 }
 
 .sidebar-interests__text{
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     line-height: 1.45;
     color: var(--color-text-muted);
     opacity: 0.9;
@@ -265,8 +265,6 @@ section[data-section] { scroll-margin-top: 5rem; }
 
     color: var(--color-text-muted) !important;
     padding: 0.1rem 0 !important;
-    padding-left: 0 !important;
-
     transition: color 160ms ease, padding-left 220ms ease !important;
 }
 

@@ -34,24 +34,11 @@
 
             <div class="sidebar-intro">
             <p class="intro intro--short">
-                Structuration backend Spring : refactoring progressif, sécurité, exécution reproductible.
+                Backend Java / Spring.<br>
+                Refactoring progressif d'applications complexes, architecture modulaire et sécurisation des systèmes.
             </p>
             </div>
 
-            <div class="sidebar-interests" aria-label="Centres d’intérêt">
-                <div class="sidebar-interests__label">Centres d’intérêt</div>
-                <div class="sidebar-interests__text">
-                    Plongée sous-marine (FFESSM N3) · Apnée (FFESSM N4) · Biologie marine · Plongée aux mélanges suroxygénés
-                </div>
-            </div>
-
-            <nav class="nav" id="site-nav">
-                <a href="#about" class="nav-link active" data-section="about">À propos</a>
-                <a href="#experience" class="nav-link" data-section="experience">Parcours</a>
-                <a href="#projects" class="nav-link" data-section="projects">Projets</a>
-                <a href="#specialisations" class="nav-link" data-section="specialisations">Spécialisations</a>
-                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
-            </nav>
 
             <div class="social-icons">
                 <a href="https://github.com/christiandrochon" aria-label="GitHub" target="_blank" rel="noreferrer noopener">
@@ -65,9 +52,27 @@
                 </a>
             </div>
 
+<!--            <div class="sidebar-interests" aria-label="Centres d’intérêt">-->
+<!--                <div class="sidebar-interests__label">Centres d’intérêt</div>-->
+<!--                <div class="sidebar-interests__text">-->
+<!--                    Natation · Plongée sous-marine (N3) · Apnée (N4) · Biologie marine · Plongée aux mélanges suroxygénés.-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+            <nav class="nav" id="site-nav">
+                <a href="#about" class="nav-link active" data-section="about">À propos</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projets</a>
+                <a href="#specialisations" class="nav-link" data-section="specialisations">Spécialisations</a>
+                <a href="#experience" class="nav-link" data-section="experience">Parcours</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </nav>
+
+
             <a href="/Christian_Drochon_CV_2026.pdf" class="cv-download" download>
                 Télécharger CV (PDF)
             </a>
+
         </div>
     </aside>
 
@@ -82,31 +87,153 @@
                 Mon focus : reprendre un existant et le rendre <span class="highlight">lisible, testable et maintenable</span>
                 — sans tout réécrire — pour accélérer les livraisons et réduire la dette technique.
             </p>
-
+<br>
             <p>
                 Concrètement, j’interviens sur des codebases déjà en production :
                 refactoring progressif, clarification des couches (contrôleurs / services / domaine),
                 modularisation et conventions partagées. J’attache autant d’importance à la
                 <span class="highlight">trajectoire</span> (comment on fait évoluer le système) qu’au code lui-même.
             </p>
-
+<br>
             <p>
                 Quand un périmètre démarre “from scratch”, je pose un socle propre dès le début :
-                sécurité <span class="highlight">OAuth2/OIDC</span>, exécution reproductible (Docker/Compose),
+                sécurité <span class="highlight">OAuth2/OIDC</span>, exécution reproductible (Docker),
                 documentation utile (pas décorative) et outillage orienté exploitation.
             </p>
-
+<br>
             <p>
                 J’ai aussi un pied “produit” : interfaces simples quand c’est pertinent (SSR Thymeleaf),
                 ou front moderne sinon. Et une curiosité data/ML uniquement lorsqu’elle sert un besoin concret
                 (recherche, similarité, prédiction) — pas comme gadget.
             </p>
-
+<br>
             <p class="note">
                 Ce site est un portfolio vivant : je montre ce qui est fait, ce qui est en cours,
                 et les trajectoires techniques que j’explore.
             </p>
         </section>
+
+        <!-- Projects -->
+        <section id="projects" data-section>
+            <h2 class="section-h">Projets</h2>
+            <div class="projects-grid">
+                <article class="project-card" id="card-sma">
+                    <div class="project-title">
+                        SMA — Intranet maintenance automobile <span class="badge text-bg-secondary">en cours</span>
+                    </div>
+                    <p class="project-desc">
+                        Application intranet (Spring WebFlux + Thymeleaf SSR) exécutable en local via Docker Compose, avec CQRS / Event Sourcing (Axon) et sécurité OIDC (Keycloak).
+                    </p>
+                    <div class="project-tech">
+                        <span>Java</span><span>WebFlux</span><span>Thymeleaf</span><span>PostgreSQL</span><span>Keycloak</span><span>Axon</span><span>Compose</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary" href="/projects/sma.html">Page projet</a>
+                        <a class="btn btn-sm btn-outline-secondary"
+                           href="https://github.com/christiandrochon/sma-eventsourcing-17"
+                           target="_blank" rel="noreferrer noopener">GitHub</a>
+                    </div>
+                </article>
+
+                <article class="project-card" id="card-multimedia">
+                    <div class="project-title">Multimedia — Similarité d’images</div>
+                    <p class="project-desc">
+                        Recherche par similarité (descripteurs classiques + embeddings ResNet), UI Angular, backend Spring Boot et métriques (précision / rappel).
+                    </p>
+                    <div class="project-tech">
+                        <span>Angular</span><span>Spring Boot</span><span>Docker</span><span>ResNet</span><span>Precision/Recall</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary" href="/projects/multimedia.html">Page projet</a>
+                        <a class="btn btn-sm btn-outline-secondary"
+                           href="https://github.com/christiandrochon/multimedia"
+                           target="_blank" rel="noreferrer noopener">GitHub</a>
+                    </div>
+                </article>
+
+                <article class="project-card" id="card-artisan">
+                    <div class="project-title">Site vitrine artisan (React)</div>
+                    <p class="project-desc">
+                        Site vitrine déployé via GitHub Pages, pensé pour être simple à maintenir et rapide à charger.
+                    </p>
+                    <div class="project-tech">
+                        <span>React</span><span>GitHub Pages</span><span>SEO</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary" href="/projects/artisan.html">Page projet</a>
+                        <a class="btn btn-sm btn-outline-secondary"
+                           href="https://christiandrochon.github.io/guillemot"
+                           target="_blank" rel="noreferrer noopener">Site</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- Specialisations -->
+        <section id="specialisations" data-section>
+            <h2 class="section-h">Spécialisations</h2>
+            <p>
+                Repères techniques : sujets que je pratique réellement et qui structurent ma façon de concevoir des systèmes.
+                Les liens pointent vers les pages officielles des modules (sans afficher les codes).
+            </p>
+
+            <div class="spec-grid">
+                <div class="spec-block">
+                    <h3>Architecture & intégration</h3>
+                    <ul class="specialisations-list">
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/architectures-et-technologies-pour-lintegration-des-systemes-2" target="_blank" rel="noreferrer noopener">Architectures & technologies d’intégration</a></li>
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/methodologie-dingenierie-et-dintegration-des-systemes-2" target="_blank" rel="noreferrer noopener">Méthodologie d’ingénierie & intégration</a></li>
+                        <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/framework/architectures-logicielles-java1" target="_blank" rel="noreferrer noopener">Architecture logicielle Java (1)</a></li>
+                        <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/framework/architectures-logicielles-java2-1" target="_blank" rel="noreferrer noopener">Architecture logicielle Java (2)</a></li>
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/langages-informatiques/bases-de-donnees-documentaires-et-distribuees-1" target="_blank" rel="noreferrer noopener">Données documentaires & distribuées</a></li>
+                    </ul>
+                </div>
+
+                <div class="spec-block">
+                    <h3>Données, IA & recherche</h3>
+                    <ul class="specialisations-list">
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/intelligence-artificielle-2" target="_blank" rel="noreferrer noopener">Intelligence artificielle</a></li>
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/apprentissage-statistique-modelisation-descriptive-et-introduction-aux-reseaux-de-neurones-2" target="_blank" rel="noreferrer noopener">Apprentissage statistique (intro réseaux de neurones)</a></li>
+                        <li><a href="" target="_blank" rel="noreferrer noopener">Données multimédia & spatio-temporelles</a></li>
+                    </ul>
+                </div>
+
+                <div class="spec-block">
+                    <h3>Modélisation & conception</h3>
+                    <ul class="specialisations-list">
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/langages-informatiques/methodologies-avancees-dinformatisation-1" target="_blank" rel="noreferrer noopener">Méthodologies avancées d’informatisation</a></li>
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/telecommunication/modelisation-optimisation-complexite-et-algorithmes-2" target="_blank" rel="noreferrer noopener">Modélisation, optimisation, complexité & algorithmes</a></li>
+                    </ul>
+                </div>
+
+                <div class="spec-block">
+                    <h3>Réseaux & systèmes</h3>
+                    <ul class="specialisations-list">
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/telecommunication/reseaux-et-protocoles-pour-linternet-6" target="_blank" rel="noreferrer noopener">Réseaux & télécommunications</a></li>
+                        <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/logiciel-systeme-gestion-bases-donnees/architectures-cloud-integration-des-applications-et-securite" target="_blank" rel="noreferrer noopener">Intégration systèmes client-serveur</a></li>
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/systemes-et-applications-repartis-pour-le-cloud-3" target="_blank" rel="noreferrer noopener">Systèmes répartis pour le cloud</a></li>
+                    </ul>
+                </div>
+
+                <div class="spec-block">
+                    <h3>Interfaces & UX</h3>
+                    <ul class="specialisations-list">
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/interaction-humain-machine-conception-dinterfaces-et-experience-utilisateur-1" target="_blank" rel="noreferrer noopener">Interaction humain-machine (UX/UI)</a></li>
+                    </ul>
+                </div>
+
+                <div class="spec-block">
+                    <h3>Transverse</h3>
+                    <ul class="specialisations-list">
+                        <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-ressources-humaines/management-dequipe-et-communication-en-entreprise-4" target="_blank" rel="noreferrer noopener">Management d’équipe & communication</a></li>
+                        <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-qualite/management-et-organisation-des-entreprises" target="_blank" rel="noreferrer noopener">Organisation des entreprises</a></li>
+                        <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-financiere-comptabilite/pilotage-financier-de-lentreprise-7" target="_blank" rel="noreferrer noopener">Pilotage financier</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Experience -->
         <section id="experience" data-section>
@@ -160,11 +287,11 @@
                     <div class="exp-period">2025</div>
                     <div>
                         <div class="exp-role">
-                            Application de vision par ordinateur · <span class="exp-company">Recherche d’images par similarité</span>
+                            Application de vision par ordinateur · <span class="exp-company">Recherche d’images similaires avec ResNet</span>
                         </div>
                         <p class="exp-description">
-                            Application complète : upload d’une image requête, extraction de descripteurs (classiques + deep) et retour des images les plus similaires,
-                            avec une UI de démonstration et une évaluation (précision / rappel).
+                            Application complète : upload d’une image requête, extraction de descripteurs visuels (classiques et deep features via ResNet)
+                            et retour des images les plus similaires, avec une interface de démonstration et une évaluation (précision / rappel).
                         </p>
                         <div class="exp-tags">
                             <span class="tag">Angular</span>
@@ -179,6 +306,50 @@
 <!--                               href="https://github.com/christiandrochon/multimedia"-->
 <!--                               target="_blank" rel="noreferrer noopener">GitHub</a>-->
 <!--                        </div>-->
+                    </div>
+                </article>
+
+                <!-- Site artisan -->
+                <article class="exp-item">
+                    <div class="exp-period">2022</div>
+                    <div>
+                        <div class="exp-role">
+                            Site vitrine React · <span class="exp-company">Artisan (maçon/couvreur/piscine)</span>
+                        </div>
+                        <p class="exp-description">
+                            Site vitrine déployé sur GitHub Pages : perf, simplicité, maintenance, mise à jour continue.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">GitHub Pages</span>
+                            <span class="tag">SEO</span>
+                        </div>
+                        <!--                        <div class="exp-actions">-->
+                        <!--                            <a class="btn btn-sm btn-outline-primary" href="/projects/artisan.html">Détails projet</a>-->
+                        <!--                            <a class="btn btn-sm btn-outline-secondary"-->
+                        <!--                               href="https://christiandrochon.github.io/"-->
+                        <!--                               target="_blank" rel="noreferrer noopener">Site</a>-->
+                        <!--                        </div>-->
+                    </div>
+                </article>
+
+
+                <!-- Lab-Concepts -->
+                <article class="exp-item">
+                    <div class="exp-period">2018 — 2019</div>
+                    <div>
+                        <div class="exp-role">
+                            Ingénieur d’études · <span class="exp-company">Lab-Concepts</span>
+                        </div>
+                        <p class="exp-description">
+                            Développement et évolution d’un CRM métier (spectacles / musiques vivantes) : correctifs, évolutions, stabilisation et refactoring ciblé.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Angular</span>
+                            <span class="tag">Maintenance</span>
+                            <span class="tag">Refactoring</span>
+                        </div>
                     </div>
                 </article>
 
@@ -201,168 +372,6 @@
                     </div>
                 </article>
 
-                <!-- Lab-Concepts -->
-                <article class="exp-item">
-                    <div class="exp-period">2018 — 2019</div>
-                    <div>
-                        <div class="exp-role">
-                            Ingénieur d’études · <span class="exp-company">Lab-Concepts</span>
-                        </div>
-                        <p class="exp-description">
-                            Développement et évolution d’un CRM métier (spectacles / musiques vivantes) : correctifs, évolutions, stabilisation et refactoring ciblé.
-                        </p>
-                        <div class="exp-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Angular</span>
-                            <span class="tag">Maintenance</span>
-                            <span class="tag">Refactoring</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Site artisan -->
-                <article class="exp-item">
-                    <div class="exp-period">Projet web</div>
-                    <div>
-                        <div class="exp-role">
-                            Site vitrine React · <span class="exp-company">Artisan (maçon/couvreur/piscine)</span>
-                        </div>
-                        <p class="exp-description">
-                            Site vitrine déployé sur GitHub Pages : perf, simplicité, maintenance, mise à jour continue.
-                        </p>
-                        <div class="exp-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">GitHub Pages</span>
-                            <span class="tag">SEO</span>
-                        </div>
-<!--                        <div class="exp-actions">-->
-<!--                            <a class="btn btn-sm btn-outline-primary" href="/projects/artisan.html">Détails projet</a>-->
-<!--                            <a class="btn btn-sm btn-outline-secondary"-->
-<!--                               href="https://christiandrochon.github.io/"-->
-<!--                               target="_blank" rel="noreferrer noopener">Site</a>-->
-<!--                        </div>-->
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" data-section>
-            <h2 class="section-h">Projets</h2>
-            <div class="projects-grid">
-                <article class="project-card" id="card-sma">
-                    <div class="project-title">
-                        SMA — Intranet maintenance automobile <span class="badge text-bg-secondary">en cours</span>
-                    </div>
-                    <p class="project-desc">
-                        Application intranet (Spring WebFlux + Thymeleaf SSR) exécutable en local via Docker Compose, avec CQRS / Event Sourcing (Axon) et sécurité OIDC (Keycloak).
-                    </p>
-                    <div class="project-tech">
-                        <span>Java</span><span>WebFlux</span><span>Thymeleaf</span><span>PostgreSQL</span><span>Keycloak</span><span>Axon</span><span>Compose</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary" href="/projects/sma.html">Page projet</a>
-                        <a class="btn btn-sm btn-outline-secondary"
-                           href="https://github.com/christiandrochon/sma-eventsourcing-17"
-                           target="_blank" rel="noreferrer noopener">GitHub</a>
-                    </div>
-                </article>
-
-                <article class="project-card" id="card-multimedia">
-                    <div class="project-title">Multimedia — Similarité d’images</div>
-                    <p class="project-desc">
-                        Recherche par similarité (descripteurs classiques + embeddings ResNet), UI Angular, backend Spring Boot et métriques (précision / rappel).
-                    </p>
-                    <div class="project-tech">
-                        <span>Angular</span><span>Spring Boot</span><span>Docker</span><span>ResNet</span><span>Precision/Recall</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary" href="/projects/multimedia.html">Page projet</a>
-                        <a class="btn btn-sm btn-outline-secondary"
-                           href="https://github.com/christiandrochon/multimedia"
-                           target="_blank" rel="noreferrer noopener">GitHub</a>
-                    </div>
-                </article>
-
-                <article class="project-card" id="card-artisan">
-                    <div class="project-title">Site vitrine artisan (React)</div>
-                    <p class="project-desc">
-                        Site vitrine déployé via GitHub Pages, pensé pour être simple à maintenir et rapide à charger.
-                    </p>
-                    <div class="project-tech">
-                        <span>React</span><span>GitHub Pages</span><span>SEO</span>
-                    </div>
-                    <div class="project-actions">
-                        <a class="btn btn-sm btn-outline-primary" href="/projects/artisan.html">Page projet</a>
-                        <a class="btn btn-sm btn-outline-secondary"
-                           href="https://christiandrochon.github.io/"
-                           target="_blank" rel="noreferrer noopener">Site</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Specialisations -->
-        <section id="specialisations" data-section>
-            <h2 class="section-h">Spécialisations</h2>
-            <p>
-                Repères techniques : sujets que je pratique réellement et qui structurent ma façon de concevoir des systèmes.
-                Les liens pointent vers les pages officielles des modules (sans afficher les codes).
-            </p>
-
-            <div class="spec-grid">
-                <div class="spec-block">
-                    <h3>Architecture & intégration</h3>
-                    <ul class="specialisations-list">
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/architectures-et-technologies-pour-lintegration-des-systemes-2" target="_blank" rel="noreferrer noopener">Architectures & technologies d’intégration</a></li>
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/methodologie-dingenierie-et-dintegration-des-systemes-2" target="_blank" rel="noreferrer noopener">Méthodologie d’ingénierie & intégration</a></li>
-                        <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/framework/architectures-logicielles-java1" target="_blank" rel="noreferrer noopener">Architecture logicielle Java (1)</a></li>
-                        <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/framework/architectures-logicielles-java2-1" target="_blank" rel="noreferrer noopener">Architecture logicielle Java (2)</a></li>
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/langages-informatiques/bases-de-donnees-documentaires-et-distribuees-1" target="_blank" rel="noreferrer noopener">Données documentaires & distribuées</a></li>
-                    </ul>
-                </div>
-
-                <div class="spec-block">
-                    <h3>Données, IA & recherche</h3>
-                    <ul class="specialisations-list">
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/intelligence-artificielle-2" target="_blank" rel="noreferrer noopener">Intelligence artificielle</a></li>
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/apprentissage-statistique-modelisation-descriptive-et-introduction-aux-reseaux-de-neurones-2" target="_blank" rel="noreferrer noopener">Apprentissage statistique (intro réseaux de neurones)</a></li>
-                        <li><a href="UE_URL_NFE205" target="_blank" rel="noreferrer noopener">Données multimédia & spatio-temporelles</a></li>
-                    </ul>
-                </div>
-
-                <div class="spec-block">
-                    <h3>Modélisation & conception</h3>
-                    <ul class="specialisations-list">
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/langages-informatiques/methodologies-avancees-dinformatisation-1" target="_blank" rel="noreferrer noopener">Méthodologies avancées d’informatisation</a></li>
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/telecommunication/modelisation-optimisation-complexite-et-algorithmes-2" target="_blank" rel="noreferrer noopener">Modélisation, optimisation, complexité & algorithmes</a></li>
-                    </ul>
-                </div>
-
-                <div class="spec-block">
-                    <h3>Réseaux & systèmes</h3>
-                    <ul class="specialisations-list">
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/telecommunication/reseaux-et-protocoles-pour-linternet-6" target="_blank" rel="noreferrer noopener">Réseaux & télécommunications</a></li>
-                        <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/logiciel-systeme-gestion-bases-donnees/architectures-cloud-integration-des-applications-et-securite" target="_blank" rel="noreferrer noopener">Intégration systèmes client-serveur</a></li>
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/systemes-et-applications-repartis-pour-le-cloud-3" target="_blank" rel="noreferrer noopener">Systèmes répartis pour le cloud</a></li>
-                    </ul>
-                </div>
-
-                <div class="spec-block">
-                    <h3>Interfaces & UX</h3>
-                    <ul class="specialisations-list">
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/interaction-humain-machine-conception-dinterfaces-et-experience-utilisateur-1" target="_blank" rel="noreferrer noopener">Interaction humain-machine (UX/UI)</a></li>
-                    </ul>
-                </div>
-
-                <div class="spec-block">
-                    <h3>Transverse</h3>
-                    <ul class="specialisations-list">
-                        <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-ressources-humaines/management-dequipe-et-communication-en-entreprise-4" target="_blank" rel="noreferrer noopener">Management d’équipe & communication</a></li>
-                        <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-qualite/management-et-organisation-des-entreprises" target="_blank" rel="noreferrer noopener">Organisation des entreprises</a></li>
-                        <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-financiere-comptabilite/pilotage-financier-de-lentreprise-7" target="_blank" rel="noreferrer noopener">Pilotage financier</a></li>
-                    </ul>
-                </div>
             </div>
         </section>
 
@@ -380,7 +389,7 @@
         </section>
 
         <footer class="site-footer">
-            © <span id="y"></span> — Site perso (HTML/CSS/JS). Pages projets dédiées + repos GitHub.
+            © <span id="y"></span> — Christian Drochon — Portfolio, projets et CV.
         </footer>
     </main>
 </div>
