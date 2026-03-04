@@ -56,29 +56,27 @@ Main elements:
 To run the site locally, simply open `index.html` in a browser.
 
 Example:
-
 ```
 firefox index.html
 ```
 
 Alternatively you can use a simple local server:
-
 ```
-python3 -m http.server
+python3 -m http.server 5137
 ```
 
 Then open:
+```
+http://localhost:5137
+```
 
-```
-http://localhost:8000
-```
+Because the site is served from the root on GitHub Pages, all assets must use **relative paths**.
 
 ## Deployment
 
 The website is automatically deployed via **GitHub Pages**.
 
 Repository:
-
 ```
 christiandrochon/christiandrochon.github.io
 ```
