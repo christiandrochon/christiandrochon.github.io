@@ -1,0 +1,233 @@
+/* =========================
+   Patch minimal (sans casser le thème)
+   ========================= */
+
+/*Titres de contenus de la colonne de droite*/
+.section-h{
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin: 0 0 0.9rem;
+    color: var(--color-text-muted);
+}
+/* si tu veux un mini trait (très discret) */
+.section-h::after{
+    content:"";
+    display:block;
+    width: 52px;
+    height: 2px;
+    margin-top: 0.55rem;
+    background: var(--color-border);
+}
+
+/* Lisibilité des tags (exp + projets) */
+.exp-tags .tag,
+.project-tech span {
+    display: inline-block;
+    margin: 0 6px 6px 0;
+    white-space: nowrap;
+}
+
+/* Sous-titres "Socle en place / Trajectoire" */
+.exp-subtitle {
+    margin-top: 0.6rem;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* Boutons sous exp/projets */
+.exp-actions,
+.project-actions {
+    margin-top: 0.7rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Tags "roadmap" un peu plus discrets */
+.exp-tags--secondary .tag {
+    opacity: 0.85;
+}
+
+/* Petites notes */
+.note {
+    opacity: 0.85;
+    font-size: 0.95em;
+}
+
+/*Laisser un peu de hauteur au dessus de contact car c'est une section petite et ca fait souvent planter le menu de gauche*/
+#contact { padding-bottom: 3rem; }
+html { scroll-padding-top: 12px; }
+section[data-section] { scroll-margin-top: 12px; }
+
+/* =========================
+   Spécialisations : grille
+   ========================= */
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.spec-block h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.specialisations-list {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.specialisations-list a {
+    text-decoration: none;
+}
+
+.specialisations-list a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .spec-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 2rem;
+    opacity: 0.75;
+    font-size: 0.9em;
+}
+
+/* =========================
+   Pages /projects : améliorer le rendu avec bootstrap
+   (sans dépendre du layout sidebar)
+   ========================= */
+.container h1 {
+    font-weight: 800;
+}
+.container h2 {
+    margin-top: 1.4rem;
+    font-weight: 700;
+}
+.container pre {
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    overflow: auto;
+}
+
+
+/* =========================
+   Colonne de gauche immobile pour presentation infaillible
+   sur tous devices.
+   ========================= */
+/* Intro gauche : courte et lisible */
+.intro--short{
+    max-width: 32rem;
+    margin-top: 1rem;
+}
+
+
+/* Desktop : sidebar sticky + structure stable (menu toujours visible) */
+@media (min-width: 1024px){
+    .sidebar-inner{
+        overflow: visible !important;
+        min-height: unset !important;
+    }
+}
+/*@media (min-width: 1024px) {*/
+/*    .sidebar-inner{*/
+/*        position: sticky;*/
+/*        top: 5rem;*/
+/*        max-height: calc(100vh - 5rem);*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        overflow: hidden; !* évite un scroll global à gauche *!*/
+/*    }*/
+
+/*    !* Si un jour tu rallonges la gauche : tu mets l'intro dans un wrapper scrollable *!*/
+/*    !* (Optionnel mais conseillé : crée un div.sidebar-intro autour de .intro) *!*/
+/*    .sidebar-intro{*/
+/*        flex: 1 1 auto;*/
+/*        min-height: 0;*/
+/*        overflow: auto;*/
+/*        padding-right: 0.5rem;*/
+/*    }*/
+
+/*    .nav{*/
+/*        flex: 0 0 auto;*/
+/*        margin-top: 1.2rem;*/
+/*    }*/
+
+/*    .social-icons{*/
+/*        flex: 0 0 auto;*/
+/*        margin-top: 1.2rem;*/
+/*    }*/
+/*}*/
+
+/* =========================
+   Sécurisation couleurs (ne pas dépendre de Bootstrap)
+   ========================= */
+
+/* Pages projets : on force le thème (sinon Bootstrap peut rendre illisible) */
+.project-page {
+    color: var(--color-text);
+}
+.project-page p,
+.project-page li {
+    color: var(--color-text-muted);
+}
+.project-page a {
+    color: var(--color-accent);
+}
+.project-page a:hover {
+    text-decoration: underline;
+}
+
+/* Spécialisations : texte plus "fin" et moins blanc */
+#specialisations .spec-grid,
+#specialisations .spec-block h3 {
+    color: var(--color-text);
+}
+#specialisations .specialisations-list li {
+    color: var(--color-text-muted);
+}
+#specialisations .specialisations-list a {
+    color: var(--color-text-muted);
+}
+#specialisations .specialisations-list a:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+}
+
+
+/* ====== BLINDAGE ACTIVE ====== */
+/*ENORME PB D'AFFICHAGE DE SURBRILLANCE DU CONTACT À GAUCHE DANS LE MENU DE GAUCHE*/
+.nav-link.active{
+    color: var(--color-text) !important;
+    padding-left: 5rem !important;
+}
+
+.nav-link.active::before{
+    transform: translateY(-50%) scaleX(1) !important;
+    opacity: 1 !important;
+}
+
+/* hover et focus totalement neutres (ne doivent JAMAIS ressembler à active) */
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:focus-visible{
+    color: var(--color-text-muted) !important;
+    padding-left: 0 !important;
+}
+
+.nav-link:hover::before,
+.nav-link:focus::before,
+.nav-link:focus-visible::before{
+    transform: translateY(-50%) scaleX(0) !important;
+    opacity: 0 !important;
+}

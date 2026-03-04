@@ -276,7 +276,7 @@ img {
 }
 
 
-/* --------- Navigation --------- */
+/* --------- Navigation (version stable définitive) --------- */
 
 .nav {
     margin-top: 2rem;
@@ -287,53 +287,54 @@ img {
     font-size: 0.9rem;
 }
 
-
-.nav-link {
+.nav-link{
     position: relative;
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-    /*color: #9ca3af;*/
-    color: var(--color-text-muted);
-    padding: 0.1rem 0;
-    transition: color 0.2s ease, padding-left 0.25s ease;
+
     text-transform: uppercase;
-    font-weight: 600; /* <-- gras */
+    font-weight: 600;
+
+    color: var(--color-text-muted);
+    padding-left: 0;
+
+    transition: none; /* aucune animation */
 }
 
-/* Couleur active */
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--color-text);
-}
-
-/* Barre latérale */
-
-.nav-link::before {
+/* barre invisible par défaut */
+.nav-link::before{
     content: "";
     position: absolute;
     left: 0;
     top: 50%;
     height: 2px;
-    width: 0;
+    width: 4rem;
     background: var(--color-accent);
-    transform: translateY(-50%);
-    transition: width 0.25s ease;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: left;
+    pointer-events: none; /* ne bloque jamais le clic */
 }
 
-/* Quand actif ou hover */
-
-.nav-link.active,
-.nav-link:hover {
+/* SEUL le lien actif (scroll) est mis en avant */
+.nav-link.active{
+    color: var(--color-text);
     padding-left: 5rem;
 }
 
-.nav-link.active::before,
-.nav-link:hover::before {
-    width: 4rem;
+.nav-link.active::before{
+    transform: translateY(-50%) scaleX(1);
 }
 
+/* hover totalement neutre */
+.nav-link:hover{
+    color: var(--color-text-muted);
+    padding-left: 0;
+}
+
+.nav-link:hover::before{
+    transform: translateY(-50%) scaleX(0);
+}
 
 /* --------- Réseaux sociaux --------- */
 
