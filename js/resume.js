@@ -1,25 +1,25 @@
+/* /js/resume.js — COPIE / COLLE TEL QUEL */
 document.addEventListener("DOMContentLoaded", () => {
     const sections = Array.from(document.querySelectorAll("section[data-section]"));
     const navLinks = Array.from(document.querySelectorAll(".nav-link"));
     if (!sections.length || !navLinks.length) return;
 
     const setActive = (id) => {
-        navLinks.forEach((link) => link.classList.toggle("active", link.dataset.section === id));
+        navLinks.forEach((link) => {
+            link.classList.toggle("active", link.dataset.section === id);
+        });
     };
 
-    // Verrou : tant qu'on scrolle suite à un clic, on n'écrase pas l'active
+    // verrou pendant scrollIntoView smooth (clic)
     let lockId = null;
     let lockTimer = null;
-
     const lockActive = (id, ms = 900) => {
         lockId = id;
         clearTimeout(lockTimer);
-        lockTimer = setTimeout(() => {
-            lockId = null;
-        }, ms);
+        lockTimer = setTimeout(() => (lockId = null), ms);
     };
 
-    // Clic : active immédiat + verrou + scroll
+    // clic: active immédiat + verrou + scroll
     navLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
@@ -27,19 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const target = document.getElementById(id);
             if (!target) return;
 
-            setActive(id);        // feedback immédiat
-            lockActive(id, 1000); // verrou pendant l'animation
-
+            setActive(id);
+            lockActive(id, 1000);
             target.scrollIntoView({ behavior: "smooth", block: "start" });
         });
     });
 
-    // Observer : ne change l'active QUE si pas verrouillé
+    // scroll-spy
     const ratios = new Map();
     let currentId = sections[0].id;
 
     const updateActive = () => {
-        if (lockId) return; // <-- IMPORTANT
+        if (lockId) return;
 
         let bestId = currentId;
         let bestRatio = -1;
@@ -59,21 +58,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // FORCE BAS DE PAGE (même si IntersectionObserver ne déclenche pas)
+    const BOTTOM_FORCE_PX = 450; // augmente si besoin (ex: 700)
+    const checkBottomForce = () => {
+        if (lockId) return;
+        const bottom = window.scrollY + window.innerHeight;
+        const pageH = document.documentElement.scrollHeight;
+        if (bottom >= pageH - BOTTOM_FORCE_PX) {
+            currentId = sections[sections.length - 1].id;
+            setActive(currentId);
+            return true;
+        }
+        return false;
+    };
+
     const observer = new IntersectionObserver(
         (entries) => {
             for (const e of entries) ratios.set(e.target.id, e.intersectionRatio);
-
-            if (lockId) return; // <-- IMPORTANT
-
-            // bas de page => force dernière section
-            const bottom = window.scrollY + window.innerHeight;
-            const pageH = document.documentElement.scrollHeight;
-            if (bottom >= pageH - 4) {
-                currentId = sections[sections.length - 1].id;
-                setActive(currentId);
-                return;
-            }
-
+            if (checkBottomForce()) return;
             updateActive();
         },
         {
@@ -84,5 +86,17 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     sections.forEach((s) => observer.observe(s));
+
+    window.addEventListener("scroll", () => {
+        if (checkBottomForce()) return;
+        updateActive();
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+        if (checkBottomForce()) return;
+        updateActive();
+    });
+
     setActive(currentId);
+    checkBottomForce();
 });

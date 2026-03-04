@@ -164,6 +164,7 @@
     --color-link-alt: #22d3ee; /* Turquoise lumineux (second accent) */
 
 
+
     /*!*Palette entre 1 et 3 bleu inversé *!*/
     /*!* fond plus clair / pastel *!*/
     /*--color-bg: #f6f8ff; !* bleu-lavande très clair *!*/
@@ -187,6 +188,8 @@
     /*--color-accent: #7c4dff;      !* Violet “electric”, moderne *!*/
     /*--color-accent-soft: #382a73; !* Hover violet sombre mais coloré *!*/
     /*--color-link-alt: #35e8d0;    !* Turquoise propre, moderne *!*/
+
+    --top-offset: 5rem; /* ajuste ensuite si tu veux (ex: 4.7rem) */
 
 
 }
@@ -247,6 +250,7 @@ img {
     flex: 0 0 30%;
     max-width: 360px;
     position: relative;
+    margin-top: -1rem;
 }
 
 
@@ -276,7 +280,7 @@ img {
 }
 
 
-/* --------- Navigation (version stable définitive) --------- */
+/* --------- Navigation --------- */
 
 .nav {
     margin-top: 2rem;
@@ -287,54 +291,114 @@ img {
     font-size: 0.9rem;
 }
 
-.nav-link{
+
+.nav-link {
     position: relative;
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-
-    text-transform: uppercase;
-    font-weight: 600;
-
+    /*color: #9ca3af;*/
     color: var(--color-text-muted);
-    padding-left: 0;
-
-    transition: none; /* aucune animation */
+    padding: 0.1rem 0;
+    transition: color 0.2s ease, padding-left 0.25s ease;
+    text-transform: uppercase;
+    font-weight: 600; /* <-- gras */
 }
 
-/* barre invisible par défaut */
-.nav-link::before{
+/* Couleur active */
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-text);
+}
+
+/* Barre latérale */
+
+.nav-link::before {
     content: "";
     position: absolute;
     left: 0;
     top: 50%;
     height: 2px;
-    width: 4rem;
+    width: 0;
     background: var(--color-accent);
-    transform: translateY(-50%) scaleX(0);
-    transform-origin: left;
-    pointer-events: none; /* ne bloque jamais le clic */
+    transform: translateY(-50%);
+    transition: width 0.25s ease;
 }
 
-/* SEUL le lien actif (scroll) est mis en avant */
-.nav-link.active{
+/* Quand actif ou hover */
+
+/* Hover = juste une couleur (pas de déplacement, pas de barre) */
+.nav-link:hover {
     color: var(--color-text);
+}
+
+/* Active = le vrai état (déplacement + barre) */
+.nav-link{
+    position: relative;
+    padding-left: 5rem;        /* espace fixe pour tout le monde */
+    color: var(--color-text-muted);
+}
+
+.nav-link::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:4rem;                /* largeur fixe */
+    height:2px;
+    background: var(--color-accent);
+    transform: translateY(-50%) scaleX(0);  /* caché */
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+/* Seul active montre la barre */
+/* --- état normal --- */
+.nav-link{
+    padding-left: 0; /* état stable */
+}
+
+/* --- SEUL l'actif bouge / affiche la barre --- */
+.nav-link.active{
     padding-left: 5rem;
+    color: var(--color-text);
 }
 
 .nav-link.active::before{
-    transform: translateY(-50%) scaleX(1);
+    width: 4rem;
 }
 
-/* hover totalement neutre */
+/* --- hover = aucune réaction visuelle --- */
 .nav-link:hover{
-    color: var(--color-text-muted);
-    padding-left: 0;
+    padding-left: 0;                 /* empêche tout déplacement */
+    color: var(--color-text-muted);  /* reste comme normal */
 }
 
 .nav-link:hover::before{
-    transform: translateY(-50%) scaleX(0);
+    width: 0;                        /* pas de barre */
 }
+/* Empêche un effet "après clic" (focus) de ressembler à un hover */
+.nav-link:focus,
+.nav-link:focus-visible{
+    padding-left: 0;
+    outline: none; /* si tu veux garder l’accessibilité, on peut mettre un outline discret ailleurs */
+}
+
+.nav-link.active:focus,
+.nav-link.active:focus-visible{
+    padding-left: 5rem;
+}
+/*.nav-link.active,*/
+/*.nav-link:hover {*/
+/*    padding-left: 5rem;*/
+/*}*/
+
+/*.nav-link.active::before,*/
+/*.nav-link:hover::before {*/
+/*    width: 4rem;*/
+/*}*/
+
 
 /* --------- Réseaux sociaux --------- */
 
@@ -514,6 +578,7 @@ section:last-of-type {
 
 .contact-text {
     max-width: none;
+    padding-top: 1rem;
 }
 
 .contact-button {
@@ -522,7 +587,7 @@ section:last-of-type {
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    padding: 0.65rem 1.1rem;
+    padding: 0.65rem 1.1rem ;
     border-radius: 999px;
     border: 1px solid var(--color-accent);
     background: transparent;
@@ -599,6 +664,7 @@ footer {
         --color-accent: #7c86ff;
         --color-accent-soft: #e9e8ff;
         --color-link-alt: #22d3ee;
+
     }
 
     /*:root {*/

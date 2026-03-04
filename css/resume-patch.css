@@ -57,9 +57,9 @@
 }
 
 /*Laisser un peu de hauteur au dessus de contact car c'est une section petite et ca fait souvent planter le menu de gauche*/
-#contact { padding-bottom: 3rem; }
-html { scroll-padding-top: 12px; }
-section[data-section] { scroll-margin-top: 12px; }
+#contact { padding-bottom: 1rem; }
+html { scroll-padding-top: 5rem; }
+section[data-section] { scroll-margin-top: 5rem; }
 
 /* =========================
    Spécialisations : grille
@@ -97,8 +97,16 @@ section[data-section] { scroll-margin-top: 12px; }
 }
 
 /* Footer */
-.site-footer {
+/* ===== Footer propre colonne droite ===== */
+
+.site-footer{
     margin-top: 2rem;
+    padding: 2rem 0 3rem 0;   /* espace en bas pour que ça respire */
+    border-top: 1px solid var(--color-border);
+
+    text-align: center;       /* centré */
+    width: 100%;              /* largeur colonne droite */
+
     opacity: 0.75;
     font-size: 0.9em;
 }
@@ -137,6 +145,7 @@ section[data-section] { scroll-margin-top: 12px; }
     .sidebar-inner{
         overflow: visible !important;
         min-height: unset !important;
+        top: 4.2rem !important; /*releve legerement Christian Drochon*/
     }
 }
 /*@media (min-width: 1024px) {*/
@@ -168,6 +177,38 @@ section[data-section] { scroll-margin-top: 12px; }
 /*        margin-top: 1.2rem;*/
 /*    }*/
 /*}*/
+
+/* COLLE ÇA DANS resume-patch.css (où tu veux). NE TOUCHE PAS AUX .nav-link */
+
+/* =========================
+   Centres d'interet dans le enu de gauche
+   ========================= */
+.sidebar-interests{
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.sidebar-interests + .nav{
+    margin-top: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.sidebar-interests__label{
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.sidebar-interests__text{
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--color-text-muted);
+    opacity: 0.9;
+}
 
 /* =========================
    Sécurisation couleurs (ne pas dépendre de Bootstrap)
@@ -205,29 +246,65 @@ section[data-section] { scroll-margin-top: 12px; }
 }
 
 
+
 /* ====== BLINDAGE ACTIVE ====== */
 /*ENORME PB D'AFFICHAGE DE SURBRILLANCE DU CONTACT À GAUCHE DANS LE MENU DE GAUCHE*/
+/* ====== NAV FINAL (AUCUN HOVER, ACTIVE SEULEMENT) ====== */
+/* Mets ce bloc EN TOUT DERNIER dans resume-patch.css */
+
+/* base */
+.nav-link{
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+
+    color: var(--color-text-muted) !important;
+    padding: 0.1rem 0 !important;
+    padding-left: 0 !important;
+
+    transition: color 160ms ease, padding-left 220ms ease !important;
+}
+
+/* barre OFF par défaut */
+.nav-link::before{
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    height: 2px !important;
+    width: 4rem !important;
+    background: var(--color-accent) !important;
+
+    transform: translateY(-50%) scaleX(0) !important;
+    transform-origin: left !important;
+    pointer-events: none !important;
+
+    transition: transform 220ms ease !important;
+}
+
+/* ACTIVE (uniquement) */
 .nav-link.active{
     color: var(--color-text) !important;
     padding-left: 5rem !important;
 }
-
 .nav-link.active::before{
     transform: translateY(-50%) scaleX(1) !important;
-    opacity: 1 !important;
 }
 
-/* hover et focus totalement neutres (ne doivent JAMAIS ressembler à active) */
-.nav-link:hover,
-.nav-link:focus,
-.nav-link:focus-visible{
+/* HOVER/FOCUS neutres UNIQUEMENT si PAS actif */
+.nav-link:hover:not(.active),
+.nav-link:focus:not(.active),
+.nav-link:focus-visible:not(.active){
     color: var(--color-text-muted) !important;
     padding-left: 0 !important;
+    outline: none !important;
 }
-
-.nav-link:hover::before,
-.nav-link:focus::before,
-.nav-link:focus-visible::before{
+.nav-link:hover:not(.active)::before,
+.nav-link:focus:not(.active)::before,
+.nav-link:focus-visible:not(.active)::before{
     transform: translateY(-50%) scaleX(0) !important;
-    opacity: 0 !important;
 }
