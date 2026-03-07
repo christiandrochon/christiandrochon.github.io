@@ -24,7 +24,11 @@
     ← Retour
 </a>
 
-<h1 class="mb-2">Multimedia — Vision par ordinateur, recherche d’images par similarité</h1>
+    <h1 class="mb-1">Vision par ordinateur</h1>
+    <p class="footer-license mb-3">
+        Recherche d’images par similarité (embeddings ResNet)
+    </p>
+
     <div class="mb-3">
         <a href="https://github.com/christiandrochon/multimedia"
            target="_blank"
@@ -51,20 +55,8 @@
     <li>Architecture modulaire pour ajouter facilement de nouveaux descripteurs</li>
 </ul>
 
-<h2>Exécution via Docker (démo reproductible)</h2>
-    //todo : lancer l(zppli en une ligne e code
-<pre><code>docker compose -f compose.yaml up -d</code></pre>
-    //todo : supprimer lapppli
-    <pre><code>docker compose -f compose.yaml down</code></pre>
-
-<h3>Accès</h3>
-<ul>
-    <li>Frontend Angular : <code>http://localhost:4200</code></li>
-    <li>Backend API : <code>http://localhost:8087</code></li>
-</ul>
-
-<h2>Architecture</h2>
-<pre><code>.
+    <h2>Architecture</h2>
+    <pre><code>.
 ├── multimedias-ui/   # Frontend Angular
 ├── multimedia/          # Backend Spring Boot / Java
 ├── data/
@@ -74,15 +66,30 @@
 └── compose.yaml
 </code></pre>
 
+
+    <h2>Exécution via Docker (démo reproductible)</h2>
+    <ul>
+        <li><strong>Démarrer :</strong> <code>docker compose -f compose.yaml up -d</code></li>
+        <li><strong>Arrêter :</strong> <code>docker compose -f compose.yaml down</code></li>
+    </ul>
+
+    <p><strong>Accès :</strong></p>
+    <ul>
+        <li>Frontend Angular : <code>http://localhost:4200</code></li>
+        <li>Backend API : <code>http://localhost:8087</code></li>
+    </ul>
+
+
+
 <h2>API (exemples)</h2>
 <p><strong>Recherche par image</strong> :</p>
 <pre><code>POST /api/search  (multipart/form-data)
 - file : image requête
-- topK : nombre de résultats pertinents et affchage des 8 plus proches voisins
+- topK : nombre de résultats pertinents et affichage des 8 plus proches voisins
 - mode : color | shape | text | ground-truth | deep | combined (optionnel)</code></pre>
 
 <p><strong>Exemple curl</strong> :</p>
-<pre><code>curl -X POST http://localhost:8080/api/search \
+<pre><code>curl -X POST http://localhost:8087/api/search \
   -F file=@image.jpg \
   -F topK=10 \
   -F mode=combined</code></pre>

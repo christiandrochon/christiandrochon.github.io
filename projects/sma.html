@@ -68,6 +68,19 @@
         tout en évitant la complexité d’un frontend SPA lorsque cela n’est pas nécessaire.
     </p>
 
+    <pre><code>.
+├── src/                    # Backend Spring Boot / Java
+├── thymeleaf-frontend/     # Frontend Thymeleaf / ressources UI
+├── docker/                 # Fichiers Docker / scripts liés aux conteneurs
+├── komp-smb/               # Fichiers Kubernetes / Kompose pour déploiement
+├── compose.yaml            # Orchestration locale des services
+├── Dockerfile              # Build de l’application principale
+├── pom.xml                 # Build Maven et dépendances
+├── application-local.properties  # Configuration profil local
+├── application-prod.properties   # Configuration profil prod
+└── README.md               # Documentation du projet
+</code></pre>
+
     <h2>Exécution locale</h2>
     <ul>
         <li><strong>Démarrer :</strong> <code>docker compose -f compose.yaml up -d</code></li>
