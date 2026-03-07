@@ -2,11 +2,13 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8"/>
-    <title>Multimedia — Recherche d’images par similarité</title>
+    <title>Multimedia — Vision par ordinateur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="icon" type="image/svg+xml" href="/img/favicon_CD_rond.svg">
-
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,32 +24,38 @@
     ← Retour
 </a>
 
-<h1 class="mb-2">Multimedia — Recherche d’images par similarité</h1>
-<p class="text-muted">
-    Repo :
-    <a href="https://github.com/christiandrochon/multimedia" target="_blank" rel="noreferrer noopener">
-        github.com/christiandrochon/multimedia
-    </a>
-</p>
+<h1 class="mb-2">Multimedia — Vision par ordinateur, recherche d’images par similarité</h1>
+    <div class="mb-3">
+        <a href="https://github.com/christiandrochon/multimedia"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-outline-primary me-2">
+            <i class="fab fa-github"></i> Repository GitHub
+        </a>
+    </div>
 
 <h2>Problème & approche</h2>
 <p>
     L’utilisateur soumet une image requête. Le système extrait des descripteurs et retourne les images les plus similaires
-    selon une métrique. L’approche combine descripteurs “classiques” (couleur, niveaux de gris, forme, texte)
-    et descripteurs profonds (embeddings via un CNN type ResNet), avec une évaluation quantitative (précision / rappel).
+    selon une métrique. L’approche combine descripteurs “classiques” (couleur, niveaux de gris, forme, texte),
+    des descripteurs profonds (embeddings via un CNN type ResNet), des classes Vérité/Terrain, avec une évaluation quantitative (précision / rappel).
+    <br>Les descripteurs de toutes les images de la base de données des images sont générés en asynchrone afin de ne pas bloquer l'utilisateur dans ses recherches.
 </p>
 
 <h2>Fonctionnalités clés</h2>
 <ul>
     <li>Upload d’une image requête via l’interface web</li>
-    <li>Modes de recherche : couleur / forme / texte / deep (ResNet) / combinaison pondérée</li>
+    <li>Modes de recherche : couleur / forme / texte / deep (ResNet) / classes Vérité-Terrain / combinaison pondérée</li>
     <li>Résultats classés par score de similarité</li>
-    <li>Évaluation : précision, rappel (vérité terrain)</li>
+    <li>Évaluation : courbes précision/rappel</li>
     <li>Architecture modulaire pour ajouter facilement de nouveaux descripteurs</li>
 </ul>
 
 <h2>Exécution via Docker (démo reproductible)</h2>
+    //todo : lancer l(zppli en une ligne e code
 <pre><code>docker compose -f compose.yaml up -d</code></pre>
+    //todo : supprimer lapppli
+    <pre><code>docker compose -f compose.yaml down</code></pre>
 
 <h3>Accès</h3>
 <ul>
@@ -58,7 +66,7 @@
 <h2>Architecture</h2>
 <pre><code>.
 ├── multimedias-ui/   # Frontend Angular
-├── backend/          # Backend Spring Boot / Java
+├── multimedia/          # Backend Spring Boot / Java
 ├── data/
 │  ├── images/        # Jeux d’images
 │  ├── indexes/       # Indexs descripteurs
@@ -70,8 +78,8 @@
 <p><strong>Recherche par image</strong> :</p>
 <pre><code>POST /api/search  (multipart/form-data)
 - file : image requête
-- topK : nombre de résultats (optionnel)
-- mode : color | shape | text | deep | combined (optionnel)</code></pre>
+- topK : nombre de résultats pertinents et affchage des 8 plus proches voisins
+- mode : color | shape | text | ground-truth | deep | combined (optionnel)</code></pre>
 
 <p><strong>Exemple curl</strong> :</p>
 <pre><code>curl -X POST http://localhost:8080/api/search \
@@ -80,7 +88,7 @@
   -F mode=combined</code></pre>
 
 <hr class="my-4">
-<p class="text-muted">Licence : MIT (voir repository).</p>
+<p class="footer-licensed">Licence : MIT (voir repository).</p>
 </main>
 </body>
 </html>

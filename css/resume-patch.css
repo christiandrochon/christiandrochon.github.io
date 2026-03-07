@@ -307,3 +307,10 @@ section[data-section] { scroll-margin-top: 5rem; }
 .nav-link:focus-visible:not(.active)::before{
     transform: translateY(-50%) scaleX(0) !important;
 }
+
+/*Garde la couleur du texte du theme, ce qui fait que la couleur du texte */
+/*n'aura jamais de probleme avec la couleur de fond de l'ecran, grande ou petite taille*/
+.footer-license {
+    color: var(--bs-body-color);
+    font-size: 0.95rem;
+}

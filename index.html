@@ -84,26 +84,26 @@
             <p>
                 Je conçois des applications <span class="highlight">backend Java</span> pensées pour durer :
                 <span class="highlight">modèle métier explicite</span>, responsabilités claires, architecture évolutive.
-                Mon focus : reprendre un existant et le rendre <span class="highlight">lisible, testable et maintenable</span>
-                — sans tout réécrire — pour accélérer les livraisons et réduire la dette technique.
+                <br>Mon focus : reprendre un existant et le rendre <span class="highlight">lisible, testable et maintenable</span>
+                — sans tout réécrire — afin d'accélérer les livraisons et réduire la dette technique.
             </p>
 <br>
             <p>
                 Concrètement, j’interviens sur des codebases déjà en production :
                 refactoring progressif, clarification des couches (contrôleurs / services / domaine),
-                modularisation et conventions partagées. J’attache autant d’importance à la
-                <span class="highlight">trajectoire</span> (comment on fait évoluer le système) qu’au code lui-même.
+                modularisation et conventions partagées. <br>J’attache autant d’importance à la
+                <span class="highlight">trajectoire</span> (c'est-à-dire comment on fait évoluer le système) qu’au code lui-même.
             </p>
 <br>
             <p>
                 Quand un périmètre démarre “from scratch”, je pose un socle propre dès le début :
                 sécurité <span class="highlight">OAuth2/OIDC</span>, exécution reproductible (Docker),
-                documentation utile (pas décorative) et outillage orienté exploitation.
+                documentation et outillage orienté exploitation.
             </p>
 <br>
             <p>
                 J’ai aussi un pied “produit” : interfaces simples quand c’est pertinent (SSR Thymeleaf),
-                ou front moderne sinon. Et une curiosité data/ML uniquement lorsqu’elle sert un besoin concret
+                ou front moderne sinon (Angular, React). Et une curiosité data/ML uniquement lorsqu’elle sert un besoin concret
                 (recherche, similarité, prédiction) — pas comme gadget.
             </p>
 <br>
@@ -122,10 +122,10 @@
                         SMA — Intranet maintenance automobile <span class="badge text-bg-secondary">en cours</span>
                     </div>
                     <p class="project-desc">
-                        Application intranet (Spring WebFlux + Thymeleaf SSR) exécutable en local via Docker Compose, avec CQRS / Event Sourcing (Axon) et sécurité OIDC (Keycloak).
+                        Application intranet (Spring WebFlux + Thymeleaf SSR) exécutable en local via Docker, avec CQRS / Event Sourcing (AxonIQ) et sécurité OIDC (Keycloak).
                     </p>
                     <div class="project-tech">
-                        <span>Java</span><span>WebFlux</span><span>Thymeleaf</span><span>PostgreSQL</span><span>Keycloak</span><span>Axon</span><span>Compose</span>
+                        <span>Java-17</span><span>WebFlux</span><span>Thymeleaf</span><span>PostgreSQL</span><span>Keycloak</span><span>AxonIQ</span><span>Docker</span>
                     </div>
                     <div class="project-actions">
                         <a class="btn btn-sm btn-outline-primary" href="/projects/sma.html">Page projet</a>
@@ -136,12 +136,12 @@
                 </article>
 
                 <article class="project-card" id="card-multimedia">
-                    <div class="project-title">Multimedia — Similarité d’images</div>
+                    <div class="project-title">Multimedia — Vision par ordinateur</div>
                     <p class="project-desc">
-                        Recherche par similarité (descripteurs classiques + embeddings ResNet), UI Angular, backend Spring Boot et métriques (précision / rappel).
+                        Recherche d'images par similarité (descripteurs classiques + embeddings ResNet), UI Angular, backend Spring Boot et évaluation (précision / rappel).
                     </p>
                     <div class="project-tech">
-                        <span>Angular</span><span>Spring Boot</span><span>Docker</span><span>ResNet</span><span>Precision/Recall</span>
+                        <span>Angular</span><span>SpringBoot</span><span>Docker</span><span>ResNet</span><span>Precision/Recall</span>
                     </div>
                     <div class="project-actions">
                         <a class="btn btn-sm btn-outline-primary" href="/projects/multimedia.html">Page projet</a>
@@ -152,12 +152,13 @@
                 </article>
 
                 <article class="project-card" id="card-artisan">
-                    <div class="project-title">Site vitrine artisan (React)</div>
+                    <div class="project-title">Site vitrine pour un artisan</div>
                     <p class="project-desc">
-                        Site vitrine déployé via GitHub Pages, pensé pour être simple à maintenir et rapide à charger.
+                        Site vitrine déployé codé en React via GitHub Pages, pensé pour être simple, fluide, rapide à charger (DOM virutel), et facile à maintenir.
                     </p>
                     <div class="project-tech">
-                        <span>React</span><span>GitHub Pages</span><span>SEO</span>
+                        <span>React</span>
+<!--                        <span>SEO</span>-->
                     </div>
                     <div class="project-actions">
                         <a class="btn btn-sm btn-outline-primary" href="/projects/artisan.html">Page projet</a>
@@ -174,8 +175,8 @@
         <section id="specialisations" data-section>
             <h2 class="section-h">Spécialisations</h2>
             <p>
-                Repères techniques : sujets que je pratique réellement et qui structurent ma façon de concevoir des systèmes.
-                Les liens pointent vers les pages officielles des modules (sans afficher les codes).
+                Repères techniques : aspects techniques et fonctionnels que je pratique assidument et qui structurent ma façon de concevoir des systèmes.
+                <br>Les liens pointent vers les pages officielles des modules (sans afficher les codes).
             </p>
 
             <div class="spec-grid">
@@ -186,7 +187,9 @@
                         <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/methodologie-dingenierie-et-dintegration-des-systemes-2" target="_blank" rel="noreferrer noopener">Méthodologie d’ingénierie & intégration</a></li>
                         <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/framework/architectures-logicielles-java1" target="_blank" rel="noreferrer noopener">Architecture logicielle Java (1)</a></li>
                         <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/framework/architectures-logicielles-java2-1" target="_blank" rel="noreferrer noopener">Architecture logicielle Java (2)</a></li>
+                        <li><a href="" target="_blank" rel="noreferrer noopener">Architecture, Patterns et intégration : systèmes embarqués e,n Java et Android (nsy208</a></li>
                         <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/langages-informatiques/bases-de-donnees-documentaires-et-distribuees-1" target="_blank" rel="noreferrer noopener">Données documentaires & distribuées</a></li>
+                        <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/logiciel-systeme-gestion-bases-donnees/architectures-cloud-integration-des-applications-et-securite" target="_blank" rel="noreferrer noopener">Intégration systèmes client-serveur</a></li>
                     </ul>
                 </div>
 
@@ -208,11 +211,10 @@
                 </div>
 
                 <div class="spec-block">
-                    <h3>Réseaux & systèmes</h3>
+                    <h3>Réseaux & systèmes cloud</h3>
                     <ul class="specialisations-list">
                         <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/telecommunication/reseaux-et-protocoles-pour-linternet-6" target="_blank" rel="noreferrer noopener">Réseaux & télécommunications</a></li>
-                        <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/logiciel-systeme-gestion-bases-donnees/architectures-cloud-integration-des-applications-et-securite" target="_blank" rel="noreferrer noopener">Intégration systèmes client-serveur</a></li>
-                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/systemes-et-applications-repartis-pour-le-cloud-3" target="_blank" rel="noreferrer noopener">Systèmes répartis pour le cloud</a></li>
+                        <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/systemes-et-applications-repartis-pour-le-cloud-3" target="_blank" rel="noreferrer noopener">Systèmes et applications répartis pour le cloud</a></li>
                     </ul>
                 </div>
 
@@ -226,9 +228,19 @@
                 <div class="spec-block">
                     <h3>Transverse</h3>
                     <ul class="specialisations-list">
-                        <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-ressources-humaines/management-dequipe-et-communication-en-entreprise-4" target="_blank" rel="noreferrer noopener">Management d’équipe & communication</a></li>
-                        <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-qualite/management-et-organisation-des-entreprises" target="_blank" rel="noreferrer noopener">Organisation des entreprises</a></li>
+                        <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-ressources-humaines/management-dequipe-et-communication-en-entreprise-4" target="_blank" rel="noreferrer noopener">Management d’équipe & communication en entreprise</a></li>
+                        <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-qualite/management-et-organisation-des-entreprises" target="_blank" rel="noreferrer noopener">Management et organisation des entreprises</a></li>
                         <li><a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-financiere-comptabilite/pilotage-financier-de-lentreprise-7" target="_blank" rel="noreferrer noopener">Pilotage financier</a></li>
+                    </ul>
+                </div>
+
+                <div class="spec-block">
+                    <h3>Mathématiques fondamentales</h3>
+                    <ul class="specialisations-list">
+                        <li><a href="" target="_blank" rel="noreferrer noopener">Mathématiques pures (mva913</a></li>
+                        <li><a href="" target="_blank" rel="noreferrer noopener">Techniques de la statistique</a></li>
+                        <li><a href="" target="_blank" rel="noreferrer noopener">Mathématiques pour l'informatique (mva003</a></li>
+                        <li><a href="" target="_blank" rel="noreferrer noopener">Outils mathématiques pour l'informatique (utc501</a></li>
                     </ul>
                 </div>
             </div>
@@ -244,32 +256,35 @@
                     <div class="exp-period">2021 — aujourd’hui</div>
                     <div>
                         <div class="exp-role">
-                            Ingénieur backend Java · <span class="exp-company">Projet SMA (fil rouge, en cours)</span>
+                            Ingénieur backend Java · <span class="exp-company">Projet SMA (Suivi de Maintenance Automobile)</span>
                             <span class="badge text-bg-secondary ms-2">en cours</span>
                         </div>
                         <p class="exp-description">
                             SMA est mon projet “terrain” : une application intranet de maintenance automobile utilisée comme support réaliste
                             pour concevoir un socle propre (architecture, sécurité, traçabilité, exécution reproductible).
-                            L’idée : montrer une trajectoire claire “socle → industrialisation → features avancées”, sans promesses floues.
+                            <br>L’idée : montrer une trajectoire claire “socle → industrialisation → features avancées”, sans promesses floues.
                         </p>
 
                         <div class="exp-subtitle">Socle en place</div>
                         <div class="exp-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Spring Boot (WebFlux)</span>
+                            <span class="tag">Java-17</span>
+                            <span class="tag">SpringBoot (WebFlux)</span>
+                            <span class="tag">Maven</span>
                             <span class="tag">Thymeleaf (SSR)</span>
                             <span class="tag">PostgreSQL</span>
                             <span class="tag">Keycloak (OIDC)</span>
-                            <span class="tag">Docker Compose</span>
-                            <span class="tag">CQRS / ES (Axon)</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Minikube / Kompose</span>
+                            <span class="tag">CQRS / Event Sourcing  (AxonIQ)</span>
                         </div>
 
                         <div class="exp-subtitle">Trajectoire</div>
                         <div class="exp-tags exp-tags--secondary">
+                            <span class="tag">DDD (Domain Driven Design)</span>
                             <span class="tag">RBAC avancé</span>
                             <span class="tag">RGPD by design</span>
-                            <span class="tag">Recherche / index (PostgreSQL + moteur)</span>
-                            <span class="tag">Découpage services</span>
+                            <span class="tag">Recherche / index (PostgreSQL + moteur ElasticSearch pour recherche exacte et approchée)</span>
+                            <span class="tag">Découpage services (Kafka / RabbitMQ / microservices)</span>
                             <span class="tag">Brique prédiction (ML/Python)</span>
                         </div>
 
@@ -295,10 +310,11 @@
                         </p>
                         <div class="exp-tags">
                             <span class="tag">Angular</span>
-                            <span class="tag">Spring Boot / Java</span>
-                            <span class="tag">Docker Compose</span>
+                            <span class="tag">SpringBoot / Java</span>
+                            <span class="tag">Maven</span>
+                            <span class="tag">Docker</span>
                             <span class="tag">Deep features (ResNet)</span>
-                            <span class="tag">Métriques (precision/recall)</span>
+                            <span class="tag">Evaluations (precision/recall)</span>
                         </div>
 <!--                        <div class="exp-actions">-->
 <!--                            <a class="btn btn-sm btn-outline-primary" href="/projects/multimedia.html">Détails projet</a>-->
@@ -314,15 +330,15 @@
                     <div class="exp-period">2022</div>
                     <div>
                         <div class="exp-role">
-                            Site vitrine React · <span class="exp-company">Artisan (maçon/couvreur/piscine)</span>
+                            Site vitrine · <span class="exp-company">Artisan (maçon/couvreur/piscine)</span>
                         </div>
                         <p class="exp-description">
                             Site vitrine déployé sur GitHub Pages : perf, simplicité, maintenance, mise à jour continue.
                         </p>
                         <div class="exp-tags">
                             <span class="tag">React</span>
-                            <span class="tag">GitHub Pages</span>
-                            <span class="tag">SEO</span>
+<!--                            <span class="tag">GitHub Pages</span>-->
+<!--                            <span class="tag">SEO</span>-->
                         </div>
                         <!--                        <div class="exp-actions">-->
                         <!--                            <a class="btn btn-sm btn-outline-primary" href="/projects/artisan.html">Détails projet</a>-->
@@ -342,11 +358,12 @@
                             Ingénieur d’études · <span class="exp-company">Lab-Concepts</span>
                         </div>
                         <p class="exp-description">
-                            Développement et évolution d’un CRM métier (spectacles / musiques vivantes) : correctifs, évolutions, stabilisation et refactoring ciblé.
+                            Maintenance et évolution d’un CRM métier (spectacles / musiques vivantes) : correctifs, évolutions, stabilisation et refactoring ciblé.
                         </p>
                         <div class="exp-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Angular</span>
+                            <span class="tag">HTML / CSS / Javascript</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">Bootstrap</span>
                             <span class="tag">Maintenance</span>
                             <span class="tag">Refactoring</span>
                         </div>
@@ -355,19 +372,52 @@
 
                 <!-- Naval -->
                 <article class="exp-item">
-                    <div class="exp-period">2014 — 2017</div>
+                    <div class="exp-period">2015 — 2017</div>
                     <div>
                         <div class="exp-role">
                             Ingénieur logiciel R&D · <span class="exp-company">Naval Group</span>
                         </div>
                         <p class="exp-description">
-                            Simulateur 3D pédagogique (formation/évaluation d’équipages) et travaux d’intégration/mise en conformité sur systèmes.
+                            Conception d’un simulateur 3D pédagogique pour la formation de sous
+                            mariniers.
                         </p>
                         <div class="exp-tags">
                             <span class="tag">R&D</span>
-                            <span class="tag">Conception système</span>
-                            <span class="tag">Modélisation</span>
-                            <span class="tag">Intégration</span>
+                            <span class="tag">Gestion de projet</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="exp-item">
+                    <div class="exp-period">2015</div>
+                    <div>
+                        <div class="exp-role">
+                            Ingénieur logiciel · <span class="exp-company">Naval Group</span>
+                        </div>
+                        <p class="exp-description">
+                            Mise en conformité des messages de la base de structures génériques
+                            GAMS du porte-avion ’Charles de Gaulle’.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tag">Réseaux</span>
+                            <span class="tag">ADA</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="exp-item">
+                    <div class="exp-period">2014</div>
+                    <div>
+                        <div class="exp-role">
+                            Ingénieur logiciel · <span class="exp-company">Naval Group</span>
+                        </div>
+                        <p class="exp-description">
+                            Réalisation d’une application pour bâtiment de surveillance côtière.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tag">Java-8</span>
+                            <span class="tag">Swing</span>
+                            <span class="tag">PostgreSQL</span>
                         </div>
                     </div>
                 </article>
@@ -380,7 +430,7 @@
             <h2 class="section-h">Contact</h2>
             <p class="contact-text">
                 Besoin d’une reprise de codebase, d’une refonte progressive, d’une clarification d’architecture ou d’un socle propre “from scratch” ?
-                Écris-moi et on parle objectifs, contraintes et trajectoire.
+                <br>Écrivez moi et on parlera objectifs, contraintes et trajectoire.
             </p>
             <button class="contact-button"
                     onclick="window.location.href='mailto:christian.drochon@tuta.io?subject=Contact%20-%20Projet%20logiciel'">
