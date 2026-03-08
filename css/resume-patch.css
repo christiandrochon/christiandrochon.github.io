@@ -39,10 +39,15 @@
 /* Boutons sous exp/projets */
 .exp-actions,
 .project-actions {
-    margin-top: 0.7rem;
     display: flex;
-    gap: 0.5rem;
     flex-wrap: wrap;
+    gap: 12px;
+}
+
+@media (max-width: 576px) {
+    .project-actions a {
+        width: 100%;
+    }
 }
 
 /* Tags "roadmap" un peu plus discrets */
