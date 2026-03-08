@@ -103,7 +103,8 @@
 <br>
             <p>
                 J’ai aussi un pied “produit” : interfaces simples quand c’est pertinent (SSR Thymeleaf),
-                ou front moderne sinon (Angular, React). Et une curiosité data/ML uniquement lorsqu’elle sert un besoin concret
+                ou front moderne sinon (Angular, React).
+                <br>Et une curiosité data/ML uniquement lorsqu’elle sert un besoin concret
                 (recherche, similarité, prédiction) — pas comme gadget.
             </p>
 <br>
@@ -176,7 +177,8 @@
             <h2 class="section-h">Spécialisations</h2>
             <p>
                 Repères techniques : aspects techniques et fonctionnels que je pratique assidument et qui structurent ma façon de concevoir des systèmes.
-                <br>Les liens pointent vers les pages officielles des modules (sans afficher les codes).
+                <br>Les liens pointent vers les pages officielles des modules.
+            <br><br><i>Cliquez sur les intitulés pour voir le contenu de chaque formation.</i>
             </p>
 
             <div class="spec-grid">
@@ -187,7 +189,7 @@
                         <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/methodologie-dingenierie-et-dintegration-des-systemes-2" target="_blank" rel="noreferrer noopener">Méthodologie d’ingénierie & intégration</a></li>
                         <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/framework/architectures-logicielles-java1" target="_blank" rel="noreferrer noopener">Architecture logicielle Java (1)</a></li>
                         <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/framework/architectures-logicielles-java2-1" target="_blank" rel="noreferrer noopener">Architecture logicielle Java (2)</a></li>
-                        <li><a href="" target="_blank" rel="noreferrer noopener">Architecture, Patterns et intégration : systèmes embarqués e,n Java et Android (nsy208</a></li>
+                        <li><a href="" target="_blank" rel="noreferrer noopener">Architecture, Patterns et intégration : systèmes embarqués en Java et Android</a></li>
                         <li><a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/langages-informatiques/bases-de-donnees-documentaires-et-distribuees-1" target="_blank" rel="noreferrer noopener">Données documentaires & distribuées</a></li>
                         <li><a href="https://www.cnam.fr/formation/logiciels-outils-applications-services/logiciel-systeme-gestion-bases-donnees/architectures-cloud-integration-des-applications-et-securite" target="_blank" rel="noreferrer noopener">Intégration systèmes client-serveur</a></li>
                     </ul>
@@ -237,10 +239,10 @@
                 <div class="spec-block">
                     <h3>Mathématiques fondamentales</h3>
                     <ul class="specialisations-list">
-                        <li><a href="" target="_blank" rel="noreferrer noopener">Mathématiques pures (mva913</a></li>
-                        <li><a href="" target="_blank" rel="noreferrer noopener">Techniques de la statistique</a></li>
-                        <li><a href="" target="_blank" rel="noreferrer noopener">Mathématiques pour l'informatique (mva003</a></li>
-                        <li><a href="" target="_blank" rel="noreferrer noopener">Outils mathématiques pour l'informatique (utc501</a></li>
+                        <li><a href="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/preformation-en-mathematiques-1487722.kjsp" target="_blank" rel="noreferrer noopener">Mathématiques pour l'ingénieur</a></li>
+                        <li><a href="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/techniques-de-la-statistique-1487931.kjsp" target="_blank" rel="noreferrer noopener">Techniques de la statistique</a></li>
+                        <li><a href="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/outils-mathematiques-pour-l-informatique-combinatoire-probabilites-ordre-calcul-booleen--1487712.kjsp" target="_blank" rel="noreferrer noopener">Mathématiques pour l'informatique</a></li>
+                        <li><a href="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/outils-mathematiques-pour-informatique-1488085.kjsp" target="_blank" rel="noreferrer noopener">Outils mathématiques pour l'informatique</a></li>
                     </ul>
                 </div>
             </div>
@@ -251,18 +253,47 @@
         <section id="experience" data-section>
             <h2 class="section-h">Parcours</h2>
             <div class="experience-list">
+
+                <!-- Vision / Multimedia -->
+                <article class="exp-item">
+                    <div class="exp-period">2025</div>
+                    <div>
+                        <div class="exp-role">Application de vision par ordinateur</div>
+                        <div class="exp-company">Recherche d’images similaires avec ResNet</div>
+
+                        <p class="exp-description">
+                            Application complète : upload d’une image requête, extraction de descripteurs visuels
+                            (classiques et deep features via ResNet) et retour des images les plus similaires,
+                            avec une interface de démonstration et une évaluation (précision / rappel).
+                        </p>
+
+                        <div class="exp-tags">
+                            <span class="tag">Angular</span>
+                            <span class="tag">SpringBoot / Java</span>
+                            <span class="tag">Maven</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Deep features (ResNet)</span>
+                            <span class="tag">Evaluations (precision/recall)</span>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- SMA -->
                 <article class="exp-item">
                     <div class="exp-period">2021 — aujourd’hui</div>
                     <div>
                         <div class="exp-role">
-                            Ingénieur backend Java · <span class="exp-company">Projet SMA (Suivi de Maintenance Automobile)</span>
+                            Ingénieur backend Java
                             <span class="badge text-bg-secondary ms-2">en cours</span>
                         </div>
+                        <div class="exp-company">Projet SMA (Suivi de Maintenance Automobile)</div>
+
                         <p class="exp-description">
-                            SMA est mon projet “terrain” : une application intranet de maintenance automobile utilisée comme support réaliste
-                            pour concevoir un socle propre (architecture, sécurité, traçabilité, exécution reproductible).
-                            <br>L’idée : montrer une trajectoire claire “socle → industrialisation → features avancées”, sans promesses floues.
+                            SMA est mon projet “terrain” : une application intranet de maintenance automobile utilisée
+                            comme support réaliste pour concevoir un socle propre (architecture, sécurité, traçabilité,
+                            exécution reproductible).
+                            <br>L’idée : montrer une trajectoire claire “socle → industrialisation → features avancées”,
+                            sans promesses floues.
                         </p>
 
                         <div class="exp-subtitle">Socle en place</div>
@@ -275,7 +306,7 @@
                             <span class="tag">Keycloak (OIDC)</span>
                             <span class="tag">Docker</span>
                             <span class="tag">Minikube / Kompose</span>
-                            <span class="tag">CQRS / Event Sourcing  (AxonIQ)</span>
+                            <span class="tag">CQRS / Event Sourcing (AxonIQ)</span>
                         </div>
 
                         <div class="exp-subtitle">Trajectoire</div>
@@ -287,67 +318,28 @@
                             <span class="tag">Découpage services (Kafka / RabbitMQ / microservices)</span>
                             <span class="tag">Brique prédiction (ML/Python)</span>
                         </div>
-
-<!--                        <div class="exp-actions">-->
-<!--                            <a class="btn btn-sm btn-outline-primary" href="/projects/sma.html">Détails projet</a>-->
-<!--                            <a class="btn btn-sm btn-outline-secondary"-->
-<!--                               href="https://github.com/christiandrochon/sma-eventsourcing-17"-->
-<!--                               target="_blank" rel="noreferrer noopener">GitHub</a>-->
-<!--                        </div>-->
                     </div>
                 </article>
 
-                <!-- Vision / Multimedia -->
-                <article class="exp-item">
-                    <div class="exp-period">2025</div>
-                    <div>
-                        <div class="exp-role">
-                            Application de vision par ordinateur · <span class="exp-company">Recherche d’images similaires avec ResNet</span>
-                        </div>
-                        <p class="exp-description">
-                            Application complète : upload d’une image requête, extraction de descripteurs visuels (classiques et deep features via ResNet)
-                            et retour des images les plus similaires, avec une interface de démonstration et une évaluation (précision / rappel).
-                        </p>
-                        <div class="exp-tags">
-                            <span class="tag">Angular</span>
-                            <span class="tag">SpringBoot / Java</span>
-                            <span class="tag">Maven</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">Deep features (ResNet)</span>
-                            <span class="tag">Evaluations (precision/recall)</span>
-                        </div>
-<!--                        <div class="exp-actions">-->
-<!--                            <a class="btn btn-sm btn-outline-primary" href="/projects/multimedia.html">Détails projet</a>-->
-<!--                            <a class="btn btn-sm btn-outline-secondary"-->
-<!--                               href="https://github.com/christiandrochon/multimedia"-->
-<!--                               target="_blank" rel="noreferrer noopener">GitHub</a>-->
-<!--                        </div>-->
-                    </div>
-                </article>
+
 
                 <!-- Site artisan -->
-                <article class="exp-item">
-                    <div class="exp-period">2022</div>
-                    <div>
-                        <div class="exp-role">
-                            Site vitrine · <span class="exp-company">Artisan (maçon/couvreur/piscine)</span>
-                        </div>
-                        <p class="exp-description">
-                            Site vitrine déployé sur GitHub Pages : perf, simplicité, maintenance, mise à jour continue.
-                        </p>
-                        <div class="exp-tags">
-                            <span class="tag">React</span>
-<!--                            <span class="tag">GitHub Pages</span>-->
-<!--                            <span class="tag">SEO</span>-->
-                        </div>
-                        <!--                        <div class="exp-actions">-->
-                        <!--                            <a class="btn btn-sm btn-outline-primary" href="/projects/artisan.html">Détails projet</a>-->
-                        <!--                            <a class="btn btn-sm btn-outline-secondary"-->
-                        <!--                               href="https://christiandrochon.github.io/"-->
-                        <!--                               target="_blank" rel="noreferrer noopener">Site</a>-->
-                        <!--                        </div>-->
-                    </div>
-                </article>
+<!--                <article class="exp-item">-->
+<!--                    <div class="exp-period">2023</div>-->
+<!--                    <div>-->
+<!--                        <div class="exp-role">-->
+<!--                            Site vitrine · <span class="exp-company">Artisan (maçon/couvreur/piscine)</span>-->
+<!--                        </div>-->
+<!--                        <p class="exp-description">-->
+<!--                            Site vitrine déployé sur GitHub Pages : perf, simplicité, maintenance, mise à jour continue.-->
+<!--                        </p>-->
+<!--                        <div class="exp-tags">-->
+<!--                            <span class="tag">React</span>-->
+<!--&lt;!&ndash;                            <span class="tag">GitHub Pages</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span class="tag">SEO</span>&ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </article>-->
 
 
                 <!-- Lab-Concepts -->
@@ -355,7 +347,7 @@
                     <div class="exp-period">2018 — 2019</div>
                     <div>
                         <div class="exp-role">
-                            Ingénieur d’études · <span class="exp-company">Lab-Concepts</span>
+                            Ingénieur d’études  <span class="exp-company">Lab-Concepts</span>
                         </div>
                         <p class="exp-description">
                             Maintenance et évolution d’un CRM métier (spectacles / musiques vivantes) : correctifs, évolutions, stabilisation et refactoring ciblé.
@@ -375,7 +367,7 @@
                     <div class="exp-period">2015 — 2017</div>
                     <div>
                         <div class="exp-role">
-                            Ingénieur logiciel R&D · <span class="exp-company">Naval Group</span>
+                            Ingénieur logiciel R&D  <span class="exp-company">Naval Group</span>
                         </div>
                         <p class="exp-description">
                             Conception d’un simulateur 3D pédagogique pour la formation de sous
@@ -392,7 +384,7 @@
                     <div class="exp-period">2015</div>
                     <div>
                         <div class="exp-role">
-                            Ingénieur logiciel · <span class="exp-company">Naval Group</span>
+                            Ingénieur logiciel  <span class="exp-company">Naval Group</span>
                         </div>
                         <p class="exp-description">
                             Mise en conformité des messages de la base de structures génériques
@@ -409,7 +401,7 @@
                     <div class="exp-period">2014</div>
                     <div>
                         <div class="exp-role">
-                            Ingénieur logiciel · <span class="exp-company">Naval Group</span>
+                            Ingénieur logiciel  <span class="exp-company">Naval Group</span>
                         </div>
                         <p class="exp-description">
                             Réalisation d’une application pour bâtiment de surveillance côtière.
@@ -430,7 +422,7 @@
             <h2 class="section-h">Contact</h2>
             <p class="contact-text">
                 Besoin d’une reprise de codebase, d’une refonte progressive, d’une clarification d’architecture ou d’un socle propre “from scratch” ?
-                <br>Écrivez moi et on parlera objectifs, contraintes et trajectoire.
+                <br>Écrivez-moi et on parlera objectifs, contraintes et trajectoire.
             </p>
             <button class="contact-button"
                     onclick="window.location.href='mailto:hello@christiandrochon.dev?subject=Contact%20-%20Projet%20logiciel'">
