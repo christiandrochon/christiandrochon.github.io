@@ -103,9 +103,9 @@
 }
 
 /*pour mettre le bouton "encours" de la page projects/sma en face du texte qui le precede*/
-h1 .badge {
+.badge-title-status {
     position: relative;
-    top: -6px;
+    top: -5px;
 }
 
 /* Petites notes */
