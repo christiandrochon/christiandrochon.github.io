@@ -19,10 +19,10 @@
 <body>
 <main class="container py-4 project-page">
 
-<a href="../index.html#card-multimedia"
-   class="btn btn-sm btn-outline-secondary mb-3">
-    ← Retour
-</a>
+    <a href="../index.html#card-multimedia"
+       class="btn btn-sm btn-outline-secondary mb-3">
+        ← Retour
+    </a>
 
     <h1 class="mb-1">Vision par ordinateur</h1>
     <p class="footer-license mb-3">
@@ -38,22 +38,27 @@
         </a>
     </div>
 
-<h2>Problème & approche</h2>
-<p>
-    L’utilisateur soumet une image requête. Le système extrait des descripteurs et retourne les images les plus similaires
-    selon une métrique. L’approche combine descripteurs “classiques” (couleur, niveaux de gris, forme, texte),
-    des descripteurs profonds (embeddings via un CNN type ResNet), des classes Vérité/Terrain, avec une évaluation quantitative (précision / rappel).
-    <br>Les descripteurs de toutes les images de la base de données des images sont générés en asynchrone afin de ne pas bloquer l'utilisateur dans ses recherches.
-</p>
+    <h2>Problème & approche</h2>
+    <p>
+        L’utilisateur soumet une image requête. Le système extrait des descripteurs et retourne les images les plus
+        similaires
+        selon une métrique. L’approche combine descripteurs “classiques” (couleur, niveaux de gris, forme, texte),
+        des descripteurs profonds (embeddings via un CNN type ResNet), des classes Vérité/Terrain, avec une évaluation
+        quantitative (précision / rappel).
+        <br>Les descripteurs de toutes les images de la base de données des images sont générés en asynchrone afin de ne
+        pas bloquer l'utilisateur dans ses recherches.
+    </p>
 
-<h2>Fonctionnalités clés</h2>
-<ul>
-    <li>Upload d’une image requête via l’interface web</li>
-    <li>Modes de recherche : couleur / forme / texte / deep (ResNet) / classes Vérité-Terrain / combinaison pondérée</li>
-    <li>Résultats classés par score de similarité</li>
-    <li>Évaluation : courbes précision/rappel</li>
-    <li>Architecture modulaire pour ajouter facilement de nouveaux descripteurs</li>
-</ul>
+    <h2>Fonctionnalités clés</h2>
+    <ul>
+        <li>Upload d’une image requête via l’interface web</li>
+        <li>Modes de recherche : couleur / forme / texte / deep (ResNet) / classes Vérité-Terrain / combinaison
+            pondérée
+        </li>
+        <li>Résultats classés par score de similarité</li>
+        <li>Évaluation : courbes précision/rappel</li>
+        <li>Architecture modulaire pour ajouter facilement de nouveaux descripteurs</li>
+    </ul>
 
     <h2>Architecture</h2>
     <pre><code>.
@@ -80,22 +85,21 @@
     </ul>
 
 
-
-<h2>API (exemples)</h2>
-<p><strong>Recherche par image</strong> :</p>
-<pre><code>POST /api/search  (multipart/form-data)
+    <h2>API (exemples)</h2>
+    <p><strong>Recherche par image</strong> :</p>
+    <pre><code>POST /api/search  (multipart/form-data)
 - file : image requête
 - topK : nombre de résultats pertinents et affichage des 8 plus proches voisins
 - mode : color | shape | text | ground-truth | deep | combined (optionnel)</code></pre>
 
-<p><strong>Exemple curl</strong> :</p>
-<pre><code>curl -X POST http://localhost:8087/api/search \
+    <p><strong>Exemple curl</strong> :</p>
+    <pre><code>curl -X POST http://localhost:8087/api/search \
   -F file=@image.jpg \
   -F topK=10 \
   -F mode=combined</code></pre>
 
-<hr class="my-4">
-<p class="footer-licensed">Licence : MIT (voir repository).</p>
+    <hr class="my-4">
+    <p class="footer-licensed">Licence : MIT (voir repository).</p>
 </main>
 </body>
 </html>

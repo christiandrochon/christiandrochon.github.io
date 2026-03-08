@@ -3,6 +3,7 @@
 This repository contains the source code for my personal resume website.
 
 The site is hosted using **GitHub Pages** and is available at:
+
 - **https://www.christiandrochon.dev**
 - **https://christiandrochon.github.io**
 
@@ -44,29 +45,33 @@ No backend or server-side framework is used.
 └── LICENSE                        # MIT license
 ```
 
-
 ## Local Development
 
 To run the site locally, you can use a simple local server:
+
 ```
 python -m http.server 5137
 ```
 
 Then open:
+
 ```
 http://localhost:5137
 ```
 
-Because the site is served from the root on GitHub Pages, assets can be referenced using either **relative paths** or **root-relative paths**.
+Because the site is served from the root on GitHub Pages, assets can be referenced using either **relative paths** or *
+*root-relative paths**.
 
 ## Deployment
 
 The website is automatically deployed via **GitHub Pages**.
 
 Repository:
+
 ```
 christiandrochon/christiandrochon.github.io
 ```
+
 Deployment configuration:
 
 - **Branch: main**
@@ -74,6 +79,7 @@ Deployment configuration:
 - **Folder: / (root)**
 
 The repository also uses a custom domain configured through the CNAME file:
+
 ```
 https://www.christiandrochon.dev
 ```
@@ -85,8 +91,7 @@ Any push to the `main` branch automatically updates the website.
 For professional inquiries, you can reach me at:
 
 - Email : [hello@christiandrochon.dev](mailto:hello@christiandrochon.dev?subject=Contact%20from%20GitHub)
-- Website: https://www.christiandrochon.dev 
-
+- Website: https://www.christiandrochon.dev
 
 ## License
 
