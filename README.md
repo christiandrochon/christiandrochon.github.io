@@ -3,8 +3,8 @@
 This repository contains the source code for my personal resume website.
 
 The site is hosted using **GitHub Pages** and is available at:
-
-**https://christiandrochon.github.io**
+- **https://www.christiandrochon.dev**
+- **https://christiandrochon.github.io**
 
 ## Purpose
 
@@ -20,12 +20,12 @@ The goal is to provide a simple and accessible overview of my work as a **softwa
 
 ## Technologies
 
-The website is a **static site** built with standard web technologies:
+The website is a **static website** built with:
 
 * HTML5
 * CSS3
 * JavaScript
-* Bootstrap (for layout and responsive design)
+* Bootstrap (responsive layout and reusable UI components)
 
 No backend or server-side framework is used.
 
@@ -33,36 +33,23 @@ No backend or server-side framework is used.
 
 ```
 .
-├── index.html
-├── css/
-├── js/
-├── img/
-├── projects/
-├── Christian_Drochon_CV_2026.pdf
-└── package.json
+├── index.html                     # Main entry point of the website
+├── css/                           # Stylesheets used across the site
+├── js/                            # JavaScript files for interactions and UI behavior
+├── img/                           # Images, icons, and visual assets
+├── projects/                      # Project pages linked from the cards on the main page
+├── Christian_Drochon_CV_2026.pdf  # Downloadable resume
+├── package.json                   # Project metadata and Surge dependency for local testing/deployment checks
+├── CNAME                          # Custom domain configuration for GitHub Pages
+└── LICENSE                        # MIT license
 ```
 
-Main elements:
-
-* `index.html` — entry point of the website
-* `css/` — stylesheets
-* `js/` — JavaScript scripts
-* `img/` — images and icons
-* `projects/` — project pages
-* `Christian_Drochon_CV_2026.pdf` — downloadable CV
 
 ## Local Development
 
-To run the site locally, simply open `index.html` in a browser.
-
-Example:
+To run the site locally, you can use a simple local server:
 ```
-firefox index.html
-```
-
-Alternatively you can use a simple local server:
-```
-python3 -m http.server 5137
+python -m http.server 5137
 ```
 
 Then open:
@@ -70,7 +57,7 @@ Then open:
 http://localhost:5137
 ```
 
-Because the site is served from the root on GitHub Pages, all assets must use **relative paths**.
+Because the site is served from the root on GitHub Pages, assets can be referenced using either **relative paths** or **root-relative paths**.
 
 ## Deployment
 
@@ -80,13 +67,26 @@ Repository:
 ```
 christiandrochon/christiandrochon.github.io
 ```
-
 Deployment configuration:
 
-* Branch: `main`
-* Folder: `/ (root)`
+- **Branch: main**
 
-Any push to `main` updates the live site.
+- **Folder: / (root)**
+
+The repository also uses a custom domain configured through the CNAME file:
+```
+https://www.christiandrochon.dev
+```
+
+Any push to the `main` branch automatically updates the website.
+
+## Contact
+
+For professional inquiries, you can reach me at:
+
+- Email : [hello@christiandrochon.dev](mailto:hello@christiandrochon.dev?subject=Contact%20from%20GitHub)
+- Website: https://www.christiandrochon.dev 
+
 
 ## License
 
