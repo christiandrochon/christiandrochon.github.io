@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8"/>
-    <title>Site vitrine artisan (React)</title>
+    <title>Site vitrine artisan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="icon" type="image/svg+xml" href="/img/favicon_CD_rond.svg">
@@ -27,45 +27,81 @@
 
     <h1 class="mb-2">Site vitrine — artisan</h1>
 
-    <div class="project-actions mb-3">
+    <div class="project-actions mb-4">
         <a href="https://christiandrochon.github.io/guillemot"
            target="_blank"
            rel="noopener noreferrer"
            class="btn btn-outline-primary">
-            <i class="fas fa-globe"></i> Voir le site internet
+            <i class="fas fa-globe" aria-hidden="true"></i> Voir le site internet
         </a>
 
         <a href="https://github.com/christiandrochon/guillemot"
            target="_blank"
            rel="noopener noreferrer"
            class="btn btn-outline-secondary">
-            <i class="fab fa-github"></i> Repository GitHub
+            <i class="fab fa-github" aria-hidden="true"></i> Repository GitHub
         </a>
     </div>
 
-<h2>Objectif</h2>
-<p>
-    Site vitrine simple pour un artisan (maçonnerie, couverture, piscines, taille de pierre),
-    conçu pour être rapide à charger, facile à mettre à jour et simple à déployer.
-</p>
+    <h2>Contexte</h2>
+    <p>
+        Projet de site vitrine destiné à présenter l’activité d’un artisan du bâtiment
+        (maçonnerie, couverture, piscines, taille de pierre), avec une approche volontairement simple :
+        mettre en avant les prestations, rassurer le visiteur et permettre une consultation rapide
+        sur mobile comme sur desktop.
+    </p>
 
-<h2>Lancer en local</h2>
-<pre><code>npm install
+    <h2>Objectif</h2>
+    <p>
+        Concevoir un site léger, rapide à charger, facile à maintenir et simple à déployer,
+        sans complexité technique inutile.
+        <br>L’idée était de retenir une solution proportionnée
+        à un besoin concret de visibilité en ligne.
+    </p>
+
+    <h2>Choix techniques</h2>
+    <p>
+        Le projet repose sur une application React compilée en site statique
+        et déployée sur GitHub Pages.
+        <br>Ce choix permet un coût d’hébergement très faible, une maintenance réduite et une mise en ligne simple.
+        L’accent a été mis sur la lisibilité, la sobriété de l’interface et la facilité d’évolution.
+    </p>
+
+    <h2>Technologies</h2>
+    <div class="exp-tags">
+        <span class="tag">React</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">HTML / CSS</span>
+        <span class="tag">Node / npm</span>
+        <span class="tag">GitHub Pages</span>
+    </div>
+
+    <h2>Ce que ce projet montre</h2>
+    <ul>
+        <li>capacité à concevoir une solution simple et adaptée au besoin ;</li>
+        <li>attention portée à la clarté de l’interface et à l’accessibilité ;</li>
+        <li>mise en œuvre d’un déploiement statique léger et maintenable ;</li>
+        <li>volonté de privilégier l’efficacité plutôt qu’une sur-ingénierie inutile.</li>
+    </ul>
+
+    <h2>Lancer en local</h2>
+    <pre><code>npm install
 npm start</code></pre>
-<p>Accès : <code>http://localhost:3000/guillemot</code></p>
+    <p>Accès : <code>http://localhost:3000/guillemot</code></p>
 
-<h2>Déploiement</h2>
+    <h2>Déploiement</h2>
     <ul>
         <li><code>npm run build</code></li>
         <li><code>npm run deploy</code></li>
     </ul>
 
-<p>
-    Le build est publié sur GitHub Pages. Approche adaptée à des sites vitrines : coûts faibles, maintenance simple.
-</p>
+    <p>
+        Le build est publié sur GitHub Pages, ce qui convient bien à un site vitrine :
+        coûts faibles, exploitation simple et maintenance limitée.
+    </p>
 
-<hr class="my-4">
-<p class="footer-license">Licence : MIT (voir repository).</p>
+    <hr class="my-4">
+    <p class="footer-license">Licence : MIT (voir repository).</p>
 </main>
 </body>
 </html>

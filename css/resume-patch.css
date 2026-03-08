@@ -41,11 +41,11 @@
 .project-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 }
 
 @media (max-width: 576px) {
-    .project-actions a {
+    .project-actions .btn {
         width: 100%;
     }
 }
