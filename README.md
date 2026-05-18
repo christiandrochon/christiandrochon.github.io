@@ -1,98 +1,123 @@
-# Christian Drochon — Personal Resume Website
+# Christian Drochon — Portfolio / Resume Website
 
-This repository contains the source code for my personal resume website.
+Ce dépôt contient le code source de mon site personnel et portfolio technique.
 
-The site is hosted using **GitHub Pages** and is available at:
+Le site est déployé via GitHub Pages et accessible aux adresses suivantes :
 
-- **https://www.christiandrochon.dev**
-- **https://christiandrochon.github.io**
+- https://www.christiandrochon.dev
+- https://christiandrochon.github.io
 
-## Purpose
+---
 
-This website presents:
+# Objectif
 
-* My professional profile
-* Technical skills
-* Selected projects
-* Downloadable CV
-* Contact information
+Ce site présente :
 
-The goal is to provide a simple and accessible overview of my work as a **software developer and technical architect**.
+- mon profil professionnel ;
+- mes compétences techniques ;
+- plusieurs projets personnels et techniques ;
+- mon CV téléchargeable ;
+- mes informations de contact.
 
-## Technologies
+L’objectif est de fournir une vue claire, accessible et structurée de mon travail autour du développement logiciel, de l’architecture applicative, de la sécurité et de la conception backend.
 
-The website is a **static website** built with:
+---
 
-* HTML5
-* CSS3
-* JavaScript
-* Bootstrap (responsive layout and reusable UI components)
+# Technologies utilisées
 
-No backend or server-side framework is used.
+Le site est une application statique construite avec :
 
-## Project Structure
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap 5
 
-```
+Aucun framework backend ni moteur de rendu serveur n’est utilisé pour ce portfolio.
+
+---
+
+# Fonctionnalités
+
+- site responsive ;
+- navigation simple et légère ;
+- pages projets dédiées ;
+- mise en avant des architectures techniques ;
+- intégration GitHub ;
+- téléchargement du CV ;
+- hébergement GitHub Pages ;
+- domaine personnalisé via CNAME.
+
+---
+
+# Structure du projet
+
+```text
 .
-├── index.html                     # Main entry point of the website
-├── css/                           # Stylesheets used across the site
-├── js/                            # JavaScript files for interactions and UI behavior
-├── img/                           # Images, icons, and visual assets
-├── projects/                      # Project pages linked from the cards on the main page
-├── Christian_Drochon_CV_2026.pdf  # Downloadable resume
-├── package.json                   # Project metadata and Surge dependency for local testing/deployment checks
-├── CNAME                          # Custom domain configuration for GitHub Pages
-└── LICENSE                        # MIT license
+├── index.html                     # Point d’entrée principal du site
+├── css/                           # Feuilles de style
+├── js/                            # Scripts JavaScript
+├── img/                           # Images, logos et assets visuels
+├── projects/                      # Pages projets individuelles
+├── Christian_Drochon_CV_2026.pdf  # CV téléchargeable
+├── package.json                   # Métadonnées projet
+├── CNAME                          # Domaine personnalisé GitHub Pages
+├── README.md                      # Documentation du dépôt
+└── LICENSE                        # Licence MIT
 ```
 
-## Local Development
+## Développement local
 
-To run the site locally, you can use a simple local server:
+Lancement rapide avec un serveur HTTP local :
 
 ```
 python -m http.server 5137
 ```
 
-Then open:
+Puis ouvrir :
 
 ```
 http://localhost:5137
 ```
 
-Because the site is served from the root on GitHub Pages, assets can be referenced using either **relative paths** or *
-*root-relative paths**.
+Le site étant servi depuis la racine sur GitHub Pages, les assets peuvent être référencés avec des chemins *relatifs* ou *root-relative*.
 
-## Deployment
+## Déploiement
 
-The website is automatically deployed via **GitHub Pages**.
+Le site est automatiquement déployé via **GitHub Pages**.
 
-Repository:
+### Dépôt privé : 
 
-```
-christiandrochon/christiandrochon.github.io
-```
+Le site est déployé via GitHub Pages avec domaine personnalisé.
 
-Deployment configuration:
+Le code source du portfolio n’est pas public.
+
+### Configuration de déploiement Github Pages:
 
 - **Branch: main**
 
 - **Folder: / (root)**
 
-The repository also uses a custom domain configured through the CNAME file:
+Le dépôt utilise également un domaine personnalisé configuré via le fichier CNAME:
 
 ```
 https://www.christiandrochon.dev
 ```
 
-Any push to the `main` branch automatically updates the website.
+Chaque push sur la branche `main` déclenche automatiquement une mise à jour du site.
+
 
 ## Contact
 
-For professional inquiries, you can reach me at:
+Pour toute prise de contact professionnelle :
 
 - Email : [hello@christiandrochon.dev](mailto:hello@christiandrochon.dev?subject=Contact%20from%20GitHub)
 - Website: https://www.christiandrochon.dev
+- GitHub : https://github.com/christiandrochon
 
-## License
+<!--
+## Licence
 
-This project is released under the **MIT License**.
+Ce projet est distribué sous **MIT License**.
+
+Voir le fichier [LICENSE](LICENSE).
+-->
