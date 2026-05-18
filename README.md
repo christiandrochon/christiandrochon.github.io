@@ -89,6 +89,10 @@ Le site est automatiquement déployé via **GitHub Pages**.
 
 Le site est déployé via GitHub Pages avec domaine personnalisé.
 
+```text
+christiandrochon/christiandrochon.github.io
+```
+
 Le code source du portfolio n’est pas public.
 
 ### Configuration de déploiement Github Pages:
