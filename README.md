@@ -118,10 +118,10 @@ Pour toute prise de contact professionnelle :
 - Website: https://www.christiandrochon.dev
 - GitHub : https://github.com/christiandrochon
 
-<!--
+
 ## Licence
 
 Ce projet est distribué sous **MIT License**.
 
 Voir le fichier [LICENSE](LICENSE).
--->
+
