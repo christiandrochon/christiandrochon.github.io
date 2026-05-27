@@ -43,200 +43,133 @@
 
     <h2>Objectif</h2>
     <p>
-        SMA est une application intranet de maintenance automobile construite comme un projet terrain.
-        L’objectif est de proposer un socle technique clair, traçable, sécurisé et évolutif,
-        capable d’accueillir des règles métier sans dérive de dette technique.
+        SMA est une application intranet de maintenance automobile développée comme un projet terrain.
+        L’objectif n’est pas seulement de gérer des données métier, mais de construire un socle applicatif
+        traçable, sécurisé, maintenable et auditable.
     </p>
 
     <p>
-        Le projet met aujourd’hui l’accent sur la séparation des responsabilités, la traçabilité métier,
-        la sécurité des accès, l’auditabilité et la conformité des traitements de données.
+        Le projet met l’accent sur l’architecture backend Java/Spring, la séparation des responsabilités,
+        la sécurité OAuth2/OIDC, la conformité RGPD, les logs structurés et le versionnement fiable
+        des évolutions SQL.
+    </p>
+
+    <p>
+        SMA sert aussi de support pour travailler des problématiques proches d’un système réel :
+        contrôle d’accès, audit métier, historique des actions, exploitation locale reproductible
+        et qualité logicielle continue.
     </p>
 
     <br>
-    <h2>Exécution locale</h2>
-    <ul>
-        <li><strong>Mode sécurisé :</strong> <code>./scripts/dev.sh secure</code></li>
-        <li><strong>Mode rapide :</strong> <code>./scripts/dev.sh fast</code></li>
-        <li><strong>Arrêter :</strong> <code>./scripts/dev.sh down</code></li>
-        <li><strong>Ouvrir les services :</strong> <code>./scripts/dev.sh open</code></li>
-    </ul>
 
-    <h3>Services disponibles en local</h3>
+    <h2>Ce que montre le projet</h2>
     <ul>
-        <li>Frontend Thymeleaf : <code>http://localhost:8091</code></li>
-        <li>Backend API : <code>http://localhost:8092</code></li>
-        <li>Healthcheck : <code>http://localhost:8092/actuator/health</code></li>
-        <li>Axon Server : <code>http://localhost:8024</code></li>
-        <li>Keycloak : <code>http://localhost:8080</code></li>
-        <li>pgAdmin : <code>http://localhost:6002</code></li>
-        <li>PostgreSQL métier : <code>localhost:5432</code></li>
-        <li>PostgreSQL Keycloak : <code>localhost:5433</code></li>
+        <li>Conception d’une architecture CQRS / Event Sourcing avec Axon.</li>
+        <li>Séparation claire entre frontend serveur, backend API, projections et audit.</li>
+        <li>Sécurité OAuth2 / OpenID Connect avec Keycloak.</li>
+        <li>Gestion des rôles, des accès et de la propriété des ressources.</li>
+        <li>Implémentation d’une politique de logs métier, technique, sécurité et audit.</li>
+        <li>Prise en compte RGPD : traçabilité, preuves opérationnelles, contrôles et gouvernance.</li>
+        <li>Versionnement des scripts SQL avec Flyway.</li>
+        <li>Contrôles qualité et analyse statique avec SonarQube.</li>
+        <li>Environnement local reproductible avec Docker Compose.</li>
     </ul>
-
-    <h3>Profils et modes</h3>
-    <ul>
-        <li><code>secure</code> : mode complet avec Keycloak et sécurité activée.</li>
-        <li><code>fast</code> : mode rapide pour debug court, sans login applicatif.</li>
-        <li><code>local</code> : exécution locale hors conteneur applicatif.</li>
-        <li><code>prod</code> : exécution via Docker Compose.</li>
-    </ul>
-
     <br>
+
     <h2>Stack actuelle</h2>
     <ul>
         <li><strong>Langage :</strong> Java 17</li>
-        <li><strong>Backend :</strong> Spring Boot, Spring WebFlux, Axon Framework, JPA</li>
+        <li><strong>Backend :</strong> Spring Boot, Spring WebFlux, Axon Framework, JPA / Hibernate</li>
         <li><strong>Frontend :</strong> Spring MVC, Thymeleaf, Thymeleaf Layout Dialect</li>
-        <li><strong>Build :</strong> Maven multi-modules</li>
-        <li><strong>Système de base de données relationnel :</strong> PostgreSQL</li>
+        <li><strong>Architecture :</strong> CQRS, Event Sourcing, projections PostgreSQL</li>
+        <li><strong>Base de données :</strong> PostgreSQL</li>
         <li><strong>Migrations SQL :</strong> Flyway</li>
-        <li><strong>Sécurité :</strong> OAuth2 / OpenID Connect via Keycloak</li>
-        <li><strong>Architecture :</strong> CQRS + Event Sourcing avec Axon Server</li>
-        <li><strong>Audit :</strong> base dédiée, grille de conformité et preuves opérationnelles</li>
-        <li><strong>Exécution locale :</strong> Docker et scripts de lancement</li>
+        <li><strong>Sécurité :</strong> OAuth2 / OpenID Connect, Keycloak, JWT, RBAC</li>
+        <li><strong>Audit :</strong> base dédiée, événements d’audit, contrôles RGPD, preuves opérationnelles</li>
+        <li><strong>Qualité :</strong> SonarQube, conventions de logs, séparation des responsabilités</li>
+        <li><strong>Exécution locale :</strong> Docker Compose, scripts de lancement</li>
     </ul>
 
     <br>
     <h2>Architecture</h2>
+
     <p>
         Le projet applique les principes <strong>CQRS</strong> et <strong>Event Sourcing</strong>.
-        Les commandes, les événements et les projections sont séparés afin de conserver une trace claire
-        des changements métier et de faciliter l’évolution du modèle.
+        Les commandes, événements, projections et contrôles d’audit sont séparés pour garder une trace claire
+        des changements métier.
     </p>
 
-    <p>
-        L’application est désormais organisée en modules Maven séparés : un module backend pour le cœur métier,
-        les commandes, les queries, les événements et les projections ; et un module frontend pour l’interface
-        Thymeleaf.
-    </p>
+    <div class="architecture-diagram">
+        <svg viewBox="0 0 1200 720" role="img" aria-label="Schéma d'architecture SMA">
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L9,3 z"></path>
+                </marker>
+            </defs>
 
-    <p>
-        Le choix de <strong>Thymeleaf</strong> permet de conserver une interface serveur simple,
-        fortement intégrée avec l’écosystème Spring, sans introduire la complexité d’une SPA lorsque
-        ce n’est pas nécessaire.
-    </p>
+            <rect x="480" y="20" width="240" height="60" rx="12"></rect>
+            <text x="600" y="55" text-anchor="middle">Utilisateur</text>
 
-    <p>
-        Les évolutions du schéma PostgreSQL sont versionnées avec <strong>Flyway</strong>,
-        afin de garder des migrations SQL reproductibles entre les environnements local,
-        Docker et production.
-    </p>
+            <rect x="360" y="130" width="480" height="120" rx="14"></rect>
+            <text x="600" y="162" text-anchor="middle" class="box-title">Frontend</text>
+            <text x="600" y="192" text-anchor="middle">Spring MVC · Thymeleaf</text>
+            <text x="600" y="222" text-anchor="middle">Pages métier · appels REST · logs UI</text>
 
-    <pre><code>+-----------------------------------------------------------------------------+
-|                               UTILISATEUR                                   |
-+-----------------------------------------------------------------------------+
-                                      |
-                                      | HTTP :8091
-                                      v
-+-----------------------------------------------------------------------------+
-| FRONTEND                                                                   |
-| Spring MVC + Thymeleaf                                                     |
-|                                                                            |
-| - rendu serveur                                                            |
-| - pages métier                                                             |
-| - appels REST vers backend                                                 |
-| - logs UI / accès / sécurité                                               |
-+-----------------------------------------------------------------------------+
-                                      |
-                                      | REST :8092
-                                      v
-+-----------------------------------------------------------------------------+
-| BACKEND                                                                    |
-| Spring WebFlux + Axon + JPA                                                |
-|                                                                            |
-| - API métier                                                               |
-| - commandes CQRS                                                           |
-| - queries                                                                  |
-| - handlers Axon                                                            |
-| - projections PostgreSQL                                                   |
-| - RBAC + ownership                                                         |
-| - logs métier / technique / sécurité                                       |
-| - audit RGPD / gouvernance data                                            |
-+-----------------------------------------------------------------------------+
-           |                               |                            |
-           |                               |                            |
-           v                               v                            v
+            <rect x="360" y="310" width="480" height="155" rx="14"></rect>
+            <text x="600" y="342" text-anchor="middle" class="box-title">Backend</text>
+            <text x="600" y="372" text-anchor="middle">Spring Boot · WebFlux · Axon · JPA</text>
+            <text x="600" y="402" text-anchor="middle">API métier · commandes · queries</text>
+            <text x="600" y="432" text-anchor="middle">RBAC · ownership · logs · audit RGPD</text>
 
-+--------------------------+  +--------------------------+  +--------------------------+
-| AXON SERVER              |  | POSTGRESQL               |  | BASE AUDIT               |
-| :8024 / :8124            |  | :5432                    |  | PostgreSQL               |
-|                          |  |                          |  |                          |
-| - command bus            |  | - read models            |  | - audit_events           |
-| - query bus              |  | - projections            |  | - audit_expectations     |
-| - event bus              |  | - données métier         |  | - expectation_checks     |
-| - event store            |  | - migrations Flyway      |  | - expectation_latest     |
-+--------------------------+  +--------------------------+  +--------------------------+
-                                      |
-                                      v
-                           +----------------------+
-                           | pgAdmin :6002        |
-                           +----------------------+
+            <rect x="50" y="540" width="280" height="115" rx="14"></rect>
+            <text x="190" y="572" text-anchor="middle" class="box-title">Axon Server</text>
+            <text x="190" y="602" text-anchor="middle">Command bus · Query bus</text>
+            <text x="190" y="632" text-anchor="middle">Event bus · Event store</text>
 
-+-----------------------------------------------------------------------------+
-| SECURITE / IAM                                                             |
-+-----------------------------------------------------------------------------+
+            <rect x="460" y="540" width="280" height="115" rx="14"></rect>
+            <text x="600" y="572" text-anchor="middle" class="box-title">PostgreSQL métier</text>
+            <text x="600" y="602" text-anchor="middle">Read models · projections</text>
+            <text x="600" y="632" text-anchor="middle">Données métier · Flyway</text>
 
-+--------------------------+             +-------------------------------+
-| KEYCLOAK :8080           | <---------> | POSTGRES KEYCLOAK :5433       |
-|                          |             |                               |
-| - realm SMA              |             | - persistance realm           |
-| - rôles ADMIN            |             | - utilisateurs                |
-| - rôles USER             |             | - clients Keycloak            |
-| - rôles AUDITOR          |             |                               |
-+--------------------------+             +-------------------------------+</code></pre>
+            <rect x="870" y="540" width="280" height="115" rx="14"></rect>
+            <text x="1010" y="572" text-anchor="middle" class="box-title">Base audit</text>
+            <text x="1010" y="602" text-anchor="middle">audit_events</text>
+            <text x="1010" y="632" text-anchor="middle">contrôles · preuves RGPD</text>
 
+            <rect x="880" y="145" width="290" height="140" rx="14"></rect>
+            <text x="1025" y="177" text-anchor="middle" class="box-title">Keycloak</text>
+            <text x="1025" y="207" text-anchor="middle">OAuth2 · OpenID Connect</text>
+            <text x="1025" y="237" text-anchor="middle">JWT · rôles</text>
+            <text x="1025" y="263" text-anchor="middle">ADMIN · USER · AUDITOR</text>
+
+            <line x1="600" y1="80" x2="600" y2="130" marker-end="url(#arrow)"></line>
+            <line x1="600" y1="250" x2="600" y2="310" marker-end="url(#arrow)"></line>
+
+            <line x1="500" y1="465" x2="230" y2="540" marker-end="url(#arrow)"></line>
+            <line x1="600" y1="465" x2="600" y2="540" marker-end="url(#arrow)"></line>
+            <line x1="700" y1="465" x2="970" y2="540" marker-end="url(#arrow)"></line>
+
+            <line x1="840" y1="185" x2="880" y2="185" marker-end="url(#arrow)"></line>
+            <line x1="880" y1="245" x2="840" y2="245" marker-end="url(#arrow)"></line>
+
+            <text x="625" y="112" text-anchor="middle" class="arrow-label">HTTP</text>
+            <text x="625" y="292" text-anchor="middle" class="arrow-label">REST</text>
+            <text x="860" y="175" text-anchor="middle" class="arrow-label">login</text>
+            <text x="860" y="265" text-anchor="middle" class="arrow-label">token</text>
+        </svg>
+    </div>
     <br>
-    <h2>Structure du dépôt</h2>
 
-    <pre><code>sma-eventsourcing-17/
-│
-├── backend/                        # cœur métier CQRS / Axon
-│   ├── API REST sécurisée
-│   ├── OAuth2 / OpenID Connect
-│   ├── validation JWT Keycloak
-│   ├── RBAC + ownership filtering
-│   ├── commandes / queries
-│   ├── aggregates / events
-│   ├── projections PostgreSQL
-│   ├── logs métier / sécurité
-│   └── audit RGPD
-│
-├── frontend/                       # interface Spring MVC + Thymeleaf
-│   ├── pages serveur
-│   ├── formulaires métier
-│   ├── login via Keycloak
-│   ├── sessions OAuth2 / OIDC
-│   ├── accès protégés par rôle
-│   └── appels REST vers backend
-│
-├── scripts/                        # exploitation locale
-│   ├── démarrage sécurisé
-│   ├── génération tokens Keycloak
-│   ├── vérifications audit
-│   └── administration locale
-│
-├── docs/                           # documentation technique
-│   ├── architecture
-│   ├── logging strategy
-│   ├── sécurité OAuth2 / OIDC
-│   ├── audit / RGPD
-│   └── changelogs
-│
-├── docker/                         # infrastructure conteneurs
-│   ├── configuration Keycloak
-│   ├── realm SMA
-│   ├── clients OAuth2 / OIDC
-│   ├── schémas PostgreSQL
-│   └── initialisation services
-│
-├── komp-smb/                       # Kubernetes / Kompose
-│
-├── compose.yaml                    # orchestration locale
-├── pom.xml                         # agrégateur Maven
-└── README.md                       # documentation principale</code></pre>
+    <h2>Organisation du projet</h2>
 
+    <ul>
+        <li><strong>backend/</strong> : cœur métier CQRS, sécurité, projections, audit.</li>
+        <li><strong>frontend/</strong> : interface Spring MVC / Thymeleaf.</li>
+        <li><strong>docker/</strong> : environnement local reproductible.</li>
+        <li><strong>docs/</strong> : architecture, sécurité, audit et stratégie de logs.</li>
+    </ul>
     <br>
+
     <h2>Sécurité : RBAC et propriété des ressources</h2>
     <p>
         Le projet intègre maintenant un contrôle d’accès basé sur les rôles et sur la propriété
@@ -303,16 +236,46 @@
 
 
     <br>
+
     <h2>Roadmap</h2>
     <ul>
-        <li>Extension progressive des règles métier selon les besoins fonctionnels réels.</li>
-        <li>Améliorer la recherche avancée avec index PostgreSQL, puis ElasticSearch si nécessaire.</li>
-        <li>Découper certains services uniquement si le périmètre métier le justifie.</li>
-        <li>Ajouter des cas d’usage ML réels : maintenance préventive, détection d’anomalies.</li>
-        <li>Étudier une application mobile de suivi véhicule et de diagnostic visuel.</li>
-        <li>Explorer la reconnaissance visuelle des symboles du tableau de bord.</li>
-        <li>Ajout de tableaux de bord et d’outils de visualisation pour les données d’audit.</li>
+        <li>Étendre progressivement les règles métier liées à la maintenance automobile.</li>
+        <li>Renforcer les tests automatisés sur les flux critiques : sécurité, audit, commandes et projections.</li>
+        <li>Améliorer les recherches métier avec des index PostgreSQL et des projections adaptées.</li>
+        <li>Stabiliser la chaîne qualité avec SonarQube et des contrôles CI plus réguliers.</li>
+        <li>Ajouter des tableaux de bord pour visualiser les événements métier, les logs et les contrôles d’audit.</li>
+        <li>Explorer des cas d’usage ML uniquement s’ils servent un besoin métier réel : maintenance préventive ou détection d’anomalies.</li>
     </ul>
+    <br>
+
+    <h2>Exécution locale</h2>
+    <ul>
+        <li><strong>Mode sécurisé :</strong> <code>./scripts/dev.sh secure</code></li>
+        <li><strong>Mode rapide :</strong> <code>./scripts/dev.sh fast</code></li>
+        <li><strong>Arrêter :</strong> <code>./scripts/dev.sh down</code></li>
+        <li><strong>Ouvrir les services :</strong> <code>./scripts/dev.sh open</code></li>
+    </ul>
+
+    <h3>Services disponibles en local</h3>
+    <ul>
+        <li>Frontend Thymeleaf : <code>http://localhost:8091</code></li>
+        <li>Backend API : <code>http://localhost:8092</code></li>
+<!--        <li>Healthcheck : <code>http://localhost:8092/actuator/health</code></li>-->
+        <li>Axon Server : <code>http://localhost:8024</code></li>
+        <li>Keycloak : <code>http://localhost:8080</code></li>
+<!--        <li>pgAdmin : <code>http://localhost:6002</code></li>-->
+        <li>PostgreSQL métier : <code>localhost:5432</code></li>
+<!--        <li>PostgreSQL Keycloak : <code>localhost:5433</code></li>-->
+    </ul>
+
+    <h3>Profils et modes</h3>
+    <ul>
+        <li><code>secure</code> : mode complet avec Keycloak et sécurité activée.</li>
+        <li><code>fast</code> : mode rapide pour debug court, sans login applicatif.</li>
+        <li><code>local</code> : exécution locale hors conteneur applicatif.</li>
+        <li><code>prod</code> : exécution via Docker Compose.</li>
+    </ul>
+
 
     <hr class="my-4">
     <p class="footer-license">Licence : MIT (voir repository).</p>

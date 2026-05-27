@@ -390,3 +390,49 @@ section[data-section] {
     color: var(--bs-body-color);
     font-size: 0.95rem;
 }
+
+
+/* CSS UNIQUEMENT POUR LE GROS DIAG SVG DE LK'ARCHITECTURE DE SMA */
+.architecture-diagram {
+    overflow-x: auto;
+    margin: 2rem 0;
+    padding: 1rem 0;
+}
+
+.architecture-diagram svg {
+    display: block;
+    width: 100%;
+    min-width: 920px;
+    height: auto;
+}
+
+.architecture-diagram rect {
+    fill: #ffffff;
+    stroke: #d0d7de;
+    stroke-width: 2;
+}
+
+.architecture-diagram text {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 16px;
+    fill: #24292f;
+}
+
+.architecture-diagram .box-title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.architecture-diagram line {
+    stroke: #6e7781;
+    stroke-width: 2;
+}
+
+.architecture-diagram marker path {
+    fill: #6e7781;
+}
+
+.architecture-diagram .arrow-label {
+    font-size: 13px;
+    fill: #6e7781;
+}
