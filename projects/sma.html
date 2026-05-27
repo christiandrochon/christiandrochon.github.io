@@ -201,49 +201,51 @@
                 <text class="diagram-text" x="410" y="392" text-anchor="middle">API métier · commandes · queries</text>
                 <text class="diagram-text" x="410" y="422" text-anchor="middle">RBAC · ownership · logs · audit RGPD</text>
 
+<!--                BARRES HORIZONTALES-->
                 <line class="diagram-line" x1="410" y1="445" x2="410" y2="500"></line>
-                <line class="diagram-line" x1="145" y1="500" x2="675" y2="500"></line>
+                <line class="diagram-line" x1="125" y1="500" x2="695" y2="500"></line>
 
-                <line class="diagram-line" x1="145" y1="500" x2="145" y2="545" marker-end="url(#arrow-tablet)"></line>
+<!--                FLECHES VERTICALES-->
+                <line class="diagram-line" x1="125" y1="500" x2="125" y2="545" marker-end="url(#arrow-tablet)"></line>
                 <line class="diagram-line" x1="410" y1="500" x2="410" y2="545" marker-end="url(#arrow-tablet)"></line>
-                <line class="diagram-line" x1="675" y1="500" x2="675" y2="545" marker-end="url(#arrow-tablet)"></line>
+                <line class="diagram-line" x1="695" y1="500" x2="695" y2="545" marker-end="url(#arrow-tablet)"></line>
 
-                <rect class="diagram-box" x="60" y="545" width="170" height="120" rx="14"></rect>
-                <text class="diagram-text box-title diagram-tablet-title" x="145" y="577" text-anchor="middle">Axon Server</text>
-                <text class="diagram-text diagram-tablet-text" x="145" y="607" text-anchor="middle">Command / Query</text>
-                <text class="diagram-text diagram-tablet-text" x="145" y="635" text-anchor="middle">Event store</text>
+                <rect class="diagram-box" x="55" y="545" width="170" height="120" rx="14"></rect>
+                <text class="diagram-text box-title diagram-tablet-title" x="140" y="577" text-anchor="middle">Axon Server</text>
+                <text class="diagram-text diagram-tablet-text" x="140" y="607" text-anchor="middle">Command / Query</text>
+                <text class="diagram-text diagram-tablet-text" x="140" y="635" text-anchor="middle">Event store</text>
 
-                <rect class="diagram-box" x="315" y="545" width="190" height="120" rx="14"></rect>
+                <rect class="diagram-box" x="285" y="545" width="250" height="120" rx="14"></rect>
                 <text class="diagram-text box-title diagram-tablet-title" x="410" y="577" text-anchor="middle">PostgreSQL métier</text>
                 <text class="diagram-text diagram-tablet-text" x="410" y="607" text-anchor="middle">Données métier</text>
                 <text class="diagram-text diagram-tablet-text" x="410" y="628" text-anchor="middle">Lectures optimisées</text>
                 <text class="diagram-text diagram-tablet-text" x="410" y="650" text-anchor="middle">Flyway</text>
 
-                <rect class="diagram-box" x="590" y="545" width="170" height="120" rx="14"></rect>
-                <text class="diagram-text box-title diagram-tablet-title" x="675" y="577" text-anchor="middle">Base audit</text>
-                <text class="diagram-text diagram-tablet-text" x="675" y="607" text-anchor="middle">preuves</text>
-                <text class="diagram-text diagram-tablet-text" x="675" y="635" text-anchor="middle">contrôles RGPD</text>
+                <rect class="diagram-box" x="595" y="545" width="170" height="120" rx="14"></rect>
+                <text class="diagram-text box-title diagram-tablet-title" x="680" y="577" text-anchor="middle">Base audit</text>
+                <text class="diagram-text diagram-tablet-text" x="680" y="607" text-anchor="middle">preuves</text>
+                <text class="diagram-text diagram-tablet-text" x="680" y="635" text-anchor="middle">contrôles RGPD</text>
 
                 <line class="diagram-line" x1="620" y1="182" x2="790" y2="182"></line>
                 <line class="diagram-line" x1="790" y1="182" x2="790" y2="762"></line>
                 <line class="diagram-line" x1="790" y1="762" x2="595" y2="762" marker-end="url(#arrow-tablet)"></line>
 
-                <rect class="diagram-box" x="250" y="700" width="345" height="125" rx="14"></rect>
+                <rect class="diagram-box" x="250" y="700" width="345" height="135" rx="14"></rect>
                 <text class="diagram-text box-title" x="422" y="732" text-anchor="middle">Keycloak</text>
                 <text class="diagram-text" x="422" y="762" text-anchor="middle">OAuth2 · OpenID Connect</text>
                 <text class="diagram-text" x="422" y="792" text-anchor="middle">JWT</text>
                 <text class="diagram-text" x="422" y="816" text-anchor="middle">rôles ADMIN · USER · AUDITOR</text>
 
-                <line class="diagram-line" x1="422" y1="825" x2="422" y2="860" marker-end="url(#arrow-tablet)"></line>
+                <line class="diagram-line" x1="422" y1="835" x2="422" y2="870" marker-end="url(#arrow-tablet)"></line>
 
-                <rect class="diagram-box" x="250" y="860" width="345" height="85" rx="14"></rect>
-                <text class="diagram-text box-title diagram-tablet-title" x="422" y="895" text-anchor="middle">PostgreSQL Keycloak</text>
-                <text class="diagram-text diagram-tablet-text" x="422" y="922" text-anchor="middle">realm · clients · utilisateurs</text>
+                <rect class="diagram-box" x="250" y="870" width="345" height="85" rx="14"></rect>
+                <text class="diagram-text box-title diagram-tablet-title" x="422" y="905" text-anchor="middle">PostgreSQL Keycloak</text>
+                <text class="diagram-text diagram-tablet-text" x="422" y="932" text-anchor="middle">realm · clients · utilisateurs</text>
             </svg>
         </div>
 
         <div class="diagram-mobile">
-            <svg viewBox="0 0 470 1120" role="img" aria-label="Schéma d'architecture SMA">
+            <svg viewBox="0 0 470 1140" role="img" aria-label="Schéma d'architecture SMA mobile">
                 <defs>
                     <marker id="arrow-mobile" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
                         <path class="diagram-arrow-head" d="M0,0 L0,6 L9,3 z"></path>
@@ -259,65 +261,66 @@
                 <rect class="diagram-box" x="65" y="120" width="340" height="115" rx="14"></rect>
                 <text class="diagram-text box-title" x="235" y="152" text-anchor="middle">Frontend</text>
                 <text class="diagram-text" x="235" y="182" text-anchor="middle">Spring MVC · Thymeleaf</text>
-                <text class="diagram-text" x="235" y="212" text-anchor="middle">Pages métier · appels REST</text>
+                <text class="diagram-text" x="235" y="212" text-anchor="middle">Pages métier · appels REST · logs UI</text>
 
                 <line class="diagram-line" x1="235" y1="235" x2="235" y2="285" marker-end="url(#arrow-mobile)"></line>
                 <text class="diagram-text arrow-label" x="260" y="265" text-anchor="middle">REST</text>
 
                 <rect class="diagram-box" x="65" y="285" width="340" height="145" rx="14"></rect>
                 <text class="diagram-text box-title" x="235" y="317" text-anchor="middle">Backend</text>
-                <text class="diagram-text" x="235" y="347" text-anchor="middle">Spring Boot · WebFlux · Axon</text>
+                <text class="diagram-text" x="235" y="347" text-anchor="middle">Spring Boot · WebFlux · Axon · JPA</text>
                 <text class="diagram-text" x="235" y="377" text-anchor="middle">API métier · commandes · queries</text>
-                <text class="diagram-text" x="235" y="407" text-anchor="middle">RBAC · logs · audit RGPD</text>
+                <text class="diagram-text" x="235" y="407" text-anchor="middle">RBAC · ownership · logs · audit RGPD</text>
 
+                <!-- Barres backend vers services -->
                 <line class="diagram-line" x1="235" y1="430" x2="235" y2="470"></line>
                 <line class="diagram-line" x1="115" y1="470" x2="355" y2="470"></line>
 
+                <!-- Flèches verticales -->
                 <line class="diagram-line" x1="115" y1="470" x2="115" y2="510" marker-end="url(#arrow-mobile)"></line>
                 <line class="diagram-line" x1="235" y1="470" x2="235" y2="510" marker-end="url(#arrow-mobile)"></line>
                 <line class="diagram-line" x1="355" y1="470" x2="355" y2="510" marker-end="url(#arrow-mobile)"></line>
 
-                <rect class="diagram-box" x="40" y="510" width="125" height="120" rx="14"></rect>
-                <text class="diagram-text box-title diagram-small-title" x="102" y="542" text-anchor="middle">Axon</text>
-                <text class="diagram-text diagram-small-text" x="102" y="570" text-anchor="middle">Command</text>
-                <text class="diagram-text diagram-small-text" x="102" y="594" text-anchor="middle">Query</text>
-                <text class="diagram-text diagram-small-text" x="102" y="618" text-anchor="middle">Event store</text>
+                <rect class="diagram-box" x="35" y="510" width="130" height="120" rx="14"></rect>
+                <text class="diagram-text box-title diagram-small-title" x="100" y="542" text-anchor="middle">Axon Server</text>
+                <text class="diagram-text diagram-small-text" x="100" y="570" text-anchor="middle">Command / Query</text>
+                <text class="diagram-text diagram-small-text" x="100" y="598" text-anchor="middle">Event store</text>
 
-                <rect class="diagram-box" x="172" y="510" width="125" height="120" rx="14"></rect>
-                <text class="diagram-text box-title diagram-small-title" x="234" y="542" text-anchor="middle">PostgreSQL</text>
-                <text class="diagram-text diagram-small-text" x="234" y="570" text-anchor="middle">Données métier</text>
-                <text class="diagram-text diagram-small-text" x="234" y="594" text-anchor="middle">Lectures optimisées</text>
-                <text class="diagram-text diagram-small-text" x="234" y="618" text-anchor="middle">Flyway</text>
+                <rect class="diagram-box" x="170" y="510" width="130" height="120" rx="14"></rect>
+                <text class="diagram-text box-title diagram-small-title" x="235" y="542" text-anchor="middle">PostgreSQL</text>
+                <text class="diagram-text diagram-small-text" x="235" y="570" text-anchor="middle">métier</text>
+                <text class="diagram-text diagram-small-text" x="235" y="594" text-anchor="middle">Lectures optimisées</text>
+                <text class="diagram-text diagram-small-text" x="235" y="618" text-anchor="middle">Flyway</text>
 
-                <rect class="diagram-box" x="305" y="510" width="125" height="120" rx="14"></rect>
-                <text class="diagram-text box-title diagram-small-title" x="367" y="542" text-anchor="middle">Base audit</text>
-                <text class="diagram-text diagram-small-text" x="367" y="570" text-anchor="middle">events</text>
-                <text class="diagram-text diagram-small-text" x="367" y="594" text-anchor="middle">contrôles</text>
-                <text class="diagram-text diagram-small-text" x="367" y="618" text-anchor="middle">RGPD</text>
+                <rect class="diagram-box" x="305" y="510" width="130" height="120" rx="14"></rect>
+                <text class="diagram-text box-title diagram-small-title" x="370" y="542" text-anchor="middle">Base audit</text>
+                <text class="diagram-text diagram-small-text" x="370" y="570" text-anchor="middle">preuves</text>
+                <text class="diagram-text diagram-small-text" x="370" y="598" text-anchor="middle">contrôles RGPD</text>
 
-                <line class="diagram-line" x1="405" y1="175" x2="455" y2="175"></line>
-                <line class="diagram-line" x1="455" y1="175" x2="455" y2="732"></line>
-                <line class="diagram-line" x1="455" y1="732" x2="355" y2="732" marker-end="url(#arrow-mobile)"></line>
+                <!-- Frontend vers Keycloak -->
+                <line class="diagram-line" x1="405" y1="182" x2="455" y2="182"></line>
+                <line class="diagram-line" x1="455" y1="182" x2="455" y2="742"></line>
+                <line class="diagram-line" x1="455" y1="742" x2="355" y2="742" marker-end="url(#arrow-mobile)"></line>
 
-                <rect class="diagram-box" x="65" y="670" width="290" height="125" rx="14"></rect>
+                <rect class="diagram-box" x="65" y="670" width="290" height="135" rx="14"></rect>
                 <text class="diagram-text box-title" x="210" y="702" text-anchor="middle">Keycloak</text>
                 <text class="diagram-text" x="210" y="732" text-anchor="middle">OAuth2 · OpenID Connect</text>
                 <text class="diagram-text" x="210" y="762" text-anchor="middle">JWT</text>
                 <text class="diagram-text" x="210" y="786" text-anchor="middle">rôles ADMIN · USER · AUDITOR</text>
 
-                <line class="diagram-line" x1="210" y1="795" x2="210" y2="850" marker-end="url(#arrow-mobile)"></line>
+                <line class="diagram-line" x1="210" y1="805" x2="210" y2="860" marker-end="url(#arrow-mobile)"></line>
 
-                <rect class="diagram-box" x="65" y="850" width="290" height="95" rx="14"></rect>
-                <text class="diagram-text box-title" x="210" y="882" text-anchor="middle">PostgreSQL Keycloak</text>
-                <text class="diagram-text" x="210" y="912" text-anchor="middle">Realm · clients · utilisateurs</text>
+                <rect class="diagram-box" x="65" y="860" width="290" height="95" rx="14"></rect>
+                <text class="diagram-text box-title" x="210" y="892" text-anchor="middle">PostgreSQL Keycloak</text>
+                <text class="diagram-text" x="210" y="922" text-anchor="middle">realm · clients · utilisateurs</text>
 
-                <text class="diagram-text arrow-label" x="235" y="1010" text-anchor="middle">
+                <text class="diagram-text arrow-label" x="235" y="1015" text-anchor="middle">
                     Frontend ↔ Keycloak : authentification OAuth2/OIDC
                 </text>
-                <text class="diagram-text arrow-label" x="235" y="1035" text-anchor="middle">
+                <text class="diagram-text arrow-label" x="235" y="1040" text-anchor="middle">
                     Backend → Axon / PostgreSQL : traitements métier
                 </text>
-                <text class="diagram-text arrow-label" x="235" y="1060" text-anchor="middle">
+                <text class="diagram-text arrow-label" x="235" y="1065" text-anchor="middle">
                     Base audit : preuves et contrôles indépendants
                 </text>
             </svg>
