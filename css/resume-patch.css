@@ -397,46 +397,64 @@ section[data-section] {
     margin: 2rem 0;
 }
 
+.diagram-desktop,
+.diagram-tablet,
 .diagram-mobile {
     display: none;
 }
 
-.diagram-desktop {
-    overflow-x: auto;
-    padding: 1rem 0;
+/* Desktop */
+@media (min-width: 1001px) {
+    .diagram-desktop {
+        display: block;
+        overflow-x: auto;
+        padding: 1rem 0;
+    }
+
+    .diagram-desktop svg {
+        display: block;
+        width: 100%;
+        min-width: 920px;
+        height: auto;
+    }
 }
 
-.diagram-desktop svg {
-    display: block;
-    width: 100%;
-    min-width: 920px;
-    height: auto;
+/* Tablette */
+@media (min-width: 641px) and (max-width: 1000px) {
+    .diagram-tablet {
+        display: block;
+        padding: 1rem 0;
+    }
+
+    .diagram-tablet svg {
+        display: block;
+        width: 100%;
+        max-width: 820px;
+        height: auto;
+        margin: 0 auto;
+    }
 }
 
-.diagram-mobile svg {
-    display: block;
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    margin: 0 auto;
-}
+/* Mobile */
+@media (max-width: 640px) {
+    .diagram-mobile {
+        display: block;
+        padding: 1rem 0;
+    }
 
-.architecture-diagram .diagram-small-title {
-    font-size: 14px;
-}
-
-.architecture-diagram .diagram-small-text {
-    font-size: 12px;
+    .diagram-mobile svg {
+        display: block;
+        width: 100%;
+        max-width: 470px;
+        height: auto;
+        margin: 0 auto;
+    }
 }
 
 .architecture-diagram .diagram-box {
     fill: #ffffff !important;
     stroke: #d0d7de !important;
     stroke-width: 2;
-}
-
-.architecture-diagram .diagram-box-secondary {
-    fill: #f6f8fa !important;
 }
 
 .architecture-diagram .diagram-text {
@@ -464,39 +482,18 @@ section[data-section] {
     fill: #6e7781 !important;
 }
 
-.diagram-desktop,
-.diagram-tablet,
-.diagram-mobile {
-    display: none;
+.architecture-diagram .diagram-small-title {
+    font-size: 14px;
 }
 
-/* grand écran */
-@media (min-width: 1001px) {
-    .diagram-desktop {
-        display: block;
-    }
+.architecture-diagram .diagram-small-text {
+    font-size: 12px;
 }
 
-/*!* tablette *!*/
-/*@media (min-width: 641px) and (max-width: 1000px) {*/
-/*    .diagram-tablet {*/
-/*        display: block;*/
-/*    }*/
-/*}*/
-
-/* mobile */
-@media (max-width: 1000px) {
-    .diagram-mobile {
-        display: block;
-    }
+.architecture-diagram .diagram-tablet-title {
+    font-size: 15px;
 }
 
-/*@media (max-width: 900px) {*/
-/*    .diagram-desktop {*/
-/*        display: none;*/
-/*    }*/
-
-/*    .diagram-mobile {*/
-/*        display: block;*/
-/*    }*/
-/*}*/
+.architecture-diagram .diagram-tablet-text {
+    font-size: 13px;
+}
