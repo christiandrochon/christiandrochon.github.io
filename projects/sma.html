@@ -103,59 +103,59 @@
         <svg viewBox="0 0 1200 720" role="img" aria-label="Schéma d'architecture SMA">
             <defs>
                 <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-                    <path d="M0,0 L0,6 L9,3 z"></path>
+                    <path class="diagram-arrow-head" d="M0,0 L0,6 L9,3 z"></path>
                 </marker>
             </defs>
 
-            <rect x="480" y="20" width="240" height="60" rx="12"></rect>
-            <text x="600" y="55" text-anchor="middle">Utilisateur</text>
+            <rect class="diagram-box" x="480" y="20" width="240" height="60" rx="12"></rect>
+            <text class="diagram-text" x="600" y="55" text-anchor="middle">Utilisateur</text>
 
-            <rect x="360" y="130" width="480" height="120" rx="14"></rect>
-            <text x="600" y="162" text-anchor="middle" class="box-title">Frontend</text>
-            <text x="600" y="192" text-anchor="middle">Spring MVC · Thymeleaf</text>
-            <text x="600" y="222" text-anchor="middle">Pages métier · appels REST · logs UI</text>
+            <rect class="diagram-box" x="360" y="130" width="480" height="120" rx="14"></rect>
+            <text class="diagram-text box-title" x="600" y="162" text-anchor="middle">Frontend</text>
+            <text class="diagram-text" x="600" y="192" text-anchor="middle">Spring MVC · Thymeleaf</text>
+            <text class="diagram-text" x="600" y="222" text-anchor="middle">Pages métier · appels REST · logs UI</text>
 
-            <rect x="360" y="310" width="480" height="155" rx="14"></rect>
-            <text x="600" y="342" text-anchor="middle" class="box-title">Backend</text>
-            <text x="600" y="372" text-anchor="middle">Spring Boot · WebFlux · Axon · JPA</text>
-            <text x="600" y="402" text-anchor="middle">API métier · commandes · queries</text>
-            <text x="600" y="432" text-anchor="middle">RBAC · ownership · logs · audit RGPD</text>
+            <rect class="diagram-box" x="360" y="310" width="480" height="155" rx="14"></rect>
+            <text class="diagram-text box-title" x="600" y="342" text-anchor="middle">Backend</text>
+            <text class="diagram-text" x="600" y="372" text-anchor="middle">Spring Boot · WebFlux · Axon · JPA</text>
+            <text class="diagram-text" x="600" y="402" text-anchor="middle">API métier · commandes · queries</text>
+            <text class="diagram-text" x="600" y="432" text-anchor="middle">RBAC · ownership · logs · audit RGPD</text>
 
-            <rect x="50" y="540" width="280" height="115" rx="14"></rect>
-            <text x="190" y="572" text-anchor="middle" class="box-title">Axon Server</text>
-            <text x="190" y="602" text-anchor="middle">Command bus · Query bus</text>
-            <text x="190" y="632" text-anchor="middle">Event bus · Event store</text>
+            <rect class="diagram-box" x="50" y="540" width="280" height="115" rx="14"></rect>
+            <text class="diagram-text box-title" x="190" y="572" text-anchor="middle">Axon Server</text>
+            <text class="diagram-text" x="190" y="602" text-anchor="middle">Command bus · Query bus</text>
+            <text class="diagram-text" x="190" y="632" text-anchor="middle">Event bus · Event store</text>
 
-            <rect x="460" y="540" width="280" height="115" rx="14"></rect>
-            <text x="600" y="572" text-anchor="middle" class="box-title">PostgreSQL métier</text>
-            <text x="600" y="602" text-anchor="middle">Read models · projections</text>
-            <text x="600" y="632" text-anchor="middle">Données métier · Flyway</text>
+            <rect class="diagram-box" x="460" y="540" width="280" height="115" rx="14"></rect>
+            <text class="diagram-text box-title" x="600" y="572" text-anchor="middle">PostgreSQL métier</text>
+            <text class="diagram-text" x="600" y="602" text-anchor="middle">Read models · projections</text>
+            <text class="diagram-text" x="600" y="632" text-anchor="middle">Données métier · Flyway</text>
 
-            <rect x="870" y="540" width="280" height="115" rx="14"></rect>
-            <text x="1010" y="572" text-anchor="middle" class="box-title">Base audit</text>
-            <text x="1010" y="602" text-anchor="middle">audit_events</text>
-            <text x="1010" y="632" text-anchor="middle">contrôles · preuves RGPD</text>
+            <rect class="diagram-box" x="870" y="540" width="280" height="115" rx="14"></rect>
+            <text class="diagram-text box-title" x="1010" y="572" text-anchor="middle">Base audit</text>
+            <text class="diagram-text" x="1010" y="602" text-anchor="middle">audit_events</text>
+            <text class="diagram-text" x="1010" y="632" text-anchor="middle">contrôles · preuves RGPD</text>
 
-            <rect x="880" y="145" width="290" height="140" rx="14"></rect>
-            <text x="1025" y="177" text-anchor="middle" class="box-title">Keycloak</text>
-            <text x="1025" y="207" text-anchor="middle">OAuth2 · OpenID Connect</text>
-            <text x="1025" y="237" text-anchor="middle">JWT · rôles</text>
-            <text x="1025" y="263" text-anchor="middle">ADMIN · USER · AUDITOR</text>
+            <rect class="diagram-box" x="880" y="145" width="290" height="140" rx="14"></rect>
+            <text class="diagram-text box-title" x="1025" y="177" text-anchor="middle">Keycloak</text>
+            <text class="diagram-text" x="1025" y="207" text-anchor="middle">OAuth2 · OpenID Connect</text>
+            <text class="diagram-text" x="1025" y="237" text-anchor="middle">JWT · rôles</text>
+            <text class="diagram-text" x="1025" y="263" text-anchor="middle">ADMIN · USER · AUDITOR</text>
 
-            <line x1="600" y1="80" x2="600" y2="130" marker-end="url(#arrow)"></line>
-            <line x1="600" y1="250" x2="600" y2="310" marker-end="url(#arrow)"></line>
+            <line class="diagram-line" x1="600" y1="80" x2="600" y2="130" marker-end="url(#arrow)"></line>
+            <line class="diagram-line" x1="600" y1="250" x2="600" y2="310" marker-end="url(#arrow)"></line>
 
-            <line x1="500" y1="465" x2="230" y2="540" marker-end="url(#arrow)"></line>
-            <line x1="600" y1="465" x2="600" y2="540" marker-end="url(#arrow)"></line>
-            <line x1="700" y1="465" x2="970" y2="540" marker-end="url(#arrow)"></line>
+            <line class="diagram-line" x1="500" y1="465" x2="230" y2="540" marker-end="url(#arrow)"></line>
+            <line class="diagram-line" x1="600" y1="465" x2="600" y2="540" marker-end="url(#arrow)"></line>
+            <line class="diagram-line" x1="700" y1="465" x2="970" y2="540" marker-end="url(#arrow)"></line>
 
-            <line x1="840" y1="185" x2="880" y2="185" marker-end="url(#arrow)"></line>
-            <line x1="880" y1="245" x2="840" y2="245" marker-end="url(#arrow)"></line>
+            <line class="diagram-line" x1="840" y1="185" x2="880" y2="185" marker-end="url(#arrow)"></line>
+            <line class="diagram-line" x1="880" y1="245" x2="840" y2="245" marker-end="url(#arrow)"></line>
 
-            <text x="625" y="112" text-anchor="middle" class="arrow-label">HTTP</text>
-            <text x="625" y="292" text-anchor="middle" class="arrow-label">REST</text>
-            <text x="860" y="175" text-anchor="middle" class="arrow-label">login</text>
-            <text x="860" y="265" text-anchor="middle" class="arrow-label">token</text>
+            <text class="diagram-text arrow-label" x="625" y="112" text-anchor="middle">HTTP</text>
+            <text class="diagram-text arrow-label" x="625" y="292" text-anchor="middle">REST</text>
+            <text class="diagram-text arrow-label" x="860" y="175" text-anchor="middle">login</text>
+            <text class="diagram-text arrow-label" x="860" y="265" text-anchor="middle">token</text>
         </svg>
     </div>
     <br>

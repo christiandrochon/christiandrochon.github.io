@@ -406,16 +406,16 @@ section[data-section] {
     height: auto;
 }
 
-.architecture-diagram rect {
-    fill: #ffffff;
-    stroke: #d0d7de;
+.architecture-diagram .diagram-box {
+    fill: #ffffff !important;
+    stroke: #d0d7de !important;
     stroke-width: 2;
 }
 
-.architecture-diagram text {
+.architecture-diagram .diagram-text {
     font-family: Inter, system-ui, sans-serif;
     font-size: 16px;
-    fill: #24292f;
+    fill: #24292f !important;
 }
 
 .architecture-diagram .box-title {
@@ -423,16 +423,16 @@ section[data-section] {
     font-size: 18px;
 }
 
-.architecture-diagram line {
-    stroke: #6e7781;
+.architecture-diagram .diagram-line {
+    stroke: #6e7781 !important;
     stroke-width: 2;
 }
 
-.architecture-diagram marker path {
-    fill: #6e7781;
+.architecture-diagram .diagram-arrow-head {
+    fill: #6e7781 !important;
 }
 
 .architecture-diagram .arrow-label {
     font-size: 13px;
-    fill: #6e7781;
+    fill: #6e7781 !important;
 }
