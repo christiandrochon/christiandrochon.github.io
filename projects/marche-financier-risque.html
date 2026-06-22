@@ -34,7 +34,8 @@
 
     <div class="project-info mb-4">
         <p>
-            <strong>Statut :</strong> Projet personnel privé (code source non public) · développement actif depuis juin 2026
+            <strong>Statut :</strong> Projet personnel privé (code source non public) · développement actif depuis juin
+            2026
         </p>
     </div>
 
@@ -47,13 +48,16 @@
 
     <h2>Objectif</h2>
     <p>
-        Ce projet est une plateforme modulaire conçue pour <strong>améliorer la prise de decision sur les marches financiers à risque
+        Ce projet est une plateforme modulaire conçue pour <strong>améliorer la prise de decision sur les marches
+        financiers à risque
         d'une pratique réactive et émotionnelle en une démarche pilotée par les données et les statistiques</strong>.
     </p>
 
     <p>
-        Le projet répond à un besoin réel et concret : réduire les biais comportementaux émotionnels (panique, FOMO, revenge trading)
-        en s'appuyant sur des <strong>indicateurs de marché, de l'osint, du machine learning et l'analyse de l'historique de trading</strong>.
+        Le projet répond à un besoin réel et concret : réduire les biais comportementaux émotionnels (panique, FOMO,
+        revenge trading)
+        en s'appuyant sur des <strong>indicateurs de marché, de l'osint, du machine learning et l'analyse de
+        l'historique de trading</strong>.
     </p>
 
     <p>
@@ -64,8 +68,10 @@
 
     <p class="note mt-4">
         Ce projet démontre une architecture backend modulaire à grande échelle, l'intégration
-        de pipelines Machine Learning en production, le traitement de données financières temps réel, et la conception d'interfaces
-        orientées aide à la décision — tout en gérant un produit avec de vrais enjeux (capitaux réels engagés sur ce système).
+        de pipelines Machine Learning en production, le traitement de données financières temps réel, et la conception
+        d'interfaces
+        orientées aide à la décision — tout en gérant un produit avec de vrais enjeux (capitaux réels engagés sur ce
+        système).
     </p>
 
     <br>
@@ -89,9 +95,13 @@
 
     <h3>Frontend</h3>
     <ul>
-        <li><strong>Framework :</strong> Angular (composants standalone, signals, templates de contrôle de flux natifs <code>@if</code>/<code>@for</code>)</li>
+        <li><strong>Framework :</strong> Angular (composants standalone, signals, templates de contrôle de flux natifs
+            <code>@if</code>/<code>@for</code>)
+        </li>
         <li><strong>Communication :</strong> Consommation d'API REST du backend</li>
-        <li><strong>Objectif :</strong> Interface orientée aide à la décision, dashboard temps réel, visualisations de stratégie</li>
+        <li><strong>Objectif :</strong> Interface orientée aide à la décision, dashboard temps réel, visualisations de
+            stratégie
+        </li>
     </ul>
 
     <h3>Machine Learning</h3>
@@ -170,13 +180,13 @@
                 <li>Escalade d'engagement (doublement sur perte)</li>
             </ul>
         </li>
-                        <li><strong>Signal anti-panique</strong> combinant :
-                            <ul>
-                                <li>Lecture de marché (technicals + Machine Learning)</li>
-                                <li>Statistiques historiques (performance passée en situation similaire)</li>
-                                <li>Patterns de réaction du trader détectés historiquement</li>
-                            </ul>
-                        </li>
+        <li><strong>Signal anti-panique</strong> combinant :
+            <ul>
+                <li>Lecture de marché (technicals + Machine Learning)</li>
+                <li>Statistiques historiques (performance passée en situation similaire)</li>
+                <li>Patterns de réaction du trader détectés historiquement</li>
+            </ul>
+        </li>
     </ul>
 
     <h3>4. Journal de trading complet</h3>
@@ -188,9 +198,9 @@
 
     <h3>5. Analyse contrefactuelle</h3>
     <ul>
-         <li>"Que se serait-il passé avec une autre décision ?" — simulation d'alternatives exécutables</li>
-          <li>Identification de cas où les signaux Machine Learning auraient changé le résultat</li>
-         <li>Mesure d'alignement entre la logique du trader et celle des modèles</li>
+        <li>"Que se serait-il passé avec une autre décision ?" — simulation d'alternatives exécutables</li>
+        <li>Identification de cas où les signaux Machine Learning auraient changé le résultat</li>
+        <li>Mesure d'alignement entre la logique du trader et celle des modèles</li>
     </ul>
 
     <br>
@@ -198,27 +208,35 @@
     <h2>Architecture modulaire</h2>
 
     <p>
-        Le backend est conçu en <strong>monolithe modulaire</strong>, chaque domaine métier ayant ses responsabilités claires :
+        Le backend est conçu en <strong>monolithe modulaire</strong>, chaque domaine métier ayant ses responsabilités
+        claires :
     </p>
 
     <ul>
-        <li><strong>Risk Engine :</strong> API REST privée, reçoit une position proposée, retourne les paramètres de risk-on</li>
-        <li><strong>Psychology Engine :</strong> Analyse l'historique de trading, détecte les patterns, alerte sur biais</li>
+        <li><strong>Risk Engine :</strong> API REST privée, reçoit une position proposée, retourne les paramètres de
+            risk-on
+        </li>
+        <li><strong>Psychology Engine :</strong> Analyse l'historique de trading, détecte les patterns, alerte sur biais
+        </li>
         <li><strong>Trading Journal :</strong> CRUD complet + reconciliation automatique des operations</li>
         <li><strong>Counterfactual :</strong> Engine de simulation d'alternatives</li>
         <li><strong>Market Data Aggregator :</strong> Consomme les feeds externes, enrichit les données locales</li>
-        <li><strong>Machine Learning Service :</strong> Appelle le microservice FastAPI, cache les prédictions, gère le drift</li>
+        <li><strong>Machine Learning Service :</strong> Appelle le microservice FastAPI, cache les prédictions, gère le
+            drift
+        </li>
         <li><strong>OSINT Collector :</strong> Agrégateur d'événements externes (prévu pour devenir microservice)</li>
     </ul>
 
-    <p>
-        Cette séparation par domaine facilite :
+    <div>
+        <p>Cette séparation par domaine facilite : </p>
         <ul>
             <li>Le <strong>test unitaire</strong> de chaque logique métier</li>
-            <li>L'<strong>évolution indépendante</strong> (ex: remplacer le modèle Machine Learning sans toucher au journal)</li>
+            <li>L'<strong>évolution indépendante</strong> (ex: remplacer le modèle Machine Learning sans toucher au
+                journal)
+            </li>
             <li>La <strong>scalabilité future</strong> (extraction en microservices si besoin)</li>
         </ul>
-    </p>
+    </div>
 
     <br>
 
@@ -229,9 +247,11 @@
     </p>
 
     <ul>
-<!--        <li><strong>Regulations UE :</strong> Encadrement des services financiers a risque, tracabilite</li>-->
-<!--        <li><strong>SEC (Etats-Unis) :</strong> Classification des instruments, limites d'exposition</li>-->
-        <li><strong>Traçabilité :</strong> Journal complet des transactions, audit trail, respect des AML/KYC si nécessaire</li>
+        <!--        <li><strong>Regulations UE :</strong> Encadrement des services financiers a risque, tracabilite</li>-->
+        <!--        <li><strong>SEC (Etats-Unis) :</strong> Classification des instruments, limites d'exposition</li>-->
+        <li><strong>Traçabilité :</strong> Journal complet des transactions, audit trail, respect des AML/KYC si
+            nécessaire
+        </li>
     </ul>
 
     <br>
@@ -240,12 +260,19 @@
 
     <ul>
         <li>Conception d'une <strong>architecture backend modulaire à grande échelle</strong> avec Spring Boot</li>
-        <li>Intégration de <strong>pipelines Machine Learning en production</strong> — validation, drift detection, calibration</li>
-        <li>Traitement de <strong>données financières temps réel</strong> et gestion d'incohérences (réseau, slippage)</li>
-        <li>Design d'<strong>interfaces orientées aide à la décision</strong> (tableaux de bord, alertes, visualisations)</li>
+        <li>Intégration de <strong>pipelines Machine Learning en production</strong> — validation, drift detection,
+            calibration
+        </li>
+        <li>Traitement de <strong>données financières temps réel</strong> et gestion d'incohérences (réseau, slippage)
+        </li>
+        <li>Design d'<strong>interfaces orientées aide à la décision</strong> (tableaux de bord, alertes,
+            visualisations)
+        </li>
         <li>Gestion de <strong>microservices et découplage asynchrone</strong> via messaging</li>
         <li><strong>Agrégation multi-sources</strong> de données externes et enrichissement contexte</li>
-        <li>Contrôle qualité avec <strong>SonarQube</strong> pour suivre la dette technique, les smells et les vulnérabilités</li>
+        <li>Contrôle qualité avec <strong>SonarQube</strong> pour suivre la dette technique, les smells et les
+            vulnérabilités
+        </li>
         <li>Développement d'un <strong>produit avec enjeux réels</strong> (capital personnel engagé)</li>
     </ul>
 
