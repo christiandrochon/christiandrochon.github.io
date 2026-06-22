@@ -125,9 +125,37 @@
         <section id="projects" data-section>
             <h2 class="section-h">Projets</h2>
             <div class="projects-grid">
+                <article class="project-card" id="card-marche-financier-risque">
+                    <div class="project-title">
+                        Marche financier à risque — Plateforme d'aide a la decision <span class="badge text-bg-secondary">en cours</span>
+                    </div>
+
+                    <p class="project-desc">
+                        Plateforme modulaire pour analyser des marches financiers a risque
+                        d'une pratique émotionnelle en une démarche pilotée par les données, les statistiques, l'osint et le machine learning.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Java 21</span>
+                        <span>Spring Boot</span>
+                        <span>Spring WebFlux</span>
+                        <span>Angular</span>
+                        <span>PostgreSQL</span>
+                        <span>Python 3</span>
+                        <span>FastAPI</span>
+                        <span>Machine Learning</span>
+                        <span>RabbitMQ</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary" href="/projects/marche-financier-risque.html">Page projet</a>
+                        <a class="btn btn-sm btn-outline-secondary" href="mailto:hello@christiandrochon.dev?subject=Marche%20financier%20a%20risque%20-%20Demande%20de%20demo">Demander une démo</a>
+                    </div>
+                </article>
+
                 <article class="project-card" id="card-sma">
                     <div class="project-title">
-                        SMA — Intranet maintenance automobile <span class="badge text-bg-secondary">en cours</span>
+                        SMA — Intranet maintenance automobile
                     </div>
 
                     <p class="project-desc">
@@ -327,37 +355,52 @@
             <h2 class="section-h">Parcours</h2>
             <div class="experience-list">
 
-                <!-- Vision / Multimedia -->
+                <!-- Marche financier a risque -->
                 <article class="exp-item">
-                    <div class="exp-period">2025</div>
+                    <div class="exp-period">2026 — aujourd'hui</div>
                     <div>
-                        <div class="exp-role">Application de vision par ordinateur</div>
-                        <div class="exp-company">Recherche d’images similaires avec ResNet</div>
+                        <div class="exp-role">
+                            Développeur full-stack
+                            <span class="badge text-bg-secondary ms-2">en cours</span>
+                        </div>
+                        <div class="exp-company">Projet Marche financier a risque — Decision pilotee par les donnees</div>
 
                         <p class="exp-description">
-                            Application complète : upload d’une image requête, extraction de descripteurs visuels
-                            (classiques et deep features via ResNet) et retour des images les plus similaires,
-                            avec une interface de démonstration et une évaluation (précision / rappel).
+                            Ce projet est une plateforme modulaire pour structurer la decision sur des marches financiers a risque
+                            d'une pratique émotionnelle en une démarche pilotée par les données, statistiques et machine learning.
+                            Le projet intègre un moteur de gestion du risque, une détection de patterns comportementaux,
+                            un journal de trading complet, et une analyse contrefactuelle.
                         </p>
 
+                        <div class="exp-subtitle">Stack technique</div>
                         <div class="exp-tags">
-                            <span class="tag">Angular</span>
-                            <span class="tag">Spring Boot / Java</span>
-                            <span class="tag">Maven</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">Deep features (ResNet)</span>
-                            <span class="tag">Evaluations (precision/recall)</span>
+                            <span class="tag">Java 17 / Spring Boot / Spring WebFlux (backend modulaire)</span>
+                            <span class="tag">Angular (frontend décisionnel)</span>
+                            <span class="tag">Python 3 / FastAPI (Machine Learning — détection retournements)</span>
+                            <span class="tag">PostgreSQL / Flyway</span>
+                            <span class="tag">RabbitMQ (messaging asynchrone)</span>
+                            <span class="tag">API de donnees de marche</span>
+                            <span class="tag">Intégrations de sentiment de marché</span>
+                        </div>
+
+                        <div class="exp-subtitle">Domaines métier</div>
+                        <div class="exp-tags exp-tags--secondary">
+                            <span class="tag">Risk-engine (dimensionnement positions, stop-loss adaptatif)</span>
+                            <span class="tag">Psychology-engine (détection biais comportementaux)</span>
+                            <span class="tag">Trading-journal (traçabilité complète)</span>
+                            <span class="tag">Counterfactual (simulation d'alternatives)</span>
+                            <span class="tag">ML Pipeline (régression logistique, MLP, Random Forest, XGBoost, HMM, GARCH)</span>
+                            <span class="tag">OSINT Collector (agrégation événements externes — réglementation, ETF, on-chain)</span>
                         </div>
                     </div>
                 </article>
 
                 <!-- SMA -->
                 <article class="exp-item">
-                    <div class="exp-period">2021 — aujourd’hui</div>
+                    <div class="exp-period">2023 — 2026</div>
                     <div>
                         <div class="exp-role">
                             Ingénieur backend Java
-                            <span class="badge text-bg-secondary ms-2">en cours</span>
                         </div>
                         <div class="exp-company">Projet SMA (Suivi de Maintenance Automobile)</div>
 
@@ -392,6 +435,31 @@
                             <span class="tag">Recherche / index (PostgreSQL + moteur ElasticSearch pour recherche exacte et approchée)</span>
                             <span class="tag">Découpage services (Kafka / RabbitMQ / microservices)</span>
                             <span class="tag">Brique prédiction (ML/Python)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Vision / Multimedia -->
+                <article class="exp-item">
+                    <div class="exp-period">2025</div>
+                    <div>
+                        <div class="exp-role">Plateforme de recherche d'images par similarité</div>
+                        <div class="exp-company">Vision par ordinateur & embeddings ResNet</div>
+
+                        <p class="exp-description">
+                            Projet full-stack de recherche d'images par similarité : upload d’une image requête,
+                            extraction de descripteurs visuels classiques et profonds (ResNet), puis restitution
+                            des images les plus pertinentes avec une interface de démonstration et une évaluation
+                            précise des résultats (précision / rappel).
+                        </p>
+
+                        <div class="exp-tags">
+                            <span class="tag">Angular</span>
+                            <span class="tag">Spring Boot / Java</span>
+                            <span class="tag">Maven</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Deep features (ResNet)</span>
+                            <span class="tag">Evaluations (precision/recall)</span>
                         </div>
                     </div>
                 </article>

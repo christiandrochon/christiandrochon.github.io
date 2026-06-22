@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Marche financier a risque — Plateforme d'aide a la decision</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          referrerpolicy="no-referrer">
+    <link rel="icon" type="image/svg+xml" href="/img/favicon_CD_rond.svg">
+    <link rel="stylesheet" href="/css/resume-gatsbyjs-colors.css">
+    <link rel="stylesheet" href="/css/resume-patch.css">
+</head>
+
+<body>
+<main class="container py-4 project-page">
+
+    <a href="../index.html#card-marche-financier-risque"
+       class="btn btn-sm btn-outline-secondary mb-3">
+        ← Retour
+    </a>
+
+    <h1 class="mb-2">
+        Marché financier à risque — Plateforme d'aide à la decision
+        <span class="badge text-bg-secondary fs-6 badge-title-status">
+            en cours
+        </span>
+    </h1>
+
+    <div class="project-info mb-4">
+        <p class="text-muted">
+            <strong>Statut :</strong> Projet personnel privé (code source non public) · développement actif depuis juin 2026
+        </p>
+    </div>
+
+    <div class="project-actions mb-4">
+        <button class="btn btn-outline-primary"
+                onclick="window.location.href='mailto:hello@christiandrochon.dev?subject=Marche%20financier%20a%20risque%20-%20Demande%20de%20demo'">
+            <i class="fas fa-envelope" aria-hidden="true"></i> Demander une démo
+        </button>
+    </div>
+
+    <h2>Objectif</h2>
+    <p>
+        Ce projet est une plateforme modulaire conçue pour <strong>améliorer la prise de decision sur les marches financiers à risque
+        d'une pratique réactive et émotionnelle en une démarche pilotée par les données et les statistiques</strong>.
+    </p>
+
+    <p>
+        Le projet répond à un besoin réel et concret : réduire les biais comportementaux émotionnels (panique, FOMO, revenge trading)
+        en s'appuyant sur des <strong>indicateurs de marché, de l'osint, du machine learning et l'analyse de l'historique de trading</strong>.
+    </p>
+
+    <p>
+        <strong>Provider de données :</strong> flux de marche multi-sources<br>
+        <strong>Segments de marché :</strong> actions, indices, ETF et autres actifs à risque<br>
+        <strong>Conformité réglementaire :</strong> Le projet s'adapte aux régulations MiCA (UE) et SEC (États-Unis)
+    </p>
+
+    <p class="note mt-4">
+        Ce projet démontre une architecture backend modulaire à grande échelle, l'intégration
+        de pipelines Machine Learning en production, le traitement de données financières temps réel, et la conception d'interfaces
+        orientées aide à la décision — tout en gérant un produit avec de vrais enjeux (capitaux réels engagés sur ce système).
+    </p>
+
+    <br>
+
+    <h2>Stack technique</h2>
+
+    <h3>Backend</h3>
+    <ul>
+        <li><strong>Framework :</strong> Java 21 / Spring Boot / Spring WebFlux</li>
+        <li><strong>Architecture :</strong> Monolithe modulaire organisée par domaines métier
+            <ul>
+                <li><code>risk-engine</code> : gestion du risque et dimensionnement des positions</li>
+                <li><code>psychology-engine</code> : détection de patterns comportementaux</li>
+                <li><code>trading-journal</code> : journalisation complète des opérations</li>
+                <li><code>counterfactual</code> : analyse contrefactuelle (que se serait-il passé ?)</li>
+                <li><code>market-data-aggregator</code> : agrégation données de marché temps réel</li>
+            </ul>
+        </li>
+        <li><strong>Persistance :</strong> PostgreSQL avec migrations Flyway versionnées</li>
+    </ul>
+
+    <h3>Frontend</h3>
+    <ul>
+        <li><strong>Framework :</strong> Angular (composants standalone, signals, templates de contrôle de flux natifs <code>@if</code>/<code>@for</code>)</li>
+        <li><strong>Communication :</strong> Consommation d'API REST du backend</li>
+        <li><strong>Objectif :</strong> Interface orientée aide à la décision, dashboard temps réel, visualisations de stratégie</li>
+    </ul>
+
+    <h3>Machine Learning</h3>
+    <ul>
+        <li><strong>Framework :</strong> Python 3 avec FastAPI</li>
+        <li><strong>Pipeline Machine Learning :</strong>
+            <ul>
+                <li>Régression logistique, MLP (Multi-Layer Perceptron)</li>
+                <li>Random Forest, XGBoost, modèles d'ensemble</li>
+                <li>Détection de retournements de marché avec probabilités calibrées</li>
+                <li>Validation walk-forward (évite l'overfitting en données financières)</li>
+            </ul>
+        </li>
+        <li><strong>Monitoring :</strong>
+            <ul>
+                <li>Détection de data drift (PSI — Population Stability Index)</li>
+                <li>Modélisation de volatilité (GARCH)</li>
+                <li>Identification de régimes de marché cachés (HMM — Hidden Markov Models)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>OSINT & Données externes</h3>
+    <ul>
+        <li><strong>Module Spring Boot indépendant</strong> conçu en prévision d'extraction en microservice</li>
+        <li><strong>Agrégation d'événements externes :</strong>
+            <ul>
+                <li>Réglementation (MiCA, SEC, OCC circulaires)</li>
+                <li>Lancements d'ETF et indicateurs macro-financiers</li>
+                <li>Signaux de sentiment et donnees d'actualité</li>
+                <li>Statut des brokers et plateformes (maintenance, restrictions regionales)</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Messagerie asynchrone</h3>
+    <ul>
+        <li><strong>Broker :</strong> RabbitMQ via Spring AMQP</li>
+        <li><strong>Objectif :</strong> Découplage entre composants, robustesse du système</li>
+    </ul>
+
+    <h3>Intégrations externes</h3>
+    <ul>
+        <li><strong>Données de prix :</strong> fournisseurs de marche et flux institutionnels</li>
+        <li><strong>Indicateurs de sentiment :</strong> fournisseurs specialises multi-actifs</li>
+        <li><strong>Fréquence :</strong> Temps réel ou à intervalles réguliers selon la source</li>
+    </ul>
+
+    <br>
+
+    <h2>Fonctionnalités clés</h2>
+
+    <h3>1. Moteur de gestion du risque (risk-engine)</h3>
+    <ul>
+        <li>Calcul automatique de <strong>taille de position</strong> basée sur le risque défini</li>
+        <li>Stop-loss <strong>adaptatif</strong> basé sur l'ATR (Average True Range)</li>
+        <li>Détection de <strong>"chasse au stop"</strong> (washouts avant retournement)</li>
+        <li>Garde-fous anti-surtrading (limite quotidienne de transactions, cooldown entre trades)</li>
+        <li>Calcul de ratio risque/rendement pour chaque opportunité</li>
+    </ul>
+
+    <h3>2. Détection statistique et Machine Learning de probabilités de retournement</h3>
+    <ul>
+        <li>Prédiction de retournements de marché via ensemble de modèles</li>
+        <li>Calibration de probabilités (fiabilité des prédictions)</li>
+        <li>Fourchettes de prix cibles extraites des modèles</li>
+        <li>Périodes de confiance réduite après détection de drift</li>
+    </ul>
+
+    <h3>3. Module de psychologie du trading (psychology-engine)</h3>
+    <ul>
+        <li>Détection de <strong>patterns comportementaux</strong> à partir de l'historique réel :
+            <ul>
+                <li>Revenge trading (réaction à une perte)</li>
+                <li>Biais horaires (temps de la journée propice au surtrading)</li>
+                <li>Escalade d'engagement (doublement sur perte)</li>
+            </ul>
+        </li>
+                        <li><strong>Signal anti-panique</strong> combinant :
+                            <ul>
+                                <li>Lecture de marché (technicals + Machine Learning)</li>
+                                <li>Statistiques historiques (performance passée en situation similaire)</li>
+                                <li>Patterns de réaction du trader détectés historiquement</li>
+                            </ul>
+                        </li>
+    </ul>
+
+    <h3>4. Journal de trading complet</h3>
+    <ul>
+        <li>Enregistrement de <strong>chaque ordre</strong> : entrée, sortie, risque/rendement réalisé</li>
+        <li>Annotation libre pour chaque trade (contexte, hypothèse, émotion au moment de la décision)</li>
+        <li>Reconciliation avec l'historique de trading (via API)</li>
+    </ul>
+
+    <h3>5. Analyse contrefactuelle</h3>
+    <ul>
+         <li>"Que se serait-il passé avec une autre décision ?" — simulation d'alternatives exécutables</li>
+          <li>Identification de cas où les signaux Machine Learning auraient changé le résultat</li>
+         <li>Mesure d'alignement entre la logique du trader et celle des modèles</li>
+    </ul>
+
+    <br>
+
+    <h2>Architecture modulaire</h2>
+
+    <p>
+        Le backend est conçu en <strong>monolithe modulaire</strong>, chaque domaine métier ayant ses responsabilités claires :
+    </p>
+
+    <ul>
+        <li><strong>Risk Engine :</strong> API REST privée, reçoit une position proposée, retourne les paramètres de risk-on</li>
+        <li><strong>Psychology Engine :</strong> Analyse l'historique de trading, détecte les patterns, alerte sur biais</li>
+        <li><strong>Trading Journal :</strong> CRUD complet + reconciliation automatique des operations</li>
+        <li><strong>Counterfactual :</strong> Engine de simulation d'alternatives</li>
+        <li><strong>Market Data Aggregator :</strong> Consomme les feeds externes, enrichit les données locales</li>
+        <li><strong>Machine Learning Service :</strong> Appelle le microservice FastAPI, cache les prédictions, gère le drift</li>
+        <li><strong>OSINT Collector :</strong> Agrégateur d'événements externes (prévu pour devenir microservice)</li>
+    </ul>
+
+    <p>
+        Cette séparation par domaine facilite :
+        <ul>
+            <li>Le <strong>test unitaire</strong> de chaque logique métier</li>
+            <li>L'<strong>évolution indépendante</strong> (ex: remplacer le modèle Machine Learning sans toucher au journal)</li>
+            <li>La <strong>scalabilité future</strong> (extraction en microservices si besoin)</li>
+        </ul>
+    </p>
+
+    <br>
+
+    <h2>Conformité réglementaire</h2>
+
+    <p>
+        Le projet est conçu pour s'adapter à un cadre réglementaire évolutif :
+    </p>
+
+    <ul>
+<!--        <li><strong>Regulations UE :</strong> Encadrement des services financiers a risque, tracabilite</li>-->
+<!--        <li><strong>SEC (Etats-Unis) :</strong> Classification des instruments, limites d'exposition</li>-->
+        <li><strong>Traçabilité :</strong> Journal complet des transactions, audit trail, respect des AML/KYC si nécessaire</li>
+    </ul>
+
+    <br>
+
+    <h2>Compétences démontrées</h2>
+
+    <ul>
+        <li>Conception d'une <strong>architecture backend modulaire à grande échelle</strong> avec Spring Boot</li>
+        <li>Intégration de <strong>pipelines Machine Learning en production</strong> — validation, drift detection, calibration</li>
+        <li>Traitement de <strong>données financières temps réel</strong> et gestion d'incohérences (réseau, slippage)</li>
+        <li>Design d'<strong>interfaces orientées aide à la décision</strong> (tableaux de bord, alertes, visualisations)</li>
+        <li>Gestion de <strong>microservices et découplage asynchrone</strong> via messaging</li>
+        <li><strong>Agrégation multi-sources</strong> de données externes et enrichissement contexte</li>
+        <li>Contrôle qualité avec <strong>SonarQube</strong> pour suivre la dette technique, les smells et les vulnérabilités</li>
+        <li>Développement d'un <strong>produit avec enjeux réels</strong> (capital personnel engagé)</li>
+    </ul>
+
+    <br>
+
+    <h2>Roadmap & évolution prévue</h2>
+
+    <ul>
+        <li><strong>Court terme (Juin - Septembre 2026) :</strong>
+            <ul>
+                <li>Stabilisation du socle : API backend, connecteur de donnees de marche, journal de trading</li>
+                <li>Modèles Machine Learning baseline (régression logistique, Random Forest)</li>
+                <li>Interface Angular minimal mais fonctionnelle (dashboard trades, alerts)</li>
+                <li>Intégration d'un premier contrôle qualité SonarQube sur le socle applicatif</li>
+            </ul>
+        </li>
+        <li><strong>Moyen terme :</strong>
+            <ul>
+                <li>Enrichissement des modèles (XGBoost, ensemble, calibration probabilités)</li>
+                <li>Psychology engine avec détection de patterns comportementaux</li>
+                <li>Renforcement des Quality Gates SonarQube et suivi des régressions</li>
+                <li>Dashboard complet + visualisations avancées</li>
+            </ul>
+        </li>
+        <li><strong>Long terme :</strong>
+            <ul>
+                <li>Extraction de composants en microservices (Machine Learning, OSINT)</li>
+                <li>Ajout d'autres classes d'actifs (actions, indices, derives selon conformité)</li>
+                <li>Événements OSINT intégrés au contexte décisionnel</li>
+            </ul>
+        </li>
+    </ul>
+
+    <br>
+
+    <h2>Exécution locale</h2>
+
+    <p>Le projet est structuré pour un développement reproductible :</p>
+
+    <ul>
+        <li><strong>Docker Compose :</strong> PostgreSQL, RabbitMQ, FastAPI (Machine Learning)</li>
+        <li><strong>Spring Boot local :</strong> backend sur port 8080</li>
+        <li><strong>Angular dev server :</strong> frontend sur port 4200</li>
+        <li><strong>Profils Spring :</strong> développement, test, production</li>
+    </ul>
+
+    <br>
+
+    <h2>Contact & démo</h2>
+
+    <p>
+        Vous souhaitez voir le projet en action ou comprendre comment cette plateforme fonctionne ?
+        <br>N'hésitez pas à me contacter pour une démonstration personnalisée.
+    </p>
+
+    <button class="btn btn-outline-primary"
+            onclick="window.location.href='mailto:hello@christiandrochon.dev?subject=Marche%20financier%20a%20risque%20-%20Demande%20de%20demo'">
+        <i class="fas fa-envelope" aria-hidden="true"></i> Demander une démo
+    </button>
+
+    <hr class="my-4">
+    <p class="footer-license">Projet personnel — Code source non public — Développement actif depuis juin 2026.</p>
+
+</main>
+</body>
+</html>
+
+
