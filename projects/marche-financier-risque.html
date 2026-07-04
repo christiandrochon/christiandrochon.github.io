@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8"/>
-    <title>Marche financier a risque — Plateforme d'aide a la decision</title>
+    <title>Marché financier à risque — Plateforme d'aide à la décision</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="stylesheet"
@@ -26,7 +26,7 @@
     </a>
 
     <h1 class="mb-2">
-        Marché financier à risque — Plateforme d'aide à la decision
+        Marché financier à risque — Plateforme d'aide à la décision
         <span class="badge text-bg-secondary fs-6 badge-title-status">
             en cours
         </span>
@@ -48,30 +48,18 @@
 
     <h2>Objectif</h2>
     <p>
-        Ce projet est une plateforme modulaire conçue pour <strong>améliorer la prise de decision sur les marches
-        financiers à risque
-        d'une pratique réactive et émotionnelle en une démarche pilotée par les données et les statistiques</strong>.
+        Ce projet est une plateforme modulaire conçue pour <strong>transformer une pratique réactive et émotionnelle
+        des marchés financiers à risque en une démarche pilotée par les données et les statistiques</strong>.
     </p>
-
     <p>
-        Le projet répond à un besoin réel et concret : réduire les biais comportementaux émotionnels (panique, FOMO,
-        revenge trading)
-        en s'appuyant sur des <strong>indicateurs de marché, de l'osint, du machine learning et l'analyse de
-        l'historique de trading</strong>.
+        Le projet répond à un besoin réel et personnel : réduire les biais comportementaux (panique, FOMO,
+        revenge trading) en s'appuyant sur des <strong>indicateurs de marché, de l'OSINT, du machine learning
+        et l'analyse de l'historique de trading</strong>.
     </p>
-
-    <p>
-        <strong>Provider de données :</strong> flux de marche multi-sources<br>
-        <strong>Segments de marché :</strong> actions, indices, ETF et autres actifs à risque<br>
-        <strong>Conformité réglementaire :</strong> Le projet s'adapte aux régulations MiCA (UE) et SEC (États-Unis)
-    </p>
-
     <p class="note mt-4">
-        Ce projet démontre une architecture backend modulaire à grande échelle, l'intégration
-        de pipelines Machine Learning en production, le traitement de données financières temps réel, et la conception
-        d'interfaces
-        orientées aide à la décision — tout en gérant un produit avec de vrais enjeux (capitaux réels engagés sur ce
-        système).
+        Ce projet démontre une architecture backend modulaire à grande échelle, l'intégration de pipelines
+        Machine Learning, le traitement de données financières multi-sources, et la conception d'interfaces
+        orientées aide à la décision — le tout sur un système où des capitaux réels sont engagés.
     </p>
 
     <br>
@@ -81,12 +69,12 @@
     <h3>Backend</h3>
     <ul>
         <li><strong>Framework :</strong> Java 21 / Spring Boot / Spring WebFlux</li>
-        <li><strong>Architecture :</strong> Monolithe modulaire organisée par domaines métier
+        <li><strong>Architecture :</strong> Monolithe modulaire organisé par domaines métier
             <ul>
                 <li><code>risk-engine</code> : gestion du risque et dimensionnement des positions</li>
                 <li><code>psychology-engine</code> : détection de patterns comportementaux</li>
                 <li><code>trading-journal</code> : journalisation complète des opérations</li>
-                <li><code>counterfactual</code> : analyse contrefactuelle (que se serait-il passé ?)</li>
+                <li><code>counterfactual</code> : analyse contrefactuelle</li>
                 <li><code>market-data-aggregator</code> : agrégation données de marché temps réel</li>
             </ul>
         </li>
@@ -95,236 +83,145 @@
 
     <h3>Frontend</h3>
     <ul>
-        <li><strong>Framework :</strong> Angular (composants standalone, signals, templates de contrôle de flux natifs
-            <code>@if</code>/<code>@for</code>)
-        </li>
-        <li><strong>Communication :</strong> Consommation d'API REST du backend</li>
-        <li><strong>Objectif :</strong> Interface orientée aide à la décision, dashboard temps réel, visualisations de
-            stratégie
-        </li>
+        <li><strong>Framework :</strong> Angular (composants standalone, signals, <code>@if</code>/<code>@for</code>)</li>
+        <li><strong>Objectif :</strong> Interface orientée aide à la décision, dashboard temps réel, visualisations de stratégie</li>
     </ul>
 
     <h3>Machine Learning</h3>
     <ul>
         <li><strong>Framework :</strong> Python 3 avec FastAPI</li>
-        <li><strong>Pipeline Machine Learning :</strong>
-            <ul>
-                <li>Régression logistique, MLP (Multi-Layer Perceptron)</li>
-                <li>Random Forest, XGBoost, modèles d'ensemble</li>
-                <li>Détection de retournements de marché avec probabilités calibrées</li>
-                <li>Validation walk-forward (évite l'overfitting en données financières)</li>
-            </ul>
-        </li>
-        <li><strong>Monitoring :</strong>
-            <ul>
-                <li>Détection de data drift (PSI — Population Stability Index)</li>
-                <li>Modélisation de volatilité (GARCH)</li>
-                <li>Identification de régimes de marché cachés (HMM — Hidden Markov Models)</li>
-            </ul>
-        </li>
+        <li><strong>Pipeline :</strong> ensemble de modèles avec probabilités calibrées, validation walk-forward,
+            détection de data drift, modélisation de volatilité et de régimes de marché</li>
     </ul>
 
-    <h3>OSINT & Données externes</h3>
+    <h3>OSINT & données externes</h3>
     <ul>
-        <li><strong>Module Spring Boot indépendant</strong> conçu en prévision d'extraction en microservice</li>
-        <li><strong>Agrégation d'événements externes :</strong>
-            <ul>
-                <li>Réglementation (MiCA, SEC, OCC circulaires)</li>
-                <li>Lancements d'ETF et indicateurs macro-financiers</li>
-                <li>Signaux de sentiment et donnees d'actualité</li>
-                <li>Statut des brokers et plateformes (maintenance, restrictions regionales)</li>
-            </ul>
-        </li>
+        <li>Module Spring Boot indépendant, conçu pour être extrait en microservice</li>
+        <li>Agrégation multi-sources d'événements externes catégorisés : réglementation, macro-économie,
+            sentiment de marché, dérivés, données on-chain, infrastructure des plateformes</li>
+        <li>Consensus pondéré intégré au pipeline de décision</li>
     </ul>
 
     <h3>Messagerie asynchrone</h3>
     <ul>
-        <li><strong>Broker :</strong> RabbitMQ via Spring AMQP</li>
-        <li><strong>Objectif :</strong> Découplage entre composants, robustesse du système</li>
-    </ul>
-
-    <h3>Intégrations externes</h3>
-    <ul>
-        <li><strong>Données de prix :</strong> fournisseurs de marche et flux institutionnels</li>
-        <li><strong>Indicateurs de sentiment :</strong> fournisseurs specialises multi-actifs</li>
-        <li><strong>Fréquence :</strong> Temps réel ou à intervalles réguliers selon la source</li>
+        <li><strong>Broker :</strong> RabbitMQ via Spring AMQP — découplage entre composants, robustesse du système</li>
     </ul>
 
     <br>
 
-    <h2>Fonctionnalités clés</h2>
+    <h2>Architecture</h2>
 
-    <h3>1. Moteur de gestion du risque (risk-engine)</h3>
-    <ul>
-        <li>Calcul automatique de <strong>taille de position</strong> basée sur le risque défini</li>
-        <li>Stop-loss <strong>adaptatif</strong> basé sur l'ATR (Average True Range)</li>
-        <li>Détection de <strong>"chasse au stop"</strong> (washouts avant retournement)</li>
-        <li>Garde-fous anti-surtrading (limite quotidienne de transactions, cooldown entre trades)</li>
-        <li>Calcul de ratio risque/rendement pour chaque opportunité</li>
-    </ul>
+    <pre class="p-3 rounded" style="background:#f8f9fa; font-size:0.82rem; line-height:1.5; overflow-x:auto;">
+┌──────────────────────────────────────────────────────────────┐
+│                      Angular Frontend                        │
+│             Dashboard · Alertes · Visualisations             │
+└─────────────────────────┬────────────────────────────────────┘
+                          │ REST
+┌─────────────────────────▼────────────────────────────────────┐
+│                   Backend Spring Boot                        │
+│                                                              │
+│  ┌─────────────┐  ┌─────────────────┐  ┌─────────────────┐  │
+│  │ risk-engine │  │psychology-engine│  │ trading-journal │  │
+│  └─────────────┘  └─────────────────┘  └─────────────────┘  │
+│                                                              │
+│  ┌────────────────┐  ┌──────────────┐  ┌───────────────┐    │
+│  │ counterfactual │  │ market-data  │  │   ML client   │    │
+│  └────────────────┘  └──────────────┘  └───────┬───────┘    │
+└─────────────────────────┬─────────────────────── ┼ ──────────┘
+                          │                        │ HTTP
+             ┌────────────▼──────────┐  ┌──────────▼──────────┐
+             │       PostgreSQL      │  │   Python · FastAPI  │
+             │    (multi-schémas)    │  │     ML pipeline     │
+             └───────────────────────┘  └─────────────────────┘
 
-    <h3>2. Détection statistique et Machine Learning de probabilités de retournement</h3>
-    <ul>
-        <li>Prédiction de retournements de marché via ensemble de modèles</li>
-        <li>Calibration de probabilités (fiabilité des prédictions)</li>
-        <li>Fourchettes de prix cibles extraites des modèles</li>
-        <li>Périodes de confiance réduite après détection de drift</li>
-    </ul>
-
-    <h3>3. Module de psychologie du trading (psychology-engine)</h3>
-    <ul>
-        <li>Détection de <strong>patterns comportementaux</strong> à partir de l'historique réel :
-            <ul>
-                <li>Revenge trading (réaction à une perte)</li>
-                <li>Biais horaires (temps de la journée propice au surtrading)</li>
-                <li>Escalade d'engagement (doublement sur perte)</li>
-            </ul>
-        </li>
-        <li><strong>Signal anti-panique</strong> combinant :
-            <ul>
-                <li>Lecture de marché (technicals + Machine Learning)</li>
-                <li>Statistiques historiques (performance passée en situation similaire)</li>
-                <li>Patterns de réaction du trader détectés historiquement</li>
-            </ul>
-        </li>
-    </ul>
-
-    <h3>4. Journal de trading complet</h3>
-    <ul>
-        <li>Enregistrement de <strong>chaque ordre</strong> : entrée, sortie, risque/rendement réalisé</li>
-        <li>Annotation libre pour chaque trade (contexte, hypothèse, émotion au moment de la décision)</li>
-        <li>Reconciliation avec l'historique de trading (via API)</li>
-    </ul>
-
-    <h3>5. Analyse contrefactuelle</h3>
-    <ul>
-        <li>"Que se serait-il passé avec une autre décision ?" — simulation d'alternatives exécutables</li>
-        <li>Identification de cas où les signaux Machine Learning auraient changé le résultat</li>
-        <li>Mesure d'alignement entre la logique du trader et celle des modèles</li>
-    </ul>
+┌──────────────────────────────────────────────────────────────┐
+│                      Module OSINT                            │
+│          Spring Boot indépendant · 50+ providers             │
+│   Réglementation · Macro · Sentiment · Dérivés · On-chain    │
+└─────────────────────────┬────────────────────────────────────┘
+                          │ RabbitMQ
+                          ▼
+                 [Backend · ML pipeline]
+</pre>
 
     <br>
 
-    <h2>Architecture modulaire</h2>
+    <h2>Fonctionnalités principales</h2>
 
-    <p>
-        Le backend est conçu en <strong>monolithe modulaire</strong>, chaque domaine métier ayant ses responsabilités
-        claires :
-    </p>
-
+    <h3>Moteur de gestion du risque</h3>
     <ul>
-        <li><strong>Risk Engine :</strong> API REST privée, reçoit une position proposée, retourne les paramètres de
-            risk-on
-        </li>
-        <li><strong>Psychology Engine :</strong> Analyse l'historique de trading, détecte les patterns, alerte sur biais
-        </li>
-        <li><strong>Trading Journal :</strong> CRUD complet + reconciliation automatique des operations</li>
-        <li><strong>Counterfactual :</strong> Engine de simulation d'alternatives</li>
-        <li><strong>Market Data Aggregator :</strong> Consomme les feeds externes, enrichit les données locales</li>
-        <li><strong>Machine Learning Service :</strong> Appelle le microservice FastAPI, cache les prédictions, gère le
-            drift
-        </li>
-        <li><strong>OSINT Collector :</strong> Agrégateur d'événements externes (prévu pour devenir microservice)</li>
+        <li>Dimensionnement automatique des positions selon le risque défini</li>
+        <li>Stop-loss adaptatif basé sur l'ATR (Average True Range)</li>
+        <li>Détection de "chasse au stop" (washouts avant retournement)</li>
+        <li>Garde-fous anti-surtrading : limite quotidienne de transactions, cooldown entre trades</li>
     </ul>
 
-    <div>
-        <p>Cette séparation par domaine facilite : </p>
-        <ul>
-            <li>Le <strong>test unitaire</strong> de chaque logique métier</li>
-            <li>L'<strong>évolution indépendante</strong> (ex: remplacer le modèle Machine Learning sans toucher au
-                journal)
-            </li>
-            <li>La <strong>scalabilité future</strong> (extraction en microservices si besoin)</li>
-        </ul>
-    </div>
-
-    <br>
-
-    <h2>Conformité réglementaire</h2>
-
-    <p>
-        Le projet est conçu pour s'adapter à un cadre réglementaire évolutif :
-    </p>
-
+    <h3>Machine Learning — probabilités de retournement</h3>
     <ul>
-        <!--        <li><strong>Regulations UE :</strong> Encadrement des services financiers a risque, tracabilite</li>-->
-        <!--        <li><strong>SEC (Etats-Unis) :</strong> Classification des instruments, limites d'exposition</li>-->
-        <li><strong>Traçabilité :</strong> Journal complet des transactions, audit trail, respect des AML/KYC si
-            nécessaire
-        </li>
+        <li>Ensemble de modèles avec probabilités calibrées et fourchettes de prix cibles</li>
+        <li>Validation walk-forward (évite l'overfitting sur données financières)</li>
+        <li>Détection de data drift et périodes de confiance réduite en cas de drift détecté</li>
+        <li>Modélisation de volatilité et identification de régimes de marché cachés</li>
+    </ul>
+
+    <h3>Psychologie du trading</h3>
+    <ul>
+        <li>Détection de patterns comportementaux sur l'historique réel : revenge trading,
+            biais horaires, escalade d'engagement</li>
+        <li>Signal anti-panique combinant lecture de marché, ML et historique du trader</li>
+    </ul>
+
+    <h3>Journal de trading & analyse contrefactuelle</h3>
+    <ul>
+        <li>Enregistrement complet de chaque opération : entrée, sortie, ratio risque/rendement réalisé</li>
+        <li>Annotation libre par trade, réconciliation automatique</li>
+        <li>Simulation d'alternatives : "que se serait-il passé avec une décision différente ?"</li>
     </ul>
 
     <br>
 
     <h2>Compétences démontrées</h2>
-
     <ul>
         <li>Conception d'une <strong>architecture backend modulaire à grande échelle</strong> avec Spring Boot</li>
-        <li>Intégration de <strong>pipelines Machine Learning en production</strong> — validation, drift detection,
-            calibration
-        </li>
-        <li>Traitement de <strong>données financières temps réel</strong> et gestion d'incohérences (réseau, slippage)
-        </li>
-        <li>Design d'<strong>interfaces orientées aide à la décision</strong> (tableaux de bord, alertes,
-            visualisations)
-        </li>
-        <li>Gestion de <strong>microservices et découplage asynchrone</strong> via messaging</li>
-        <li><strong>Agrégation multi-sources</strong> de données externes et enrichissement contexte</li>
-        <li>Contrôle qualité avec <strong>SonarQube</strong> pour suivre la dette technique, les smells et les
-            vulnérabilités
-        </li>
-        <li>Développement d'un <strong>produit avec enjeux réels</strong> (capital personnel engagé)</li>
+        <li>Intégration de <strong>pipelines Machine Learning</strong> : validation, drift detection, calibration</li>
+        <li>Traitement de <strong>données financières temps réel</strong> et gestion d'incohérences (réseau, slippage)</li>
+        <li>Design d'<strong>interfaces orientées aide à la décision</strong> (tableaux de bord, alertes, visualisations)</li>
+        <li>Découplage asynchrone via <strong>messagerie</strong> (RabbitMQ)</li>
+        <li><strong>Agrégation multi-sources</strong> de données externes et normalisation de signaux hétérogènes</li>
+        <li>Développement piloté par les tests sur des composants à fort volume de sources</li>
     </ul>
 
     <br>
 
-    <h2>Roadmap & évolution prévue</h2>
+    <h2>Avancement</h2>
 
+    <h3>Réalisé</h3>
     <ul>
-        <li><strong>Court terme (Juin - Septembre 2026) :</strong>
-            <ul>
-                <li>Stabilisation du socle : API backend, connecteur de donnees de marche, journal de trading</li>
-                <li>Modèles Machine Learning baseline (régression logistique, Random Forest)</li>
-                <li>Interface Angular minimal mais fonctionnelle (dashboard trades, alerts)</li>
-                <li>Intégration d'un premier contrôle qualité SonarQube sur le socle applicatif</li>
-            </ul>
-        </li>
-        <li><strong>Moyen terme :</strong>
-            <ul>
-                <li>Enrichissement des modèles (XGBoost, ensemble, calibration probabilités)</li>
-                <li>Psychology engine avec détection de patterns comportementaux</li>
-                <li>Renforcement des Quality Gates SonarQube et suivi des régressions</li>
-                <li>Dashboard complet + visualisations avancées</li>
-            </ul>
-        </li>
-        <li><strong>Long terme :</strong>
-            <ul>
-                <li>Extraction de composants en microservices (Machine Learning, OSINT)</li>
-                <li>Ajout d'autres classes d'actifs (actions, indices, derives selon conformité)</li>
-                <li>Événements OSINT intégrés au contexte décisionnel</li>
-            </ul>
-        </li>
+        <li>Socle backend modulaire (Spring Boot, tous les modules métier)</li>
+        <li>Pipeline Machine Learning complet : modèles d'ensemble, walk-forward, drift, volatilité, régimes</li>
+        <li>Module OSINT : 50+ providers, consensus pondéré multi-sources intégré au pipeline</li>
+        <li>Interface Angular (composants standalone, dashboard, page calendrier macro)</li>
+        <li>Messagerie asynchrone RabbitMQ opérationnelle</li>
     </ul>
 
-    <br>
-
-    <h2>Exécution locale</h2>
-
-    <p>Le projet est structuré pour un développement reproductible :</p>
-
+    <h3>En cours</h3>
     <ul>
-        <li><strong>Docker Compose :</strong> PostgreSQL, RabbitMQ, FastAPI (Machine Learning)</li>
-        <li><strong>Spring Boot local :</strong> backend sur port 8080</li>
-        <li><strong>Angular dev server :</strong> frontend sur port 4200</li>
-        <li><strong>Profils Spring :</strong> développement, test, production</li>
+        <li>Affinement et extension des modèles ML</li>
+        <li>Visualisations avancées et dashboard complet</li>
+        <li>Quality gates SonarQube</li>
+    </ul>
+
+    <h3>Prévu</h3>
+    <ul>
+        <li>Extraction de composants en microservices (ML, OSINT)</li>
+        <li>Extension à d'autres classes d'actifs (actions, indices, dérivés)</li>
     </ul>
 
     <br>
 
     <h2>Contact & démo</h2>
-
     <p>
-        Vous souhaitez voir le projet en action ou comprendre comment cette plateforme fonctionne ?
+        Vous souhaitez voir le projet en action ou comprendre l'architecture en détail ?
         <br>N'hésitez pas à me contacter pour une démonstration personnalisée.
     </p>
 
@@ -339,5 +236,3 @@
 </main>
 </body>
 </html>
-
-
