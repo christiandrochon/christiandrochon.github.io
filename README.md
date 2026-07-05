@@ -73,6 +73,12 @@ Lancement rapide avec un serveur HTTP local :
 python -m http.server 5137
 ```
 
+ou
+
+```
+python3 -m http.server 5137
+```    
+
 Puis ouvrir :
 
 ```
