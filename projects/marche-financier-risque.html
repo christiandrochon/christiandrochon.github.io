@@ -34,8 +34,7 @@
 
     <div class="project-info mb-4">
         <p>
-            <strong>Statut :</strong> Projet personnel privé (code source non public) · développement actif depuis juin
-            2026
+            <strong>Statut :</strong> Projet personnel privé (code source non public).
         </p>
     </div>
 
@@ -59,7 +58,7 @@
     <p class="note mt-4">
         Ce projet démontre une architecture backend modulaire à grande échelle, l'intégration de pipelines
         Machine Learning, le traitement de données financières multi-sources, et la conception d'interfaces
-        orientées aide à la décision — le tout sur un système où des capitaux réels sont engagés.
+        orientées aide à la décision.
     </p>
 
     <br>
@@ -89,14 +88,14 @@
 
     <h3>Machine Learning</h3>
     <ul>
-        <li><strong>Framework :</strong> Python 3 avec FastAPI</li>
+        <li><strong>Framework :</strong> Python 3 avec FastAPI — service indépendant exposant une API HTTP, déployé séparément du backend Java</li>
         <li><strong>Pipeline :</strong> ensemble de modèles avec probabilités calibrées, validation walk-forward,
-            détection de data drift, modélisation de volatilité et de régimes de marché</li>
+            détection de data drift *(dérive statistique des données signalant que les conditions de marché ont changé)*, modélisation de volatilité et de régimes de marché</li>
     </ul>
 
     <h3>OSINT & données externes</h3>
     <ul>
-        <li>Module Spring Boot indépendant, conçu pour être extrait en microservice</li>
+        <li>Module Spring Boot indépendant — frontières métier claires, extractible en microservice comme les autres modules du monolithe</li>
         <li>Agrégation multi-sources d'événements externes catégorisés : réglementation, macro-économie,
             sentiment de marché, dérivés, données on-chain, infrastructure des plateformes</li>
         <li>Consensus pondéré intégré au pipeline de décision</li>
@@ -107,11 +106,16 @@
         <li><strong>Broker :</strong> RabbitMQ via Spring AMQP — découplage entre composants, robustesse du système</li>
     </ul>
 
+    <h3>Qualité logicielle</h3>
+    <ul>
+        <li><strong>SonarQube :</strong> analyse statique continue — dette technique, code smells, vulnérabilités, quality gates</li>
+    </ul>
+
     <br>
 
     <h2>Architecture</h2>
 
-    <pre class="p-3 rounded" style="background:#f8f9fa; font-size:0.82rem; line-height:1.5; overflow-x:auto;">
+    <pre style="background: var(--color-bg-soft); color: var(--color-text); font-size:0.82rem; line-height:1.5;">
 ┌──────────────────────────────────────────────────────────────┐
 │                      Angular Frontend                        │
 │             Dashboard · Alertes · Visualisations             │
@@ -156,11 +160,11 @@
         <li>Garde-fous anti-surtrading : limite quotidienne de transactions, cooldown entre trades</li>
     </ul>
 
-    <h3>Machine Learning — probabilités de retournement</h3>
+    <h3>Machine Learning — probabilités de retournement et estimation de fourchettes de prix du range</h3>
     <ul>
         <li>Ensemble de modèles avec probabilités calibrées et fourchettes de prix cibles</li>
         <li>Validation walk-forward (évite l'overfitting sur données financières)</li>
-        <li>Détection de data drift et périodes de confiance réduite en cas de drift détecté</li>
+        <li>Détection de data drift *(dérive statistique des données signalant que les conditions de marché ont changé)* et périodes de confiance réduite en cas de drift détecté</li>
         <li>Modélisation de volatilité et identification de régimes de marché cachés</li>
     </ul>
 
@@ -183,12 +187,13 @@
     <h2>Compétences démontrées</h2>
     <ul>
         <li>Conception d'une <strong>architecture backend modulaire à grande échelle</strong> avec Spring Boot</li>
-        <li>Intégration de <strong>pipelines Machine Learning</strong> : validation, drift detection, calibration</li>
+        <li>Intégration de <strong>pipelines Machine Learning</strong> : validation, drift detection *(détection automatique que le modèle n'est plus aligné avec les données réelles)*, calibration</li>
         <li>Traitement de <strong>données financières temps réel</strong> et gestion d'incohérences (réseau, slippage)</li>
         <li>Design d'<strong>interfaces orientées aide à la décision</strong> (tableaux de bord, alertes, visualisations)</li>
         <li>Découplage asynchrone via <strong>messagerie</strong> (RabbitMQ)</li>
         <li><strong>Agrégation multi-sources</strong> de données externes et normalisation de signaux hétérogènes</li>
         <li>Développement piloté par les tests sur des composants à fort volume de sources</li>
+        <li>Contrôle qualité continu avec <strong>SonarQube</strong> : suivi de la dette technique, des smells et des vulnérabilités via quality gates</li>
     </ul>
 
     <br>
@@ -206,6 +211,9 @@
 
     <h3>En cours</h3>
     <ul>
+        <li>Utilisation de l'application en conditions réelles pour tester et valider l'efficacité des modèles ML sur des marchés actifs</li>
+        <li>Paper trading — simulation de trades sans capital engagé pour tester les stratégies et les signaux sur les marchés financiers</li>
+        <li>Module OSINT actif : pondération des événements géopolitiques, financiers (décisions BCE/Fed, guerres, crises) et intégration au pipeline de décision</li>
         <li>Affinement et extension des modèles ML</li>
         <li>Visualisations avancées et dashboard complet</li>
         <li>Quality gates SonarQube</li>
@@ -213,8 +221,9 @@
 
     <h3>Prévu</h3>
     <ul>
-        <li>Extraction de composants en microservices (ML, OSINT)</li>
+        <li>Extraction de modules en microservices indépendants (les frontières sont déjà tracées dans le monolithe modulaire)</li>
         <li>Extension à d'autres classes d'actifs (actions, indices, dérivés)</li>
+        <li>Intégration de <strong>Renovate</strong> pour la gestion automatisée de l'évolution des dépendances</li>
     </ul>
 
     <br>
@@ -231,7 +240,7 @@
     </button>
 
     <hr class="my-4">
-    <p class="footer-license">Projet personnel — Code source non public — Développement actif depuis juin 2026.</p>
+    <p class="footer-license">Projet personnel — Code source non public.</p>
 
 </main>
 </body>
