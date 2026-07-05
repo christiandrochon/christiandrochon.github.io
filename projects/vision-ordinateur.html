@@ -78,6 +78,157 @@
 
 
     <h2>Architecture</h2>
+
+    <div class="architecture-diagram">
+
+        <!-- DESKTOP -->
+        <div class="diagram-desktop">
+            <svg viewBox="0 0 1000 565" role="img" aria-label="Schéma d’architecture — Vision par ordinateur">
+                <defs>
+                    <marker id="vo-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                        <path class="diagram-arrow-head" d="M0,0 L0,6 L9,3 z"></path>
+                    </marker>
+                </defs>
+
+                <!-- Navigateur -->
+                <rect class="diagram-box" x="375" y="20" width="250" height="60" rx="12"></rect>
+                <text class="diagram-text" x="500" y="55" text-anchor="middle">Navigateur</text>
+
+                <line class="diagram-line" x1="500" y1="80" x2="500" y2="138" marker-end="url(#vo-arrow)"></line>
+                <text class="diagram-text arrow-label" x="514" y="113" text-anchor="start">image requête</text>
+
+                <!-- Angular Frontend -->
+                <rect class="diagram-box" x="200" y="140" width="600" height="95" rx="14"></rect>
+                <text class="diagram-text box-title" x="500" y="172" text-anchor="middle">Angular Frontend · port 4200</text>
+                <text class="diagram-text" x="500" y="202" text-anchor="middle">Upload image · sélection mode · affichage résultats</text>
+
+                <line class="diagram-line" x1="500" y1="235" x2="500" y2="296" marker-end="url(#vo-arrow)"></line>
+                <text class="diagram-text arrow-label" x="514" y="270" text-anchor="start">POST /api/search</text>
+
+                <!-- Backend Spring Boot -->
+                <rect class="diagram-box" x="200" y="298" width="600" height="110" rx="14"></rect>
+                <text class="diagram-text box-title" x="500" y="330" text-anchor="middle">Backend Spring Boot · port 8087</text>
+                <text class="diagram-text" x="500" y="360" text-anchor="middle">API REST · extraction de descripteurs</text>
+                <text class="diagram-text" x="500" y="388" text-anchor="middle">couleur · forme · texte · ResNet · précision/rappel</text>
+
+                <!-- Fan vers données -->
+                <line class="diagram-line" x1="500" y1="408" x2="500" y2="448"></line>
+                <line class="diagram-line" x1="210" y1="448" x2="790" y2="448"></line>
+                <line class="diagram-line" x1="210" y1="448" x2="210" y2="476" marker-end="url(#vo-arrow)"></line>
+                <line class="diagram-line" x1="500" y1="448" x2="500" y2="476" marker-end="url(#vo-arrow)"></line>
+                <line class="diagram-line" x1="790" y1="448" x2="790" y2="476" marker-end="url(#vo-arrow)"></line>
+
+                <!-- Données -->
+                <rect class="diagram-box" x="100" y="478" width="220" height="65" rx="12"></rect>
+                <text class="diagram-text box-title" x="210" y="508" text-anchor="middle">images/</text>
+                <text class="diagram-text" x="210" y="530" text-anchor="middle">jeux d’images</text>
+
+                <rect class="diagram-box" x="390" y="478" width="220" height="65" rx="12"></rect>
+                <text class="diagram-text box-title" x="500" y="508" text-anchor="middle">indexes/</text>
+                <text class="diagram-text" x="500" y="530" text-anchor="middle">descripteurs pré-calculés</text>
+
+                <rect class="diagram-box" x="680" y="478" width="220" height="65" rx="12"></rect>
+                <text class="diagram-text box-title" x="790" y="508" text-anchor="middle">ground_truth/</text>
+                <text class="diagram-text" x="790" y="530" text-anchor="middle">vérité terrain</text>
+            </svg>
+        </div>
+
+        <!-- TABLETTE -->
+        <div class="diagram-tablet">
+            <svg viewBox="0 0 820 530" role="img" aria-label="Schéma d’architecture — Vision par ordinateur">
+                <defs>
+                    <marker id="vo-arrow-t" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                        <path class="diagram-arrow-head" d="M0,0 L0,6 L9,3 z"></path>
+                    </marker>
+                </defs>
+
+                <rect class="diagram-box" x="310" y="20" width="200" height="55" rx="12"></rect>
+                <text class="diagram-text" x="410" y="52" text-anchor="middle">Navigateur</text>
+
+                <line class="diagram-line" x1="410" y1="75" x2="410" y2="128" marker-end="url(#vo-arrow-t)"></line>
+                <text class="diagram-text arrow-label" x="424" y="106" text-anchor="start">image requête</text>
+
+                <rect class="diagram-box" x="135" y="130" width="550" height="90" rx="14"></rect>
+                <text class="diagram-text box-title" x="410" y="162" text-anchor="middle">Angular Frontend · port 4200</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="192" text-anchor="middle">Upload image · sélection mode · affichage résultats</text>
+
+                <line class="diagram-line" x1="410" y1="220" x2="410" y2="281" marker-end="url(#vo-arrow-t)"></line>
+                <text class="diagram-text arrow-label" x="424" y="255" text-anchor="start">POST /api/search</text>
+
+                <rect class="diagram-box" x="135" y="283" width="550" height="105" rx="14"></rect>
+                <text class="diagram-text box-title" x="410" y="315" text-anchor="middle">Backend Spring Boot · port 8087</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="345" text-anchor="middle">API REST · extraction de descripteurs</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="368" text-anchor="middle">couleur · forme · texte · ResNet · précision/rappel</text>
+
+                <line class="diagram-line" x1="410" y1="388" x2="410" y2="428"></line>
+                <line class="diagram-line" x1="165" y1="428" x2="655" y2="428"></line>
+                <line class="diagram-line" x1="165" y1="428" x2="165" y2="453" marker-end="url(#vo-arrow-t)"></line>
+                <line class="diagram-line" x1="410" y1="428" x2="410" y2="453" marker-end="url(#vo-arrow-t)"></line>
+                <line class="diagram-line" x1="655" y1="428" x2="655" y2="453" marker-end="url(#vo-arrow-t)"></line>
+
+                <rect class="diagram-box" x="65" y="455" width="200" height="60" rx="12"></rect>
+                <text class="diagram-text box-title diagram-tablet-title" x="165" y="483" text-anchor="middle">images/</text>
+                <text class="diagram-text diagram-tablet-text" x="165" y="503" text-anchor="middle">jeux d’images</text>
+
+                <rect class="diagram-box" x="310" y="455" width="200" height="60" rx="12"></rect>
+                <text class="diagram-text box-title diagram-tablet-title" x="410" y="483" text-anchor="middle">indexes/</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="503" text-anchor="middle">descripteurs pré-calculés</text>
+
+                <rect class="diagram-box" x="555" y="455" width="200" height="60" rx="12"></rect>
+                <text class="diagram-text box-title diagram-tablet-title" x="655" y="483" text-anchor="middle">ground_truth/</text>
+                <text class="diagram-text diagram-tablet-text" x="655" y="503" text-anchor="middle">vérité terrain</text>
+            </svg>
+        </div>
+
+        <!-- MOBILE -->
+        <div class="diagram-mobile">
+            <svg viewBox="0 0 470 530" role="img" aria-label="Schéma d’architecture — Vision par ordinateur">
+                <defs>
+                    <marker id="vo-arrow-m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                        <path class="diagram-arrow-head" d="M0,0 L0,6 L9,3 z"></path>
+                    </marker>
+                </defs>
+
+                <rect class="diagram-box" x="160" y="20" width="150" height="50" rx="12"></rect>
+                <text class="diagram-text" x="235" y="50" text-anchor="middle">Navigateur</text>
+
+                <line class="diagram-line" x1="235" y1="70" x2="235" y2="123" marker-end="url(#vo-arrow-m)"></line>
+                <text class="diagram-text arrow-label" x="248" y="101" text-anchor="start">image requête</text>
+
+                <rect class="diagram-box" x="40" y="125" width="390" height="88" rx="14"></rect>
+                <text class="diagram-text box-title" x="235" y="157" text-anchor="middle">Angular Frontend · port 4200</text>
+                <text class="diagram-text diagram-small-text" x="235" y="184" text-anchor="middle">Upload · sélection mode · résultats</text>
+
+                <line class="diagram-line" x1="235" y1="213" x2="235" y2="276" marker-end="url(#vo-arrow-m)"></line>
+                <text class="diagram-text arrow-label" x="248" y="249" text-anchor="start">POST /api/search</text>
+
+                <rect class="diagram-box" x="40" y="278" width="390" height="105" rx="14"></rect>
+                <text class="diagram-text box-title" x="235" y="310" text-anchor="middle">Backend Spring Boot · port 8087</text>
+                <text class="diagram-text diagram-small-text" x="235" y="337" text-anchor="middle">API REST · extraction descripteurs</text>
+                <text class="diagram-text diagram-small-text" x="235" y="360" text-anchor="middle">couleur · forme · texte · ResNet</text>
+
+                <line class="diagram-line" x1="235" y1="383" x2="235" y2="418"></line>
+                <line class="diagram-line" x1="100" y1="418" x2="370" y2="418"></line>
+                <line class="diagram-line" x1="100" y1="418" x2="100" y2="443" marker-end="url(#vo-arrow-m)"></line>
+                <line class="diagram-line" x1="235" y1="418" x2="235" y2="443" marker-end="url(#vo-arrow-m)"></line>
+                <line class="diagram-line" x1="370" y1="418" x2="370" y2="443" marker-end="url(#vo-arrow-m)"></line>
+
+                <rect class="diagram-box" x="40" y="445" width="120" height="55" rx="12"></rect>
+                <text class="diagram-text box-title diagram-small-title" x="100" y="471" text-anchor="middle">images/</text>
+                <text class="diagram-text diagram-small-text" x="100" y="489" text-anchor="middle">images</text>
+
+                <rect class="diagram-box" x="175" y="445" width="120" height="55" rx="12"></rect>
+                <text class="diagram-text box-title diagram-small-title" x="235" y="471" text-anchor="middle">indexes/</text>
+                <text class="diagram-text diagram-small-text" x="235" y="489" text-anchor="middle">descripteurs</text>
+
+                <rect class="diagram-box" x="310" y="445" width="120" height="55" rx="12"></rect>
+                <text class="diagram-text box-title diagram-small-title" x="370" y="471" text-anchor="middle">ground_truth/</text>
+                <text class="diagram-text diagram-small-text" x="370" y="489" text-anchor="middle">vérité terrain</text>
+            </svg>
+        </div>
+    </div>
+
+    <h2>Organisation du projet</h2>
     <pre><code>.
 ├── multimedias-ui/   # Frontend Angular
 ├── multimedia/          # Backend Spring Boot / Java

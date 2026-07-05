@@ -82,7 +82,7 @@
 
     <h3>Frontend</h3>
     <ul>
-        <li><strong>Framework :</strong> Angular (composants standalone, signals, <code>@if</code>/<code>@for</code>)</li>
+        <li><strong>Framework :</strong> Angular (composants standalone, signals)</li>
         <li><strong>Objectif :</strong> Interface orientée aide à la décision, dashboard temps réel, visualisations de stratégie</li>
     </ul>
 
@@ -115,38 +115,158 @@
 
     <h2>Architecture</h2>
 
-    <pre style="background: var(--color-bg-soft); color: var(--color-text); font-size:0.82rem; line-height:1.5;">
-┌──────────────────────────────────────────────────────────────┐
-│                      Angular Frontend                        │
-│             Dashboard · Alertes · Visualisations             │
-└─────────────────────────┬────────────────────────────────────┘
-                          │ REST
-┌─────────────────────────▼────────────────────────────────────┐
-│                   Backend Spring Boot                        │
-│                                                              │
-│  ┌─────────────┐  ┌─────────────────┐  ┌─────────────────┐  │
-│  │ risk-engine │  │psychology-engine│  │ trading-journal │  │
-│  └─────────────┘  └─────────────────┘  └─────────────────┘  │
-│                                                              │
-│  ┌────────────────┐  ┌──────────────┐  ┌───────────────┐    │
-│  │ counterfactual │  │ market-data  │  │   ML client   │    │
-│  └────────────────┘  └──────────────┘  └───────┬───────┘    │
-└─────────────────────────┬─────────────────────── ┼ ──────────┘
-                          │                        │ HTTP
-             ┌────────────▼──────────┐  ┌──────────▼──────────┐
-             │       PostgreSQL      │  │   Python · FastAPI  │
-             │    (multi-schémas)    │  │     ML pipeline     │
-             └───────────────────────┘  └─────────────────────┘
+    <div class="architecture-diagram">
 
-┌──────────────────────────────────────────────────────────────┐
-│                      Module OSINT                            │
-│          Spring Boot indépendant · 50+ providers             │
-│   Réglementation · Macro · Sentiment · Dérivés · On-chain    │
-└─────────────────────────┬────────────────────────────────────┘
-                          │ RabbitMQ
-                          ▼
-                 [Backend · ML pipeline]
-</pre>
+        <!-- DESKTOP -->
+        <div class="diagram-desktop">
+            <svg viewBox="0 0 1200 500" role="img" aria-label="Schéma d'architecture — Marché financier à risque">
+                <defs>
+                    <marker id="mf-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                        <path class="diagram-arrow-head" d="M0,0 L0,6 L9,3 z"></path>
+                    </marker>
+                </defs>
+
+                <!-- Angular Frontend -->
+                <rect class="diagram-box" x="350" y="20" width="500" height="80" rx="12"></rect>
+                <text class="diagram-text box-title" x="600" y="52" text-anchor="middle">Angular Frontend</text>
+                <text class="diagram-text" x="600" y="78" text-anchor="middle">Dashboard · Alertes · Visualisations</text>
+
+                <line class="diagram-line" x1="600" y1="100" x2="600" y2="158" marker-end="url(#mf-arrow)"></line>
+                <text class="diagram-text arrow-label" x="614" y="133" text-anchor="start">REST</text>
+
+                <!-- Backend Spring Boot -->
+                <rect class="diagram-box" x="80" y="160" width="1040" height="165" rx="14"></rect>
+                <text class="diagram-text box-title" x="600" y="192" text-anchor="middle">Backend Spring Boot</text>
+                <text class="diagram-text" x="600" y="222" text-anchor="middle">risk-engine · psychology-engine · trading-journal</text>
+                <text class="diagram-text" x="600" y="252" text-anchor="middle">counterfactual · market-data-aggregator · ML client</text>
+                <text class="diagram-text" x="600" y="282" text-anchor="middle">PostgreSQL (multi-schémas) · RabbitMQ AMQP · SonarQube</text>
+
+                <!-- Backend → PostgreSQL -->
+                <line class="diagram-line" x1="230" y1="325" x2="230" y2="383" marker-end="url(#mf-arrow)"></line>
+
+                <!-- Backend → Python FastAPI -->
+                <line class="diagram-line" x1="590" y1="325" x2="590" y2="383" marker-end="url(#mf-arrow)"></line>
+                <text class="diagram-text arrow-label" x="604" y="358" text-anchor="start">HTTP</text>
+
+                <!-- OSINT → Backend (RabbitMQ, flèche montante) -->
+                <line class="diagram-line" x1="960" y1="383" x2="960" y2="327" marker-end="url(#mf-arrow)"></line>
+                <text class="diagram-text arrow-label" x="974" y="360" text-anchor="start">RabbitMQ</text>
+
+                <!-- PostgreSQL -->
+                <rect class="diagram-box" x="80" y="385" width="300" height="95" rx="12"></rect>
+                <text class="diagram-text box-title" x="230" y="418" text-anchor="middle">PostgreSQL</text>
+                <text class="diagram-text" x="230" y="448" text-anchor="middle">multi-schémas · Flyway</text>
+
+                <!-- Python FastAPI -->
+                <rect class="diagram-box" x="435" y="385" width="310" height="95" rx="12"></rect>
+                <text class="diagram-text box-title" x="590" y="418" text-anchor="middle">Python 3 · FastAPI</text>
+                <text class="diagram-text" x="590" y="448" text-anchor="middle">ML pipeline · service indépendant</text>
+
+                <!-- Module OSINT -->
+                <rect class="diagram-box" x="800" y="385" width="320" height="95" rx="12"></rect>
+                <text class="diagram-text box-title" x="960" y="418" text-anchor="middle">Module OSINT</text>
+                <text class="diagram-text" x="960" y="448" text-anchor="middle">Spring Boot · 50+ providers</text>
+            </svg>
+        </div>
+
+        <!-- TABLETTE -->
+        <div class="diagram-tablet">
+            <svg viewBox="0 0 820 495" role="img" aria-label="Schéma d'architecture — Marché financier à risque">
+                <defs>
+                    <marker id="mf-arrow-t" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                        <path class="diagram-arrow-head" d="M0,0 L0,6 L9,3 z"></path>
+                    </marker>
+                </defs>
+
+                <rect class="diagram-box" x="165" y="20" width="490" height="78" rx="12"></rect>
+                <text class="diagram-text box-title" x="410" y="52" text-anchor="middle">Angular Frontend</text>
+                <text class="diagram-text" x="410" y="78" text-anchor="middle">Dashboard · Alertes · Visualisations</text>
+
+                <line class="diagram-line" x1="410" y1="98" x2="410" y2="156" marker-end="url(#mf-arrow-t)"></line>
+                <text class="diagram-text arrow-label" x="424" y="132" text-anchor="start">REST</text>
+
+                <rect class="diagram-box" x="40" y="158" width="740" height="165" rx="14"></rect>
+                <text class="diagram-text box-title" x="410" y="190" text-anchor="middle">Backend Spring Boot</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="220" text-anchor="middle">risk-engine · psychology-engine · trading-journal</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="248" text-anchor="middle">counterfactual · market-data-aggregator · ML client</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="276" text-anchor="middle">PostgreSQL · RabbitMQ AMQP · SonarQube</text>
+
+                <!-- Backend → PostgreSQL -->
+                <line class="diagram-line" x1="145" y1="323" x2="145" y2="379" marker-end="url(#mf-arrow-t)"></line>
+
+                <!-- Backend → Python FastAPI -->
+                <line class="diagram-line" x1="387" y1="323" x2="387" y2="379" marker-end="url(#mf-arrow-t)"></line>
+                <text class="diagram-text arrow-label" x="400" y="355" text-anchor="start">HTTP</text>
+
+                <!-- OSINT → Backend (montant) -->
+                <line class="diagram-line" x1="655" y1="379" x2="655" y2="325" marker-end="url(#mf-arrow-t)"></line>
+                <text class="diagram-text arrow-label" x="667" y="356" text-anchor="start">RabbitMQ</text>
+
+                <rect class="diagram-box" x="40" y="381" width="210" height="90" rx="12"></rect>
+                <text class="diagram-text box-title diagram-tablet-title" x="145" y="413" text-anchor="middle">PostgreSQL</text>
+                <text class="diagram-text diagram-tablet-text" x="145" y="441" text-anchor="middle">multi-schémas · Flyway</text>
+
+                <rect class="diagram-box" x="275" y="381" width="225" height="90" rx="12"></rect>
+                <text class="diagram-text box-title diagram-tablet-title" x="387" y="413" text-anchor="middle">Python 3 · FastAPI</text>
+                <text class="diagram-text diagram-tablet-text" x="387" y="441" text-anchor="middle">ML pipeline</text>
+
+                <rect class="diagram-box" x="530" y="381" width="250" height="90" rx="12"></rect>
+                <text class="diagram-text box-title diagram-tablet-title" x="655" y="413" text-anchor="middle">Module OSINT</text>
+                <text class="diagram-text diagram-tablet-text" x="655" y="441" text-anchor="middle">50+ providers</text>
+            </svg>
+        </div>
+
+        <!-- MOBILE -->
+        <div class="diagram-mobile">
+            <svg viewBox="0 0 470 640" role="img" aria-label="Schéma d'architecture — Marché financier à risque">
+                <defs>
+                    <marker id="mf-arrow-m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                        <path class="diagram-arrow-head" d="M0,0 L0,6 L9,3 z"></path>
+                    </marker>
+                </defs>
+
+                <rect class="diagram-box" x="60" y="20" width="350" height="72" rx="12"></rect>
+                <text class="diagram-text box-title" x="235" y="52" text-anchor="middle">Angular Frontend</text>
+                <text class="diagram-text diagram-small-text" x="235" y="76" text-anchor="middle">Dashboard · Alertes · Visualisations</text>
+
+                <line class="diagram-line" x1="235" y1="92" x2="235" y2="143" marker-end="url(#mf-arrow-m)"></line>
+                <text class="diagram-text arrow-label" x="248" y="122" text-anchor="start">REST</text>
+
+                <rect class="diagram-box" x="30" y="145" width="410" height="155" rx="14"></rect>
+                <text class="diagram-text box-title" x="235" y="177" text-anchor="middle">Backend Spring Boot</text>
+                <text class="diagram-text diagram-small-text" x="235" y="205" text-anchor="middle">risk-engine · psychology-engine</text>
+                <text class="diagram-text diagram-small-text" x="235" y="228" text-anchor="middle">trading-journal · counterfactual</text>
+                <text class="diagram-text diagram-small-text" x="235" y="251" text-anchor="middle">market-data-aggregator · ML client</text>
+                <text class="diagram-text diagram-small-text" x="235" y="274" text-anchor="middle">PostgreSQL · RabbitMQ · SonarQube</text>
+
+                <!-- Backend → PostgreSQL -->
+                <line class="diagram-line" x1="122" y1="300" x2="122" y2="355" marker-end="url(#mf-arrow-m)"></line>
+
+                <!-- Backend → Python FastAPI -->
+                <line class="diagram-line" x1="337" y1="300" x2="337" y2="355" marker-end="url(#mf-arrow-m)"></line>
+                <text class="diagram-text arrow-label" x="350" y="332" text-anchor="start">HTTP</text>
+
+                <rect class="diagram-box" x="30" y="357" width="185" height="85" rx="12"></rect>
+                <text class="diagram-text box-title diagram-small-title" x="122" y="387" text-anchor="middle">PostgreSQL</text>
+                <text class="diagram-text diagram-small-text" x="122" y="413" text-anchor="middle">multi-schémas · Flyway</text>
+
+                <rect class="diagram-box" x="225" y="357" width="215" height="85" rx="12"></rect>
+                <text class="diagram-text box-title diagram-small-title" x="332" y="387" text-anchor="middle">Python 3 · FastAPI</text>
+                <text class="diagram-text diagram-small-text" x="332" y="413" text-anchor="middle">ML pipeline</text>
+
+                <!-- OSINT (bas) -->
+                <rect class="diagram-box" x="60" y="510" width="350" height="85" rx="12"></rect>
+                <text class="diagram-text box-title diagram-small-title" x="235" y="542" text-anchor="middle">Module OSINT</text>
+                <text class="diagram-text diagram-small-text" x="235" y="567" text-anchor="middle">Spring Boot · 50+ providers</text>
+
+                <!-- Routage RabbitMQ : OSINT → Backend (côté droit) -->
+                <line class="diagram-line" x1="410" y1="552" x2="450" y2="552"></line>
+                <line class="diagram-line" x1="450" y1="552" x2="450" y2="222"></line>
+                <line class="diagram-line" x1="450" y1="222" x2="442" y2="222" marker-end="url(#mf-arrow-m)"></line>
+                <text class="diagram-text arrow-label" x="452" y="395" text-anchor="start">RabbitMQ</text>
+            </svg>
+        </div>
+    </div>
 
     <br>
 
