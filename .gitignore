@@ -10,7 +10,7 @@
 # Ignorer toute la configuration JetBrains
 .idea/
 *.iml
-.cl[a]ude/
+.claude/
 
 # Dossiers de build éventuels
 dist/
