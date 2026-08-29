@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const iframeEl = document.getElementById("spec-panel-iframe");
     const certLinkEl = document.getElementById("spec-panel-cert-link");
     const courseTitleEl = document.getElementById("spec-panel-course-title");
+    const courseNoteEl = document.getElementById("spec-panel-course-note");
     const courseLinkEl = document.getElementById("spec-panel-course-link");
 
     const triggers = Array.from(document.querySelectorAll("a[data-cert]"));
@@ -67,6 +68,15 @@ document.addEventListener("DOMContentLoaded", () => {
         certLinkEl.setAttribute("href", certUrl);
         courseTitleEl.textContent = label;
         courseLinkEl.setAttribute("href", courseUrl);
+
+        const note = trigger.getAttribute("data-note");
+        if (note) {
+            courseNoteEl.textContent = note;
+            courseNoteEl.hidden = false;
+        } else {
+            courseNoteEl.textContent = "";
+            courseNoteEl.hidden = true;
+        }
 
         lastFocusedEl = trigger;
         overlay.hidden = false;

@@ -154,6 +154,21 @@
     color: var(--color-text);
 }
 
+.spec-panel-course-note {
+    margin: 0;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    background: var(--color-accent-soft);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0.3rem;
+}
+
+.spec-panel-course-note[hidden] {
+    display: none;
+}
+
 .spec-panel-course-btn {
     display: inline-flex;
     align-items: center;
