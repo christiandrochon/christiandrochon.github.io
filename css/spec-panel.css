@@ -1,0 +1,172 @@
+/* =========================
+   Spécialisations : icône certificat
+   ========================= */
+.spec-cert-icon {
+    margin-left: 0.35rem;
+    font-size: 0.75em;
+    color: var(--color-link-alt);
+    vertical-align: middle;
+}
+
+/* =========================
+   Panneau Certificat / Cours
+   ========================= */
+.spec-panel-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(8, 12, 24, 0.65);
+}
+
+.spec-panel-overlay[hidden] {
+    display: none;
+}
+
+.spec-panel {
+    position: relative;
+    width: min(1100px, 100%);
+    max-height: min(900px, 92vh);
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-border);
+    border-radius: 0.8rem;
+    box-shadow: 0 25px 60px rgba(8, 12, 24, 0.45);
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.spec-panel-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.spec-panel-close:hover,
+.spec-panel-close:focus-visible {
+    color: var(--color-text);
+    border-color: var(--color-accent);
+    background: var(--color-accent-soft);
+}
+
+.spec-panel-title {
+    padding-right: 3rem;
+    margin: 0 0 1rem 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.spec-panel-body {
+    display: flex;
+    gap: 1.25rem;
+    flex: 1;
+    min-height: 0;
+}
+
+.spec-panel-cert {
+    flex: 1 1 62%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.spec-panel-iframe {
+    flex: 1;
+    min-height: 300px;
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: #ffffff;
+}
+
+.spec-panel-cert-fallback {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.spec-panel-cert-fallback a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.spec-panel-course {
+    flex: 1 1 38%;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.6rem;
+    background: var(--color-bg);
+}
+
+.spec-panel-course-title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.spec-panel-course-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-accent);
+    background: transparent;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.spec-panel-course-btn:hover,
+.spec-panel-course-btn:focus-visible {
+    background: var(--color-accent);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Mobile : volets empilés */
+@media (max-width: 720px) {
+    .spec-panel {
+        padding: 1.1rem;
+        max-height: 95vh;
+    }
+
+    .spec-panel-body {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .spec-panel-iframe {
+        min-height: 340px;
+    }
+
+    .spec-panel-course {
+        min-width: 0;
+    }
+}
