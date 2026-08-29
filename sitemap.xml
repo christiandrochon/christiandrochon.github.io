@@ -2,17 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://christiandrochon.dev/</loc>
+        <lastmod>2026-08-24</lastmod>
     </url>
     <url>
         <loc>https://christiandrochon.dev/projects/artisan.html</loc>
+        <lastmod>2026-08-24</lastmod>
     </url>
     <url>
         <loc>https://christiandrochon.dev/projects/sma.html</loc>
+        <lastmod>2026-08-24</lastmod>
     </url>
     <url>
         <loc>https://christiandrochon.dev/projects/marche-financier-risque.html</loc>
+        <lastmod>2026-08-24</lastmod>
     </url>
     <url>
         <loc>https://christiandrochon.dev/projects/vision-ordinateur.html</loc>
+        <lastmod>2026-08-24</lastmod>
+    </url>
+    <url>
+        <loc>https://christiandrochon.dev/Christian_Drochon_CV_2026.pdf</loc>
+        <lastmod>2026-06-21</lastmod>
     </url>
 </urlset>
