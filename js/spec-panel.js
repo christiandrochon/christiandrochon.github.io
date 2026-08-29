@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("spec-panel-overlay");
     const panel = document.getElementById("spec-panel");
     const closeBtn = document.getElementById("spec-panel-close");
+    const backBtn = document.getElementById("spec-panel-back");
     const titleEl = document.getElementById("spec-panel-title");
     const iframeEl = document.getElementById("spec-panel-iframe");
     const certLinkEl = document.getElementById("spec-panel-cert-link");
@@ -98,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     closeBtn.addEventListener("click", closePanel);
+    if (backBtn) backBtn.addEventListener("click", closePanel);
 
     overlay.addEventListener("click", (e) => {
         if (e.target === overlay) closePanel();

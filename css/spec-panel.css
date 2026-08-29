@@ -28,8 +28,8 @@
 
 .spec-panel {
     position: relative;
-    width: min(1100px, 100%);
-    max-height: min(900px, 92vh);
+    width: min(1500px, 97vw);
+    max-height: min(1050px, 95vh);
     display: flex;
     flex-direction: column;
     background: var(--color-bg-soft);
@@ -38,6 +38,30 @@
     box-shadow: 0 25px 60px rgba(8, 12, 24, 0.45);
     padding: 1.5rem;
     overflow: hidden;
+}
+
+.spec-panel-back {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.spec-panel-back:hover,
+.spec-panel-back:focus-visible {
+    border-color: var(--color-accent);
+    background: var(--color-accent-soft);
 }
 
 .spec-panel-close {
@@ -67,7 +91,7 @@
 }
 
 .spec-panel-title {
-    padding-right: 3rem;
+    padding: 2.75rem 3rem 0 0;
     margin: 0 0 1rem 0;
     font-size: 1.15rem;
     font-weight: 600;
@@ -82,7 +106,7 @@
 }
 
 .spec-panel-cert {
-    flex: 1 1 62%;
+    flex: 1 1 72%;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -91,7 +115,7 @@
 
 .spec-panel-iframe {
     flex: 1;
-    min-height: 300px;
+    min-height: 640px;
     width: 100%;
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
@@ -109,7 +133,7 @@
 }
 
 .spec-panel-course {
-    flex: 1 1 38%;
+    flex: 1 1 28%;
     min-width: 220px;
     display: flex;
     flex-direction: column;
@@ -155,6 +179,16 @@
     .spec-panel {
         padding: 1.1rem;
         max-height: 95vh;
+    }
+
+    .spec-panel-back {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.65rem;
+        max-width: 60%;
+    }
+
+    .spec-panel-title {
+        padding-top: 2.5rem;
     }
 
     .spec-panel-body {
