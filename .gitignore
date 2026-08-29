@@ -23,4 +23,23 @@ node_modules/
 
 css/bootstrap*
 js/bootstrap*
-ue/
+
+ue/*
+!ue/Attestation_Reussite_GLG203.pdf
+!ue/Attestation_Reussite_GLG204.pdf
+!ue/Attestation_Reussite_MVA003.pdf
+!ue/Attestation_Reussite_RCP105.pdf
+!ue/Attestation_Succes_ANG100.pdf
+!ue/Attestation_Succes_ENG221.pdf
+!ue/Attestation_Succes_GFN106.pdf
+!ue/Attestation_Succes_MUX102.pdf
+!ue/Attestation_Succes_MVA913.pdf
+!ue/Attestation_Succes_NFE204.pdf
+!ue/Attestation_Succes_NFE205.pdf
+!ue/Attestation_Succes_NSY205.pdf
+!ue/Attestation_Succes_NSY206.pdf
+!ue/Attestation_Succes_NSY208.pdf
+!ue/Attestation_Succes_SMB111.pdf
+!ue/Attestation_Succes_UTC501.pdf
+!ue/Attestation_Success_STA001.pdf
+!ue/attestation_secnumacademie.pdf
