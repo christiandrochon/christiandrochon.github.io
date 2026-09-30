@@ -5,14 +5,14 @@
     <title>Vision par ordinateur — Christian Drochon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <meta name="description" content="Recherche d'images par similarité : descripteurs classiques et embeddings ResNet, interface Angular, backend Spring Boot, évaluation précision/rappel."/>
+    <meta name="description" content="Recherche d’images par similarité&nbsp;: descripteurs classiques et embeddings ResNet, interface Angular, backend Spring Boot, évaluation précision/rappel."/>
     <link rel="canonical" href="https://christiandrochon.dev/projects/vision-ordinateur.html"/>
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
     <meta property="og:title" content="Vision par ordinateur"/>
-    <meta property="og:description" content="Recherche d'images par similarité : descripteurs classiques et embeddings ResNet, interface Angular, backend Spring Boot, évaluation précision/rappel."/>
+    <meta property="og:description" content="Recherche d’images par similarité&nbsp;: descripteurs classiques et embeddings ResNet, interface Angular, backend Spring Boot, évaluation précision/rappel."/>
     <meta property="og:url" content="https://christiandrochon.dev/projects/vision-ordinateur.html"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Christian Drochon"/>
@@ -21,7 +21,7 @@
     <meta property="og:image:height" content="630"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="Vision par ordinateur"/>
-    <meta name="twitter:description" content="Recherche d'images par similarité : descripteurs classiques et embeddings ResNet, interface Angular, backend Spring Boot, évaluation précision/rappel."/>
+    <meta name="twitter:description" content="Recherche d’images par similarité&nbsp;: descripteurs classiques et embeddings ResNet, interface Angular, backend Spring Boot, évaluation précision/rappel."/>
     <meta name="twitter:image" content="https://christiandrochon.dev/img/og-cover.jpg"/>
 
     <link rel="icon" type="image/svg+xml" href="/img/favicon_CD_rond.svg">
@@ -71,23 +71,22 @@
 
     <h2>Problème & approche</h2>
     <p>
-        L’utilisateur soumet une image requête. Le système extrait des descripteurs et retourne les images les plus
+        L’utilisateur choisit une image de la base comme requête, ou en fait tirer une au hasard. Le système s’appuie sur des descripteurs et retourne les images les plus
         similaires
-        selon une métrique. L’approche combine descripteurs “classiques” (couleur, niveaux de gris, forme, texte),
-        des descripteurs profonds (embeddings via un CNN type ResNet), des classes Vérité/Terrain, avec une évaluation
+        selon une métrique. L’approche combine des descripteurs «&nbsp;classiques&nbsp;» (couleur, niveaux de gris, forme, texture),
+        des descripteurs profonds (embeddings ResNet pré-calculés, lus depuis un fichier), des classes de vérité terrain, ainsi qu’une évaluation
         quantitative (précision / rappel).
-        <br>Les descripteurs de toutes les images de la base de données des images sont générés en asynchrone afin de ne
-        pas bloquer l'utilisateur dans ses recherches.
+        <br>La génération des descripteurs est déclenchée par des appels <code>GET</code> dédiés (par exemple <code>/rvb666</code>). Seule l’évaluation précision/rappel est exécutée en asynchrone.
     </p>
 
     <h2>Fonctionnalités clés</h2>
     <ul>
-        <li>Upload d’une image requête via l’interface web</li>
-        <li>Modes de recherche : couleur / forme / texte / deep (ResNet) / classes Vérité-Terrain / combinaison
+        <li>Tirage au hasard d’une image requête via l’interface web (pour ResNet, choix d’une classe puis tirage au sein de celle-ci)&nbsp;; l’API accepte aussi un <code>queryImage</code> explicite</li>
+        <li>Modes de recherche&nbsp;: couleur / forme / texture / embeddings ResNet / classes de vérité terrain / combinaison
             pondérée
         </li>
         <li>Résultats classés par score de similarité</li>
-        <li>Évaluation : courbes précision/rappel</li>
+        <li>Évaluation&nbsp;: courbes précision/rappel</li>
         <li>Architecture modulaire pour ajouter facilement de nouveaux descripteurs</li>
     </ul>
 
@@ -97,11 +96,11 @@
         <li>Conception d’une architecture full-stack Angular / Spring Boot.</li>
         <li>Développement d’une API REST pour la recherche multimédia.</li>
         <li>Implémentation d’algorithmes de recherche par similarité d’images.</li>
-        <li>Extraction et comparaison de descripteurs visuels (couleur, niveaux de gris, forme et texte).</li>
-        <li>Utilisation d’un réseau de neurones convolutionnel (ResNet) pour la génération d’embeddings.</li>
+        <li>Extraction et comparaison de descripteurs visuels (couleur, niveaux de gris, forme et texture).</li>
+        <li>Recherche par similarité s’appuyant sur des embeddings ResNet.</li>
         <li>Mise en œuvre d’une recherche vectorielle basée sur les plus proches voisins.</li>
         <li>Combinaison et pondération de plusieurs métriques de similarité.</li>
-        <li>Traitements asynchrones pour la génération et l’indexation des descripteurs.</li>
+        <li>Exécution asynchrone de l’évaluation précision/rappel.</li>
         <li>Évaluation des performances à l’aide d’indicateurs de précision et de rappel.</li>
         <li>Conteneurisation et exécution reproductible avec Docker Compose.</li>
     </ul>
@@ -126,21 +125,21 @@
                 <text class="diagram-text" x="500" y="55" text-anchor="middle">Navigateur</text>
 
                 <line class="diagram-line" x1="500" y1="80" x2="500" y2="138" marker-end="url(#vo-arrow)"></line>
-                <text class="diagram-text arrow-label" x="514" y="113" text-anchor="start">image requête</text>
+                <text class="diagram-text arrow-label" x="514" y="113" text-anchor="start">tirage</text>
 
                 <!-- Angular Frontend -->
                 <rect class="diagram-box" x="200" y="140" width="600" height="95" rx="14"></rect>
                 <text class="diagram-text box-title" x="500" y="172" text-anchor="middle">Angular Frontend · port 4200</text>
-                <text class="diagram-text" x="500" y="202" text-anchor="middle">Upload image · sélection mode · affichage résultats</text>
+                <text class="diagram-text" x="500" y="202" text-anchor="middle">Image aléatoire · mode · affichage résultats</text>
 
                 <line class="diagram-line" x1="500" y1="235" x2="500" y2="296" marker-end="url(#vo-arrow)"></line>
-                <text class="diagram-text arrow-label" x="514" y="270" text-anchor="start">POST /api/search</text>
+                <text class="diagram-text arrow-label" x="514" y="270" text-anchor="start">requêtes GET</text>
 
                 <!-- Backend Spring Boot -->
                 <rect class="diagram-box" x="200" y="298" width="600" height="110" rx="14"></rect>
                 <text class="diagram-text box-title" x="500" y="330" text-anchor="middle">Backend Spring Boot · port 8087</text>
-                <text class="diagram-text" x="500" y="360" text-anchor="middle">API REST · extraction de descripteurs</text>
-                <text class="diagram-text" x="500" y="388" text-anchor="middle">couleur · forme · texte · ResNet · précision/rappel</text>
+                <text class="diagram-text" x="500" y="360" text-anchor="middle">API REST · descripteurs · évaluation</text>
+                <text class="diagram-text" x="500" y="388" text-anchor="middle">couleur · forme · texture · ResNet</text>
 
                 <!-- Fan vers données -->
                 <line class="diagram-line" x1="500" y1="408" x2="500" y2="448"></line>
@@ -151,15 +150,15 @@
 
                 <!-- Données -->
                 <rect class="diagram-box" x="100" y="478" width="220" height="65" rx="12"></rect>
-                <text class="diagram-text box-title" x="210" y="508" text-anchor="middle">images/</text>
-                <text class="diagram-text" x="210" y="530" text-anchor="middle">jeux d’images</text>
+                <text class="diagram-text box-title" x="210" y="508" text-anchor="middle">Base10000/images</text>
+                <text class="diagram-text" x="210" y="530" text-anchor="middle">jeu d’images</text>
 
                 <rect class="diagram-box" x="390" y="478" width="220" height="65" rx="12"></rect>
-                <text class="diagram-text box-title" x="500" y="508" text-anchor="middle">indexes/</text>
-                <text class="diagram-text" x="500" y="530" text-anchor="middle">descripteurs pré-calculés</text>
+                <text class="diagram-text box-title" x="500" y="508" text-anchor="middle">outputs/descripteurs</text>
+                <text class="diagram-text" x="500" y="530" text-anchor="middle">descripteurs</text>
 
                 <rect class="diagram-box" x="680" y="478" width="220" height="65" rx="12"></rect>
-                <text class="diagram-text box-title" x="790" y="508" text-anchor="middle">ground_truth/</text>
+                <text class="diagram-text box-title" x="790" y="508" text-anchor="middle">VT_*.txt</text>
                 <text class="diagram-text" x="790" y="530" text-anchor="middle">vérité terrain</text>
             </svg>
         </div>
@@ -177,19 +176,19 @@
                 <text class="diagram-text" x="410" y="52" text-anchor="middle">Navigateur</text>
 
                 <line class="diagram-line" x1="410" y1="75" x2="410" y2="128" marker-end="url(#vo-arrow-t)"></line>
-                <text class="diagram-text arrow-label" x="424" y="106" text-anchor="start">image requête</text>
+                <text class="diagram-text arrow-label" x="424" y="106" text-anchor="start">tirage</text>
 
                 <rect class="diagram-box" x="135" y="130" width="550" height="90" rx="14"></rect>
                 <text class="diagram-text box-title" x="410" y="162" text-anchor="middle">Angular Frontend · port 4200</text>
-                <text class="diagram-text diagram-tablet-text" x="410" y="192" text-anchor="middle">Upload image · sélection mode · affichage résultats</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="192" text-anchor="middle">Image aléatoire · mode · affichage résultats</text>
 
                 <line class="diagram-line" x1="410" y1="220" x2="410" y2="281" marker-end="url(#vo-arrow-t)"></line>
-                <text class="diagram-text arrow-label" x="424" y="255" text-anchor="start">POST /api/search</text>
+                <text class="diagram-text arrow-label" x="424" y="255" text-anchor="start">requêtes GET</text>
 
                 <rect class="diagram-box" x="135" y="283" width="550" height="105" rx="14"></rect>
                 <text class="diagram-text box-title" x="410" y="315" text-anchor="middle">Backend Spring Boot · port 8087</text>
-                <text class="diagram-text diagram-tablet-text" x="410" y="345" text-anchor="middle">API REST · extraction de descripteurs</text>
-                <text class="diagram-text diagram-tablet-text" x="410" y="368" text-anchor="middle">couleur · forme · texte · ResNet · précision/rappel</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="345" text-anchor="middle">API REST · descripteurs · évaluation</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="368" text-anchor="middle">couleur · forme · texture · ResNet</text>
 
                 <line class="diagram-line" x1="410" y1="388" x2="410" y2="428"></line>
                 <line class="diagram-line" x1="165" y1="428" x2="655" y2="428"></line>
@@ -198,15 +197,15 @@
                 <line class="diagram-line" x1="655" y1="428" x2="655" y2="453" marker-end="url(#vo-arrow-t)"></line>
 
                 <rect class="diagram-box" x="65" y="455" width="200" height="60" rx="12"></rect>
-                <text class="diagram-text box-title diagram-tablet-title" x="165" y="483" text-anchor="middle">images/</text>
-                <text class="diagram-text diagram-tablet-text" x="165" y="503" text-anchor="middle">jeux d’images</text>
+                <text class="diagram-text box-title diagram-tablet-title" x="165" y="483" text-anchor="middle">Base10000/images</text>
+                <text class="diagram-text diagram-tablet-text" x="165" y="503" text-anchor="middle">jeu d’images</text>
 
                 <rect class="diagram-box" x="310" y="455" width="200" height="60" rx="12"></rect>
-                <text class="diagram-text box-title diagram-tablet-title" x="410" y="483" text-anchor="middle">indexes/</text>
-                <text class="diagram-text diagram-tablet-text" x="410" y="503" text-anchor="middle">descripteurs pré-calculés</text>
+                <text class="diagram-text box-title diagram-tablet-title" x="410" y="483" text-anchor="middle">outputs/descripteurs</text>
+                <text class="diagram-text diagram-tablet-text" x="410" y="503" text-anchor="middle">descripteurs</text>
 
                 <rect class="diagram-box" x="555" y="455" width="200" height="60" rx="12"></rect>
-                <text class="diagram-text box-title diagram-tablet-title" x="655" y="483" text-anchor="middle">ground_truth/</text>
+                <text class="diagram-text box-title diagram-tablet-title" x="655" y="483" text-anchor="middle">VT_*.txt</text>
                 <text class="diagram-text diagram-tablet-text" x="655" y="503" text-anchor="middle">vérité terrain</text>
             </svg>
         </div>
@@ -224,19 +223,19 @@
                 <text class="diagram-text" x="235" y="50" text-anchor="middle">Navigateur</text>
 
                 <line class="diagram-line" x1="235" y1="70" x2="235" y2="123" marker-end="url(#vo-arrow-m)"></line>
-                <text class="diagram-text arrow-label" x="248" y="101" text-anchor="start">image requête</text>
+                <text class="diagram-text arrow-label" x="248" y="101" text-anchor="start">tirage</text>
 
                 <rect class="diagram-box" x="40" y="125" width="390" height="88" rx="14"></rect>
                 <text class="diagram-text box-title" x="235" y="157" text-anchor="middle">Angular Frontend · port 4200</text>
-                <text class="diagram-text diagram-small-text" x="235" y="184" text-anchor="middle">Upload · sélection mode · résultats</text>
+                <text class="diagram-text diagram-small-text" x="235" y="184" text-anchor="middle">Image aléatoire · mode · résultats</text>
 
                 <line class="diagram-line" x1="235" y1="213" x2="235" y2="276" marker-end="url(#vo-arrow-m)"></line>
-                <text class="diagram-text arrow-label" x="248" y="249" text-anchor="start">POST /api/search</text>
+                <text class="diagram-text arrow-label" x="248" y="249" text-anchor="start">requêtes GET</text>
 
                 <rect class="diagram-box" x="40" y="278" width="390" height="105" rx="14"></rect>
                 <text class="diagram-text box-title" x="235" y="310" text-anchor="middle">Backend Spring Boot · port 8087</text>
-                <text class="diagram-text diagram-small-text" x="235" y="337" text-anchor="middle">API REST · extraction descripteurs</text>
-                <text class="diagram-text diagram-small-text" x="235" y="360" text-anchor="middle">couleur · forme · texte · ResNet</text>
+                <text class="diagram-text diagram-small-text" x="235" y="337" text-anchor="middle">API REST · descripteurs · évaluation</text>
+                <text class="diagram-text diagram-small-text" x="235" y="360" text-anchor="middle">couleur · forme · texture · ResNet</text>
 
                 <line class="diagram-line" x1="235" y1="383" x2="235" y2="418"></line>
                 <line class="diagram-line" x1="100" y1="418" x2="370" y2="418"></line>
@@ -245,15 +244,15 @@
                 <line class="diagram-line" x1="370" y1="418" x2="370" y2="443" marker-end="url(#vo-arrow-m)"></line>
 
                 <rect class="diagram-box" x="40" y="445" width="120" height="55" rx="12"></rect>
-                <text class="diagram-text box-title diagram-small-title" x="100" y="471" text-anchor="middle">images/</text>
+                <text class="diagram-text box-title diagram-small-title" x="100" y="471" text-anchor="middle">Base10000/</text>
                 <text class="diagram-text diagram-small-text" x="100" y="489" text-anchor="middle">images</text>
 
                 <rect class="diagram-box" x="175" y="445" width="120" height="55" rx="12"></rect>
-                <text class="diagram-text box-title diagram-small-title" x="235" y="471" text-anchor="middle">indexes/</text>
+                <text class="diagram-text box-title diagram-small-title" x="235" y="471" text-anchor="middle">outputs/</text>
                 <text class="diagram-text diagram-small-text" x="235" y="489" text-anchor="middle">descripteurs</text>
 
                 <rect class="diagram-box" x="310" y="445" width="120" height="55" rx="12"></rect>
-                <text class="diagram-text box-title diagram-small-title" x="370" y="471" text-anchor="middle">ground_truth/</text>
+                <text class="diagram-text box-title diagram-small-title" x="370" y="471" text-anchor="middle">VT_*.txt</text>
                 <text class="diagram-text diagram-small-text" x="370" y="489" text-anchor="middle">vérité terrain</text>
             </svg>
         </div>
@@ -262,43 +261,49 @@
     <h2>Organisation du projet</h2>
     <pre><code>.
 ├── multimedias-ui/   # Frontend Angular
-├── multimedia/          # Backend Spring Boot / Java
-├── data/
-│  ├── images/        # Jeux d’images
-│  ├── indexes/       # Indexs descripteurs
-│  └── ground_truth/  # Vérité terrain
+├── multimedias/      # Backend Spring Boot / Java
+│  ├── ferecatu/      # Base10000/&nbsp;: images et fichiers VT_*.txt (volume)
+│  └── outputs/
+│     ├── descripteurs/    # Descripteurs générés
+│     └── precisionrappel/ # Résultats précision/rappel
 └── compose.yaml
 </code></pre>
 
 
     <h2>Exécution via Docker (démo reproductible)</h2>
     <ul>
-        <li><strong>Démarrer :</strong> <code>docker compose -f compose.yaml up -d</code></li>
-        <li><strong>Arrêter :</strong> <code>docker compose -f compose.yaml down</code></li>
+        <li><strong>Démarrer&nbsp;:</strong> <code>docker compose -f compose.yaml up -d</code></li>
+        <li><strong>Arrêter&nbsp;:</strong> <code>docker compose -f compose.yaml down</code></li>
     </ul>
 
-    <p><strong>Accès :</strong></p>
+    <p><strong>Accès&nbsp;:</strong></p>
     <ul>
-        <li>Frontend Angular : <code>http://localhost:4200</code></li>
-        <li>Backend API : <code>http://localhost:8087</code></li>
+        <li>Frontend Angular&nbsp;: <code>http://localhost:4200</code></li>
+        <li>Backend API&nbsp;: <code>http://localhost:8087</code></li>
     </ul>
 
 
     <h2>API (exemples)</h2>
-    <p><strong>Recherche par image</strong> :</p>
-    <pre><code>POST /api/search  (multipart/form-data)
-- file : image requête
-- topK : nombre de résultats pertinents et affichage des 8 plus proches voisins
-- mode : color | shape | text | ground-truth | deep | combined (optionnel)</code></pre>
+    <p>Le backend expose des points d’entrée en <code>GET</code> (pas d’envoi d’image par <code>POST</code>). Quelques-uns, tels qu’ils figurent dans le code du dépôt&nbsp;:</p>
+    <pre><code>GET /similaritecouleur
+    tire une image au hasard dans le dossier d’images
+GET /recherchesimilaire?k=&lt;entier&gt;
+    k images les plus proches de l’image tirée ci-dessus
+GET /recherchesimilairetexture?queryImage=&lt;nom&gt;&amp;k=&lt;entier&gt;
+    k images proches selon la texture
+GET /resnetclasses
+GET /resnetimages?className=&lt;classe&gt;&amp;queryImage=&lt;nom&gt;
+    recherche avec les descripteurs ResNet
+GET /precision-rappel/gris | /couleur | /gris-couleur-resnet
+    évaluation précision/rappel</code></pre>
 
-    <p><strong>Exemple curl</strong> :</p>
-    <pre><code>curl -X POST http://localhost:8087/api/search \
-  -F file=@image.jpg \
-  -F topK=10 \
-  -F mode=combined</code></pre>
+    <p><strong>Exemple curl</strong>. Le dossier <code>multimedias/ferecatu/</code> ne contient que <code>.gitkeep</code> dans le dépôt. Il faut y placer <code>Base10000/images</code> et la liste <code>Base10000/Base10000_files.txt</code>, puis appeler une première fois <code>/rvb666</code> pour générer le descripteur couleur&nbsp;:</p>
+    <pre><code>curl http://localhost:8087/rvb666
+curl http://localhost:8087/similaritecouleur
+curl "http://localhost:8087/recherchesimilaire?k=10"</code></pre>
 
     <hr class="my-4">
-    <p class="footer-licensed">Licence : MIT (voir repository).</p>
+    <p class="footer-licensed">Licence&nbsp;: MIT (voir repository).</p>
 </main>
 </body>
 </html>
