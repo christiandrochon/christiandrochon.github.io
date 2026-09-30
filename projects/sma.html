@@ -5,14 +5,14 @@
     <title>SMA — Intranet maintenance automobile — Christian Drochon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <meta name="description" content="SMA, intranet de maintenance automobile : CQRS/Event Sourcing en Java/Spring Boot, sécurité OAuth2/OIDC (Keycloak), audit RGPD, migrations SQL versionnées."/>
+    <meta name="description" content="SMA, intranet de maintenance automobile&nbsp;: CQRS/Event Sourcing en Java/Spring Boot, sécurité OAuth2/OIDC (Keycloak), audit RGPD, migrations SQL versionnées."/>
     <link rel="canonical" href="https://christiandrochon.dev/projects/sma.html"/>
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
     <meta property="og:title" content="SMA — Intranet maintenance automobile"/>
-    <meta property="og:description" content="SMA, intranet de maintenance automobile : CQRS/Event Sourcing en Java/Spring Boot, sécurité OAuth2/OIDC (Keycloak), audit RGPD, migrations SQL versionnées."/>
+    <meta property="og:description" content="SMA, intranet de maintenance automobile&nbsp;: CQRS/Event Sourcing en Java/Spring Boot, sécurité OAuth2/OIDC (Keycloak), audit RGPD, migrations SQL versionnées."/>
     <meta property="og:url" content="https://christiandrochon.dev/projects/sma.html"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Christian Drochon"/>
@@ -21,7 +21,7 @@
     <meta property="og:image:height" content="630"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="SMA — Intranet maintenance automobile"/>
-    <meta name="twitter:description" content="SMA, intranet de maintenance automobile : CQRS/Event Sourcing en Java/Spring Boot, sécurité OAuth2/OIDC (Keycloak), audit RGPD, migrations SQL versionnées."/>
+    <meta name="twitter:description" content="SMA, intranet de maintenance automobile&nbsp;: CQRS/Event Sourcing en Java/Spring Boot, sécurité OAuth2/OIDC (Keycloak), audit RGPD, migrations SQL versionnées."/>
     <meta name="twitter:image" content="https://christiandrochon.dev/img/og-cover.jpg"/>
 
 
@@ -57,9 +57,6 @@
 
     <h1 class="mb-2">
         SMA — Intranet maintenance automobile
-        <span class="badge text-bg-secondary fs-6 badge-title-status">
-            en cours
-        </span>
     </h1>
 
     <div class="project-actions mb-4">
@@ -85,7 +82,7 @@
     </p>
 
     <p>
-        SMA sert aussi de support pour travailler des problématiques proches d’un système réel :
+        SMA sert aussi de support pour travailler des problématiques proches d’un système réel&nbsp;:
         contrôle d’accès, audit métier, historique des actions, exploitation locale reproductible
         et qualité logicielle continue.
     </p>
@@ -99,25 +96,25 @@
         <li>Sécurité OAuth2 / OpenID Connect avec Keycloak.</li>
         <li>Gestion des rôles, des accès et de la propriété des ressources.</li>
         <li>Implémentation d’une politique de logs métier, technique, sécurité et audit.</li>
-        <li>Prise en compte RGPD : traçabilité, preuves opérationnelles, contrôles et gouvernance.</li>
+        <li>Prise en compte RGPD&nbsp;: traçabilité, preuves opérationnelles, contrôles et gouvernance.</li>
         <li>Versionnement des scripts SQL avec Flyway.</li>
         <li>Contrôles qualité et analyse statique avec SonarQube.</li>
         <li>Environnement local reproductible avec Docker Compose.</li>
     </ul>
     <br>
 
-    <h2>Stack actuelle</h2>
+    <h2>Stack technique</h2>
     <ul>
-        <li><strong>Langage :</strong> Java 17</li>
-        <li><strong>Backend :</strong> Spring Boot, Spring WebFlux, Axon Framework, JPA / Hibernate</li>
-        <li><strong>Frontend :</strong> Spring MVC, Thymeleaf, Thymeleaf Layout Dialect</li>
-        <li><strong>Architecture :</strong> CQRS, Event Sourcing, projections PostgreSQL</li>
-        <li><strong>Base de données :</strong> PostgreSQL</li>
-        <li><strong>Migrations SQL :</strong> Flyway</li>
-        <li><strong>Sécurité :</strong> OAuth2 / OpenID Connect, Keycloak, JWT, RBAC</li>
-        <li><strong>Audit :</strong> base dédiée, événements d’audit, contrôles RGPD, preuves opérationnelles</li>
-        <li><strong>Qualité :</strong> SonarQube, conventions de logs, séparation des responsabilités</li>
-        <li><strong>Exécution locale :</strong> Docker Compose, scripts de lancement</li>
+        <li><strong>Langage&nbsp;:</strong> Java 17</li>
+        <li><strong>Backend&nbsp;:</strong> Spring Boot, Spring WebFlux, Axon Framework, JPA / Hibernate</li>
+        <li><strong>Frontend&nbsp;:</strong> Spring MVC, Thymeleaf, Thymeleaf Layout Dialect</li>
+        <li><strong>Architecture&nbsp;:</strong> CQRS, Event Sourcing, projections PostgreSQL</li>
+        <li><strong>Base de données&nbsp;:</strong> PostgreSQL</li>
+        <li><strong>Migrations SQL&nbsp;:</strong> Flyway</li>
+        <li><strong>Sécurité&nbsp;:</strong> OAuth2 / OpenID Connect, Keycloak, JWT, RBAC</li>
+        <li><strong>Audit&nbsp;:</strong> base dédiée, événements d’audit, contrôles RGPD, preuves opérationnelles</li>
+        <li><strong>Qualité&nbsp;:</strong> SonarQube, conventions de logs, séparation des responsabilités</li>
+        <li><strong>Exécution locale&nbsp;:</strong> Docker Compose, scripts de lancement</li>
     </ul>
 
     <br>
@@ -345,13 +342,13 @@
                 <text class="diagram-text" x="210" y="922" text-anchor="middle">realm · clients · utilisateurs</text>
 
                 <text class="diagram-text arrow-label" x="235" y="1015" text-anchor="middle">
-                    Frontend ↔ Keycloak : authentification OAuth2/OIDC
+                    Frontend ↔ Keycloak&nbsp;: authentification OAuth2/OIDC
                 </text>
                 <text class="diagram-text arrow-label" x="235" y="1040" text-anchor="middle">
-                    Backend → Axon / PostgreSQL : traitements métier
+                    Backend → Axon / PostgreSQL&nbsp;: traitements métier
                 </text>
                 <text class="diagram-text arrow-label" x="235" y="1065" text-anchor="middle">
-                    Base audit : preuves et contrôles indépendants
+                    Base audit&nbsp;: preuves et contrôles indépendants
                 </text>
             </svg>
         </div>
@@ -361,14 +358,14 @@
     <h2>Organisation du projet</h2>
 
     <ul>
-        <li><strong>backend/</strong> : cœur métier CQRS, sécurité, projections, audit.</li>
-        <li><strong>frontend/</strong> : interface Spring MVC / Thymeleaf.</li>
-        <li><strong>docker/</strong> : environnement local reproductible.</li>
-        <li><strong>docs/</strong> : architecture, sécurité, audit et stratégie de logs.</li>
+        <li><strong>backend/</strong>&nbsp;: cœur métier CQRS, sécurité, projections, audit.</li>
+        <li><strong>frontend/</strong>&nbsp;: interface Spring MVC / Thymeleaf.</li>
+        <li><strong>docker/</strong>&nbsp;: environnement local reproductible.</li>
+        <li><strong>docs/</strong>&nbsp;: architecture, sécurité, audit et stratégie de logs.</li>
     </ul>
     <br>
 
-    <h2>Sécurité : RBAC et propriété des ressources</h2>
+    <h2>Sécurité&nbsp;: RBAC et propriété des ressources</h2>
     <p>
         Le projet intègre maintenant un contrôle d’accès basé sur les rôles et sur la propriété
         des ressources. Les tokens JWT Keycloak sont validés côté backend, puis les rôles sont
@@ -376,9 +373,9 @@
     </p>
 
     <ul>
-        <li><strong>ADMIN :</strong> accès global aux ressources métier.</li>
-        <li><strong>USER :</strong> accès limité aux ressources qui lui appartiennent.</li>
-        <li><strong>AUDITOR :</strong> accès lecture globale pour les besoins d’audit, sans modification métier.</li>
+        <li><strong>ADMIN&nbsp;:</strong> accès global aux ressources métier.</li>
+        <li><strong>USER&nbsp;:</strong> accès limité aux ressources qui lui appartiennent.</li>
+        <li><strong>AUDITOR&nbsp;:</strong> accès lecture globale pour les besoins d’audit, sans modification métier.</li>
     </ul>
 
     <p>
@@ -395,9 +392,9 @@
     </p>
 
     <ul>
-        <li><strong>Logs métier :</strong> actions fonctionnelles, événements business, accès UI.</li>
-        <li><strong>Logs techniques :</strong> erreurs serveur, requêtes HTTP, exceptions, diagnostic runtime.</li>
-        <li><strong>Logs sécurité :</strong> accès refusés, requêtes suspectes, chemins ou méthodes anormales.</li>
+        <li><strong>Logs métier&nbsp;:</strong> actions fonctionnelles, événements business, accès UI.</li>
+        <li><strong>Logs techniques&nbsp;:</strong> erreurs serveur, requêtes HTTP, exceptions, diagnostic runtime.</li>
+        <li><strong>Logs sécurité&nbsp;:</strong> accès refusés, requêtes suspectes, chemins ou méthodes anormales.</li>
     </ul>
 
     <p>
@@ -407,14 +404,14 @@
     </p>
 
     <ul>
-        <li><strong>audit_events :</strong> preuves opérationnelles horodatées.</li>
-        <li><strong>audit_expectations :</strong> référentiel des attentes d’audit.</li>
-        <li><strong>audit_expectation_checks :</strong> historique des contrôles indépendants.</li>
-        <li><strong>audit_expectations_latest :</strong> vue de synthèse pour cockpit d’audit.</li>
+        <li><strong>audit_events&nbsp;:</strong> preuves opérationnelles horodatées.</li>
+        <li><strong>audit_expectations&nbsp;:</strong> référentiel des attentes d’audit.</li>
+        <li><strong>audit_expectation_checks&nbsp;:</strong> historique des contrôles indépendants.</li>
+        <li><strong>audit_expectations_latest&nbsp;:</strong> vue de synthèse pour cockpit d’audit.</li>
     </ul>
 
     <br>
-    <h2>CQRS / Axon : flux de création</h2>
+    <h2>CQRS / Axon&nbsp;: flux de création</h2>
     <p>
         Le flux de création a été stabilisé afin d’éviter les incohérences entre l’envoi d’une commande Axon
         et la persistance effective de la projection en base.
@@ -435,14 +432,15 @@
 
     <br>
 
-    <h2>Roadmap</h2>
+    <h2>Évolutions envisagées</h2>
+    <p>Pistes d’évolution envisagées au-delà du périmètre livré&nbsp;:</p>
     <ul>
         <li>Étendre progressivement les règles métier liées à la maintenance automobile.</li>
-        <li>Renforcer les tests automatisés sur les flux critiques : sécurité, audit, commandes et projections.</li>
+        <li>Renforcer les tests automatisés sur les flux critiques&nbsp;: sécurité, audit, commandes et projections.</li>
         <li>Améliorer les recherches métier avec des index PostgreSQL et des projections adaptées.</li>
         <li>Stabiliser la chaîne qualité avec SonarQube et des contrôles CI plus réguliers.</li>
         <li>Ajouter des tableaux de bord pour visualiser les événements métier, les logs et les contrôles d’audit.</li>
-        <li>Explorer des cas d’usage ML uniquement s’ils servent un besoin métier réel : maintenance préventive ou
+        <li>Explorer des cas d’usage ML uniquement s’ils servent un besoin métier réel&nbsp;: maintenance préventive ou
             détection d’anomalies.
         </li>
     </ul>
@@ -450,35 +448,35 @@
 
     <h2>Exécution locale</h2>
     <ul>
-        <li><strong>Mode sécurisé :</strong> <code>./scripts/dev.sh secure</code></li>
-        <li><strong>Mode rapide :</strong> <code>./scripts/dev.sh fast</code></li>
-        <li><strong>Arrêter :</strong> <code>./scripts/dev.sh down</code></li>
-        <li><strong>Ouvrir les services :</strong> <code>./scripts/dev.sh open</code></li>
+        <li><strong>Mode sécurisé&nbsp;:</strong> <code>./scripts/dev.sh secure</code></li>
+        <li><strong>Mode rapide&nbsp;:</strong> <code>./scripts/dev.sh fast</code></li>
+        <li><strong>Arrêter&nbsp;:</strong> <code>./scripts/dev.sh down</code></li>
+        <li><strong>Ouvrir les services&nbsp;:</strong> <code>./scripts/dev.sh open</code></li>
     </ul>
 
     <h3>Services disponibles en local</h3>
     <ul>
-        <li>Frontend Thymeleaf : <code>http://localhost:8091</code></li>
-        <li>Backend API : <code>http://localhost:8092</code></li>
+        <li>Frontend Thymeleaf&nbsp;: <code>http://localhost:8091</code></li>
+        <li>Backend API&nbsp;: <code>http://localhost:8092</code></li>
         <!--        <li>Healthcheck : <code>http://localhost:8092/actuator/health</code></li>-->
-        <li>Axon Server : <code>http://localhost:8024</code></li>
-        <li>Keycloak : <code>http://localhost:8080</code></li>
+        <li>Axon Server&nbsp;: <code>http://localhost:8024</code></li>
+        <li>Keycloak&nbsp;: <code>http://localhost:8080</code></li>
         <!--        <li>pgAdmin : <code>http://localhost:6002</code></li>-->
-        <li>PostgreSQL métier : <code>localhost:5432</code></li>
+        <li>PostgreSQL métier&nbsp;: <code>localhost:5432</code></li>
         <!--        <li>PostgreSQL Keycloak : <code>localhost:5433</code></li>-->
     </ul>
 
     <h3>Profils et modes</h3>
     <ul>
-        <li><code>secure</code> : mode complet avec Keycloak et sécurité activée.</li>
-        <li><code>fast</code> : mode rapide pour debug court, sans login applicatif.</li>
-        <li><code>local</code> : exécution locale hors conteneur applicatif.</li>
-        <li><code>prod</code> : exécution via Docker Compose.</li>
+        <li><code>secure</code>&nbsp;: mode complet avec Keycloak et sécurité activée.</li>
+        <li><code>fast</code>&nbsp;: mode rapide pour debug court, sans login applicatif.</li>
+        <li><code>local</code>&nbsp;: exécution locale hors conteneur applicatif.</li>
+        <li><code>prod</code>&nbsp;: exécution via Docker Compose.</li>
     </ul>
 
 
     <hr class="my-4">
-    <p class="footer-license">Licence : MIT (voir repository).</p>
+    <p class="footer-license">Licence&nbsp;: MIT (voir repository).</p>
 
 </main>
 </body>
