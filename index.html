@@ -2,17 +2,17 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8"/>
-    <title>Christian Drochon — Ingénieur backend Java / Spring Boot</title>
+    <title>Christian Drochon — Développeur Full-Stack &amp; Agentic AI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <meta name="description" content="Christian Drochon, ingénieur backend Java / Spring Boot : refactoring d'applications complexes, architecture modulaire sécurisée et interfaces Angular."/>
+    <meta name="description" content="Christian Drochon, développeur full-stack Java/Spring – Angular&nbsp;: architecture logicielle, ingénierie agentique et orchestration d’agents IA."/>
     <link rel="canonical" href="https://christiandrochon.dev/"/>
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-    <meta property="og:title" content="Christian Drochon — Ingénieur backend Java / Spring Boot"/>
-    <meta property="og:description" content="Christian Drochon, ingénieur backend Java / Spring Boot : refactoring d'applications complexes, architecture modulaire sécurisée et interfaces Angular."/>
+    <meta property="og:title" content="Christian Drochon — Développeur Full-Stack &amp; Agentic AI"/>
+    <meta property="og:description" content="Christian Drochon, développeur full-stack Java/Spring – Angular&nbsp;: architecture logicielle, ingénierie agentique et orchestration d’agents IA."/>
     <meta property="og:url" content="https://christiandrochon.dev/"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Christian Drochon"/>
@@ -20,8 +20,8 @@
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Christian Drochon — Ingénieur backend Java / Spring Boot"/>
-    <meta name="twitter:description" content="Christian Drochon, ingénieur backend Java / Spring Boot : refactoring d'applications complexes, architecture modulaire sécurisée et interfaces Angular."/>
+    <meta name="twitter:title" content="Christian Drochon — Développeur Full-Stack &amp; Agentic AI"/>
+    <meta name="twitter:description" content="Christian Drochon, développeur full-stack Java/Spring – Angular&nbsp;: architecture logicielle, ingénierie agentique et orchestration d’agents IA."/>
     <meta name="twitter:image" content="https://christiandrochon.dev/img/og-cover.jpg"/>
 
     <link rel="preload" href="/fonts/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -42,7 +42,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Christian Drochon",
-      "jobTitle": "Ingénieur backend Java / Spring Boot",
+      "jobTitle": "Développeur Full-Stack & Agentic AI",
       "email": "mailto:hello@christiandrochon.dev",
       "url": "https://christiandrochon.dev/",
       "sameAs": [
@@ -71,15 +71,15 @@
             </a>
 
             <div class="role">
-                <strong>Ingénieur backend Java / Spring Boot</strong><br>
-                Structuration et refactoring d'applications<br>
-                Angular pour les interfaces
+                <strong>Développeur Full-Stack &amp; Agentic AI</strong><br>
+                Ingénierie système et architecture logicielle<br>
+                Java/Spring – Angular, ingénierie agentique
             </div>
 
             <div class="sidebar-intro">
                 <p class="intro intro--short">
-                    Refactoring progressif d'applications complexes, clarification du modèle métier
-                    et structuration d'architectures modulaires sécurisées.
+                    Refactoring progressif d’applications complexes, clarification du modèle métier
+                    et structuration d’architectures modulaires sécurisées.
                 </p>
             </div>
 
@@ -89,11 +89,11 @@
                     <i class="fas fa-envelope"></i>
                 </a>
                 <a href="https://github.com/christiandrochon" aria-label="GitHub" target="_blank"
-                   rel="noreferrer noopener">
+                   rel="me noreferrer noopener">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="https://linkedin.com/in/christiandrochon" aria-label="LinkedIn" target="_blank"
-                   rel="noreferrer noopener">
+                   rel="me noreferrer noopener">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
@@ -106,13 +106,26 @@
             <!--            </div>-->
 
 
-            <nav class="nav" id="site-nav">
-                <a href="#about" class="nav-link active" data-section="about">À propos</a>
-                <a href="#projects" class="nav-link" data-section="projects">Projets</a>
-                <a href="#specialisations" class="nav-link" data-section="specialisations">Spécialisations</a>
-                <a href="#experience" class="nav-link" data-section="experience">Parcours</a>
-                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
-            </nav>
+            <div class="site-menu">
+                <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false"
+                        aria-controls="nav-panel" aria-label="Menu de navigation">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <div class="nav-panel" id="nav-panel">
+                    <nav class="nav" id="site-nav" aria-label="Navigation principale">
+                        <a href="#about" class="nav-link active" data-section="about">À propos</a>
+                        <a href="#projects" class="nav-link" data-section="projects">Projets</a>
+                        <a href="#specialisations" class="nav-link" data-section="specialisations">Spécialisations</a>
+                        <a href="#experience" class="nav-link" data-section="experience">Parcours</a>
+                        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                    </nav>
+
+                    <a href="/Christian_Drochon_CV_2026_IA_agents.pdf" class="cv-download cv-download--menu" download>
+                        Télécharger CV (PDF)
+                    </a>
+                </div>
+            </div>
 
 
             <a href="/Christian_Drochon_CV_2026_IA_agents.pdf" class="cv-download" download>
@@ -128,37 +141,44 @@
         <section id="about" data-section>
             <h2 class="section-h">À propos</h2>
             <p>
-                Je conçois des applications <span class="highlight">backend Java</span> pensées pour durer :
+                Je conçois des applications <span class="highlight">backend Java</span> pensées pour durer&nbsp;:
                 <span class="highlight">modèle métier explicite</span>, responsabilités claires, architecture évolutive.
-                <br>Mon focus : reprendre un existant et le rendre <span class="highlight">lisible, testable et maintenable</span>
-                — sans tout réécrire — afin d'accélérer les livraisons et réduire la dette technique.
+                <br>Mon focus&nbsp;: reprendre un existant et le rendre <span class="highlight">lisible, testable et maintenable</span>
+                — sans tout réécrire — afin d’accélérer les livraisons et réduire la dette technique.
             </p>
             <br>
             <p>
-                Concrètement, j'interviens sur des codebases déjà en production :
+                Concrètement, j’interviens sur des codebases déjà en production&nbsp;:
                 refactoring progressif, clarification des couches (contrôleurs / services / domaine),
-                modularisation et conventions partagées. <br>J'attache autant d'importance à la
-                <span class="highlight">trajectoire</span> (c'est-à-dire la manière dont on fait évoluer le système)
-                qu'au code
+                modularisation et conventions partagées. <br>J’attache autant d’importance à la
+                <span class="highlight">trajectoire</span> (c’est-à-dire la manière dont on fait évoluer le système)
+                qu’au code
                 lui-même.
             </p>
             <br>
             <p>
-                Quand un périmètre démarre "from scratch", je pose un socle propre dès le début :
+                Quand un périmètre démarre «&nbsp;from scratch&nbsp;», je pose un socle propre dès le début&nbsp;:
                 sécurité <span class="highlight">OAuth2/OIDC</span>, exécution reproductible (Docker),
                 documentation et outillage orienté exploitation.
             </p>
             <br>
             <p>
-                J'ai aussi un pied "produit" : interfaces simples quand c'est pertinent (SSR Thymeleaf),
+                Je m’appuie également sur des agents IA dans mes processus d’ingénierie, de conception, de
+                développement et d’automatisation logicielle. Cela passe par l’orchestration d’agents,
+                l’usage de <i>skills</i> et l’intégration via MCP&nbsp;; le projet Deveo, présenté plus bas, en donne un
+                exemple concret.
+            </p>
+            <br>
+            <p>
+                J’ai aussi un pied «&nbsp;produit&nbsp;»&nbsp;: interfaces simples quand c’est pertinent (SSR Thymeleaf),
                 ou front moderne sinon (Angular, React).
-                <br>Et une curiosité data/ML uniquement lorsqu'elle sert un besoin concret
+                <br>Et une curiosité data/ML uniquement lorsqu’elle sert un besoin concret
                 (recherche, similarité, prédiction) — pas comme gadget.
             </p>
             <br>
             <p class="note">
-                Ce site est un portfolio vivant : je montre ce qui est fait, ce qui est en cours,
-                et les trajectoires techniques que j'explore.
+                Ce site est un portfolio vivant&nbsp;: je montre ce qui est fait, ce qui est en cours,
+                et les trajectoires techniques que j’explore.
             </p>
         </section>
 
@@ -168,13 +188,13 @@
             <div class="projects-grid">
                 <article class="project-card" id="card-marche-financier-risque">
                     <div class="project-title">
-                        Marché financier à risque — Plateforme d'aide à la décision <span
+                        Marché financier à risque — Plateforme d’aide à la décision <span
                             class="badge text-bg-secondary">en cours</span>
                     </div>
 
                     <p class="project-desc">
                         Plateforme modulaire transformant une pratique émotionnelle des marchés financiers à risque
-                        en une démarche pilotée par les données, les statistiques, l'OSINT et le machine learning.
+                        en une démarche pilotée par les données, les statistiques, l’OSINT et le machine learning.
                     </p>
 
                     <div class="project-tech">
@@ -185,7 +205,7 @@
                         <span>PostgreSQL</span>
                         <span>Python 3</span>
                         <span>FastAPI</span>
-                        <span>Machine Learning</span>
+                        <span>Machine learning</span>
                         <span>RabbitMQ</span>
                     </div>
 
@@ -203,7 +223,7 @@
                     </div>
 
                     <p class="project-desc">
-                        Application Java/Spring orientée traçabilité métier : CQRS/Event Sourcing,
+                        Application Java/Spring orientée traçabilité métier&nbsp;: CQRS/Event Sourcing,
                         sécurité OAuth2/OIDC avec Keycloak, audit RGPD, logs structurés et migrations SQL versionnées.
                     </p>
 
@@ -230,7 +250,7 @@
                 <article class="project-card" id="card-multimedia">
                     <div class="project-title">Vision par ordinateur</div>
                     <p class="project-desc">
-                        Recherche d'images par similarité (descripteurs classiques + embeddings ResNet), UI Angular,
+                        Recherche d’images par similarité (descripteurs classiques + embeddings ResNet), UI Angular,
                         backend Spring Boot et évaluation (précision / rappel).
                     </p>
                     <div class="project-tech">
@@ -247,8 +267,8 @@
                 <article class="project-card" id="card-artisan">
                     <div class="project-title">Site vitrine</div>
                     <p class="project-desc">
-                        Site vitrine déployé codé en React via GitHub Pages, pensé pour être simple, fluide, rapide à
-                        charger (DOM virtuel), et facile à maintenir.
+                        Site vitrine déployé codé en React via GitHub Pages, pensé pour être simple, fluide et facile à
+                        maintenir.
                     </p>
                     <div class="project-tech">
                         <span>React</span>
@@ -261,6 +281,17 @@
                            target="_blank" rel="noreferrer noopener">Site</a>
                     </div>
                 </article>
+
+                <article class="project-card" id="card-deveo">
+                    <div class="project-title">Deveo — Application mobile iOS / Android</div>
+                    <p class="project-desc">
+                        Application Flutter pour iOS et Android, dont je coordonne la conception, le développement
+                        et les revues en pilotant des agents IA. Le détail figure dans le Parcours.
+                    </p>
+                    <div class="project-tech">
+                        <span>Flutter</span><span>iOS / Android</span><span>Agentic AI</span>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -268,14 +299,51 @@
         <!-- Specialisations -->
         <section id="specialisations" data-section>
             <h2 class="section-h">Spécialisations</h2>
+
             <p>
-                Repères techniques : aspects techniques et fonctionnels que je pratique assidument et qui structurent ma
-                façon de concevoir des systèmes.
+                Cette section présente mes diplômes, puis les unités d’enseignement (UE) du CNAM que j’ai suivies et
+                une formation d’un autre organisme (SecNumAcadémie, de l’ANSSI), ces dernières regroupées par domaine
+                et non par diplôme. Ce sont des repères techniques et fonctionnels que je pratique assidûment
+                et qui structurent ma façon de concevoir des systèmes.
                 <br>Les liens pointent vers les pages officielles des modules.
-                <br><br><i>Cliquez sur les intitulés pour voir le contenu de chaque formation. Les intitulés marqués
-                d'un <i class="fas fa-certificate" aria-hidden="true"></i> ouvrent aussi l'attestation de
-                réussite.</i>
+                <br><br><i>Cliquez sur les intitulés des UE pour voir le contenu de chaque formation. Les intitulés marqués
+                d’un <i class="fas fa-certificate" aria-hidden="true"></i> ouvrent aussi la pièce justificative
+                correspondante.</i>
             </p>
+
+            <div class="spec-block">
+                <h3>Diplômes et cycles de formation</h3>
+                <div class="experience-list">
+                    <article class="exp-item">
+                        <div class="exp-period">2021 — en cours</div>
+                        <div>
+                            <div class="exp-role">Ingénieur systèmes et logiciels (Bac+5)</div>
+                            <div class="exp-company">EiCNAM, France</div>
+                        </div>
+                    </article>
+                    <article class="exp-item">
+                        <div class="exp-period">2018 — 2019</div>
+                        <div>
+                            <div class="exp-role">Tech Lead (Bac+5)</div>
+                            <div class="exp-company">Sciences-U, Lyon, France</div>
+                        </div>
+                    </article>
+                    <article class="exp-item">
+                        <div class="exp-period">2015 — 2017</div>
+                        <div>
+                            <div class="exp-role">Cycle ingénieur systèmes et logiciels (Bac+5)</div>
+                            <div class="exp-company">Naval Group, France</div>
+                        </div>
+                    </article>
+                    <article class="exp-item">
+                        <div class="exp-period">2013 — 2015</div>
+                        <div>
+                            <div class="exp-role">Concepteur Développeur Informatique (Bac+3)</div>
+                            <div class="exp-company">2isa/PEI, France</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
 
             <div class="spec-grid">
                 <div class="spec-block">
@@ -285,14 +353,14 @@
                             <a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/architectures-et-technologies-pour-lintegration-des-systemes-2"
                                target="_blank" rel="noreferrer noopener"
                                data-cert="/ue/Attestation_Succes_NSY205.pdf"
-                               data-course-url="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/architectures-et-technologies-pour-lintegration-des-systemes-2">Architectures & technologies d'intégration<i
+                               data-course-url="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/architectures-et-technologies-pour-lintegration-des-systemes-2">Architectures & technologies d’intégration<i
                                     class="fas fa-certificate spec-cert-icon" aria-hidden="true"></i></a>
                         </li>
                         <li>
                             <a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/methodologie-dingenierie-et-dintegration-des-systemes-2"
                                target="_blank" rel="noreferrer noopener"
                                data-cert="/ue/Attestation_Succes_NSY206.pdf"
-                               data-course-url="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/methodologie-dingenierie-et-dintegration-des-systemes-2">Méthodologie d'ingénierie & intégration<i
+                               data-course-url="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/methodologie-dingenierie-et-dintegration-des-systemes-2">Méthodologie d’ingénierie & intégration<i
                                     class="fas fa-certificate spec-cert-icon" aria-hidden="true"></i></a>
                         </li>
                         <li>
@@ -311,7 +379,7 @@
                             <a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/architecture-patterns-et-integration-systemes-embarques-et-mobiles-en-java-et-android-1-1"
                                target="_blank" rel="noreferrer noopener"
                                data-cert="/ue/Attestation_Succes_NSY208.pdf"
-                               data-course-url="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/architecture-patterns-et-integration-systemes-embarques-et-mobiles-en-java-et-android-1-1">Architecture, Patterns et intégration : systèmes embarqués en Java et Android<i
+                               data-course-url="https://www.cnam.fr/formation/electronique-informatique-telecommunication/informatique-systemes-dinformation-et-numerique/architecture-patterns-et-integration-systemes-embarques-et-mobiles-en-java-et-android-1-1">Architecture, Patterns et intégration&nbsp;: systèmes embarqués en Java et Android<i
                                     class="fas fa-certificate spec-cert-icon" aria-hidden="true"></i></a></li>
                         <li>
                             <a href="https://www.cnam.fr/formation/electronique-informatique-telecommunication/langages-informatiques/bases-de-donnees-documentaires-et-distribuees-1"
@@ -355,7 +423,7 @@
                                target="_blank" rel="noreferrer noopener"
                                data-cert="/ue/Extrait_Releve_Toulouse_NFE103.pdf"
                                data-course-url="https://www.cnam.fr/formation/electronique-informatique-telecommunication/langages-informatiques/methodologies-avancees-dinformatisation-1"
-                               data-note="Le code et l'intitulé de cette UE ont changé depuis l'obtention (auparavant NFE103), mais il s'agit du même cours.">Méthodologies avancées d'informatisation<i
+                               data-note="Le code et l'intitulé de cette UE ont changé depuis l'obtention (auparavant NFE103), mais il s'agit du même cours.">Méthodologies avancées d’informatisation<i
                                     class="fas fa-certificate spec-cert-icon" aria-hidden="true"></i></a>
                         </li>
                         <li>
@@ -404,7 +472,7 @@
                             <a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-ressources-humaines/management-dequipe-et-communication-en-entreprise-4"
                                target="_blank" rel="noreferrer noopener"
                                data-cert="/ue/Extrait_Releve_Toulouse_TET102.pdf"
-                               data-course-url="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-ressources-humaines/management-dequipe-et-communication-en-entreprise-4">Management d'équipe & communication en
+                               data-course-url="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-ressources-humaines/management-dequipe-et-communication-en-entreprise-4">Management d’équipe & communication en
                                 entreprise<i class="fas fa-certificate spec-cert-icon" aria-hidden="true"></i></a></li>
                         <li>
                             <a href="https://www.cnam.fr/formation/vie-et-gestion-des-organisations/gestion-qualite/management-et-organisation-des-entreprises"
@@ -429,7 +497,7 @@
                             <a href="https://www.cnam-paca.fr/nos-formations/ue/en-journee/ENG221"
                                target="_blank" rel="noreferrer noopener"
                                data-cert="/ue/Attestation_Succes_ENG221.pdf"
-                               data-course-url="https://www.cnam-paca.fr/nos-formations/ue/en-journee/ENG221">Information et communication pour l'ingénieur<i
+                               data-course-url="https://www.cnam-paca.fr/nos-formations/ue/en-journee/ENG221">Information et communication pour l’ingénieur<i
                                     class="fas fa-certificate spec-cert-icon" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
@@ -441,7 +509,7 @@
                             <a href="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/preformation-en-mathematiques-1487722.kjsp"
                                target="_blank" rel="noreferrer noopener"
                                data-cert="/ue/Attestation_Succes_MVA913.pdf"
-                               data-course-url="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/preformation-en-mathematiques-1487722.kjsp">Mathématiques pour l'ingénieur<i
+                               data-course-url="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/preformation-en-mathematiques-1487722.kjsp">Mathématiques pour l’ingénieur<i
                                     class="fas fa-certificate spec-cert-icon" aria-hidden="true"></i></a></li>
                         <li>
                             <a href="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/techniques-de-la-statistique-1487931.kjsp"
@@ -453,13 +521,13 @@
                             <a href="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/outils-mathematiques-pour-l-informatique-combinatoire-probabilites-ordre-calcul-booleen--1487712.kjsp"
                                target="_blank" rel="noreferrer noopener"
                                data-cert="/ue/Attestation_Reussite_MVA003.pdf"
-                               data-course-url="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/outils-mathematiques-pour-l-informatique-combinatoire-probabilites-ordre-calcul-booleen--1487712.kjsp">Mathématiques pour l'informatique<i
+                               data-course-url="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/outils-mathematiques-pour-l-informatique-combinatoire-probabilites-ordre-calcul-booleen--1487712.kjsp">Mathématiques pour l’informatique<i
                                     class="fas fa-certificate spec-cert-icon" aria-hidden="true"></i></a></li>
                         <li>
                             <a href="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/outils-mathematiques-pour-informatique-1488085.kjsp"
                                target="_blank" rel="noreferrer noopener"
                                data-cert="/ue/Attestation_Succes_UTC501.pdf"
-                               data-course-url="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/outils-mathematiques-pour-informatique-1488085.kjsp">Outils mathématiques pour l'informatique<i
+                               data-course-url="https://www.cnam-paris.fr/choisir-ma-formation/par-discipline/outils-mathematiques-pour-informatique-1488085.kjsp">Outils mathématiques pour l’informatique<i
                                     class="fas fa-certificate spec-cert-icon" aria-hidden="true"></i></a>
                         </li>
                     </ul>
@@ -485,9 +553,32 @@
             <h2 class="section-h">Parcours</h2>
             <div class="experience-list">
 
+                <!-- Deveo : placé en tête, comme dans le CV -->
+                <article class="exp-item">
+                    <div class="exp-period">2026</div>
+                    <div>
+                        <div class="exp-role">Pilotage d’agents IA · Application mobile iOS / Android</div>
+                        <div class="exp-company">Projet Deveo</div>
+
+                        <p class="exp-description">
+                            Je pilote dix-neuf agents IA et je coordonne leur travail sur la conception, le
+                            développement et les revues d’une application Flutter. Ils couvrent notamment les rôles
+                            de PO, PM, UX, architecte, dev, front, data scientist, QA, sécurité, DevOps, SEO, marketing, OSINT et SRE&nbsp;; les agents relecteurs et
+                            validateurs font partie de ces dix-neuf agents.
+                        </p>
+
+                        <div class="exp-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">iOS / Android</span>
+                            <span class="tag">Agentic AI</span>
+                            <span class="tag">Orchestration d’agents</span>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- Marche financier a risque -->
                 <article class="exp-item">
-                    <div class="exp-period">2026 — aujourd'hui</div>
+                    <div class="exp-period">2026 — aujourd’hui</div>
                     <div>
                         <div class="exp-role">
                             Développeur full-stack
@@ -498,19 +589,19 @@
 
                         <p class="exp-description">
                             Plateforme modulaire conçue pour transformer une pratique réactive des marchés financiers
-                            à risque en une démarche pilotée par les données, le machine learning et l'OSINT.
-                            Projet en développement actif, utilisé en conditions réelles avec paper trading
-                            et validation des modèles ML sur marchés actifs.
+                            à risque en une démarche pilotée par les données, le machine learning et l’OSINT.
+                            Projet en développement actif, utilisé en paper trading,
+                            avec validation des modèles ML sur marchés actifs.
                         </p>
 
                         <div class="exp-subtitle">Stack technique</div>
                         <div class="exp-tags">
                             <span class="tag">Java 21 / Spring Boot / Spring WebFlux (backend modulaire)</span>
                             <span class="tag">Angular (frontend décisionnel)</span>
-                            <span class="tag">Python 3 / FastAPI (Machine Learning — détection retournements)</span>
+                            <span class="tag">Python 3 / FastAPI (Machine learning — détection retournements)</span>
                             <span class="tag">PostgreSQL / Flyway</span>
                             <span class="tag">RabbitMQ (messaging asynchrone)</span>
-                            <span class="tag">API de donnees de marche</span>
+                            <span class="tag">API de données de marché</span>
                             <span class="tag">Intégrations de sentiment de marché</span>
                         </div>
 
@@ -519,7 +610,7 @@
                             <span class="tag">Risk-engine (dimensionnement positions, stop-loss adaptatif)</span>
                             <span class="tag">Psychology-engine (détection biais comportementaux)</span>
                             <span class="tag">Trading-journal (traçabilité complète)</span>
-                            <span class="tag">Counterfactual (simulation d'alternatives)</span>
+                            <span class="tag">Counterfactual (simulation d’alternatives)</span>
                             <span class="tag">ML Pipeline (régression logistique, MLP, Random Forest, XGBoost, HMM, GARCH)</span>
                             <span class="tag">OSINT Collector (agrégation événements externes — réglementation, ETF, on-chain)</span>
                         </div>
@@ -536,34 +627,37 @@
                         <div class="exp-company">Projet SMA (Suivi de Maintenance Automobile)</div>
 
                         <p class="exp-description">
-                            SMA est mon projet "terrain" : une application intranet de maintenance automobile utilisée
+                            SMA est mon projet «&nbsp;terrain&nbsp;»&nbsp;: une application intranet de maintenance automobile utilisée
                             comme support réaliste pour concevoir un socle propre (architecture, sécurité, traçabilité,
                             exécution reproductible).
-                            <br>L'idée : montrer une trajectoire claire "socle → industrialisation → features avancées",
+                            <br>L’idée&nbsp;: montrer une trajectoire claire «&nbsp;socle → industrialisation → features avancées&nbsp;»,
                             sans promesses floues.
+                            <br>Je l’ai mené seul, à titre personnel, dans le contexte de Point S.
                         </p>
 
-                        <div class="exp-subtitle">Socle en place</div>
+                        <div class="exp-subtitle">Socle réalisé</div>
                         <div class="exp-tags">
-                            <span class="tag">Java-17</span>
+                            <span class="tag">Java 17</span>
                             <span class="tag">Spring Boot (WebFlux)</span>
                             <span class="tag">Maven</span>
                             <span class="tag">Thymeleaf (SSR)</span>
                             <span class="tag">PostgreSQL</span>
                             <span class="tag">Flyway</span>
+                            <span class="tag">H2</span>
                             <span class="tag">Keycloak</span>
                             <span class="tag">Docker</span>
                             <span class="tag">Minikube / Kompose</span>
                             <span class="tag">CQRS / Event Sourcing (AxonIQ)</span>
                             <span class="tag">Audit / RGPD</span>
+                            <span class="tag">GitHub Actions</span>
                         </div>
 
-                        <div class="exp-subtitle">Trajectoire</div>
+                        <div class="exp-subtitle">Pistes d’évolution envisagées</div>
                         <div class="exp-tags exp-tags--secondary">
-                            <span class="tag">DDD (Domain Driven Design)</span>
+                            <span class="tag">DDD (Domain-Driven Design)</span>
                             <span class="tag">RBAC avancé</span>
                             <span class="tag">RGPD by design</span>
-                            <span class="tag">Recherche / index (PostgreSQL + moteur ElasticSearch pour recherche exacte et approchée)</span>
+                            <span class="tag">Recherche / index (PostgreSQL + moteur Elasticsearch pour recherche exacte et approchée)</span>
                             <span class="tag">Découpage services (Kafka / RabbitMQ / microservices)</span>
                             <span class="tag">Brique prédiction (ML/Python)</span>
                         </div>
@@ -574,12 +668,12 @@
                 <article class="exp-item">
                     <div class="exp-period">2025</div>
                     <div>
-                        <div class="exp-role">Plateforme de recherche d'images par similarité</div>
+                        <div class="exp-role">Plateforme de recherche d’images par similarité</div>
                         <div class="exp-company">Vision par ordinateur & embeddings ResNet</div>
 
                         <p class="exp-description">
-                            Projet full-stack de recherche d'images par similarité : upload d'une image requête,
-                            extraction de descripteurs visuels classiques et profonds (ResNet), puis restitution
+                            Projet full-stack de recherche d’images par similarité&nbsp;: tirage au hasard d’une image requête (choix d’une classe pour ResNet),
+                            recherche par descripteurs visuels classiques et profonds (embeddings ResNet), puis restitution
                             des images les plus pertinentes avec une interface de démonstration et une évaluation
                             précise des résultats (précision / rappel).
                         </p>
@@ -615,19 +709,33 @@
                 <!--                </article>-->
 
 
+                <!-- Freelance -->
+                <article class="exp-item">
+                    <div class="exp-period">2024</div>
+                    <div>
+                        <div class="exp-role">Reprise et maintenance d’applications métier</div>
+                        <div class="exp-company">Prestations freelance en télétravail, via la plateforme Malt</div>
+                        <p class="exp-description">
+                            J’ai repris et maintenu des applications métier existantes dans le cadre de prestations
+                            freelance, réalisées à distance.
+                        </p>
+                    </div>
+                </article>
+
                 <!-- Lab-Concepts -->
                 <article class="exp-item">
                     <div class="exp-period">2018 — 2019</div>
                     <div>
                         <div class="exp-role">
-                            Ingénieur d'études <span class="exp-company">Lab-Concepts</span>
+                            Ingénieur d’études <span class="exp-company">Lab-Concepts</span>
                         </div>
                         <p class="exp-description">
-                            Maintenance et évolution d'un CRM métier (spectacles / musiques vivantes) : correctifs,
+                            Maintenance et évolution d’un CRM métier (spectacles / musiques vivantes)&nbsp;: correctifs,
                             évolutions, stabilisation et refactoring ciblé.
                         </p>
                         <div class="exp-tags">
-                            <span class="tag">HTML / CSS / Javascript</span>
+                            <span class="tag">HTML / CSS / JavaScript</span>
+                            <span class="tag">jQuery</span>
                             <span class="tag">PHP</span>
                             <span class="tag">Bootstrap</span>
                             <span class="tag">Maintenance</span>
@@ -644,12 +752,19 @@
                             Ingénieur logiciel R&D <span class="exp-company">Naval Group</span>
                         </div>
                         <p class="exp-description">
-                            Conception d'un simulateur 3D pédagogique pour la formation de sous
-                            mariniers.
+                            Conception d’un simulateur 3D pédagogique pour la formation de sous-mariniers.
+                            <br>Les technologies de cette entrée valent pour l’ensemble de mes missions chez Naval Group,
+                            y compris celles des deux entrées suivantes&nbsp;; ces dernières sont en outre rattachées
+                            chacune à une mission précise.
                         </p>
                         <div class="exp-tags">
                             <span class="tag">R&D</span>
                             <span class="tag">Gestion de projet</span>
+                            <span class="tag">JavaFX</span>
+                            <span class="tag">AWT</span>
+                            <span class="tag">C</span>
+                            <span class="tag">Jenkins</span>
+                            <span class="tag">Excel VBA</span>
                         </div>
                     </div>
                 </article>
@@ -658,11 +773,11 @@
                     <div class="exp-period">2015</div>
                     <div>
                         <div class="exp-role">
-                            Ingénieur logiciel <span class="exp-company">Naval Group</span>
+                            Ingénieur logiciel R&D <span class="exp-company">Naval Group</span>
                         </div>
                         <p class="exp-description">
                             Mise en conformité des messages de la base de structures génériques
-                            GAMS du porte-avion 'Charles de Gaulle'.
+                            GAMS du porte-avions «&nbsp;Charles de Gaulle&nbsp;».
                         </p>
                         <div class="exp-tags">
                             <span class="tag">Réseaux</span>
@@ -675,13 +790,13 @@
                     <div class="exp-period">2014</div>
                     <div>
                         <div class="exp-role">
-                            Ingénieur logiciel <span class="exp-company">Naval Group</span>
+                            Ingénieur logiciel R&D <span class="exp-company">Naval Group</span>
                         </div>
                         <p class="exp-description">
-                            Réalisation d'une application pour bâtiment de surveillance côtière.
+                            Réalisation d’une application pour bâtiment de surveillance côtière.
                         </p>
                         <div class="exp-tags">
-                            <span class="tag">Java-8</span>
+                            <span class="tag">Java 8</span>
                             <span class="tag">Swing</span>
                             <span class="tag">PostgreSQL</span>
                         </div>
@@ -696,7 +811,7 @@
             <h2 class="section-h">Contact</h2>
 
             <div class="contact-text">
-                <p>J'échange volontiers autour de :</p>
+                <p>J’échange volontiers autour de&nbsp;:</p>
                 <ul class="contact-list">
                     <li>Architecture logicielle</li>
                     <li>Sécurité applicative et gestion des identités</li>
@@ -705,13 +820,18 @@
                     <li>Conteneurisation et orchestration (Docker, Kubernetes)</li>
                     <li>Qualité, robustesse et maintenabilité du code</li>
                     <li>Optimisation des applications et des infrastructures</li>
-                    <li>Machine Learning appliqué à des problèmes concrets</li>
+                    <li>Machine learning appliqué à des problèmes concrets</li>
+                    <li>Ingénierie agentique et orchestration d’agents IA</li>
                 </ul>
+                <p class="note">
+                    Je suis à Nouméa, en Nouvelle-Calédonie. Je parle français (langue maternelle) et anglais
+                    (niveau B2).
+                </p>
             </div>
 
             <a class="contact-button"
                href="mailto:hello@christiandrochon.dev?subject=Contact%20-%20Projet%20logiciel">
-                M'écrire
+                M’écrire
             </a>
         </section>
 
@@ -739,7 +859,7 @@
             <div class="spec-panel-cert">
                 <iframe id="spec-panel-iframe" class="spec-panel-iframe" title="Certificat"></iframe>
                 <p class="spec-panel-cert-fallback">
-                    Si le certificat ne s'affiche pas ci-dessus,
+                    Si le certificat ne s’affiche pas ci-dessus,
                     <a id="spec-panel-cert-link" href="#" target="_blank" rel="noreferrer noopener">ouvrez-le
                         directement</a>.
                 </p>
@@ -761,6 +881,7 @@
     document.getElementById("y").textContent = new Date().getFullYear().toString();
 </script>
 <script src="/js/resume.js"></script>
+<script src="/js/nav-menu.js"></script>
 <script src="/js/spec-panel.js"></script>
 </body>
 </html>
