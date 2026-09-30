@@ -232,6 +232,75 @@ section[data-section] {
     }
 }
 
+/* Desktop : marge basse de la page. Le pied de page garde son propre
+   padding (3rem) ; .page ajoute 5rem (80px) en dessous, soit environ 130px
+   sous le texte du pied de page. Reserve au desktop : tablette et mobile
+   gardent leur padding-block 1.2rem. */
+@media (min-width: 1024px) {
+    .page {
+        padding-bottom: 5rem;
+    }
+}
+
+/* Desktop : plage de collage de la colonne de gauche raccourcie. Le menu
+   (.sidebar-inner, sticky) se decolle quand son bas atteint le bas de
+   .sidebar ; en retirant 5.68rem (~91px) a la hauteur de .sidebar, il se
+   pose en fin de page de facon que le lien « Contact » soit au niveau du
+   trait du pied de page. L'alignement est geometrique (il depend du
+   document, pas de la hauteur de fenetre) tant que le menu se decolle,
+   c'est-a-dire pour les fenetres d'environ 770px de haut ou moins ; au-dela,
+   le menu reste colle a son top et ne descend pas plus bas. Valeur mesuree :
+   distance bas de main.content - trait (104,05px) moins distance centre de
+   « Contact » - bas de .sidebar-inner (13,14px). */
+@media (min-width: 1024px) {
+    .sidebar {
+        /* 5.68rem - 1rem (16px) : le trait du pied de page se place 16px
+           au-dessus du centre de « Contact ». Reduire la marge fait descendre
+           le menu en fin de defilement (le trait ne bouge pas) ; cela
+           attenue aussi la sortie par le haut de la colonne de gauche. */
+        margin-bottom: 4.68rem;
+    }
+}
+
+/* Desktop : colonne de gauche resserree pour que la navigation demarre
+   plus haut (le bouton CV est place avant les icones). Rythme regulier de
+   0.75rem entre blocs (0.6rem sous le nom) ; interlignes du role et de l'intro legerement
+   reduits. Reserve au desktop : en tablette et en mobile, ces blocs sont
+   des enfants directs de .page et gardent leurs espacements d'origine. */
+@media (min-width: 1024px) {
+    .name {
+        margin-bottom: 0.4rem;
+    }
+
+    .role {
+        margin-top: 0.6rem;
+        line-height: 1.4;
+    }
+
+    .intro--short {
+        margin-top: 0.75rem;
+        line-height: 1.5;
+    }
+
+    .sidebar-inner .cv-download {
+        margin-top: 0.75rem;
+    }
+
+    .sidebar-inner .social-icons {
+        margin-top: 0.75rem;
+    }
+
+    .sidebar-inner .nav {
+        margin-top: 0.75rem;
+        /* Entrees du menu un peu plus aerees (pas 42 -> 46px). Plafond : la
+           colonne collee (.sidebar-inner) doit tenir dans une fenetre de
+           630px de haut (top 67px + hauteur ~551px) ; ne pas l'augmenter
+           sans re-mesurer. L'espace est entre les entrees uniquement : rien
+           sous « Contact », pour ne pas decaler l'alignement avec le trait. */
+        gap: 1.25rem;
+    }
+}
+
 /* =========================
    Centres d'interet dans le menu de gauche
    ========================= */
@@ -758,4 +827,28 @@ pre code {
     --bs-btn-active-color: var(--color-bg-soft);
     --bs-btn-active-bg: var(--color-text);
     --bs-btn-active-border-color: var(--color-text);
+}
+
+/* Desktop : le bouton de contact est rapproche du trait du pied de page.
+   Ecart bouton / trait : 56px = 16px (padding-bottom de #contact) + 2.5rem
+   (40px) de marge haute du pied de page. Le levier est cette marge (et non
+   un espace au-dessus du bouton) : le trait est ancre a la fin du document,
+   donc c'est le bouton qui descend vers lui. Le 2rem de base (.site-footer)
+   est remplace ici ; tablette et mobile le conservent. */
+@media (min-width: 1024px) {
+    .site-footer {
+        margin-top: 2.5rem;
+    }
+
+    /* Bouton « M'ecrire » : centre dans la colonne de droite (meme axe que le
+       texte du copyright) et elargi. width: fit-content + marges automatiques
+       laterales centrent un bloc sans changer la mise en page verticale de
+       la section ; la largeur minimale elargit sans toucher a la taille du
+       texte. Desktop uniquement. */
+    .contact-button {
+        display: flex;
+        width: fit-content;
+        min-width: 11rem;
+        margin-inline: auto;
+    }
 }
