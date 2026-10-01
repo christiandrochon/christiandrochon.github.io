@@ -876,3 +876,57 @@ pre code {
         margin-inline: auto;
     }
 }
+
+
+/* Pages projets : fil d'Ariane et pied commun (identité + contact) */
+.project-breadcrumb ol,
+.project-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+}
+
+.project-breadcrumb {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.project-breadcrumb li + li::before {
+    content: "›";
+    margin-right: 0.5rem;
+    color: var(--color-text-muted);
+}
+
+.project-breadcrumb li {
+    color: var(--color-text-muted);
+    overflow-wrap: anywhere;
+}
+
+.project-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1.5rem;
+}
+
+.project-footer-name {
+    font-weight: 600;
+}
+
+.project-breadcrumb a:focus-visible,
+.project-footer a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.project-breadcrumb a,
+.project-footer a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
