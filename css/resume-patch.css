@@ -930,3 +930,37 @@ pre code {
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
+
+
+/* =========================
+   Zones tactiles
+   Cibles >= 44px de haut et de large sur petit écran et sur écran tactile
+   (recommandation Apple 44pt / WCAG 2.5.5 ; WCAG 2.5.8 AA = 24px est déjà
+   respecté). Le desktop à la souris (>= 1024px, pointer: fine) ne change pas.
+   Aucune couleur : seules les dimensions et l'alignement changent.
+   ========================= */
+@media (max-width: 1023px), (pointer: coarse) {
+    .project-breadcrumb a,
+    .project-footer a,
+    .specialisations-list a,
+    .btn,
+    .cv-download {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .project-breadcrumb a,
+    .project-footer a,
+    .specialisations-list a,
+    .btn {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Le .btn Bootstrap est centré par text-align ; en flex, on centre explicitement.
+       gap remplace l'espace (supprimé en flex) entre l'icône et le texte. */
+    .btn {
+        justify-content: center;
+        gap: 0.25em;
+    }
+}
