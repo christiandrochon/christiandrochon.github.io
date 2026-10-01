@@ -287,6 +287,10 @@ img {
 
 
 .name {
+    /* Marges posees ici plutot qu'heritees du reboot de Bootstrap (h1 { margin: 0 0 .5rem }),
+       charge depuis un CDN : sans elles, un CDN injoignable laisse la marge par defaut
+       du navigateur (0.67em) et decale toute la colonne de gauche. */
+    margin: 0 0 0.5rem;
     font-family: var(--font-inter), system-ui, sans-serif;
     font-size: clamp(2.6rem, 4vw, 3.2rem);
     font-weight: 700;

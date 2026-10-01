@@ -9,6 +9,10 @@
     text-transform: uppercase;
     margin: 0 0 0.9rem;
     color: var(--color-text-muted);
+    /* Valeurs du reboot Bootstrap (titres) reprises ici : sans elles, un CDN injoignable
+       donne au titre l'interligne `normal` et la graisse 700 du navigateur. */
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 /* si tu veux un mini trait (très discret) */
@@ -154,7 +158,18 @@ section[data-section] {
 
 .spec-block h3 {
     font-size: 1.05rem;
+    margin-top: 0;
     margin-bottom: 0.5rem;
+    /* Valeurs du reboot Bootstrap (titres) reprises localement, voir .section-h. */
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Liste de la section Contact : marges et retrait du reboot Bootstrap (ul) reprises
+   localement, pour que la mise en page ne depende pas du CDN. */
+.contact-list {
+    margin: 0 0 1rem;
+    padding-left: 2rem;
 }
 
 .specialisations-list {
