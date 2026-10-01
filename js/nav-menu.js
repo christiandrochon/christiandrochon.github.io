@@ -29,8 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Le mode "menu" n'est activé que si ce script s'exécute (sans JS, la
-    // navigation reste affichée en clair plutôt que de devenir inaccessible).
+    // Le mode "menu" n'est activé que si du JS s'exécute (sans JS, la navigation
+    // reste affichée en clair plutôt que de devenir inaccessible). Le script en ligne
+    // de index.html l'a déjà posé pendant le parsing, avant toute mise en page de
+    // l'ancre ; cet appel reste le repli si ce script en ligne venait à manquer.
     menu.classList.add("menu-ready");
 
     toggle.addEventListener("click", () => setOpen(!isOpen(), { restoreFocus: true }));

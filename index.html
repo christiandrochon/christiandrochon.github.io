@@ -129,6 +129,12 @@
                     </a>
                 </div>
             </div>
+            <script>
+                /* Active le mode "menu" des cet instant du parsing (et non a DOMContentLoaded, voir
+                   js/nav-menu.js) : sinon le panneau, affiche en clair a la premiere mise en page,
+                   se replie 176 px plus haut apres que le navigateur a positionne une ancre #card-*. */
+                document.querySelector(".site-menu").classList.add("menu-ready");
+            </script>
 
 
         </div>
