@@ -22,6 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
             icon.classList.toggle("fa-times", open);
         }
         if (open) {
+            // La barre est sticky mais, tant que la page n'a pas défilé, elle reste à sa
+            // place naturelle (bas du premier écran) : le panneau, ancré sous elle,
+            // s'ouvrirait hors écran. On la ramène donc en haut, instantanément (jamais
+            // animé, même si le CSS pose scroll-behavior: smooth), avant de donner le
+            // focus. Rien ne bouge si elle est déjà collée en haut.
+            const top = menu.getBoundingClientRect().top;
+            if (top > 1) {
+                const root = document.documentElement;
+                const previous = root.style.scrollBehavior;
+                root.style.scrollBehavior = "auto";
+                window.scrollTo(window.scrollX, window.scrollY + top);
+                root.style.scrollBehavior = previous;
+            }
             const first = panel.querySelector("a");
             if (first) first.focus({ preventScroll: true });
         } else if (restoreFocus) {
