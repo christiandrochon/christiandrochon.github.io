@@ -724,15 +724,25 @@ section[data-section] {
     .menu-toggle {
         align-items: center;
         justify-content: center;
-        width: 44px;
+        gap: 0.5rem;
+        min-width: 44px;
         height: 44px;
-        padding: 0;
+        padding: 0 0.75rem;
         font-size: 1.15rem;
+        white-space: nowrap;
         color: var(--color-text);
         background: transparent;
         border: 1px solid var(--color-border);
         border-radius: 0.5rem;
         cursor: pointer;
+    }
+
+    /* Libellé visible à côté de l'icône : il fournit aussi le nom accessible
+       (pas d'aria-label, donc pas de « Menu Menu »). */
+    .menu-toggle__label {
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1;
     }
 
     .menu-toggle:focus-visible {
@@ -997,5 +1007,31 @@ pre code {
     .btn {
         justify-content: center;
         gap: 0.25em;
+    }
+}
+
+/* =========================
+   Icones sociales : espacement et cible tactile
+   Avant : gap 0.75rem (12px) ; apres : 1rem (16px) sur mobile, tablette et
+   tout ecran tactile. Sous 1024px le dessin fait deja 44px. A partir de
+   1024px sur tactile il reste a 32px (aspect inchange) : la zone cliquable
+   est etendue a 44px par un pseudo-element transparent (6px de chaque
+   cote), sans chevauchement entre icones puisque l'ecart est de 16px.
+   ========================= */
+@media (max-width: 1023px), (pointer: coarse) {
+    .social-icons {
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1024px) and (pointer: coarse) {
+    .social-icons a {
+        position: relative;
+    }
+
+    .social-icons a::after {
+        content: "";
+        position: absolute;
+        inset: -7px;
     }
 }
