@@ -189,6 +189,14 @@ section[data-section] {
     text-decoration: underline;
 }
 
+/* L'icône de certificat reste collée au dernier mot : Font Awesome la rend en
+   inline-block (objet atomique = occasion de coupure de ligne avant elle).
+   En inline, la glyphe fait partie du même mot et ne peut plus être seule sur
+   sa ligne. --fa-display est la variable prévue par Font Awesome 6. */
+.specialisations-list .spec-cert-icon {
+    --fa-display: inline;
+}
+
 /* Mobile */
 @media (max-width: 900px) {
     .spec-grid {
