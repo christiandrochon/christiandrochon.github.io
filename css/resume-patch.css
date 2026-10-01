@@ -970,7 +970,19 @@ pre code {
        vertical recentre le texte dans la cible de 44px. */
     .specialisations-list a {
         display: inline-block;
+        vertical-align: top;
         padding-block: 0.5625rem;
+        line-height: 1.6;
+    }
+
+    /* La puce (::marker) s'aligne sur la ligne de base de la 1re ligne du <li>.
+       Un inline-block expose la ligne de base de sa DERNIERE ligne, d'ou une puce
+       en bas sur un intitule multiligne : on l'aligne en haut (vertical-align: top)
+       et on donne au <li> une hauteur de ligne = interligne du lien (1.6) + son
+       padding vertical (2 x 0.5625rem), ce qui place la ligne de base du <li>
+       exactement sur celle de la 1re ligne du lien. */
+    .specialisations-list li {
+        line-height: calc(1.6em + 1.125rem);
     }
 
     /* Liens de la sidebar (desktop tactile) : 44px de haut. Le .nav-link est déjà
