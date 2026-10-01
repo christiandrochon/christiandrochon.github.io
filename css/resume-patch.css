@@ -73,7 +73,11 @@
 
 @media (min-width: 640px) {
     .exp-item {
-        grid-template-columns: 170px minmax(0, 1fr);
+        /* 140px : la plus longue periode (« 2026 — aujourd'hui ») mesure 122px et les
+           dates sont en white-space: nowrap, donc la colonne doit la contenir sans
+           deborder. Les 170px d'origine laissaient pres de 50px de vide meme dans ce
+           cas. L'espace qui separe la date du texte (column-gap) ne change pas. */
+        grid-template-columns: 140px minmax(0, 1fr);
     }
 }
 
