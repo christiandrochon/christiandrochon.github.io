@@ -951,10 +951,25 @@ pre code {
 
     .project-breadcrumb a,
     .project-footer a,
-    .specialisations-list a,
     .btn {
         display: inline-flex;
         align-items: center;
+    }
+
+    /* Spécialisations : le lien reste un bloc de texte (inline-block) et non un
+       conteneur flex, sinon l'icône de certificat devient un item distinct et
+       se détache du texte quand l'intitulé passe sur 2 lignes. Le padding
+       vertical recentre le texte dans la cible de 44px. */
+    .specialisations-list a {
+        display: inline-block;
+        padding-block: 0.5625rem;
+    }
+
+    /* Liens de la sidebar (desktop tactile) : 44px de haut. Le .nav-link est déjà
+       inline-flex + align-items:center, le texte reste centré. Le panneau mobile
+       et la barre tablette ont déjà ce min-height. */
+    .nav-link {
+        min-height: 44px;
     }
 
     /* Le .btn Bootstrap est centré par text-align ; en flex, on centre explicitement.
