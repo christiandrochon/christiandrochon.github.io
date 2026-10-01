@@ -434,10 +434,20 @@ section[data-section] {
     margin-bottom: 0;
 }
 
-/* Note sur les UE, placée entre la liste des diplômes et la grille des UE :
-   même espacement au-dessus (ici) qu'au-dessous (margin-top de .spec-grid). */
+/* Note sur les UE, placée entre la liste des diplômes et la grille des UE.
+   La marge du haut remplace l'ancienne phrase d'introduction (supprimée) et
+   ses deux sauts de ligne : elle garde l'italique à la même hauteur. Valeurs
+   mesurées (bas du dernier diplôme -> haut de l'italique) : ~66 px dès
+   467 px de large, ~88 px en dessous (l'ancienne phrase y passait sur deux
+   lignes, d'où une marge plus grande). */
 #specialisations .spec-block + p {
-    margin-top: 1rem;
+    margin-top: 4rem;
+}
+
+@media (max-width: 466px) {
+    #specialisations .spec-block + p {
+        margin-top: 5.3rem;
+    }
 }
 
 #specialisations .specialisations-list li {
