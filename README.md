@@ -66,7 +66,6 @@ Aucun framework backend ni moteur de rendu serveur n’est utilisé pour ce port
 ├── sitemap.xml                    # Plan du site
 ├── package.json                   # Dépendances npm du projet (surge)
 ├── package-lock.json              # Versions figées des dépendances npm
-├── SEO-AUDIT-2026-08-29.md        # Audit SEO du site (29 août 2026)
 ├── CNAME                          # Domaine personnalisé GitHub Pages (apex)
 ├── README.md                      # Documentation du dépôt
 └── LICENSE                        # Licence MIT
@@ -77,14 +76,16 @@ Aucun framework backend ni moteur de rendu serveur n’est utilisé pour ce port
 Lancement rapide avec un serveur HTTP local :
 
 ```
-python -m http.server 5137
+python -m http.server 5137 --bind 127.0.0.1
 ```
 
 ou
 
 ```
-python3 -m http.server 5137
-```    
+python3 -m http.server 5137 --bind 127.0.0.1
+```
+
+Le paramètre `--bind 127.0.0.1` est important : sans lui, le serveur est accessible depuis le réseau local, y compris le dossier `.git`.
 
 Puis ouvrir :
 
