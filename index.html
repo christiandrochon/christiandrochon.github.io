@@ -112,8 +112,10 @@
             <div class="site-menu">
                 <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false"
                         aria-controls="nav-panel">
-                    <i class="fas fa-bars" aria-hidden="true"></i>
-                    <span class="menu-toggle__label">Menu</span>
+                    <span class="menu-toggle__pill">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                        <span class="menu-toggle__label">Menu</span>
+                    </span>
                 </button>
 
                 <div class="nav-panel" id="nav-panel">
@@ -171,8 +173,7 @@
             <p>
                 Je m’appuie également sur des agents IA dans mes processus d’ingénierie, de conception, de
                 développement et d’automatisation logicielle. Cela passe par l’orchestration d’agents,
-                l’usage de <i>skills</i> et l’intégration via MCP&nbsp;; le projet Deveo, présenté plus bas, en donne un
-                exemple concret.
+                l’usage de <i>skills</i> et l’intégration via MCP.
             </p>
             <br>
             <p>
@@ -192,6 +193,21 @@
         <section id="projects" data-section>
             <h2 class="section-h">Projets</h2>
             <div class="projects-grid">
+                <article class="project-card" id="card-deveo">
+                    <div class="project-title">Deveo — Application mobile iOS / Android</div>
+                    <p class="project-desc">
+                        Application Flutter pour iOS et Android, dont je coordonne la conception, le développement
+                        et les revues en pilotant des agents IA.
+                    </p>
+                    <div class="project-tech">
+                        <span>Flutter</span><span>iOS / Android</span><span>Agentic AI</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a class="btn btn-sm btn-outline-primary" href="#exp-deveo">Voir le détail</a>
+                    </div>
+                </article>
+
                 <article class="project-card" id="card-marche-financier-risque">
                     <div class="project-title">
                         Marché financier à risque — Plateforme d’aide à la décision <span
@@ -213,6 +229,7 @@
                         <span>FastAPI</span>
                         <span>Machine learning</span>
                         <span>RabbitMQ</span>
+                        <span>Tailscale</span>
                     </div>
 
                     <div class="project-actions">
@@ -230,7 +247,7 @@
 
                     <p class="project-desc">
                         Application Java/Spring orientée traçabilité métier&nbsp;: CQRS/Event Sourcing,
-                        sécurité OAuth2/OIDC avec Keycloak, audit RGPD, logs structurés et migrations SQL versionnées.
+                        sécurité OAuth2/OIDC avec Keycloak et RBAC, audit RGPD, logs structurés et migrations SQL versionnées.
                     </p>
 
                     <div class="project-tech">
@@ -288,16 +305,6 @@
                     </div>
                 </article>
 
-                <article class="project-card" id="card-deveo">
-                    <div class="project-title">Deveo — Application mobile iOS / Android</div>
-                    <p class="project-desc">
-                        Application Flutter pour iOS et Android, dont je coordonne la conception, le développement
-                        et les revues en pilotant des agents IA. Le détail figure dans le Parcours.
-                    </p>
-                    <div class="project-tech">
-                        <span>Flutter</span><span>iOS / Android</span><span>Agentic AI</span>
-                    </div>
-                </article>
             </div>
         </section>
 
@@ -311,10 +318,6 @@
                 une formation d’un autre organisme (SecNumAcadémie, de l’ANSSI), ces dernières regroupées par domaine
                 et non par diplôme. Ce sont des repères techniques et fonctionnels que je pratique assidûment
                 et qui structurent ma façon de concevoir des systèmes.
-                <br>Les liens pointent vers les pages officielles des modules.
-                <br><br><i>Cliquez sur les intitulés des UE pour voir le contenu de chaque formation. Les intitulés marqués
-                d’un <i class="fas fa-certificate" aria-hidden="true"></i> ouvrent aussi la pièce justificative
-                correspondante.</i>
             </p>
 
             <div class="spec-block">
@@ -350,6 +353,13 @@
                     </article>
                 </div>
             </div>
+
+            <p>
+                Les liens pointent vers les pages officielles des modules.
+                <br><br><i>Cliquez sur les intitulés des UE pour voir le contenu de chaque formation. Les intitulés marqués
+                d’un <i class="fas fa-certificate" aria-hidden="true"></i> ouvrent aussi la pièce justificative
+                correspondante.</i>
+            </p>
 
             <div class="spec-grid">
                 <div class="spec-block">
@@ -560,7 +570,7 @@
             <div class="experience-list">
 
                 <!-- Deveo : placé en tête, comme dans le CV -->
-                <article class="exp-item">
+                <article class="exp-item" id="exp-deveo">
                     <div class="exp-period">2026</div>
                     <div>
                         <div class="exp-role">Pilotage d’agents IA · Application mobile iOS / Android</div>

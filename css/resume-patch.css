@@ -145,7 +145,8 @@ section[data-section] {
 /* Cartes projets ciblées par les liens « Retour » des pages projets (#card-*) :
    même décalage d'arrivée que les sections (une seule source, pas de
    scroll-padding-top sur html). */
-.project-card[id] {
+.project-card[id],
+.exp-item[id] {
     scroll-margin-top: 5rem;
 }
 
@@ -420,6 +421,23 @@ section[data-section] {
 #specialisations .spec-grid,
 #specialisations .spec-block h3 {
     color: var(--color-text);
+}
+
+/* Liste des diplômes : entrées resserrées pour se lire comme un seul bloc.
+   Le Parcours (#experience) réutilise .exp-item et garde son espacement
+   (gap 1.5rem + margin-bottom 32px = 56px) : seule cette liste change. */
+#specialisations .experience-list {
+    gap: 1rem;
+}
+
+#specialisations .experience-list .exp-item {
+    margin-bottom: 0;
+}
+
+/* Note sur les UE, placée entre la liste des diplômes et la grille des UE :
+   même espacement au-dessus (ici) qu'au-dessous (margin-top de .spec-grid). */
+#specialisations .spec-block + p {
+    margin-top: 1rem;
 }
 
 #specialisations .specialisations-list li {
@@ -712,16 +730,33 @@ section[data-section] {
 
 /* Mobile (<= 639px) : bouton menu sticky + panneau vertical */
 @media (max-width: 639px) {
-    .site-menu {
-        padding-block: 0.25rem;
-    }
-
     /* Sans le script du menu, la navigation reste affichée en clair. */
     .site-menu.menu-ready .menu-toggle {
-        display: inline-flex;
+        display: flex;
     }
 
+    /* Le bouton occupe toute la largeur et toute la hauteur de la barre
+       (l'espacement vertical de la barre est son padding) : un appui
+       n'importe où sur la barre ouvre ou ferme le menu. Il est transparent
+       et sans bordure ; seule la pastille interne reste visible. */
     .menu-toggle {
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        /* +1px en bas : le bouton recouvre aussi la bordure basse de .site-menu
+           (marge négative), sans changer la hauteur de la barre ni la place
+           de la pastille. */
+        padding: 0.25rem 0 calc(0.25rem + 1px);
+        margin-bottom: -1px;
+        font: inherit;
+        color: var(--color-text);
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .menu-toggle__pill {
+        display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
@@ -730,11 +765,8 @@ section[data-section] {
         padding: 0 0.75rem;
         font-size: 1.15rem;
         white-space: nowrap;
-        color: var(--color-text);
-        background: transparent;
         border: 1px solid var(--color-border);
         border-radius: 0.5rem;
-        cursor: pointer;
     }
 
     /* Libellé visible à côté de l'icône : il fournit aussi le nom accessible
@@ -745,7 +777,12 @@ section[data-section] {
         line-height: 1;
     }
 
+    /* Le contour de focus suit la pastille (l'élément visible), pas la barre. */
     .menu-toggle:focus-visible {
+        outline: none;
+    }
+
+    .menu-toggle:focus-visible .menu-toggle__pill {
         outline: 2px solid var(--color-accent);
         outline-offset: 2px;
     }
