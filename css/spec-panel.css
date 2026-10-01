@@ -134,6 +134,57 @@
     text-decoration: underline;
 }
 
+/* Lien PDF : contrôle tactile (cible >= 44px) sous 720px et sur écran tactile,
+   même identité que .spec-panel-course-btn. Souris et large : lien souligné. */
+@media (max-width: 720px), (pointer: coarse) {
+    .spec-panel-cert-fallback a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.4rem 1.1rem;
+        border: 1px solid var(--color-accent);
+        border-radius: 999px;
+        font-size: 0.9rem;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .spec-panel-cert-fallback a:hover,
+    .spec-panel-cert-fallback a:focus-visible {
+        background: var(--color-accent);
+        color: var(--color-bg);
+    }
+}
+
+/* Retour et Fermer : cibles >= 44px sous 720px et sur tout écran tactile
+   (Fermer vaut déjà 48px au-dessus de 720px). Souris : inchangé. */
+@media (max-width: 720px), (pointer: coarse) {
+    .spec-panel-back {
+        min-height: 44px;
+    }
+
+    .spec-panel-close {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* Paysage de téléphone (peu de hauteur, tactile) : l'iframe n'aurait pas la
+   place d'être lisible ; le lien PDF devient l'action principale. Le src reste
+   posé par spec-panel.js. Le corps défile si besoin (volet cours). */
+@media (max-height: 480px) and (pointer: coarse) {
+    .spec-panel-iframe {
+        display: none;
+    }
+
+    .spec-panel-body {
+        overflow-y: auto;
+    }
+}
+
 .spec-panel-course {
     flex: 1 1 28%;
     min-width: 220px;
@@ -205,8 +256,8 @@
     }
 
     .spec-panel-close {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 44px;
+        height: 44px;
         font-size: 1.7rem;
     }
 
