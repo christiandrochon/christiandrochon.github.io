@@ -48,3 +48,16 @@ ue/*
 !ue/Extrait_Releve_Toulouse_RSX101.pdf
 !ue/Extrait_Releve_Toulouse_EME102.pdf
 !ue/Extrait_Releve_Toulouse_TET102.pdf
+
+# Documents de travail : audits, verifications et decisions de validation.
+# Conserves en local, jamais publies : GitHub Pages les servirait publiquement
+# et ils contiennent des elements personnels et des reserves internes.
+qa-*.md
+analyse-factuelle*.md
+relecture-editoriale*.md
+validation-finale*.md
+ux-revue-finale.md
+ux-responsive-spec.md
+seo-audit.md
+SEO-AUDIT-*.md
+roadmap-implementation.md

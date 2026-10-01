@@ -9,6 +9,10 @@
     text-transform: uppercase;
     margin: 0 0 0.9rem;
     color: var(--color-text-muted);
+    /* Valeurs du reboot Bootstrap (titres) reprises ici : sans elles, un CDN injoignable
+       donne au titre l'interligne `normal` et la graisse 700 du navigateur. */
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 /* si tu veux un mini trait (très discret) */
@@ -26,7 +30,11 @@
 .project-tech span {
     display: inline-block;
     margin: 0 6px 6px 0;
-    white-space: nowrap;
+    /* Un tag long doit pouvoir passer à la ligne plutôt que d'imposer sa largeur
+       à toute la page. */
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 /* Sous-titres "Socle en place / Trajectoire" */
@@ -51,18 +59,26 @@
     }
 }
 
-/* Tags "roadmap" un peu plus discrets */
-.exp-tags--secondary .tag {
-    opacity: 0.85;
-}
 
 /*Lisibilité des contenus de formation*/
 .exp-item {
     display: grid;
-    grid-template-columns: 170px 1fr;
+    /* Une seule colonne par défaut (mobile) ; minmax(0, 1fr) et non 1fr :
+       la piste ne descend jamais sous la largeur de son contenu avec 1fr seul. */
+    grid-template-columns: minmax(0, 1fr);
     column-gap: 24px;
     align-items: start;
     margin-bottom: 32px;
+}
+
+@media (min-width: 640px) {
+    .exp-item {
+        /* 140px : la plus longue periode (« 2026 — aujourd'hui ») mesure 122px et les
+           dates sont en white-space: nowrap, donc la colonne doit la contenir sans
+           deborder. Les 170px d'origine laissaient pres de 50px de vide meme dans ce
+           cas. L'espace qui separe la date du texte (column-gap) ne change pas. */
+        grid-template-columns: 140px minmax(0, 1fr);
+    }
 }
 
 .exp-period {
@@ -81,7 +97,7 @@
     display: block;
     font-size: 0.92rem;
     font-weight: 500;
-    color: #6c757d;
+    color: var(--color-text-muted);
     margin-top: 4px;
 }
 
@@ -110,7 +126,7 @@
 
 /* Petites notes */
 .note {
-    opacity: 0.85;
+    /* Pas d'opacité : --color-text-muted à .85 tombait à 3,48:1 en pastel. */
     font-size: 0.95em;
 }
 
@@ -119,11 +135,17 @@
     padding-bottom: 1rem;
 }
 
-html {
-    scroll-padding-top: 5rem;
+/* Un seul décalage d'arrivée pour les ancres et scrollIntoView : 5rem (80px),
+   supérieur aux barres sticky (53px mobile, 45px tablette). Ne pas y ajouter
+   de scroll-padding-top sur html : les deux valeurs s'additionneraient. */
+section[data-section] {
+    scroll-margin-top: 5rem;
 }
 
-section[data-section] {
+/* Cartes projets ciblées par les liens « Retour » des pages projets (#card-*) :
+   même décalage d'arrivée que les sections (une seule source, pas de
+   scroll-padding-top sur html). */
+.project-card[id] {
     scroll-margin-top: 5rem;
 }
 
@@ -140,7 +162,18 @@ section[data-section] {
 
 .spec-block h3 {
     font-size: 1.05rem;
+    margin-top: 0;
     margin-bottom: 0.5rem;
+    /* Valeurs du reboot Bootstrap (titres) reprises localement, voir .section-h. */
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Liste de la section Contact : marges et retrait du reboot Bootstrap (ul) reprises
+   localement, pour que la mise en page ne depende pas du CDN. */
+.contact-list {
+    margin: 0 0 1rem;
+    padding-left: 2rem;
 }
 
 .specialisations-list {
@@ -154,6 +187,14 @@ section[data-section] {
 
 .specialisations-list a:hover {
     text-decoration: underline;
+}
+
+/* L'icône de certificat reste collée au dernier mot : Font Awesome la rend en
+   inline-block (objet atomique = occasion de coupure de ligne avant elle).
+   En inline, la glyphe fait partie du même mot et ne peut plus être seule sur
+   sa ligne. --fa-display est la variable prévue par Font Awesome 6. */
+.specialisations-list .spec-cert-icon {
+    --fa-display: inline;
 }
 
 /* Mobile */
@@ -174,7 +215,7 @@ section[data-section] {
     text-align: center; /* centré */
     width: 100%; /* largeur colonne droite */
 
-    opacity: 0.75;
+    /* Pas d'opacité : à .75, --color-text-muted passait sous 4,5:1 en pastel. */
     font-size: 0.9em;
 }
 
@@ -215,6 +256,75 @@ section[data-section] {
         overflow: visible !important;
         min-height: unset !important;
         top: 4.2rem !important; /*releve legerement Christian Drochon*/
+    }
+}
+
+/* Desktop : marge basse de la page. Le pied de page garde son propre
+   padding (3rem) ; .page ajoute 5rem (80px) en dessous, soit environ 130px
+   sous le texte du pied de page. Reserve au desktop : tablette et mobile
+   gardent leur padding-block 1.2rem. */
+@media (min-width: 1024px) {
+    .page {
+        padding-bottom: 5rem;
+    }
+}
+
+/* Desktop : plage de collage de la colonne de gauche raccourcie. Le menu
+   (.sidebar-inner, sticky) se decolle quand son bas atteint le bas de
+   .sidebar ; en retirant 5.68rem (~91px) a la hauteur de .sidebar, il se
+   pose en fin de page de facon que le lien « Contact » soit au niveau du
+   trait du pied de page. L'alignement est geometrique (il depend du
+   document, pas de la hauteur de fenetre) tant que le menu se decolle,
+   c'est-a-dire pour les fenetres d'environ 770px de haut ou moins ; au-dela,
+   le menu reste colle a son top et ne descend pas plus bas. Valeur mesuree :
+   distance bas de main.content - trait (104,05px) moins distance centre de
+   « Contact » - bas de .sidebar-inner (13,14px). */
+@media (min-width: 1024px) {
+    .sidebar {
+        /* 5.68rem - 1rem (16px) : le trait du pied de page se place 16px
+           au-dessus du centre de « Contact ». Reduire la marge fait descendre
+           le menu en fin de defilement (le trait ne bouge pas) ; cela
+           attenue aussi la sortie par le haut de la colonne de gauche. */
+        margin-bottom: 4.68rem;
+    }
+}
+
+/* Desktop : colonne de gauche resserree pour que la navigation demarre
+   plus haut (le bouton CV est place avant les icones). Rythme regulier de
+   0.75rem entre blocs (0.6rem sous le nom) ; interlignes du role et de l'intro legerement
+   reduits. Reserve au desktop : en tablette et en mobile, ces blocs sont
+   des enfants directs de .page et gardent leurs espacements d'origine. */
+@media (min-width: 1024px) {
+    .name {
+        margin-bottom: 0.4rem;
+    }
+
+    .role {
+        margin-top: 0.6rem;
+        line-height: 1.4;
+    }
+
+    .intro--short {
+        margin-top: 0.75rem;
+        line-height: 1.5;
+    }
+
+    .sidebar-inner .cv-download {
+        margin-top: 0.75rem;
+    }
+
+    .sidebar-inner .social-icons {
+        margin-top: 0.75rem;
+    }
+
+    .sidebar-inner .nav {
+        margin-top: 0.75rem;
+        /* Entrees du menu un peu plus aerees (pas 42 -> 46px). Plafond : la
+           colonne collee (.sidebar-inner) doit tenir dans une fenetre de
+           630px de haut (top 67px + hauteur ~551px) ; ne pas l'augmenter
+           sans re-mesurer. L'espace est entre les entrees uniquement : rien
+           sous « Contact », pour ne pas decaler l'alignement avec le trait. */
+        gap: 1.25rem;
     }
 }
 
@@ -269,15 +379,19 @@ section[data-section] {
     border-radius: 999px;
     border: 1px solid var(--color-accent);
 
-    color: var(--color-accent);
+    /* Texte en couleur principale (l'accent seul est sous 4,5:1 sur fond clair
+       comme sur fond sombre) ; la bordure garde l'accent. */
+    color: var(--color-text);
     text-decoration: none;
 
     transition: background 0.2s ease, color 0.2s ease;
 }
 
+/* Survol : inversion texte/fond, contraste élevé dans les deux ambiances.
+   S'applique aussi au lien du panneau mobile (aucune surcharge de couleur). */
 .cv-download:hover {
-    background: var(--color-accent);
-    color: #fff;
+    background: var(--color-text);
+    color: var(--color-bg);
 }
 
 /* =========================
@@ -384,6 +498,15 @@ section[data-section] {
     transform: translateY(-50%) scaleX(0) !important;
 }
 
+/* Indicateur de focus clavier visible (a11y) — :focus-visible uniquement,
+   jamais :focus, pour ne pas afficher de halo au simple clic souris.
+   N'affecte ni le mécanisme de la barre (::before) ni padding-left. */
+.nav-link.active:focus-visible,
+.nav-link:focus-visible:not(.active) {
+    outline: 2px solid var(--color-accent) !important;
+    outline-offset: 2px !important;
+}
+
 /*Garde la couleur du texte du theme, ce qui fait que la couleur du texte */
 /*n'aura jamais de probleme avec la couleur de fond de l'ecran, grande ou petite taille*/
 .footer-license {
@@ -479,7 +602,7 @@ section[data-section] {
 
 .architecture-diagram .arrow-label {
     font-size: 13px;
-    fill: #6e7781 !important;
+    fill: var(--color-text-muted) !important;
 }
 
 .architecture-diagram .diagram-small-title {
@@ -496,4 +619,383 @@ section[data-section] {
 
 .architecture-diagram .diagram-tablet-text {
     font-size: 13px;
+}
+
+/* =========================================================================
+   Navigation responsive (tablette et mobile)
+   Un seul jeu de .nav-link : le mécanisme de l'indicateur actif (padding-left
+   + barre ::before en scaleX) est réutilisé tel quel, seule la disposition du
+   conteneur change. Aucune couleur littérale : variables --color-* uniquement.
+   ========================================================================= */
+
+/* Desktop (>= 1024px) : le wrapper est transparent pour la mise en page, la
+   navigation reste dans la sidebar sticky exactement comme avant. */
+.site-menu,
+.nav-panel {
+    display: contents;
+}
+
+.menu-toggle,
+.cv-download--menu {
+    display: none;
+}
+
+/* Tablette et mobile : sidebar et sidebar-inner sont aplaties (display:
+   contents) pour que le wrapper sticky ait toute la hauteur de .page comme
+   bloc conteneur. L'espacement qui reposait sur le gap de .page et sur la
+   marge négative de .sidebar est reporté sur leurs enfants. */
+@media (max-width: 1023px) {
+    .sidebar,
+    .sidebar-inner {
+        display: contents;
+    }
+
+    .page {
+        gap: 0;
+    }
+
+    .name-link {
+        margin-top: -1rem;
+        align-self: flex-start;
+    }
+
+    .content {
+        margin-top: clamp(1.5rem, 3vw, 3rem);
+    }
+
+    /* .sidebar était limitée à 360px : la largeur est reportée sur ses enfants. */
+    .role,
+    .sidebar-intro,
+    .cv-download {
+        max-width: 360px;
+    }
+
+    .site-menu {
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 900; /* sous le panneau certificat (spec-panel.css : 1000) */
+        margin-top: 1.5rem;
+        background: var(--color-bg-soft);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-link {
+        min-height: 44px;
+    }
+}
+
+/* Tablette (640-1023px) : barre horizontale sticky */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .nav-panel {
+        display: block;
+    }
+
+    .nav {
+        margin-top: 0;
+        column-gap: 1.5rem;
+        row-gap: 0;
+    }
+
+    /* Amplitude du déplacement de l'indicateur actif réduite en tablette
+       uniquement (le desktop garde 5rem). */
+    .nav-link.active {
+        padding-left: 2rem !important;
+    }
+
+    /* La barre doit tenir dans l'espace libéré par le padding réduit
+       (2rem) sans recouvrir le libellé. */
+    .nav-link::before {
+        width: 1.25rem !important;
+    }
+}
+
+/* Mobile (<= 639px) : bouton menu sticky + panneau vertical */
+@media (max-width: 639px) {
+    .site-menu {
+        padding-block: 0.25rem;
+    }
+
+    /* Sans le script du menu, la navigation reste affichée en clair. */
+    .site-menu.menu-ready .menu-toggle {
+        display: inline-flex;
+    }
+
+    .menu-toggle {
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        font-size: 1.15rem;
+        color: var(--color-text);
+        background: transparent;
+        border: 1px solid var(--color-border);
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+
+    .menu-toggle:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+    }
+
+    .site-menu.menu-ready .nav-panel {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        max-height: calc(100vh - 4rem); /* repli */
+        max-height: calc(100dvh - 4rem);
+        overflow-y: auto;
+        padding: 0.75rem 1rem 1rem;
+        background: var(--color-bg-soft);
+        border: 1px solid var(--color-border);
+        border-top: 0;
+    }
+
+    .site-menu.menu-ready .nav-panel.is-open {
+        display: block;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 0;
+        margin-top: 0;
+    }
+
+    .site-menu.menu-ready .cv-download--menu {
+        display: flex;
+        min-height: 44px;
+    }
+
+    .cv-download:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+    }
+}
+
+/* Animation d'ouverture du panneau mobile : uniquement si l'utilisateur ne
+   demande pas de réduction des animations (repli : apparition immédiate). */
+@media (max-width: 639px) and (prefers-reduced-motion: no-preference) {
+    .site-menu.menu-ready .nav-panel.is-open {
+        animation: nav-panel-in 160ms ease-out;
+    }
+
+    @keyframes nav-panel-in {
+        from {
+            opacity: 0;
+            transform: translateY(-0.25rem);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+/* =========================
+   Grille des projets
+   ========================= */
+/* La dernière carte occupe la ligne entière si leur nombre est impair. */
+/* Une colonne sous 576px, deux au-delà : le nombre de colonnes est explicite
+   (et non auto-fit) pour que la règle de la dernière carte reste valable. */
+.projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 576px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .projects-grid > .project-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Les enfants de flex/grid ne se réduisent pas sous leur contenu sans min-width: 0 :
+   c'est la cause structurelle du débordement horizontal. */
+.content,
+.exp-item > * {
+    min-width: 0;
+}
+
+/* <code> : surcharge du rose Bootstrap #d63384 (3,76:1 en sombre, 3,82:1 en pastel). */
+code {
+    color: var(--color-code);
+}
+
+pre code {
+    color: inherit;
+}
+
+
+/* Boutons Bootstrap outline : les gris/bleus par défaut de Bootstrap (2,73:1 et 2,85:1 en thème sombre,
+   4,50:1 en pastel) sont remplacés par des variables du thème. Seules les couleurs changent. */
+.btn-outline-primary {
+    --bs-btn-color: var(--color-accent);
+    --bs-btn-border-color: var(--color-accent);
+    --bs-btn-hover-color: var(--color-bg-soft);
+    --bs-btn-hover-bg: var(--color-accent);
+    --bs-btn-hover-border-color: var(--color-accent);
+    --bs-btn-active-color: var(--color-bg-soft);
+    --bs-btn-active-bg: var(--color-accent);
+    --bs-btn-active-border-color: var(--color-accent);
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--color-text);
+    --bs-btn-border-color: var(--color-text);
+    --bs-btn-hover-color: var(--color-bg-soft);
+    --bs-btn-hover-bg: var(--color-text);
+    --bs-btn-hover-border-color: var(--color-text);
+    --bs-btn-active-color: var(--color-bg-soft);
+    --bs-btn-active-bg: var(--color-text);
+    --bs-btn-active-border-color: var(--color-text);
+}
+
+/* Desktop : le bouton de contact est rapproche du trait du pied de page.
+   Ecart bouton / trait : 56px = 16px (padding-bottom de #contact) + 2.5rem
+   (40px) de marge haute du pied de page. Le levier est cette marge (et non
+   un espace au-dessus du bouton) : le trait est ancre a la fin du document,
+   donc c'est le bouton qui descend vers lui. Le 2rem de base (.site-footer)
+   est remplace ici ; tablette et mobile le conservent. */
+@media (min-width: 1024px) {
+    .site-footer {
+        /* Le trait est descendu de 16px pour arriver en face du lien « Contact » du
+           menu : la marge haute le pousse vers le bas, le remplissage haut remonte le
+           texte d'autant. Le texte du copyright, la marge basse et la hauteur du
+           document ne bougent donc pas, et la colonne de gauche n'est pas touchee. */
+        margin-top: 2.5rem;
+        padding-top: calc(2rem - 16px);
+    }
+
+    /* Bouton « M'ecrire » : centre dans la colonne de droite (meme axe que le
+       texte du copyright) et elargi. width: fit-content + marges automatiques
+       laterales centrent un bloc sans changer la mise en page verticale de
+       la section ; la largeur minimale elargit sans toucher a la taille du
+       texte. Desktop uniquement. */
+    .contact-button {
+        display: flex;
+        width: fit-content;
+        min-width: 11rem;
+        margin-inline: auto;
+    }
+}
+
+
+/* Pages projets : fil d'Ariane et pied commun (identité + contact) */
+.project-breadcrumb ol,
+.project-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+}
+
+.project-breadcrumb {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.project-breadcrumb li + li::before {
+    content: "›";
+    margin-right: 0.5rem;
+    color: var(--color-text-muted);
+}
+
+.project-breadcrumb li {
+    color: var(--color-text-muted);
+    overflow-wrap: anywhere;
+}
+
+.project-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1.5rem;
+}
+
+.project-footer-name {
+    font-weight: 600;
+}
+
+.project-breadcrumb a:focus-visible,
+.project-footer a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.project-breadcrumb a,
+.project-footer a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+
+/* =========================
+   Zones tactiles
+   Cibles >= 44px de haut et de large sur petit écran et sur écran tactile
+   (recommandation Apple 44pt / WCAG 2.5.5 ; WCAG 2.5.8 AA = 24px est déjà
+   respecté). Le desktop à la souris (>= 1024px, pointer: fine) ne change pas.
+   Aucune couleur : seules les dimensions et l'alignement changent.
+   ========================= */
+@media (max-width: 1023px), (pointer: coarse) {
+    .project-breadcrumb a,
+    .project-footer a,
+    .specialisations-list a,
+    .btn,
+    .cv-download {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .project-breadcrumb a,
+    .project-footer a,
+    .btn {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Spécialisations : le lien reste un bloc de texte (inline-block) et non un
+       conteneur flex, sinon l'icône de certificat devient un item distinct et
+       se détache du texte quand l'intitulé passe sur 2 lignes. Le padding
+       vertical recentre le texte dans la cible de 44px. */
+    .specialisations-list a {
+        display: inline-block;
+        vertical-align: top;
+        padding-block: 0.5625rem;
+        line-height: 1.6;
+    }
+
+    /* La puce (::marker) s'aligne sur la ligne de base de la 1re ligne du <li>.
+       Un inline-block expose la ligne de base de sa DERNIERE ligne, d'ou une puce
+       en bas sur un intitule multiligne : on l'aligne en haut (vertical-align: top)
+       et on donne au <li> une hauteur de ligne = interligne du lien (1.6) + son
+       padding vertical (2 x 0.5625rem), ce qui place la ligne de base du <li>
+       exactement sur celle de la 1re ligne du lien. */
+    .specialisations-list li {
+        line-height: calc(1.6em + 1.125rem);
+    }
+
+    /* Liens de la sidebar (desktop tactile) : 44px de haut. Le .nav-link est déjà
+       inline-flex + align-items:center, le texte reste centré. Le panneau mobile
+       et la barre tablette ont déjà ce min-height. */
+    .nav-link {
+        min-height: 44px;
+    }
+
+    /* Le .btn Bootstrap est centré par text-align ; en flex, on centre explicitement.
+       gap remplace l'espace (supprimé en flex) entre l'icône et le texte. */
+    .btn {
+        justify-content: center;
+        gap: 0.25em;
+    }
 }

@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const triggers = Array.from(document.querySelectorAll("a[data-cert]"));
     if (!overlay || !panel || !triggers.length) return;
 
+    const bodyEl = panel.querySelector(".spec-panel-body");
     let lastFocusedEl = null;
 
     const getFocusableEls = () =>
@@ -81,6 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
         lastFocusedEl = trigger;
         overlay.hidden = false;
         document.body.style.overflow = "hidden";
+        // Le défilement du corps est conservé d'une ouverture à l'autre :
+        // retour en haut une fois le panneau affiché (un élément
+        // display:none n'a pas de boîte de défilement). L'affectation directe
+        // saute instantanément : scroll-behavior: smooth n'est posé que sur
+        // :root, pas sur .spec-panel-body.
+        if (bodyEl) bodyEl.scrollTop = 0;
 
         document.addEventListener("keydown", onKeydown, true);
 
