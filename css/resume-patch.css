@@ -852,7 +852,12 @@ pre code {
    est remplace ici ; tablette et mobile le conservent. */
 @media (min-width: 1024px) {
     .site-footer {
+        /* Le trait est descendu de 16px pour arriver en face du lien « Contact » du
+           menu : la marge haute le pousse vers le bas, le remplissage haut remonte le
+           texte d'autant. Le texte du copyright, la marge basse et la hauteur du
+           document ne bougent donc pas, et la colonne de gauche n'est pas touchee. */
         margin-top: 2.5rem;
+        padding-top: calc(2rem - 16px);
     }
 
     /* Bouton « M'ecrire » : centre dans la colonne de droite (meme axe que le
