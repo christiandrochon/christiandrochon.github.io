@@ -140,7 +140,9 @@
     <h3>Paroles</h3>
     <ul>
         <li>Génération à partir d’un thème&nbsp;: le LLM écrit, syllabes et rimes sont revérifiées de façon déterministe.</li>
-        <li>Comptage syllabique en français («&nbsp;mode chanson&nbsp;») et en anglais (CMUdict, Britfone), rimes, idiomes anglais.</li>
+        <li><strong>Prosodie</strong>&nbsp;: comptage syllabique en mode «&nbsp;vers classique&nbsp;» ou «&nbsp;chanson&nbsp;» (e muet chanté sur une note tenue, alerte s’il tombe sur un temps fort sans justification)&nbsp;; accent lexical de chaque mot anglais (CMUdict, Britfone).</li>
+        <li><strong>Rimes</strong>&nbsp;: en anglais, comparaison phonétique (CMUdict, Britfone) avec classement <em>perfect</em> / <em>slant</em> et rimes masculines ou féminines&nbsp;; en français, classement riche / suffisante / pauvre (approximation orthographique)&nbsp;; détection du schéma AABB / ABAB / ABBA sur les quatrains.</li>
+        <li>Idiomes anglais.</li>
         <li>Détection de clichés metal, cohérence lexicale, adéquation à la technique vocale.</li>
         <li>Adaptation FR→EN, extraction de titre, mise en musique syllabe par syllabe.</li>
     </ul>
@@ -234,6 +236,7 @@
     <h2>Prévu</h2>
     <p>Non implémenté à ce jour&nbsp;:</p>
     <ul>
+        <li>Génération de paroles avec un nombre de syllabes imposé par vers, chaque vers se terminant par une rime, appuyée sur un dictionnaire de rimes hors ligne (français et anglais).</li>
         <li>Transcription audio vers MIDI.</li>
         <li>Authentification Keycloak.</li>
         <li>RabbitMQ&nbsp;: l’infrastructure est déployée, aucun code ne l’utilise encore.</li>
