@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Lyra — Application d’aide à la composition musicale — Christian Drochon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="description" content="Assistant de composition et d’écriture musicale : génération, analyse, arrangement, paroles, assistant en langage naturel. Conçu avec des agents IA."/>
+    <link rel="canonical" href="https://christiandrochon.dev/projects/lyra.html"/>
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <meta property="og:title" content="Lyra — Application d’aide à la composition musicale"/>
+    <meta property="og:description" content="Assistant de composition et d’écriture musicale : génération, analyse, arrangement, paroles, assistant en langage naturel. Conçu avec des agents IA."/>
+    <meta property="og:url" content="https://christiandrochon.dev/projects/lyra.html"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Christian Drochon"/>
+    <meta property="og:image" content="https://christiandrochon.dev/img/og-cover-v2.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Lyra — Application d’aide à la composition musicale"/>
+    <meta name="twitter:description" content="Assistant de composition et d’écriture musicale : génération, analyse, arrangement, paroles, assistant en langage naturel. Conçu avec des agents IA."/>
+    <meta name="twitter:image" content="https://christiandrochon.dev/img/og-cover-v2.jpg"/>
+
+    <link rel="icon" type="image/svg+xml" href="/img/favicon_CD_rond.svg">
+
+
+    <link rel="preload" href="/fonts/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--    Icone github-->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/css/resume-gatsbyjs-colors.css">
+    <link rel="stylesheet" href="/css/resume-patch.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://christiandrochon.dev/"},
+        {"@type": "ListItem", "position": 2, "name": "Projets", "item": "https://christiandrochon.dev/#projects"},
+        {"@type": "ListItem", "position": 3, "name": "Lyra — Application d’aide à la composition musicale", "item": "https://christiandrochon.dev/projects/lyra.html"}
+      ]
+    }
+    </script>
+</head>
+<body>
+<main class="container py-4 project-page project-page-lyra">
+
+    <nav aria-label="Fil d'Ariane" class="project-breadcrumb">
+        <ol>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/#card-lyra">Projets</a></li>
+            <li aria-current="page">Lyra — Application d’aide à la composition musicale</li>
+        </ol>
+    </nav>
+
+    <h1 class="mb-2">Lyra — Application d’aide à la composition musicale</h1>
+
+    <h2>Présentation</h2>
+    <p>
+        Lyra est un assistant de composition et d’écriture pour auteur-compositeur-interprète, orienté metal et
+        metal alternatif, avec une visée orchestrale et musique de film. C’est un projet privé.
+    </p>
+    <p>
+        Son principe&nbsp;: des moteurs à <strong>règles musicales sourcées et déterministes</strong> génèrent
+        (progressions d’accords, mélodies, basse et batterie, contrepoint et fugue, formes), analysent (mode,
+        harmonie, conduite des voix, forme, paroles), arrangent et orchestrent. Les moteurs justifient leurs choix&nbsp;; pour les
+        générations principales (progressions, mélodie, contrepoint, fugue, réharmonisation), les décisions sont
+        consignées dans un <strong>journal</strong> consultable. Un assistant en langage naturel couvre un
+        sous-ensemble de fonctions (recherche, progression, groove, paroles, réharmonisation, analyse de mode,
+        comparaison, export MusicXML, explication d’une décision)&nbsp;; les autres fonctions s’appellent depuis
+        l’interface. Il repose sur un <strong>LLM local</strong> (Ollama), sans service tiers.
+    </p>
+    <p class="note">
+        Les fonctions ne disposent pas toutes d’un formulaire dédié&nbsp;: plus de 200 des quelque 220 endpoints REST
+        sont accessibles depuis l’interface, la majorité via des écrans génériques par intention où l’on choisit une
+        fonction, édite le corps JSON de la requête (un exemple est fourni) et voit le résultat, avec une partition
+        rendue lorsque c’est pertinent.
+    </p>
+
+    <h2>Fonctionnalités</h2>
+
+    <h3>Composition et éditeur de partition</h3>
+    <ul>
+        <li>Bibliothèque de pièces&nbsp;: créer, modifier, enregistrer, supprimer.</li>
+        <li>Édition multipiste en tablature et en portée (alphaTex, rendu alphaTab).</li>
+        <li>Écoute dans le navigateur (synthé soundfont).</li>
+    </ul>
+
+    <h3>Harmonie</h3>
+    <ul>
+        <li>Progressions avec emprunts modaux, dominantes secondaires et médiantes chromatiques.</li>
+        <li>Courbe de tension et climax, thème par humeur (91 gabarits), progressions pop, cycle de Coltrane, rhythm changes.</li>
+        <li>Réharmonisation.</li>
+    </ul>
+
+    <h3>Mélodie</h3>
+    <ul>
+        <li>Mélodie inédite contrainte par les accords et le mode.</li>
+        <li>Amélioration motivée d’un motif, variations et développement.</li>
+    </ul>
+
+    <h3>Rythme, batterie et basse</h3>
+    <ul>
+        <li>Groove basse et batterie, patrons nommés (rock, double pédale, blast beat, breakdown), batterie calée sur un riff.</li>
+        <li>Fills, polyrythmie, polymètre, mesures asymétriques, notes fantômes, palm mute.</li>
+    </ul>
+
+    <h3>Contrepoint et fugue</h3>
+    <ul>
+        <li>Espèces 1 à 5 de Fux, contrepoint à N voix, contrepoint renversable.</li>
+        <li>Réponse réelle ou tonale, contre-sujet(s), strette, analyse d’exposition.</li>
+    </ul>
+
+    <h3>Voix et harmonisation</h3>
+    <ul>
+        <li>Harmonisation SATB et effectifs non-SATB, renversements automatiques.</li>
+        <li>Doublures à 5 voix et plus, conduite des voix multipiste.</li>
+    </ul>
+
+    <h3>Arrangement et orchestration</h3>
+    <ul>
+        <li>Orchestration par rôle et courbe de tension, doublages, guitares jumelles en sixtes.</li>
+        <li>Topics instrumentaux (Berlioz), instruments ethniques, croisement de genres (orchestral, cello metal).</li>
+        <li>Détection de surcharge, jouabilité guitare 6, 7 et 8 cordes.</li>
+    </ul>
+
+    <h3>Analyse et comparaison</h3>
+    <ul>
+        <li>Mode et tonalité&nbsp;; mélodie, harmonie, rythme, forme, texture, instrumentation, tension, contraste.</li>
+        <li>Diagnostic global d’une pièce, ensembles de Forte, analyse néo-riemannienne, polymodalité, analyse spectrale.</li>
+        <li>Comparaison de progressions ou de motifs, retour à l’idée initiale, réutilisation de motif.</li>
+    </ul>
+
+    <h3>Paroles</h3>
+    <ul>
+        <li>Génération à partir d’un thème&nbsp;: le LLM écrit, syllabes et rimes sont revérifiées de façon déterministe.</li>
+        <li>Comptage syllabique en français («&nbsp;mode chanson&nbsp;») et en anglais (CMUdict, Britfone), rimes, idiomes anglais.</li>
+        <li>Détection de clichés metal, cohérence lexicale, adéquation à la technique vocale.</li>
+        <li>Adaptation FR→EN, extraction de titre, mise en musique syllabe par syllabe.</li>
+    </ul>
+
+    <h3>Assistant en langage naturel</h3>
+    <ul>
+        <li>Texte libre classé en 9 intentions&nbsp;: générer, transformer, arranger, rechercher, expliquer, analyser, comparer, exporter, méta. Chacune est routée vers 1 à 3 fonctions.</li>
+        <li>Sous-ensemble couvert&nbsp;: recherche, progression, groove, paroles, réharmonisation, analyse de mode, comparaison, export MusicXML, explication d’une décision&nbsp;; les autres fonctions s’appellent depuis l’interface.</li>
+        <li>Le LLM classe la demande&nbsp;; les paramètres sont extraits par règles. «&nbsp;Expliquer&nbsp;» restitue une décision consignée.</li>
+        <li>Nécessite Ollama en local.</li>
+    </ul>
+
+    <h3>Recherche</h3>
+    <ul>
+        <li>Plein texte flou (Elasticsearch).</li>
+        <li>Recherche vectorielle kNN sur embeddings (qwen3-embedding).</li>
+        <li>Index de n-grammes d’accords (Postgres).</li>
+    </ul>
+
+    <h3>Suivi de la composition</h3>
+    <ul>
+        <li>Journal de décisions&nbsp;: les générations principales (progressions, mélodie, contrepoint, fugue, réharmonisation) consignent leurs décisions&nbsp;; profil de style consultable.</li>
+        <li>Historique de versions d’une pièce et comparaison.</li>
+        <li>Droits et métadonnées (auteurs, répartitions).</li>
+        <li>Conseils de composition par axe.</li>
+    </ul>
+
+    <h3>Import et export</h3>
+    <ul>
+        <li>Dans l’éditeur, côté navigateur&nbsp;: export Guitar Pro 7, import Guitar Pro 3 à 8, MusicXML et Capella.</li>
+        <li>Import symbolique côté serveur (MusicXML, **kern, MEI, ABC, MIDI, Guitar Pro 3 à 5), converti en voix monophoniques.</li>
+        <li>Export MusicXML (accords, motif, multipupitre, paroles) et légende de percussion.</li>
+        <li>Prévisualisation audio d’un motif depuis les écrans génériques (nécessite fluidsynth en local).</li>
+    </ul>
+
+    <h2>Étendue de la théorie musicale</h2>
+    <p>85 modules Python de théorie musicale et une quarantaine de fiches de règles de composition documentées.</p>
+    <h3>Gammes et modes</h3>
+    <ul>
+        <li>Modes d’église et modes klezmer (freygish, mi sheberakh, adonoy molokh).</li>
+        <li>12 modes dérivés des mineurs harmonique et mélodique (dont lydien dominant, altéré).</li>
+        <li>Gamme par tons, octatoniques.</li>
+    </ul>
+    <h3>Harmonie, contrepoint et forme</h3>
+    <ul>
+        <li>Harmonie tonale&nbsp;: emprunts, dominantes secondaires, médiantes chromatiques, cycle des quintes, renversements, accords suspendus, pédale, substitutions.</li>
+        <li>Contrepoint de Fux, fugue, canon.</li>
+        <li>Formes&nbsp;: période, sentence, AABA, forme rhapsodique, structure de chanson.</li>
+    </ul>
+    <h3>XXe siècle et dispositifs de compositeurs</h3>
+    <ul>
+        <li>Dodécaphonisme, sérialisme intégral, ensembles de Forte, néo-riemannien, polymodalité (Bartók, Stravinsky).</li>
+        <li>Harmonie spectrale (Grisey, Murail), planing de Debussy, couches d’Ives, phasing de Reich.</li>
+        <li>Cryptogrammes BACH et DSCH, Florestan et Eusebius (Schumann), ritournelle (Vivaldi), folklore (Dvořák).</li>
+    </ul>
+    <h3>Traditions du monde</h3>
+    <ul>
+        <li>Raga et tala, makam, iqa’at, aksak balkanique, mugham, chant grégorien, rituel tibétain.</li>
+        <li>Hocket, hétérophonie, second line, hymnes nationaux.</li>
+        <li>13 instruments ethniques (sitar, tabla, duduk, kora, djembé, erhu, shakuhachi, didgeridoo, cornemuse, bouzouki, handpan, oud, koto) et 15 topics orchestraux.</li>
+    </ul>
+    <h3>Genres actuels et voix</h3>
+    <ul>
+        <li>Metal (blast beat, breakdown, double pédale, palm mute, polymètre), électronique (house, techno, structure EDM, dub), metal et électro hybride.</li>
+        <li>Épique et trailer, musique de film (leitmotivs, mickey-mousing), identité sonore et jingles, bluegrass, funk, transe.</li>
+        <li>Voix&nbsp;: techniques vocales (taxonomie CVT) et tessitures.</li>
+    </ul>
+
+    <h2>Architecture et stack</h2>
+    <ul>
+        <li><strong>lyra-ui&nbsp;:</strong> Angular 22 (composants standalone, signals), alphaTab, tests Vitest et Playwright.</li>
+        <li><strong>lyra-api&nbsp;:</strong> Spring Boot 4, Java 21&nbsp;; JPA, Flyway, Spring Data Elasticsearch, OpenAPI/Swagger, Actuator, Testcontainers. Passerelle unique de l’interface, persistance, relais HTTP vers lyra-ml.</li>
+        <li><strong>lyra-ml&nbsp;:</strong> Python et FastAPI, music21, mido, pyguitarpro, CMUdict.</li>
+        <li><strong>Données&nbsp;:</strong> PostgreSQL 16 (7 migrations Flyway, JSONB indexé GIN), Elasticsearch 9 (plein texte et vecteurs kNN).</li>
+        <li><strong>LLM local&nbsp;:</strong> Ollama (modèle d’instruction léger et modèle d’embeddings), aucun service tiers.</li>
+        <li><strong>Infrastructure et qualité&nbsp;:</strong> Docker Compose pour l’infrastructure (Postgres, Elasticsearch, RabbitMQ, SonarQube)&nbsp;; un Dockerfile par module, CI GitHub Actions (build et tests Java, build de l’interface), SonarQube local, Renovate.</li>
+        <li>Décisions d’architecture tracées en ADR.</li>
+    </ul>
+
+    <h2>Quelques chiffres</h2>
+    <p class="note">Ordres de grandeur au 5&nbsp;octobre 2026.</p>
+    <ul>
+        <li>Plus de 320 commits depuis le 17&nbsp;juillet 2026.</li>
+        <li>Plus de 120 décisions d’architecture (ADR).</li>
+        <li>Plus de 220 endpoints REST (lyra-api), dont plus de 200 appelables depuis l’interface&nbsp;; plus de 210 routes côté service ML (lyra-ml).</li>
+        <li>85 modules Python de théorie musicale.</li>
+        <li>Environ 38&nbsp;000 lignes de Python.</li>
+        <li>Plus de 1&nbsp;690 tests pytest, 310 tests JUnit, 85 tests d’interface (Vitest et Playwright).</li>
+    </ul>
+
+    <h2>Prévu</h2>
+    <p>Non implémenté à ce jour&nbsp;:</p>
+    <ul>
+        <li>Transcription audio vers MIDI.</li>
+        <li>Authentification Keycloak.</li>
+        <li>RabbitMQ&nbsp;: l’infrastructure est déployée, aucun code ne l’utilise encore.</li>
+        <li>Ingestion d’un corpus externe.</li>
+    </ul>
+
+    <h2>Projet Lyra</h2>
+    <p><strong>2026</strong> · Pilotage d’agents IA · Application d’aide à la composition musicale</p>
+    <p>
+        Pilotage de dix-neuf agents IA et coordination de leur travail sur la conception, le
+        développement et les revues d’une application d’aide à la composition musicale (Angular, Spring Boot, Python). Ils couvrent notamment les rôles
+        de PO, PM, UX, architecte, dev, front, data scientist, QA, sécurité, DevOps, SEO, marketing, OSINT et SRE&nbsp;; les agents relecteurs et
+        validateurs font partie de ces dix-neuf agents.
+    </p>
+
+    <h2>Technologies</h2>
+    <div class="exp-tags">
+        <span class="tag">Angular</span>
+        <span class="tag">Spring Boot</span>
+        <span class="tag">Python</span>
+        <span class="tag">Agentic AI</span>
+        <span class="tag">Orchestration d’agents</span>
+        <span class="tag">MCP</span>
+    </div>
+
+    <footer class="project-footer">
+        <a class="project-footer-name" href="/">Christian Drochon</a>
+        <ul>
+            <li><a href="/Christian_Drochon_CV_2026_IA_agents.pdf">CV (PDF)</a></li>
+            <li><a href="mailto:hello@christiandrochon.dev">Contact</a></li>
+            <li><a href="https://github.com/christiandrochon" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+    </footer>
+</main>
+</body>
+</html>

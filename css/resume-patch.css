@@ -1082,3 +1082,18 @@ pre code {
         inset: -7px;
     }
 }
+
+/* Page projet Lyra (page longue, lue sur mobile) : corps de texte à 16px minimum
+   et retour à la ligne des longs termes techniques. Scopé à .project-page-lyra :
+   aucune autre page projet n'est impactée, aucun breakpoint ajouté. */
+.project-page-lyra p,
+.project-page-lyra li {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+}
+
+.project-page-lyra h1,
+.project-page-lyra h2,
+.project-page-lyra h3 {
+    overflow-wrap: anywhere;
+}
