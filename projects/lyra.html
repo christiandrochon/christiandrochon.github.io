@@ -5,14 +5,14 @@
     <title>Lyra — Application d’aide à la composition musicale — Christian Drochon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <meta name="description" content="Assistant de composition et d’écriture musicale : génération, analyse, arrangement, paroles, assistant en langage naturel. Conçu avec des agents IA."/>
+    <meta name="description" content="Assistant de composition et d’écriture musicale : génération, analyse, arrangement, paroles, assistant en langage naturel (LLM local). Conçu avec des agents IA."/>
     <link rel="canonical" href="https://christiandrochon.dev/projects/lyra.html"/>
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
     <meta property="og:title" content="Lyra — Application d’aide à la composition musicale"/>
-    <meta property="og:description" content="Assistant de composition et d’écriture musicale : génération, analyse, arrangement, paroles, assistant en langage naturel. Conçu avec des agents IA."/>
+    <meta property="og:description" content="Assistant de composition et d’écriture musicale : génération, analyse, arrangement, paroles, assistant en langage naturel (LLM local). Conçu avec des agents IA."/>
     <meta property="og:url" content="https://christiandrochon.dev/projects/lyra.html"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Christian Drochon"/>
@@ -21,7 +21,7 @@
     <meta property="og:image:height" content="630"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="Lyra — Application d’aide à la composition musicale"/>
-    <meta name="twitter:description" content="Assistant de composition et d’écriture musicale : génération, analyse, arrangement, paroles, assistant en langage naturel. Conçu avec des agents IA."/>
+    <meta name="twitter:description" content="Assistant de composition et d’écriture musicale : génération, analyse, arrangement, paroles, assistant en langage naturel (LLM local). Conçu avec des agents IA."/>
     <meta name="twitter:image" content="https://christiandrochon.dev/img/og-cover-v2.jpg"/>
 
     <link rel="icon" type="image/svg+xml" href="/img/favicon_CD_rond.svg">
@@ -49,7 +49,7 @@
     </script>
 </head>
 <body>
-<main class="container py-4 project-page project-page-lyra">
+<main class="container py-4 project-page">
 
     <nav aria-label="Fil d'Ariane" class="project-breadcrumb">
         <ol>
@@ -139,7 +139,7 @@
 
     <h3>Paroles</h3>
     <ul>
-        <li>Génération à partir d’un thème&nbsp;: le LLM écrit, syllabes et rimes sont revérifiées de façon déterministe.</li>
+        <li>Génération à partir d’un thème&nbsp;: le LLM local (Ollama) écrit, syllabes et rimes sont revérifiées de façon déterministe.</li>
         <li><strong>Prosodie</strong>&nbsp;: comptage syllabique en mode «&nbsp;vers classique&nbsp;» ou «&nbsp;chanson&nbsp;» (e muet chanté sur une note tenue, alerte s’il tombe sur un temps fort sans justification)&nbsp;; accent lexical de chaque mot anglais (CMUdict, Britfone).</li>
         <li><strong>Rimes</strong>&nbsp;: en anglais, comparaison phonétique (CMUdict, Britfone) avec classement <em>perfect</em> / <em>slant</em> et rimes masculines ou féminines&nbsp;; en français, classement riche / suffisante / pauvre (approximation orthographique)&nbsp;; détection du schéma AABB / ABAB / ABBA sur les quatrains.</li>
         <li>Idiomes anglais.</li>
@@ -147,18 +147,18 @@
         <li>Adaptation FR→EN, extraction de titre, mise en musique syllabe par syllabe.</li>
     </ul>
 
-    <h3>Assistant en langage naturel</h3>
+    <h3>Assistant en langage naturel (LLM local)</h3>
     <ul>
         <li>Texte libre classé en 9 intentions&nbsp;: générer, transformer, arranger, rechercher, expliquer, analyser, comparer, exporter, méta. Chacune est routée vers 1 à 3 fonctions.</li>
         <li>Sous-ensemble couvert&nbsp;: recherche, progression, groove, paroles, réharmonisation, analyse de mode, comparaison, export MusicXML, explication d’une décision&nbsp;; les autres fonctions s’appellent depuis l’interface.</li>
-        <li>Le LLM classe la demande&nbsp;; les paramètres sont extraits par règles. «&nbsp;Expliquer&nbsp;» restitue une décision consignée.</li>
+        <li>Le LLM local (Ollama) classe la demande&nbsp;; les paramètres sont extraits par règles. «&nbsp;Expliquer&nbsp;» restitue une décision consignée.</li>
         <li>Nécessite Ollama en local.</li>
     </ul>
 
     <h3>Recherche</h3>
     <ul>
         <li>Plein texte flou (Elasticsearch).</li>
-        <li>Recherche vectorielle kNN sur embeddings (qwen3-embedding).</li>
+        <li>Recherche vectorielle kNN sur embeddings (Qwen3-Embedding via Ollama).</li>
         <li>Index de n-grammes d’accords (Postgres).</li>
     </ul>
 
@@ -217,7 +217,7 @@
         <li><strong>lyra-api&nbsp;:</strong> Spring Boot 4, Java 21&nbsp;; JPA, Flyway, Spring Data Elasticsearch, OpenAPI/Swagger, Actuator, Testcontainers. Passerelle unique de l’interface, persistance, relais HTTP vers lyra-ml.</li>
         <li><strong>lyra-ml&nbsp;:</strong> Python et FastAPI, music21, mido, pyguitarpro, CMUdict.</li>
         <li><strong>Données&nbsp;:</strong> PostgreSQL 16 (7 migrations Flyway, JSONB indexé GIN), Elasticsearch 9 (plein texte et vecteurs kNN).</li>
-        <li><strong>LLM local&nbsp;:</strong> Ollama (modèle d’instruction léger et modèle d’embeddings), aucun service tiers.</li>
+        <li><strong>LLM local&nbsp;:</strong> Ollama, avec Qwen2.5 1.5B pour la génération (modèle provisoire) et Qwen3-Embedding 0.6B pour la recherche sémantique, aucun service tiers.</li>
         <li><strong>Infrastructure et qualité&nbsp;:</strong> Docker Compose pour l’infrastructure (Postgres, Elasticsearch, RabbitMQ, SonarQube)&nbsp;; un Dockerfile par module, CI GitHub Actions (build et tests Java, build de l’interface), SonarQube local, Renovate.</li>
         <li>Décisions d’architecture tracées en ADR.</li>
     </ul>
@@ -244,10 +244,10 @@
     </ul>
 
     <h2>Projet Lyra</h2>
-    <p><strong>2026</strong> · Pilotage d’agents IA · Application d’aide à la composition musicale</p>
+    <p><strong>2026 — aujourd’hui</strong> · Pilotage d’agents IA · Application d’aide à la composition musicale</p>
     <p>
         Pilotage de dix-neuf agents IA et coordination de leur travail sur la conception, le
-        développement et les revues d’une application d’aide à la composition musicale (Angular, Spring Boot, Python). Ils couvrent notamment les rôles
+        développement et les revues d’une application d’aide à la composition musicale (Angular, Spring Boot, Python, LLM local Ollama). Ils couvrent notamment les rôles
         de PO, PM, UX, architecte, dev, front, data scientist, QA, sécurité, DevOps, SEO, marketing, OSINT et SRE&nbsp;; les agents relecteurs et
         validateurs font partie de ces dix-neuf agents.
     </p>
@@ -257,6 +257,7 @@
         <span class="tag">Angular</span>
         <span class="tag">Spring Boot</span>
         <span class="tag">Python</span>
+        <span class="tag">Ollama</span>
         <span class="tag">Agentic AI</span>
         <span class="tag">Orchestration d’agents</span>
         <span class="tag">MCP</span>

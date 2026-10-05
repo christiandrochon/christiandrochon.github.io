@@ -133,7 +133,7 @@
     <div class="architecture-diagram">
 
         <!--        DIAG DESKTOP-->
-        <div class="diagram-desktop">
+        <div class="diagram-desktop" tabindex="0" role="region" aria-label="Schéma d'architecture SMA, défilable horizontalement">
             <svg viewBox="0 0 1200 720" role="img" aria-label="Schéma d'architecture SMA">
                 <defs>
                     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
@@ -174,15 +174,15 @@
                 <text class="diagram-text" x="1010" y="602" text-anchor="middle">audit_events</text>
                 <text class="diagram-text" x="1010" y="632" text-anchor="middle">contrôles · preuves RGPD</text>
 
-                <rect class="diagram-box" x="880" y="145" width="290" height="140" rx="14"></rect>
-                <text class="diagram-text box-title" x="1025" y="177" text-anchor="middle">Keycloak</text>
-                <text class="diagram-text" x="1025" y="207" text-anchor="middle">OAuth2 · OpenID Connect</text>
-                <text class="diagram-text" x="1025" y="237" text-anchor="middle">JWT</text>
-                <text class="diagram-text" x="1025" y="263" text-anchor="middle">rôles ADMIN · USER · AUDITOR</text>
+                <rect class="diagram-box" x="900" y="145" width="270" height="140" rx="14"></rect>
+                <text class="diagram-text box-title" x="1035" y="177" text-anchor="middle">Keycloak</text>
+                <text class="diagram-text" x="1035" y="207" text-anchor="middle">OAuth2 · OpenID Connect</text>
+                <text class="diagram-text" x="1035" y="237" text-anchor="middle">JWT</text>
+                <text class="diagram-text" x="1035" y="263" text-anchor="middle">rôles ADMIN · USER · AUDITOR</text>
 
-                <rect class="diagram-box" x="880" y="315" width="290" height="95" rx="14"></rect>
-                <text class="diagram-text box-title" x="1025" y="347" text-anchor="middle">PostgreSQL Keycloak</text>
-                <text class="diagram-text" x="1025" y="377" text-anchor="middle">Realm · clients · utilisateurs</text>
+                <rect class="diagram-box" x="900" y="315" width="270" height="95" rx="14"></rect>
+                <text class="diagram-text box-title" x="1035" y="347" text-anchor="middle">PostgreSQL Keycloak</text>
+                <text class="diagram-text" x="1035" y="377" text-anchor="middle">Realm · clients · utilisateurs</text>
 
                 <line class="diagram-line" x1="600" y1="80" x2="600" y2="130" marker-end="url(#arrow)"></line>
                 <line class="diagram-line" x1="600" y1="250" x2="600" y2="310" marker-end="url(#arrow)"></line>
@@ -191,19 +191,19 @@
                 <line class="diagram-line" x1="600" y1="465" x2="600" y2="540" marker-end="url(#arrow)"></line>
                 <line class="diagram-line" x1="700" y1="465" x2="970" y2="540" marker-end="url(#arrow)"></line>
 
-                <line class="diagram-line" x1="840" y1="185" x2="880" y2="185" marker-end="url(#arrow)"></line>
-                <line class="diagram-line" x1="880" y1="245" x2="840" y2="245" marker-end="url(#arrow)"></line>
+                <line class="diagram-line" x1="840" y1="185" x2="900" y2="185" marker-end="url(#arrow)"></line>
+                <line class="diagram-line" x1="900" y1="245" x2="840" y2="245" marker-end="url(#arrow)"></line>
 
-                <line class="diagram-line" x1="1025" y1="285" x2="1025" y2="315" marker-end="url(#arrow)"></line>
+                <line class="diagram-line" x1="1035" y1="285" x2="1035" y2="315" marker-end="url(#arrow)"></line>
 
                 <text class="diagram-text arrow-label" x="625" y="112" text-anchor="middle">HTTP</text>
                 <text class="diagram-text arrow-label" x="625" y="292" text-anchor="middle">REST</text>
-                <text class="diagram-text arrow-label" x="860" y="175" text-anchor="middle">login</text>
-                <text class="diagram-text arrow-label" x="860" y="265" text-anchor="middle">token</text>
+                <text class="diagram-text arrow-label" x="870" y="175" text-anchor="middle">login</text>
+                <text class="diagram-text arrow-label" x="870" y="265" text-anchor="middle">token</text>
             </svg>
         </div>
 
-        <div class="diagram-tablet">
+        <div class="diagram-tablet" tabindex="0" role="region" aria-label="Schéma d'architecture SMA, défilable horizontalement">
             <svg viewBox="0 0 820 980" role="img" aria-label="Schéma d'architecture SMA">
                 <defs>
                     <marker id="arrow-tablet" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
@@ -274,7 +274,7 @@
             </svg>
         </div>
 
-        <div class="diagram-mobile">
+        <div class="diagram-mobile" tabindex="0" role="region" aria-label="Schéma d'architecture SMA, défilable horizontalement">
             <svg viewBox="0 0 470 1140" role="img" aria-label="Schéma d'architecture SMA mobile">
                 <defs>
                     <marker id="arrow-mobile" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
@@ -420,7 +420,7 @@
         et la persistance effective de la projection en base.
     </p>
 
-    <pre><code>HTTP POST
+    <pre tabindex="0" role="region" aria-label="Flux de traitement d’une commande, défilable horizontalement"><code>HTTP POST
   → CommandController
   → CommandService
   → CommandGateway Axon

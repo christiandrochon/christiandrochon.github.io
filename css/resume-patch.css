@@ -4,7 +4,7 @@
 
 /*Titres de contenus de la colonne de droite*/
 .section-h {
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     margin: 0 0 0.9rem;
@@ -95,7 +95,7 @@
 
 .exp-company {
     display: block;
-    font-size: 0.92rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-text-muted);
     margin-top: 4px;
@@ -127,7 +127,7 @@
 /* Petites notes */
 .note {
     /* Pas d'opacité : --color-text-muted à .85 tombait à 3,48:1 en pastel. */
-    font-size: 0.95em;
+    font-size: 1rem;
 }
 
 /*Laisser un peu de hauteur au dessus de contact car c'est une section petite et ca fait souvent planter le menu de gauche*/
@@ -371,7 +371,7 @@ section[data-section] {
     width: 100%; /* pleine largeur de la colonne */
     margin-top: 1rem;
 
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 
@@ -390,9 +390,11 @@ section[data-section] {
 
 /* Survol : inversion texte/fond, contraste élevé dans les deux ambiances.
    S'applique aussi au lien du panneau mobile (aucune surcharge de couleur). */
-.cv-download:hover {
-    background: var(--color-text);
-    color: var(--color-bg);
+@media (hover: hover) and (pointer: fine) {
+    .cv-download:hover {
+        background: var(--color-text);
+        color: var(--color-bg);
+    }
 }
 
 /* =========================
@@ -1083,17 +1085,174 @@ pre code {
     }
 }
 
-/* Page projet Lyra (page longue, lue sur mobile) : corps de texte à 16px minimum
-   et retour à la ligne des longs termes techniques. Scopé à .project-page-lyra :
-   aucune autre page projet n'est impactée, aucun breakpoint ajouté. */
-.project-page-lyra p,
-.project-page-lyra li {
+/* Pages projet (pages longues, lues sur mobile) : corps de texte à 16px minimum
+   et retour à la ligne des longs termes techniques. Scopé à .project-page :
+   aucun breakpoint ajouté. Exclus volontairement : le chapeau (p.lead, 20px,
+   qui serait réduit) et les items du fil d'Ariane (taille réduite voulue). */
+.project-page p:not(.lead),
+.project-page li:not(.project-breadcrumb li) {
     font-size: 1rem;
     overflow-wrap: anywhere;
 }
 
-.project-page-lyra h1,
-.project-page-lyra h2,
-.project-page-lyra h3 {
+.project-page h1,
+.project-page h2,
+.project-page h3 {
     overflow-wrap: anywhere;
+}
+
+
+/* =========================================================================
+   Lisibilité et compatibilité iOS / Android
+   Règle : texte de lecture >= 1rem (16px) à toutes les largeurs, éléments
+   secondaires >= 0.875rem (14px). Surcharges des tailles posées dans
+   resume-gatsbyjs-colors.css (chargé avant ce fichier, même spécificité ou
+   spécificité plus forte ici). Aucun breakpoint ajouté ni modifié.
+   ========================================================================= */
+
+/* iOS Safari agrandit seul le texte en paysage ; 100% garde le contrôle des
+   tailles (jamais `none` : cela bloquerait le zoom de texte utilisateur). */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* Texte de lecture : 1rem partout, y compris sous 640px (colors:788 réduisait
+   p et .intro à 0.9rem). */
+p,
+.intro,
+.intro--short,
+.project-card .project-desc,
+.exp-item .exp-description {
+    font-size: 1rem;
+}
+
+/* Rôle de la sidebar en mobile : 1rem (le 1.1rem desktop reste inchangé).
+   Le letter-spacing 0.16em peut le faire passer sur 2 lignes à 320px : le
+   mot n'est jamais coupé (overflow-wrap) et ne déborde pas de la colonne. */
+@media (max-width: 639px) {
+    .sidebar .role {
+        font-size: 1rem;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Éléments secondaires : minimum 0.875rem (14px). */
+.exp-item .exp-period,
+.project-footer,
+footer.project-footer,
+.project-footer-name,
+.project-tech span,
+.exp-tags .tag {
+    font-size: 0.875rem;
+}
+
+/* Bootstrap .badge = 0.75em du parent (≈ 12px) : surcharge pour atteindre 14px rendus. */
+.badge {
+    font-size: 0.875rem;
+}
+
+/* ------------------------------------------------------------------
+   Diagrammes d'architecture sur mobile (<= 640px, même seuil que les règles
+   .diagram-mobile ci-dessus).
+   Problème : le viewBox (470px de large) était réduit à la largeur de la
+   colonne (~240-300px sur 320-375px), soit un texte rendu à 7-12px.
+   Solution : le conteneur devient une zone défilable horizontalement et le
+   SVG garde une largeur fixe de 35rem (560px) : l'échelle rendue vaut
+   560/470 = 1,19, donc le plus petit texte déclaré (12px) est rendu à 14,3px,
+   les autres à 15,5-21px, sans modifier les SVG ni risquer de débordement
+   dans les boîtes (proportions conservées). Seul ce conteneur défile : la page
+   ne défile jamais horizontalement. Le conteneur est focalisable au clavier
+   (tabindex="0", role="region", aria-label dans le HTML) et l'ombre latérale
+   (dégradés background-attachment: local/scroll) signale visuellement qu'il
+   reste du contenu à faire défiler.
+   Variante verticale dédiée écartée : trois diagrammes à re-dessiner, risque
+   d'incohérence avec les versions desktop/tablette.
+   ------------------------------------------------------------------ */
+
+/* Conteneur défilant commun aux trois variantes (desktop, tablette, mobile) :
+   n'est atteint que si le SVG dépasse la largeur disponible ; sinon aucun
+   défilement ni ombre visible. */
+.diagram-desktop,
+.diagram-tablet,
+.diagram-mobile {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    background:
+        linear-gradient(to right, var(--color-bg) 30%, transparent) left center / 2rem 100% no-repeat local,
+        linear-gradient(to left, var(--color-bg) 30%, transparent) right center / 2rem 100% no-repeat local,
+        radial-gradient(farthest-side at 0 50%, rgba(15, 23, 42, 0.28), transparent) left center / 0.75rem 100% no-repeat scroll,
+        radial-gradient(farthest-side at 100% 50%, rgba(15, 23, 42, 0.28), transparent) right center / 0.75rem 100% no-repeat scroll;
+}
+
+.diagram-desktop:focus-visible,
+.diagram-tablet:focus-visible,
+.diagram-mobile:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+    .diagram-mobile svg {
+        width: 35rem;
+        max-width: none;
+        margin: 0;
+    }
+}
+
+/* Tablette (641-1000px, seuils propres aux diagrammes) : viewBox 820, textes
+   déclarés jusqu'à 13px. Largeur minimale 56rem (896px) = échelle 1,09 :
+   13px -> 14,2px rendus. En dessous (colonne plus étroite), le conteneur défile. */
+@media (min-width: 641px) and (max-width: 1000px) {
+    .diagram-tablet svg {
+        width: 100%;
+        min-width: 56rem;
+        max-width: none;
+        margin: 0;
+    }
+}
+
+/* Desktop (>= 1001px) : viewBox 1200, textes de 16px (étiquettes de flèche
+   portées de 13 à 16px dans ce seul gabarit). Largeur minimale 66rem (1056px) =
+   échelle 0,88 : 16px -> 14,1px rendus. Le viewBox de 1000 (vision par
+   ordinateur) n'a besoin que de 55rem (880px). */
+@media (min-width: 1001px) {
+    .architecture-diagram .diagram-desktop .arrow-label {
+        font-size: 16px;
+    }
+
+    .diagram-desktop svg {
+        min-width: 66rem;
+    }
+
+    .diagram-desktop svg[viewBox^="0 0 1000 "] {
+        min-width: 55rem;
+    }
+}
+
+/* Cartes projet : boutons d'action épinglés en bas de carte, alignés d'une carte
+   à l'autre sur une même ligne de la grille. Les marges verticales ne fusionnent
+   plus dans un conteneur flex : les marges basses du titre et de la description
+   sont mises à 0 pour conserver l'espacement d'origine (0,6rem / 0,5rem). */
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card .project-title,
+.project-card .project-desc {
+    margin-bottom: 0;
+}
+
+.project-card .project-actions {
+    margin-top: auto;
+}
+
+/* Blocs de code defilables horizontalement : focalisables au clavier
+   (tabindex="0" + role="region" + aria-label dans le HTML), meme indicateur
+   de focus que les conteneurs de diagrammes. */
+.project-page pre:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
 }

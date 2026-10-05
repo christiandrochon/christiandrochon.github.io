@@ -29,7 +29,8 @@
 .spec-panel {
     position: relative;
     width: min(1800px, 99vw);
-    max-height: min(1250px, 97vh);
+    max-height: min(1250px, 97vh); /* repli */
+    max-height: min(1250px, 97dvh);
     display: flex;
     flex-direction: column;
     background: var(--color-bg-soft);
@@ -48,7 +49,7 @@
     align-items: center;
     gap: 0.35rem;
     padding: 0.45rem 0.9rem;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-accent);
     background: transparent;
@@ -58,10 +59,17 @@
     transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.spec-panel-back:hover,
 .spec-panel-back:focus-visible {
     border-color: var(--color-accent);
     background: var(--color-accent-soft);
+}
+
+/* :hover séparé de :focus-visible et limité aux pointeurs précis (hover collant tactile). */
+@media (hover: hover) and (pointer: fine) {
+    .spec-panel-back:hover {
+        border-color: var(--color-accent);
+        background: var(--color-accent-soft);
+    }
 }
 
 .spec-panel-close {
@@ -85,11 +93,18 @@
     transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
 
-.spec-panel-close:hover,
 .spec-panel-close:focus-visible {
     color: #ffffff;
     background: #000000;
     transform: scale(1.06);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .spec-panel-close:hover {
+        color: #ffffff;
+        background: #000000;
+        transform: scale(1.06);
+    }
 }
 
 .spec-panel-title {
@@ -125,7 +140,7 @@
 }
 
 .spec-panel-cert-fallback {
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     margin: 0;
 }
 
@@ -152,10 +167,16 @@
         transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .spec-panel-cert-fallback a:hover,
     .spec-panel-cert-fallback a:focus-visible {
         background: var(--color-accent);
         color: var(--color-bg);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .spec-panel-cert-fallback a:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
     }
 }
 
@@ -208,7 +229,7 @@
 .spec-panel-course-note {
     margin: 0;
     padding: 0.6rem 0.75rem;
-    font-size: 0.8rem;
+    font-size: 1rem; /* texte de lecture */
     font-style: italic;
     color: var(--color-text-muted);
     background: var(--color-accent-soft);
@@ -235,22 +256,31 @@
     transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
 
-.spec-panel-course-btn:hover,
 .spec-panel-course-btn:focus-visible {
     background: var(--color-accent);
     color: var(--color-bg);
     transform: translateY(-1px);
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .spec-panel-course-btn:hover {
+        background: var(--color-accent);
+        color: var(--color-bg);
+        transform: translateY(-1px);
+    }
+}
+
 /* Mobile : volets empilés */
 @media (max-width: 720px) {
     .spec-panel {
         padding: 1.1rem;
-        max-height: 95vh;
+        max-height: 95vh; /* repli */
+        max-height: 95dvh;
     }
 
     .spec-panel-back {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
+        line-height: 1.25; /* libellé sur 2 lignes possible à 14px (max-width 60%) : interligne serré */
         padding: 0.35rem 0.65rem;
         max-width: 60%;
     }
@@ -262,7 +292,7 @@
     }
 
     .spec-panel-title {
-        padding-top: 3rem;
+        padding-top: 4rem; /* dégage le bouton Retour, qui peut tenir sur 2 lignes */
         padding-right: 3.25rem;
     }
 

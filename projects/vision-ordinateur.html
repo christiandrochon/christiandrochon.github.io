@@ -115,7 +115,7 @@
     <div class="architecture-diagram">
 
         <!-- DESKTOP -->
-        <div class="diagram-desktop">
+        <div class="diagram-desktop" tabindex="0" role="region" aria-label="Schéma d’architecture — Vision par ordinateur, défilable horizontalement">
             <svg viewBox="0 0 1000 565" role="img" aria-label="Schéma d’architecture — Vision par ordinateur">
                 <defs>
                     <marker id="vo-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
@@ -167,7 +167,7 @@
         </div>
 
         <!-- TABLETTE -->
-        <div class="diagram-tablet">
+        <div class="diagram-tablet" tabindex="0" role="region" aria-label="Schéma d’architecture — Vision par ordinateur, défilable horizontalement">
             <svg viewBox="0 0 820 530" role="img" aria-label="Schéma d’architecture — Vision par ordinateur">
                 <defs>
                     <marker id="vo-arrow-t" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
@@ -214,7 +214,7 @@
         </div>
 
         <!-- MOBILE -->
-        <div class="diagram-mobile">
+        <div class="diagram-mobile" tabindex="0" role="region" aria-label="Schéma d’architecture — Vision par ordinateur, défilable horizontalement">
             <svg viewBox="0 0 470 530" role="img" aria-label="Schéma d’architecture — Vision par ordinateur">
                 <defs>
                     <marker id="vo-arrow-m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
@@ -262,7 +262,7 @@
     </div>
 
     <h2>Organisation du projet</h2>
-    <pre><code>.
+    <pre tabindex="0" role="region" aria-label="Organisation du projet (arborescence), défilable horizontalement"><code>.
 ├── multimedias-ui/   # Frontend Angular
 ├── multimedias/      # Backend Spring Boot / Java
 │  ├── ferecatu/      # Base10000/&nbsp;: images et fichiers VT_*.txt (volume)
@@ -288,7 +288,7 @@
 
     <h2>API (exemples)</h2>
     <p>Le backend expose des points d’entrée en <code>GET</code> (pas d’envoi d’image par <code>POST</code>). Quelques-uns, tels qu’ils figurent dans le code du dépôt&nbsp;:</p>
-    <pre><code>GET /similaritecouleur
+    <pre tabindex="0" role="region" aria-label="Exemples d’appels API, défilable horizontalement"><code>GET /similaritecouleur
     tire une image au hasard dans le dossier d’images
 GET /recherchesimilaire?k=&lt;entier&gt;
     k images les plus proches de l’image tirée ci-dessus
@@ -301,7 +301,7 @@ GET /precision-rappel/gris | /couleur | /gris-couleur-resnet
     évaluation précision/rappel</code></pre>
 
     <p><strong>Exemple curl</strong>. Le dossier <code>multimedias/ferecatu/</code> ne contient que <code>.gitkeep</code> dans le dépôt. Il faut y placer <code>Base10000/images</code> et la liste <code>Base10000/Base10000_files.txt</code>, puis appeler une première fois <code>/rvb666</code> pour générer le descripteur couleur&nbsp;:</p>
-    <pre><code>curl http://localhost:8087/rvb666
+    <pre tabindex="0" role="region" aria-label="Exemple de commandes curl, défilable horizontalement"><code>curl http://localhost:8087/rvb666
 curl http://localhost:8087/similaritecouleur
 curl "http://localhost:8087/recherchesimilaire?k=10"</code></pre>
 
