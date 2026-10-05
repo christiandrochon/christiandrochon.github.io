@@ -1265,3 +1265,83 @@ footer.project-footer,
     display: table;
     margin-top: 0.3rem;
 }
+
+
+/* ------------------------------------------------------------------
+   Contact : adresse en clair + bouton « Copier l'adresse »
+   Repli pour les visiteurs sans application de messagerie ou qui la
+   refusent. Variables du site (themes clair/sombre), bouton secondaire
+   discret, cibles tactiles >= 44px, pas de :hover hors souris.
+   ------------------------------------------------------------------ */
+.contact-direct {
+    margin-top: 1.25rem;
+}
+
+.contact-direct-label {
+    margin: 0 0 0.25rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.contact-address {
+    margin: 0;
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+.contact-address a {
+    display: inline-block;
+    min-height: 44px;
+    line-height: 44px;
+    color: var(--color-text);
+    text-decoration: underline;
+}
+
+.contact-copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text);
+    font: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.contact-copy:focus-visible,
+.contact-address a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .contact-copy:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+    }
+}
+
+/* Zone d'annonce aria-live : hauteur reservee pour eviter tout decalage. */
+.contact-copy-status {
+    min-height: 1.5rem;
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.contact-copy-status.is-error {
+    color: var(--color-code);
+}
+
+/* Desktop : meme axe central que le bouton « M'ecrire » (breakpoint existant). */
+@media (min-width: 1024px) {
+    .contact-direct {
+        text-align: center;
+    }
+}
