@@ -1256,3 +1256,10 @@ footer.project-footer,
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
+
+/* Carte Lyra : le badge « en cours » est place sous le titre (<br> dans le
+   HTML) ; inline-block pour permettre un petit espacement vertical. */
+#card-lyra .project-title .badge {
+    display: inline-block;
+    margin-top: 0.3rem;
+}
